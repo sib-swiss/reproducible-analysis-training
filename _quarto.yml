@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "Make your research FAIRer with Quarto, GitHub and Zenodo"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - slides.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

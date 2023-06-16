@@ -1,0 +1,171 @@
+---
+title: "1. Make your research FAIRer with Quarto, GitHub and Zenodo"
+subtitle: "Introduction of the tutorial"
+date: "2023-06-16"
+format:
+  revealjs:
+    theme: default
+    slide-numer: true
+
+---
+
+## Why reusable research?
+
+::: {.incremental}
+
+1.   Redo your own experiments/analysis
+
+2.   Colleagues can redo or reuse your experiments/analysis
+
+3.   Get feedback - People will appreciate! + identify mistakes or bugs
+
+4.   Because journals/funding agencies require you to..
+
+:::
+
+## Why can reusable data analysis be difficult?
+
+- Short term goal: get your results ASAP!
+
+- Mid term goal: publish
+
+- Long term goal: stand and let others stand on the shoulders of your giant!
+
+::: {.callout-tip title="The longer it takes to reach goals .. "}
+The less likely we are motivated to invest time .. 
+:::
+
+___
+
+::: columns
+::: {.column width="50%"}
+### Software
+
+-   Developed continuously
+
+-   Developed by teams
+
+-   Developed for others
+
+-   Data is input
+
+-   Defined interface
+
+-   Extensive testing
+
+-   **Reusability is enforced**
+:::
+
+::: {.column width="50%"}
+### Data analysis
+
+-   Developed 'once'
+
+-   Usually single researcher
+
+-   Developer = user
+
+-   Developed for single dataset
+
+-   Users interact with code
+
+-   Mistakes can go undetected
+
+-   **Reusability is a choice**
+:::
+:::
+
+::: aside
+Slide from: Roland Krause ELIXIR-LU
+:::
+
+___
+
+## Think like a software engineer
+
+-   Prepare to:
+
+    -   Develop your code further and collaborate
+
+    -   Let others reuse your code
+
+    -   Allow for different data input
+
+-   Important:
+
+    -   Good coding practices
+
+    -   Documentation (this course)
+
+    -   Version control (this course)
+
+![](../img/software_engineer.jpg){.absolute top="350" right="50" width="400"}
+
+## FAIR principles
+
+- **Findable**
+
+- Accessbile
+
+- Interoperable
+
+- **Reusable**
+
+::: aside
+More at: [go-fair.org](https://www.go-fair.org/fair-principles/)
+:::
+
+## How to apply this?
+
+::: {.incremental}
+
+- Make your analysis reproducible and Reusable:
+
+  - **Code**: style + context, version control (git)
+  
+  - **Workflows**: e.g. snakemake, nextflow
+  
+  - **Environments**: e.g. conda, renv, containers
+  
+- Make your analysis Findable:
+  
+  - Unique identifier
+  
+  - Long term storage
+  
+  - Describe
+  
+:::
+
+
+## This tutorial
+
+- **In** this tutorial:
+
+  - Tell your story together with code by using **Quarto**
+  
+  - Version control your work with **git and GitHub**
+  
+  - Store it with **Zenodo**
+  
+- **Not in** this tutorial:
+
+  - Good coding practices
+  
+  - Workflows
+  
+  - Environments
+
+## Tutorial overview
+
+- Part 1:
+
+  - Creating notebooks with Quarto
+  
+  - Basics of version control with git and GitHub
+
+- Part 2:
+
+  - Using GitHub pages to create a website with Quarto
+  
+  - Introduction to Zenodo

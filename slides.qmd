@@ -1,0 +1,10 @@
+---
+title: "Slides"
+listing:
+  contents: slides
+  sort: "title"
+  date-format: "DD MMM YYYY"
+  fields: [date, title, subtitle]
+---
+
+

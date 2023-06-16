@@ -1,0 +1,317 @@
+[
+  {
+    "objectID": "slides/introduction.html#why-reusable-research",
+    "href": "slides/introduction.html#why-reusable-research",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Why reusable research?",
+    "text": "Why reusable research?\n\n\nRedo your own experiments/analysis\nColleagues can redo or reuse your experiments/analysis\nGet feedback - People will appreciate! + identify mistakes or bugs\nBecause journals/funding agencies require you to.."
+  },
+  {
+    "objectID": "slides/introduction.html#fair-principles",
+    "href": "slides/introduction.html#fair-principles",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "FAIR principles",
+    "text": "FAIR principles\n\nFindable\nAccessbile\nInteroperable\nReusable\n\n\n\nMore at: go-fair.org"
+  },
+  {
+    "objectID": "slides/introduction.html#how-to-apply-this",
+    "href": "slides/introduction.html#how-to-apply-this",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "How to apply this?",
+    "text": "How to apply this?\n\n\nMake your analysis reproducible and Reusable:\n\nCode: style + context, version control (git)\nWorkflows: e.g. snakemake, nextflow\nEnvironments: e.g. conda, renv, containers\n\nMake your analysis Findable:\n\nUnique identifier\nLong term storage\nDescribe"
+  },
+  {
+    "objectID": "slides/introduction.html#this-tutorial",
+    "href": "slides/introduction.html#this-tutorial",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "This tutorial",
+    "text": "This tutorial\n\nIn this tutorial:\n\nTell your story together with code by using Quarto\nVersion control your work with git and GitHub\nStore it with Zenodo\n\nNot in this tutorial:\n\nGood coding practices\nWorkflows\nEnvironments"
+  },
+  {
+    "objectID": "slides/introduction.html#tutorial-overview",
+    "href": "slides/introduction.html#tutorial-overview",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Tutorial overview",
+    "text": "Tutorial overview\n\nPart 1:\n\nCreating notebooks with Quarto\nBasics of version control with git and GitHub\n\nPart 2:\n\nUsing GitHub pages to create a website with Quarto\nIntroduction to Zenodo"
+  },
+  {
+    "objectID": "slides/introduction.html#we-can-reusable-data-analysis-be-difficult",
+    "href": "slides/introduction.html#we-can-reusable-data-analysis-be-difficult",
+    "title": "Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "We can reusable data analysis be difficult?",
+    "text": "We can reusable data analysis be difficult?\n\nShort term feedback: get your results ASAP!\nMid term feedback: publish\nLong term feedback: stand and let others stand on the shoulders of your giant!\n\n\n\n\n\n\n\nThe longer it takes to get feedback ..\n\n\nThe less motivated we are to invest time .."
+  },
+  {
+    "objectID": "slides/introduction.html#why-can-reusable-data-analysis-be-difficult",
+    "href": "slides/introduction.html#why-can-reusable-data-analysis-be-difficult",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Why can reusable data analysis be difficult?",
+    "text": "Why can reusable data analysis be difficult?\n\nShort term goal: get your results ASAP!\nMid term goal: publish\nLong term goal: stand and let others stand on the shoulders of your giant!\n\n\n\n\n\n\n\nThe longer it takes to reach goals ..\n\n\nThe less likely we are motivated to invest time .."
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#software-development-versus-analysis",
+    "href": "slides/introduction_quarto.html#software-development-versus-analysis",
+    "title": "Introduction to Quarto",
+    "section": "Software development versus analysis",
+    "text": "Software development versus analysis\n\n\nSoftware development\n\nDeveloped continuously\nDeveloped by teams\nDesigned to run independently\nData is secondary, in the user domain\nUsers that interact with the system through defined interface\n\n\nData analysis\n\nDeveloped for the shortest time possible\nUsually single researcher\nDesigned to run by experienced people or analyst only\nData is key\nUsers might interact with the system at any stage"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#analysis-code-and-its-context",
+    "href": "slides/introduction_quarto.html#analysis-code-and-its-context",
+    "title": "Introduction to Quarto",
+    "section": "Analysis code and its context",
+    "text": "Analysis code and its context\n\nRecording your data analysis story (= the choices you make) is important\nA story is not easy to extract from code:\n\nTelling a story is not the main purpose of coding languages - the main goal is telling a computer what to do\nNot everybody can read code"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#think-like-a-software-engineer",
+    "href": "slides/introduction_quarto.html#think-like-a-software-engineer",
+    "title": "Introduction to Quarto",
+    "section": "Think like a software engineer",
+    "text": "Think like a software engineer\n\nPrepare to:\n\nDevelop your code further and collaborate\nLet others reuse your code\nAllow for different data input\n\nImportant:\n\nGood coding practices\nDocumentation (this course)\nVersion control (this course)"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#your-analysis-and-its-story",
+    "href": "slides/introduction_quarto.html#your-analysis-and-its-story",
+    "title": "2. Introduction to Quarto",
+    "section": "Your analysis and its story",
+    "text": "Your analysis and its story\n\nRecording your data analysis story (= the choices you make) is important\nA story is not easy to extract from code:\n\nTelling a story is not the main purpose of coding languages - the main goal is telling a computer what to do\nNot everybody can read code\n\nSolution: tell your story together with your code!"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#notebooks",
+    "href": "slides/introduction_quarto.html#notebooks",
+    "title": "Introduction to Quarto",
+    "section": "Notebooks",
+    "text": "Notebooks\n\nDifferent types:\n\nJupyter\nGoogle colab\nRmarkdown\nQuarto\n\nText is written in markdown \nCode is in (executable) code chunks"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#story-code-notebooks",
+    "href": "slides/introduction_quarto.html#story-code-notebooks",
+    "title": "2. Introduction to Quarto",
+    "section": "Story + code = notebooks",
+    "text": "Story + code = notebooks\n\nSome examples:\n\nJupyter\nGoogle colab\nRmarkdown\nQuarto\n\nText is written in markdown \nCode is in (executable) code chunks"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#quarto-example",
+    "href": "slides/introduction_quarto.html#quarto-example",
+    "title": "2. Introduction to Quarto",
+    "section": "Quarto example",
+    "text": "Quarto example"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#quarto-example-1",
+    "href": "slides/introduction_quarto.html#quarto-example-1",
+    "title": "2. Introduction to Quarto",
+    "section": "Quarto example",
+    "text": "Quarto example"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#loading-in-the-data",
+    "href": "slides/introduction_quarto.html#loading-in-the-data",
+    "title": "Introduction to Quarto",
+    "section": "Loading in the data",
+    "text": "Loading in the data\nThe data is stored in count matrices that can be directly loaded using Seurat:\n\n```{r}\n#| eval: false\nlibrary(Seurat)\nsparse_matrix &lt;- Seurat::Read10X(data.dir = \"/path/to/data_dir\")\n```"
+  },
+  {
+    "objectID": "slides/quarto_tutorial.html",
+    "href": "slides/quarto_tutorial.html",
+    "title": "quarto_tutorial",
+    "section": "",
+    "text": "In this analysis we load the second batch of data …\n\n\nThe data is stored in count matrices that can be directly loaded using Seurat:\n\nlibrary(Seurat)\nsparse_matrix &lt;- Seurat::Read10X(data.dir = \"/path/to/data_dir\")"
+  },
+  {
+    "objectID": "slides/quarto_tutorial.html#loading-in-the-data",
+    "href": "slides/quarto_tutorial.html#loading-in-the-data",
+    "title": "quarto_tutorial",
+    "section": "",
+    "text": "The data is stored in count matrices that can be directly loaded using Seurat:\n\nlibrary(Seurat)\nsparse_matrix &lt;- Seurat::Read10X(data.dir = \"/path/to/data_dir\")"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#quarto-outputs",
+    "href": "slides/introduction_quarto.html#quarto-outputs",
+    "title": "2. Introduction to Quarto",
+    "section": "Quarto outputs",
+    "text": "Quarto outputs\n\nDocuments: html, pdf and MS word\nPresentations: Revealjs (html), Powerpoint (pptx) and Beamer (pdf/latex)\nWebsites\nBooks"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#writing-quarto",
+    "href": "slides/introduction_quarto.html#writing-quarto",
+    "title": "2. Introduction to Quarto",
+    "section": "Writing quarto",
+    "text": "Writing quarto\n\nPlatforms:\n\nVSCode: most used code editor. Works well for rendering python documents.\nRstudio: code editor for R. Works well for rendering R documents.\n\nSetup:\n\nStart with a template (Document, Presentation, Website or Book)\nStart coding!"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#writing-quarto---platforms",
+    "href": "slides/introduction_quarto.html#writing-quarto---platforms",
+    "title": "Introduction to Quarto",
+    "section": "Writing quarto - platforms",
+    "text": "Writing quarto - platforms\n\nVSCode: most used code editor. Works well for rendering python documents.\nRstudio: code editor for R. Works well for rendering R documents."
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#writing-code---set-up",
+    "href": "slides/introduction_quarto.html#writing-code---set-up",
+    "title": "Introduction to Quarto",
+    "section": "Writing code - set up",
+    "text": "Writing code - set up"
+  },
+  {
+    "objectID": "slides/introduction.html#think-like-a-software-engineer",
+    "href": "slides/introduction.html#think-like-a-software-engineer",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Think like a software engineer",
+    "text": "Think like a software engineer\n\nPrepare to:\n\nDevelop your code further and collaborate\nLet others reuse your code\nAllow for different data input\n\nImportant:\n\nGood coding practices\nDocumentation (this course)\nVersion control (this course)"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#writing-code---markdown",
+    "href": "slides/introduction_quarto.html#writing-code---markdown",
+    "title": "Introduction to Quarto",
+    "section": "Writing code - markdown",
+    "text": "Writing code - markdown\n\n\nHeaders\n# 1. Title\n\n## 1.1 Subtitle\n\n### 1.1.1 Subtitle\nEmphasis\n*italics*\n**bold**\nLists\n- item 1\n- item 2\n\nLinks\n[GO fair website](https://www.go-fair.org)\nImages\n![SIB logo](https://www.sib.swiss/templates/sib/images/sib_logo2023.svg)\n\n\n\n\nFull markdown docs here"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#writing-code---chunks",
+    "href": "slides/introduction_quarto.html#writing-code---chunks",
+    "title": "2. Introduction to Quarto",
+    "section": "Writing code - chunks",
+    "text": "Writing code - chunks\n\n```{r}\nlibrary(ggplot2)\n\nmtcars |&gt;\n  ggplot(aes(x = drat, y = mpg, color = cyl)) +\n  geom_point()\n```"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#markdown",
+    "href": "slides/introduction_quarto.html#markdown",
+    "title": "Introduction to Quarto",
+    "section": "Markdown",
+    "text": "Markdown\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\n*italics*, **bold**, ***bold italics***\nitalics, bold, bold italics\n\n\nsuperscript^2^ / subscript~2~\nsuperscript2 / subscript2\n\n\n~~strikethrough~~\nstrikethrough\n\n\n`verbatim code`\nverbatim code"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#markdown---text-formatting",
+    "href": "slides/introduction_quarto.html#markdown---text-formatting",
+    "title": "2. Introduction to Quarto",
+    "section": "Markdown - text formatting",
+    "text": "Markdown - text formatting\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\n*italics*, **bold**, ***bold italics***\nitalics, bold, bold italics\n\n\nsuperscript^2^ / subscript~2~\nsuperscript2 / subscript2\n\n\n~~strikethrough~~\nstrikethrough\n\n\n`verbatim code`\nverbatim code"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#markdown---heading",
+    "href": "slides/introduction_quarto.html#markdown---heading",
+    "title": "2. Introduction to Quarto",
+    "section": "Markdown - heading",
+    "text": "Markdown - heading\n\n\n\n\n\n\n\nMarkdown syntax\nOutput\n\n\n\n\n# Header 1\nHeader 1\n\n\n## Header 2\nHeader 2\n\n\n### Header 3\nHeader 3\n\n\n#### Header 4\nHeader 4"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#markdown---lists",
+    "href": "slides/introduction_quarto.html#markdown---lists",
+    "title": "2. Introduction to Quarto",
+    "section": "Markdown - lists",
+    "text": "Markdown - lists\n\n\nUnordered list\n- item 1\n    - sub-item 1\n    - sum-item 2\n        - sub-sub-item 1\n\nitem 1\n\nsub-item 1\nsum-item 2\n\nsub-sub-item 1\n\n\n\n\nOrdered list\n1. ordered list\n2. item 2\n    i) sub-item 1\n         A.  sub-sub-item 1\n\nordered list\nitem 2\n\nsub-item 1\n\nsub-sub-item 1"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#writing-code---links-and-images",
+    "href": "slides/introduction_quarto.html#writing-code---links-and-images",
+    "title": "2. Introduction to Quarto",
+    "section": "Writing code - links and images",
+    "text": "Writing code - links and images\n\nGO fair [website](https://www.go-fair.org)\nGO fair website"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#writing-code---chunks-1",
+    "href": "slides/introduction_quarto.html#writing-code---chunks-1",
+    "title": "2. Introduction to Quarto",
+    "section": "Writing code - chunks",
+    "text": "Writing code - chunks\n\n```{r}\nhead(mtcars[, 1:3]) |&gt; knitr::kable()\n```\n\n\n\n\n\nmpg\ncyl\ndisp\n\n\n\n\nMazda RX4\n21.0\n6\n160\n\n\nMazda RX4 Wag\n21.0\n6\n160\n\n\nDatsun 710\n22.8\n4\n108\n\n\nHornet 4 Drive\n21.4\n6\n258\n\n\nHornet Sportabout\n18.7\n8\n360\n\n\nValiant\n18.1\n6\n225"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#images",
+    "href": "slides/introduction_quarto.html#images",
+    "title": "2. Introduction to Quarto",
+    "section": "Images",
+    "text": "Images\n![logo of SIB](logo.svg){#fig-logo width=\"300\" fig-align=\"left\"}\n\nAs you can see from @fig-logo, it is red.\n\n\n\n\nFigure 1: logo of SIB\n\n\nAs you can see from Figure 1, it is red.\n\n\nMore markdown basics here"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#writing-code---chunks-2",
+    "href": "slides/introduction_quarto.html#writing-code---chunks-2",
+    "title": "Introduction to Quarto",
+    "section": "Writing code - chunks",
+    "text": "Writing code - chunks\n\n```{r}\n#| label: \"fig-mpg-vs-drat\"\n#| fig-cap: \"mpg versus drat\"\n#| fig-align: \"left\"\nlibrary(ggplot2)\nmtcars |&gt;\n  ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()\n```\n\n\nFigure 2: mpg versus dratFrom Figure 2 you can see there’s a positive correlation."
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#writing-code---quarto-magic",
+    "href": "slides/introduction_quarto.html#writing-code---quarto-magic",
+    "title": "2. Introduction to Quarto",
+    "section": "Writing code - quarto magic",
+    "text": "Writing code - quarto magic\n\n```{r}\n#| label: \"fig-mpg-vs-drat\"\n#| fig-cap: \"mpg versus drat\"\n#| fig-align: \"left\"\nlibrary(ggplot2)\nmtcars |&gt;\n  ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()\n```\n\n\nFigure 2: mpg versus dratFrom @fig-mpg-vs-drat you can see there is a positive correlation. \nFrom Figure 2 you can see there is a positive correlation."
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#endless-possibilities",
+    "href": "slides/introduction_quarto.html#endless-possibilities",
+    "title": "Introduction to Quarto",
+    "section": "Endless possibilities",
+    "text": "Endless possibilities\n\nCitations\nVisual editor - have a particular look at Insert Anything\nIntegrate shiny\nComplete overview at https://quarto.org/docs/guide/\nMore extensive ‘getting started’ tutorial at https://quarto.org/docs/get-started/"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#more-quarto",
+    "href": "slides/introduction_quarto.html#more-quarto",
+    "title": "2. Introduction to Quarto",
+    "section": "More Quarto",
+    "text": "More Quarto\n\nFor example:\n\nCitations\nVisual editor - have a particular look at Insert Anything\nIntegrate shiny\n\nComplete overview at https://quarto.org/docs/guide/\nMore extensive ‘getting started’ tutorial at https://quarto.org/docs/get-started/"
+  },
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Slides",
+    "section": "",
+    "text": ":::{#quarto-listing-pipeline .hidden} \\(e = mC^2\\)\n:::{.hidden render-id=“pipeline-listing-listing”}\n:::{.list .quarto-listing-default}\n\n\n\n\n\nMake your research FAIRer with Quarto, GitHub and Zenodo\n\n\nIntroduction of the tutorial\n\n\n\n\n\n\n16 Jun 2023\n\n\n\n\n\n\n\n\n\nIntroduction to Quarto\n\n\nBasics of writing with Quarto\n\n\n\n\n\n\n16 Jun 2023\n\n\n\n\n:::\n\n\n\nNo matching items\n\n:::\n:::"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ISMB tutorial",
+    "section": "",
+    "text": "The FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research’s impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.\nSharing and reusing are at the heart of the FAIR principles and should be a routine task of any (life) scientist today. To enable others to use or reproduce our findings and work, we need to provide all the information: the data, software and parameters used, scripts for the analysis, databases and their versions, and any required documentation and contextualisation. To have all this information and code together in a single file, many use markdown. Such a markdown file can be created in a simple way, and after that rendered in a single web page that is easy to share and read.\nThe FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g. R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).\nBy using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing."
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "ISMB tutorial",
+    "section": "",
+    "text": "The FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research’s impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.\nSharing and reusing are at the heart of the FAIR principles and should be a routine task of any (life) scientist today. To enable others to use or reproduce our findings and work, we need to provide all the information: the data, software and parameters used, scripts for the analysis, databases and their versions, and any required documentation and contextualisation. To have all this information and code together in a single file, many use markdown. Such a markdown file can be created in a simple way, and after that rendered in a single web page that is easy to share and read.\nThe FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g. R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).\nBy using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing."
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "ISMB tutorial",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nAfter this tutorial, the participants will be able to:\nCreate notebooks and websites based on Markdown, and Python or R with Quarto Use Git and GitHub to version control the generated content\nHost a website by making use of GitHub actions and GitHub pages\nLink the GitHub repository to Zenodo and give it a unique identifier (DOI)"
+  },
+  {
+    "objectID": "index.html#maximum-number-of-attendees-participating",
+    "href": "index.html#maximum-number-of-attendees-participating",
+    "title": "ISMB tutorial",
+    "section": "Maximum number of attendees participating",
+    "text": "Maximum number of attendees participating\nThis tutorial can be taught to a maximum of 30 participants. Tutorial mode This tutorial can be taught in person or online."
+  },
+  {
+    "objectID": "index.html#provisional-schedule",
+    "href": "index.html#provisional-schedule",
+    "title": "ISMB tutorial",
+    "section": "Provisional schedule",
+    "text": "Provisional schedule\n\n\n\n\n\n\n\n\n\n\nBlock\nFrom\nTo\nTopic\nTypes of teaching activity\n\n\n\n\nBlock 1\n9:00\n10:45\nCreating notebooks in Markdown with Quarto\nShort talk + hands-on\n\n\n\n10:45\n11:00\nBREAK\n\n\n\nBlock 2\n11:00\n13:00\nBasics of version control with git and GitHub\nShort talk + hands-on\n\n\n\n13:00\n14:00\nBREAK\n\n\n\nBlock 3\n14:00\n16:00\nUsing GitHub pages to host a website created with Quarto\nShort talk + hands-on\n\n\n\n16:00\n16:15\nBREAK\n\n\n\nBlock 4\n16:15\n18:00\nIntroduction to Zenodo and how to link GitHub repositories to Zenodo for long-term storage and DOI\nShort talk + hands-on"
+  },
+  {
+    "objectID": "index.html#list-of-trainers",
+    "href": "index.html#list-of-trainers",
+    "title": "ISMB tutorial",
+    "section": "List of trainers",
+    "text": "List of trainers\n\nDr. Geert van Geest - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland\nDr. Wandrille Duchemin - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the sciCORE core facility of the University of Basel, Switzerland\nDr. Lea Taylor - Bioinformatician, affiliated to the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland"
+  },
+  {
+    "objectID": "index.html#intended-audience-and-level",
+    "href": "index.html#intended-audience-and-level",
+    "title": "ISMB tutorial",
+    "section": "Intended audience and level",
+    "text": "Intended audience and level\nThis tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a GitHub account (https://github.com/join) and bring their laptops with either the latest versions of RStudio or VSCode pre-installed."
+  }
+]

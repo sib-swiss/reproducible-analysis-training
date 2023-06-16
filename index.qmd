@@ -1,0 +1,50 @@
+---
+title: "ISMB tutorial"
+subtitle: "Make your research FAIRer with Quarto, GitHub and Zenodo"
+---
+
+## Abstract
+
+The FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research's impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.
+
+Sharing and reusing are at the heart of the FAIR principles and should be a routine task of any (life) scientist today. To enable others to use or reproduce our findings and work, we need to provide all the information: the data, software and parameters used, scripts for the analysis, databases and their versions, and any required documentation and contextualisation. To have all this information and code together in a single file, many use markdown. Such a markdown file can be created in a simple way, and after that rendered in a single web page that is easy to share and read.
+
+The FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g. R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).
+
+By using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing.
+
+## Learning objectives
+
+-   After this tutorial, the participants will be able to:
+
+-   Create notebooks and websites based on Markdown, and Python or R with Quarto Use Git and GitHub to version control the generated content
+
+-   Host a website by making use of GitHub actions and GitHub pages
+
+-   Link the GitHub repository to Zenodo and give it a unique identifier (DOI)
+
+## Maximum number of attendees participating 
+
+This tutorial can be taught to a maximum of 30 participants. Tutorial mode This tutorial can be taught in person or online. 
+
+## Provisional schedule
+
+| Block   	| From  	| To    	| Topic                                                                                              	| Types of teaching activity 	|
+|---------	|-------	|-------	|----------------------------------------------------------------------------------------------------	|----------------------------	|
+| Block 1 	| 9:00  	| 10:45 	| Creating notebooks in Markdown with Quarto                                                         	| Short talk + hands-on      	|
+|         	| 10:45 	| 11:00 	| BREAK                                                                                              	|                            	|
+| Block 2 	| 11:00 	| 13:00 	| Basics of version control with git and GitHub                                                      	| Short talk + hands-on      	|
+|         	| 13:00 	| 14:00 	| BREAK                                                                                              	|                            	|
+| Block 3 	| 14:00 	| 16:00 	| Using GitHub pages to host a website created with Quarto                                           	| Short talk + hands-on      	|
+|         	| 16:00 	| 16:15 	| BREAK                                                                                              	|                            	|
+| Block 4 	| 16:15 	| 18:00 	| Introduction to Zenodo and how to link GitHub repositories to Zenodo for long-term storage and DOI 	| Short talk + hands-on      	|
+
+## List of trainers 
+
+- Dr. Geert van Geest - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland
+- Dr. Wandrille Duchemin - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the sciCORE core facility of the University of Basel, Switzerland
+- Dr. Lea Taylor - Bioinformatician, affiliated to the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland 
+
+## Intended audience and level
+
+This tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a GitHub account (https://github.com/join) and bring their laptops with either the latest versions of RStudio or VSCode pre-installed.

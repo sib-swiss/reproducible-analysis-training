@@ -1,0 +1,231 @@
+---
+title: "2. Introduction to Quarto"
+subtitle: "Basics of writing with Quarto"
+date: "2023-06-16"
+format: 
+  revealjs:
+    theme: default
+    slide-number: true
+---
+
+## Your analysis and its story
+
+-   Recording your data analysis story (= the choices you make) is important
+
+-   A story is not easy to extract from code:
+
+    -   Telling a story is not the main purpose of coding languages - the main goal is telling a computer what to do
+
+    -   Not everybody can read code
+
+-   Solution: tell your story together with your code!
+
+## Story + code = notebooks
+
+-   Some examples:
+
+    -   Jupyter
+
+    -   Google colab
+
+    -   Rmarkdown
+
+    -   **Quarto**
+
+-   Text is written in [markdown](https://www.markdownguide.org/) ![](https://raw.githubusercontent.com/dcurtis/markdown-mark/master/svg/markdown-mark.svg){height="40"}
+
+-   Code is in (executable) code chunks
+
+## Quarto example
+
+![](../img/quarto_code.png)
+
+## Quarto example
+
+![](../img/quarto_rendered.png)
+
+## Quarto outputs
+
+-   **Documents**: html, pdf and MS word
+
+-   **Presentations**: Revealjs (html), Powerpoint (pptx) and Beamer (pdf/latex)
+
+-   **Websites**
+
+-   **Books**
+
+## Writing quarto
+
+-   Platforms:
+
+    -   VSCode: most used code editor. Works well for rendering python documents.
+
+    -   Rstudio: code editor for R. Works well for rendering R documents.
+
+-   Setup:
+
+    -   Start with a template (Document, Presentation, Website or Book)
+
+    -   Start coding!
+
+## Markdown - text formatting
+
++-----------------------------------------+-----------------------------------------+
+| Markdown Syntax                         | Output                                  |
++=========================================+=========================================+
+| ```                                     | *italics*, **bold**, ***bold italics*** |
+| *italics*, **bold**, ***bold italics*** |                                         |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+| ```                                     | superscript^2^ / subscript~2~           |
+| superscript^2^ / subscript~2~           |                                         |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+| ```                                     | ~~strikethrough~~                       |
+| ~~strikethrough~~                       |                                         |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+| ```                                     | `verbatim code`                         |
+| `verbatim code`                         |                                         |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+
+## Markdown - heading
+
++------------------+-----------------+
+| Markdown syntax  | Output          |
++==================+=================+
+| ```              | # Header 1      |
+| # Header 1       |                 |
+| ```              |                 |
++------------------+-----------------+
+| ```              | ## Header 2     |
+| ## Header 2      |                 |
+| ```              |                 |
++------------------+-----------------+
+| ```              | ### Header 3    |
+| ### Header 3     |                 |
+| ```              |                 |
++------------------+-----------------+
+| ```              | #### Header 4   |
+| #### Header 4    |                 |
+| ```              |                 |
++------------------+-----------------+
+
+
+: {tbl-colwidths="\[50,50\]"}
+
+## Markdown - lists
+
+::: columns
+::: {.column width="50%"}
+### Unordered list
+
+```         
+- item 1
+    - sub-item 1
+    - sum-item 2
+        - sub-sub-item 1
+```
+
+-   item 1
+    -   sub-item 1
+    -   sum-item 2
+        -   sub-sub-item 1
+:::
+
+::: {.column width="\"50%"}
+### Ordered list
+
+```         
+1. ordered list
+2. item 2
+    i) sub-item 1
+         A.  sub-sub-item 1
+```
+
+1.  ordered list
+2.  item 2
+    i)  sub-item 1
+        A.  sub-sub-item 1
+:::
+:::
+
+## Writing code - links and images
+
+<br>
+
+```         
+GO fair [website](https://www.go-fair.org)
+```
+
+GO fair [website](https://www.go-fair.org)
+
+## Images
+
+```         
+![logo of SIB](logo.svg){#fig-logo width="300" fig-align="left"}
+
+As you can see from @fig-logo, it is red.
+```
+
+<br>
+
+![logo of SIB](logo.svg){#fig-logo width="300" fig-align="left"}
+
+As you can see from @fig-logo, it is red.
+
+::: aside
+More markdown basics [here](https://quarto.org/docs/authoring/markdown-basics.html)
+:::
+
+## Writing code - chunks
+
+```{r}
+#| echo: fenced
+library(ggplot2)
+
+mtcars |>
+  ggplot(aes(x = drat, y = mpg, color = cyl)) +
+  geom_point()
+```
+
+## Writing code - chunks
+
+```{r}
+#| echo: fenced
+
+head(mtcars[, 1:3]) |> knitr::kable()
+```
+
+## Writing code - quarto magic
+
+```{r}
+#| echo: fenced
+#| label: "fig-mpg-vs-drat"
+#| fig-cap: "mpg versus drat"
+#| fig-align: "left"
+library(ggplot2)
+mtcars |>
+  ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()
+```
+
+```
+From @fig-mpg-vs-drat you can see there is a positive correlation. 
+```
+
+From @fig-mpg-vs-drat you can see there is a positive correlation. 
+
+## More Quarto
+
+- For example:
+
+  - [Citations](https://quarto.org/docs/authoring/footnotes-and-citations.html)
+  
+  - [Visual editor](https://quarto.org/docs/visual-editor/#using-the-editor) - have a particular look at **Insert Anything**
+  
+  - [Integrate shiny](https://quarto.org/docs/interactive/shiny/)
+
+- Complete overview at [https://quarto.org/docs/guide/](https://quarto.org/docs/guide/)
+
+- More extensive 'getting started' tutorial at [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/)
