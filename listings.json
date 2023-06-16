@@ -1,0 +1,9 @@
+[
+  {
+    "listing": "/slides.html",
+    "items": [
+      "/slides/introduction.html",
+      "/slides/introduction_quarto.html"
+    ]
+  }
+]
