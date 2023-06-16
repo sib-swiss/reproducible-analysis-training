@@ -2,9 +2,7 @@
 title: "Slides"
 listing:
   contents: slides
-  sort: "title"
+  sort: true
   date-format: "DD MMM YYYY"
   fields: [date, title, subtitle]
 ---
-
-
