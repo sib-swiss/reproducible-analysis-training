@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Make your research FAIRer with Quarto, GitHub and Zenodo - Slides</title>
+<title>Make your research FAIRer - Slides</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,9 +71,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-subtitle','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -105,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Make your research FAIRer with Quarto, GitHub and Zenodo</span>
+    <span class="navbar-title">Make your research FAIRer</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -122,8 +122,19 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./slides.html" rel="" target="" aria-current="page">
  <span class="menu-text">Slides</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./exercises.html" rel="" target="">
+ <span class="menu-text">Exercises</span></a>
+  </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/sib-swiss/reproducible-analysis" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -157,60 +168,89 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>:::{#quarto-listing-pipeline .hidden} <span class="hidden" data-render-id="quarto-enable-math-inline"><span class="math inline">\(e = mC^2\)</span></span></p>
-<p>:::{.hidden render-id=“pipeline-listing-listing”}</p>
-:::{.list .quarto-listing-default}
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1686903442151" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
-<div class="body">
-<a href="./slides/introduction.html">
-<h3 class="no-anchor listing-title">
-<ol type="1">
-<li>Make your research FAIRer with Quarto, GitHub and Zenodo
-</li></ol></h3>
-<div class="listing-subtitle">
-Introduction of the tutorial
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./slides/introduction.html">
-<div class="listing-date">
-16 Jun 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1686903442152" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9">
-<div class="body">
-<a href="./slides/introduction_quarto.html">
-<h3 class="no-anchor listing-title">
-<ol start="2" type="1">
-<li>Introduction to Quarto
-</li></ol></h3>
-<div class="listing-subtitle">
-Basics of writing with Quarto
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./slides/introduction_quarto.html">
-<div class="listing-date">
-16 Jun 2023
-</div>
-</a>
-</div>
-</div>
-:::
 
 
+
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Date</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+Subtitle
+</th>
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1686906450069" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="1. Make your research FAIRer with Quarto, GitHub and Zenodo" data-listing-filename-sort="introduction.qmd">
+<td>
+<span class="listing-date">16 Jun 2023</span>
+</td>
+<td>
+<a href="./slides/introduction.html" class="title listing-title">1. Make your research FAIRer with Quarto, GitHub and Zenodo</a>
+</td>
+<td>
+<span class="listing-subtitle">Introduction of the tutorial</span>
+</td>
+<td>
+<span class="listing-author">Geert van Geest</span>
+</td>
+</tr>
+<tr data-index="1" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1686906466930" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-title-sort="2. Introduction to Quarto" data-listing-filename-sort="introduction_quarto.qmd">
+<td>
+<span class="listing-date">16 Jun 2023</span>
+</td>
+<td>
+<a href="./slides/introduction_quarto.html" class="title listing-title">2. Introduction to Quarto</a>
+</td>
+<td>
+<span class="listing-subtitle">Basics of writing with Quarto</span>
+</td>
+<td>
+<span class="listing-author">Geert van Geest</span>
+</td>
+</tr>
+</tbody>
+
+</table>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-<p>:::</p>
-<p>:::</p>
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing"></div></main> <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -448,4 +488,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sib-swiss/reproducible-analysis/edit/main/slides.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sib-swiss/reproducible-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>

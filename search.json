@@ -4,7 +4,7 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": ":::{#quarto-listing-pipeline .hidden} \\(e = mC^2\\)\n:::{.hidden render-id=“pipeline-listing-listing”}\n:::{.list .quarto-listing-default}\n\n\n\n\n\nMake your research FAIRer with Quarto, GitHub and Zenodo\n\n\nIntroduction of the tutorial\n\n\n\n\n\n\n16 Jun 2023\n\n\n\n\n\n\n\n\n\nIntroduction to Quarto\n\n\nBasics of writing with Quarto\n\n\n\n\n\n\n16 Jun 2023\n\n\n\n\n:::\n\n\n\nNo matching items\n\n:::\n:::"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\nAuthor\n\n\n\n\n\n\n16 Jun 2023\n\n\n1. Make your research FAIRer with Quarto, GitHub and Zenodo\n\n\nIntroduction of the tutorial\n\n\nGeert van Geest\n\n\n\n\n16 Jun 2023\n\n\n2. Introduction to Quarto\n\n\nBasics of writing with Quarto\n\n\nGeert van Geest\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -14,8 +14,8 @@
     "text": "The FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research’s impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.\nSharing and reusing are at the heart of the FAIR principles and should be a routine task of any (life) scientist today. To enable others to use or reproduce our findings and work, we need to provide all the information: the data, software and parameters used, scripts for the analysis, databases and their versions, and any required documentation and contextualisation. To have all this information and code together in a single file, many use markdown. Such a markdown file can be created in a simple way, and after that rendered in a single web page that is easy to share and read.\nThe FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g. R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).\nBy using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing."
   },
   {
-    "objectID": "index.html#abstract",
-    "href": "index.html#abstract",
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
     "title": "ISMB tutorial",
     "section": "",
     "text": "The FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research’s impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.\nSharing and reusing are at the heart of the FAIR principles and should be a routine task of any (life) scientist today. To enable others to use or reproduce our findings and work, we need to provide all the information: the data, software and parameters used, scripts for the analysis, databases and their versions, and any required documentation and contextualisation. To have all this information and code together in a single file, many use markdown. Such a markdown file can be created in a simple way, and after that rendered in a single web page that is easy to share and read.\nThe FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g. R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).\nBy using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing."
@@ -25,7 +25,7 @@
     "href": "index.html#learning-objectives",
     "title": "ISMB tutorial",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\nAfter this tutorial, the participants will be able to:\nCreate notebooks and websites based on Markdown, and Python or R with Quarto Use Git and GitHub to version control the generated content\nHost a website by making use of GitHub actions and GitHub pages\nLink the GitHub repository to Zenodo and give it a unique identifier (DOI)"
+    "text": "Learning objectives\nAfter this tutorial, the participants will be able to:\n\nCreate notebooks and websites based on Markdown, and Python or R with Quarto Use Git and GitHub to version control the generated content\nHost a website by making use of GitHub actions and GitHub pages\nLink the GitHub repository to Zenodo and give it a unique identifier (DOI)"
   },
   {
     "objectID": "index.html#maximum-number-of-attendees-participating",
@@ -172,7 +172,7 @@
     "href": "slides/introduction.html#why-can-reusable-data-analysis-be-difficult",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Why can reusable data analysis be difficult?",
-    "text": "Why can reusable data analysis be difficult?\n\nShort term goal: get your results ASAP!\nMid term goal: publish\nLong term goal: stand and let others stand on the shoulders of your giant!\n\n\n\n\n\n\n\nThe longer it takes to reach goals ..\n\n\nThe less likely we are motivated to invest time .."
+    "text": "Why can reusable data analysis be difficult?\n\n\n\nShort term goal: get your results ASAP!\nMid term goal: publish\nLong term goal: re-use and stand on the shoulder of giants!\n\n\n\n\n\n\n\nThe longer it takes to reach goals ..\n\n\nThe less likely we are motivated to invest time .."
   },
   {
     "objectID": "slides/introduction.html#think-like-a-software-engineer",
@@ -210,10 +210,10 @@
     "text": "Tutorial overview\n\nPart 1:\n\nCreating notebooks with Quarto\nBasics of version control with git and GitHub\n\nPart 2:\n\nUsing GitHub pages to create a website with Quarto\nIntroduction to Zenodo"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "exercises.html",
+    "href": "exercises.html",
+    "title": "Exercises",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Here will follow the exercises on:\n\nBuilding your first Quarto website\nUse version control\nHost your website with github pages\nStore your work on Zenodo and give it a DOI"
   }
 ]
