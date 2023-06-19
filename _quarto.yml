@@ -2,12 +2,24 @@ project:
   type: website
 
 website:
-  title: "Make your research FAIRer with Quarto, GitHub and Zenodo"
+  title: "Make your research FAIRer"
+  repo-url: "https://github.com/sib-swiss/reproducible-analysis"
+  repo-actions: [edit, issue]
+  site-url: "https://sib-swiss.github.io/reproducible-analysis/"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - slides.qmd
+      - text: Exercises
+        menu:
+        - href: write_quarto.qmd
+        - href: git_pages_zenodo.qmd
+        
+    right:
+      - icon: github
+        href: "https://github.com/sib-swiss/reproducible-analysis"
+        aria-label: GitHub
 
 format:
   html:

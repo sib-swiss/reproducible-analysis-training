@@ -1,0 +1,251 @@
+---
+title: "Writing with Quarto"
+---
+
+Here will follow the exercises on:
+
+-   Building your first Quarto website
+-   Use version control
+-   Host your website with github pages
+-   Store your work on Zenodo and give it a DOI
+
+## Initiate a website project
+
+In Rstudio:
+
+-   Choose **File** \> **New Project..**
+-   Choose **New Directory**
+-   Choose **Quarto website**
+-   Choose a location and name for the website. Leave **Create a git repository** checked
+-   Finish by pushing the button **Create Project**
+
+![](img/create_project.gif)
+
+Now we have created a template for a quarto website 👏 . It doesn't contain much, but we can already render it and use it as a functional website. In order to view it locally in your browser you can either:
+
+-   Open `index.qmd` in Rstudio and press the button **Render**
+
+-   Or you can use the **Terminal** and type:
+
+```{bash}
+#| eval: false
+
+quarto preview
+```
+
+In both cases your computer will open a browser and locally host the page at a random port.
+
+## Adding content
+
+To play around, we will use the `babynames` package. Install it with:
+
+```{r}
+#| eval: false
+install.packages("babynames")
+```
+
+### Adding text
+
+In this part, we will use quarto to display our project goals. In `index.qmd`, create an introduction where you will state:
+
+*In this project we aim to visualize the trends of the most frequently used babynames from 1880 to 2017 in the United States. We do this by:*
+
+-   *Understanding the different columns of the data set*
+-   *Find the top 10 most frequently used baby names in the data for:*
+-   *girls*
+-   *boys*
+-   *Plot the yearly trend of the top 10 baby names*
+
+::: callout-important
+## Exercise
+
+Take the above introduction of your `babynames` project, convert it to markdown text, and add it to `index.qmd`.
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+This is what your `index.qmd` could look like:
+
+```         
+---
+title: "quarto-tutorial"
+---
+
+In this project we aim to visualize the trends of the most frequently used babynames from 1880 to 2017 in the United States. We do this by:
+
+- Understanding the different columns of the data set
+- Find the top 10 most frequently used baby names in the data for:
+- girls
+- boys
+- Plot the yearly trend of the top 10 baby names 
+```
+:::
+
+### Adding an image
+
+You can add images with the following syntax:
+
+```
+![image_alt_text](path/or/url/to/image.png)
+```
+
+::: {.callout-important}
+## Exercise
+Check out the [quarto figure guide](https://quarto.org/docs/authoring/figures.html). Find an image of a baby on the internet and get the full URL of the image. After that, add it to your `quarto.qmd`, make it 400 pixels in width and align it to the right side of the page. 
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Your `index.qmd` could look like this:
+
+```
+---
+title: "quarto-tutorial"
+---
+
+In this project we aim to visualize the trends of the most frequently used babynames from 1880 to 2017 in the United States. We do this by:
+
+- Understanding the different columns of the data set
+- Find the top 10 most frequently used baby names in the data for:
+  - girls
+  - boys
+- Plot the yearly trend of the top 10 baby names 
+
+![](https://cdn.pixabay.com/photo/2016/10/02/06/27/baby-1709013_1280.jpg){fig-align="right" width=400}
+```
+:::
+
+### Adding a page
+
+We will now add a page for the analysis. We do this by clicking in Rstudio **File** > **New File..** > **Quarto Document..**. Choose a title, e.g. `analysis` and press **Create**. Save the newly created file as `analysis.qmd`.
+
+In order to make our new page part of the website, we have to edit `_quarto.yml`. By adding it to the `navbar` item in the `website` markup:
+
+```yml
+website:
+  title: "quarto-tutorial"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - analysis.qmd
+```
+
+### Adding code chunks
+
+We can add some code in there. First, we add a chunk that loads the libraries:
+
+```{r}
+#| eval: false
+library(babynames)
+library(knitr)
+library(dplyr)
+library(ggplot2)
+```
+
+To plot the first 10 lines of the babynames table you can add:
+
+```{r}
+#| eval: false
+head(babynames) |> kable()
+```
+
+::: {.callout-important}
+## Exercise
+Add the two above code as an R code chunk to `analysis.qmd`, and do the following:
+
+- add some text to let the reader know what it does
+- suppress the package startup messages with `#| output: false` at the top of the chunk that loads the packages. More info about the hash-pipe [here](https://quarto.org/docs/reference/cells/cells-knitr.html) 
+- re-render the site. 
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+```
+---
+title: "Analysis"
+---
+
+First we load the packages:
+```
+
+```{r}
+#| echo: fenced
+#| output: false
+
+library(babynames)
+library(knitr)
+library(dplyr)
+library(ggplot2)
+```
+```
+The first ten lines of the babynames dataset looks like:
+```
+
+```{r}
+#| echo: fenced
+#| output: false
+head(babynames) |> kable()
+```
+
+::: 
+
+Here, I've created two functions that do the following:
+
+- `get_most_frequent`: Gets the most frequent babynames over a time-period.
+- `plot_top`: from the output of `get_most_frequent`. Plot the top n most popular names. 
+
+This is not a coding tutorial, so you can ignore the code itself. Just know what is does. 
+
+```{r}
+#| eval: false
+get_most_frequent <- function(babynames, select_sex, from = 1950) {
+  most_freq <- babynames |>
+    filter(sex == select_sex, year > from) |>
+    group_by(name) |>
+    summarise(average = mean(prop)) |>
+    arrange(desc(average))
+  return(most_freq)
+}
+
+plot_top <- function(x, babynames, select_sex, top = 10, from = 1950) {
+  topx <- x$name[1:top]
+  
+  p <- babynames |>
+    filter(name %in% topx, sex == select_sex, year > from) |>
+    ggplot(aes(x = year, y = prop, color = name)) +
+    geom_line() +
+    scale_color_brewer(palette = "Paired") +
+    theme_classic()
+  
+  return(p)
+}
+```
+
+Plotting them for girls like this:
+
+```{r}
+#| eval: false
+get_most_frequent(babynames, select_sex = "F") |>
+  plot_top(babynames, select_sex = "F", top = 10)
+```
+
+Plotting them for boys like this:
+
+```{r}
+#| eval: false
+get_most_frequent(babynames, select_sex = "M") |>
+  plot_top(babynames, select_sex = "M", top = 10)
+```
+
+::: {.callout-important}
+## Exercise
+Add the above three code chunks to `analysis.qmd`, and do the following:
+
+- Since the functions are a bit bulky we want to make the chunk foldable. Do this by `#| code-fold: true`
+- Describe in a text what you see in the figures. Refer to the individual figures in text by [cross-referencing](https://quarto.org/docs/authoring/figures.html#cross-references).  
+::: 

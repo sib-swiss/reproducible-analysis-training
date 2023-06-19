@@ -1,6 +1,7 @@
 ---
 title: "2. Introduction to Quarto"
 subtitle: "Basics of writing with Quarto"
+author: "Geert van Geest"
 date: "2023-06-16"
 format: 
   revealjs:
@@ -9,6 +10,8 @@ format:
 ---
 
 ## Your analysis and its story
+
+::: incremental
 
 -   Recording your data analysis story (= the choices you make) is important
 
@@ -19,6 +22,8 @@ format:
     -   Not everybody can read code
 
 -   Solution: tell your story together with your code!
+
+:::
 
 ## Story + code = notebooks
 
@@ -36,15 +41,20 @@ format:
 
 -   Code is in (executable) code chunks
 
-## Quarto example
+## Project - based working
 
-![](../img/quarto_code.png)
+- Work in projects to:
+  
+  - Define goals and tasks
+  
+  - Organize yourself
+  
+  - Keep a good documentation
+  
+  - Communicate about methods, goals, results etc.
 
-## Quarto example
 
-![](../img/quarto_rendered.png)
-
-## Quarto outputs
+## Quarto projects
 
 -   **Documents**: html, pdf and MS word
 
@@ -67,6 +77,54 @@ format:
     -   Start with a template (Document, Presentation, Website or Book)
 
     -   Start coding!
+    
+
+
+## Quarto project files
+
+- `_quarto.yml`: YML file with project-wide settings
+- `.git`: Everything required for version control with git
+- `my_awesome_project.Rproj`: R-project based settings
+- `my_awesome_project.qmd`: Where the work is done!
+
+![](../img/project_init.png){fig-align="right"}
+
+## A `qmd` file
+
+- Front matter (YML format):
+
+```
+---
+title: "My awesome project"
+author: "Jan Janssen"
+date: 2023-06-20
+format:
+  html:
+    theme: cosmo
+    toc: true
+---
+```
+
+- Markdown text
+
+- Code blocks
+
+```{r}
+#| echo: fenced
+two <- 1 + 1
+```
+
+## Quarto example
+
+Contents of `my_new_analysis.qmd`:
+
+![](../img/quarto_code.png)
+
+## Quarto example
+
+After rendering:
+
+![](../img/quarto_rendered.png)
 
 ## Markdown - text formatting
 
@@ -151,7 +209,7 @@ format:
 :::
 :::
 
-## Writing code - links and images
+## Markdown - links
 
 <br>
 
@@ -161,7 +219,7 @@ GO fair [website](https://www.go-fair.org)
 
 GO fair [website](https://www.go-fair.org)
 
-## Images
+## Markdown - images
 
 ```         
 ![logo of SIB](logo.svg){#fig-logo width="300" fig-align="left"}
@@ -198,7 +256,7 @@ mtcars |>
 head(mtcars[, 1:3]) |> knitr::kable()
 ```
 
-## Writing code - quarto magic
+## Markdown & code - quarto magic
 
 ```{r}
 #| echo: fenced
@@ -229,3 +287,15 @@ From @fig-mpg-vs-drat you can see there is a positive correlation.
 - Complete overview at [https://quarto.org/docs/guide/](https://quarto.org/docs/guide/)
 
 - More extensive 'getting started' tutorial at [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/)
+
+## Exercises
+
+Use Rstudio to:
+
+- Initiate a Quarto website project
+
+- Create a website of two pages with:
+  - Markdown text and images
+  - Code and plots
+  
+- Render locally

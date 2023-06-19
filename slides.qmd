@@ -2,7 +2,8 @@
 title: "Slides"
 listing:
   contents: slides
+  type: table
   sort: true
   date-format: "DD MMM YYYY"
-  fields: [date, title, subtitle]
+  fields: [date, title, subtitle, author]
 ---

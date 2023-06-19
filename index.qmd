@@ -3,7 +3,7 @@ title: "ISMB tutorial"
 subtitle: "Make your research FAIRer with Quarto, GitHub and Zenodo"
 ---
 
-## Abstract
+## Course description
 
 The FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research's impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.
 
@@ -15,7 +15,7 @@ By using the taught tools and concepts, the participants will take significant s
 
 ## Learning objectives
 
--   After this tutorial, the participants will be able to:
+After this tutorial, the participants will be able to:
 
 -   Create notebooks and websites based on Markdown, and Python or R with Quarto Use Git and GitHub to version control the generated content
 
@@ -38,6 +38,8 @@ This tutorial can be taught to a maximum of 30 participants. Tutorial mode This 
 | Block 3 	| 14:00 	| 16:00 	| Using GitHub pages to host a website created with Quarto                                           	| Short talk + hands-on      	|
 |         	| 16:00 	| 16:15 	| BREAK                                                                                              	|                            	|
 | Block 4 	| 16:15 	| 18:00 	| Introduction to Zenodo and how to link GitHub repositories to Zenodo for long-term storage and DOI 	| Short talk + hands-on      	|
+
+: {tbl-colwidths="\[10,10,10,40,30\]"}
 
 ## List of trainers 
 
