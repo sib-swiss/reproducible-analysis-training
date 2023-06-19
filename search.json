@@ -7,6 +7,27 @@
     "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\nAuthor\n\n\n\n\n\n\n16 Jun 2023\n\n\n1. Make your research FAIRer with Quarto, GitHub and Zenodo\n\n\nIntroduction of the tutorial\n\n\nGeert van Geest\n\n\n\n\n16 Jun 2023\n\n\n2. Introduction to Quarto\n\n\nBasics of writing with Quarto\n\n\nGeert van Geest\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "write_quarto.html",
+    "href": "write_quarto.html",
+    "title": "Writing with Quarto",
+    "section": "",
+    "text": "Here will follow the exercises on:"
+  },
+  {
+    "objectID": "write_quarto.html#initiate-a-website-project",
+    "href": "write_quarto.html#initiate-a-website-project",
+    "title": "Writing with Quarto",
+    "section": "Initiate a website project",
+    "text": "Initiate a website project\nIn Rstudio:\n\nChoose File &gt; New Project..\nChoose New Directory\nChoose Quarto website\nChoose a location and name for the website. Leave Create a git repository checked\nFinish by pushing the button Create Project\n\n\nNow we have created a template for a quarto website 👏 . It doesn’t contain much, but we can already render it and use it as a functional website. In order to view it locally in your browser you can either:\n\nOpen index.qmd in Rstudio and press the button Render\nOr you can use the Terminal and type:\n\n\nquarto preview\n\nIn both cases your computer will open a browser and locally host the page at a random port."
+  },
+  {
+    "objectID": "write_quarto.html#adding-content",
+    "href": "write_quarto.html#adding-content",
+    "title": "Writing with Quarto",
+    "section": "Adding content",
+    "text": "Adding content\nTo play around, we will use the babynames package. Install it with:\n\ninstall.packages(\"babynames\")\n\n\nAdding text\nIn this part, we will use quarto to display our project goals. In index.qmd, create an introduction where you will state:\nIn this project we aim to visualize the trends of the most frequently used babynames from 1880 to 2017 in the United States. We do this by:\n\nUnderstanding the different columns of the data set\nFind the top 10 most frequently used baby names in the data for:\ngirls\nboys\nPlot the yearly trend of the top 10 baby names\n\n\n\n\n\n\n\nExercise\n\n\n\nTake the above introduction of your babynames project, convert it to markdown text, and add it to index.qmd.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nThis is what your index.qmd could look like:\n---\ntitle: \"quarto-tutorial\"\n---\n\nIn this project we aim to visualize the trends of the most frequently used babynames from 1880 to 2017 in the United States. We do this by:\n\n- Understanding the different columns of the data set\n- Find the top 10 most frequently used baby names in the data for:\n- girls\n- boys\n- Plot the yearly trend of the top 10 baby names \n\n\n\n\n\nAdding an image\nYou can add images with the following syntax:\n![image_alt_text](path/or/url/to/image.png)\n\n\n\n\n\n\nExercise\n\n\n\nCheck out the quarto figure guide. Find an image of a baby on the internet and get the full URL of the image. After that, add it to your quarto.qmd, make it 400 pixels in width and align it to the right side of the page.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nYour index.qmd could look like this:\n---\ntitle: \"quarto-tutorial\"\n---\n\nIn this project we aim to visualize the trends of the most frequently used babynames from 1880 to 2017 in the United States. We do this by:\n\n- Understanding the different columns of the data set\n- Find the top 10 most frequently used baby names in the data for:\n  - girls\n  - boys\n- Plot the yearly trend of the top 10 baby names \n\n![](https://cdn.pixabay.com/photo/2016/10/02/06/27/baby-1709013_1280.jpg){fig-align=\"right\" width=400}\n\n\n\n\n\nAdding a page\nWe will now add a page for the analysis. We do this by clicking in Rstudio File &gt; New File.. &gt; Quarto Document... Choose a title, e.g. analysis and press Create. Save the newly created file as analysis.qmd.\nIn order to make our new page part of the website, we have to edit _quarto.yml. By adding it to the navbar item in the website markup:\nwebsite:\n  title: \"quarto-tutorial\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - about.qmd\n      - analysis.qmd\n\n\nAdding code chunks\nWe can add some code in there. First, we add a chunk that loads the libraries:\n\nlibrary(babynames)\nlibrary(knitr)\nlibrary(dplyr)\nlibrary(ggplot2)\n\nTo plot the first 10 lines of the babynames table you can add:\n\nhead(babynames) |&gt; kable()\n\n\n\n\n\n\n\nExercise\n\n\n\nAdd the two above code as an R code chunk to analysis.qmd, and do the following:\n\nadd some text to let the reader know what it does\nsuppress the package startup messages with #| output: false at the top of the chunk that loads the packages. More info about the hash-pipe here\nre-render the site.\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n---\ntitle: \"Analysis\"\n---\n\nFirst we load the packages:\n\n```{r}\n#| output: false\n\nlibrary(babynames)\nlibrary(knitr)\nlibrary(dplyr)\nlibrary(ggplot2)\n```\n\nThe first ten lines of the babynames dataset looks like:\n\n```{r}\n#| output: false\nhead(babynames) |&gt; kable()\n```\n\n\n\n\nHere, I’ve created two functions that do the following:\n\nget_most_frequent: Gets the most frequent babynames over a time-period.\nplot_top: from the output of get_most_frequent. Plot the top n most popular names.\n\nThis is not a coding tutorial, so you can ignore the code itself. Just know what is does.\n\nget_most_frequent &lt;- function(babynames, select_sex, from = 1950) {\n  most_freq &lt;- babynames |&gt;\n    filter(sex == select_sex, year &gt; from) |&gt;\n    group_by(name) |&gt;\n    summarise(average = mean(prop)) |&gt;\n    arrange(desc(average))\n  return(most_freq)\n}\n\nplot_top &lt;- function(x, babynames, select_sex, top = 10, from = 1950) {\n  topx &lt;- x$name[1:top]\n  \n  p &lt;- babynames |&gt;\n    filter(name %in% topx, sex == select_sex, year &gt; from) |&gt;\n    ggplot(aes(x = year, y = prop, color = name)) +\n    geom_line() +\n    scale_color_brewer(palette = \"Paired\") +\n    theme_classic()\n  \n  return(p)\n}\n\nPlotting them for girls like this:\n\nget_most_frequent(babynames, select_sex = \"F\") |&gt;\n  plot_top(babynames, select_sex = \"F\", top = 10)\n\nPlotting them for boys like this:\n\nget_most_frequent(babynames, select_sex = \"M\") |&gt;\n  plot_top(babynames, select_sex = \"M\", top = 10)\n\n\n\n\n\n\n\nExercise\n\n\n\nAdd the above three code chunks to analysis.qmd, and do the following:\n\nSince the functions are a bit bulky we want to make the chunk foldable. Do this by #| code-fold: true\nDescribe in a text what you see in the figures. Refer to the individual figures in text by cross-referencing."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "ISMB tutorial",
@@ -60,7 +81,7 @@
     "href": "slides/introduction_quarto.html#your-analysis-and-its-story",
     "title": "2. Introduction to Quarto",
     "section": "Your analysis and its story",
-    "text": "Your analysis and its story\n\nRecording your data analysis story (= the choices you make) is important\nA story is not easy to extract from code:\n\nTelling a story is not the main purpose of coding languages - the main goal is telling a computer what to do\nNot everybody can read code\n\nSolution: tell your story together with your code!"
+    "text": "Your analysis and its story\n\n\nRecording your data analysis story (= the choices you make) is important\nA story is not easy to extract from code:\n\nTelling a story is not the main purpose of coding languages - the main goal is telling a computer what to do\nNot everybody can read code\n\nSolution: tell your story together with your code!"
   },
   {
     "objectID": "slides/introduction_quarto.html#story-code-notebooks",
@@ -70,25 +91,18 @@
     "text": "Story + code = notebooks\n\nSome examples:\n\nJupyter\nGoogle colab\nRmarkdown\nQuarto\n\nText is written in markdown \nCode is in (executable) code chunks"
   },
   {
-    "objectID": "slides/introduction_quarto.html#quarto-example",
-    "href": "slides/introduction_quarto.html#quarto-example",
+    "objectID": "slides/introduction_quarto.html#project---based-working",
+    "href": "slides/introduction_quarto.html#project---based-working",
     "title": "2. Introduction to Quarto",
-    "section": "Quarto example",
-    "text": "Quarto example"
+    "section": "Project - based working",
+    "text": "Project - based working\n\nWork in projects to:\n\nDefine goals and tasks\nOrganize yourself\nKeep a good documentation\nCommunicate about methods, goals, results etc."
   },
   {
-    "objectID": "slides/introduction_quarto.html#quarto-example-1",
-    "href": "slides/introduction_quarto.html#quarto-example-1",
+    "objectID": "slides/introduction_quarto.html#quarto-projects",
+    "href": "slides/introduction_quarto.html#quarto-projects",
     "title": "2. Introduction to Quarto",
-    "section": "Quarto example",
-    "text": "Quarto example"
-  },
-  {
-    "objectID": "slides/introduction_quarto.html#quarto-outputs",
-    "href": "slides/introduction_quarto.html#quarto-outputs",
-    "title": "2. Introduction to Quarto",
-    "section": "Quarto outputs",
-    "text": "Quarto outputs\n\nDocuments: html, pdf and MS word\nPresentations: Revealjs (html), Powerpoint (pptx) and Beamer (pdf/latex)\nWebsites\nBooks"
+    "section": "Quarto projects",
+    "text": "Quarto projects\n\nDocuments: html, pdf and MS word\nPresentations: Revealjs (html), Powerpoint (pptx) and Beamer (pdf/latex)\nWebsites\nBooks"
   },
   {
     "objectID": "slides/introduction_quarto.html#writing-quarto",
@@ -96,6 +110,34 @@
     "title": "2. Introduction to Quarto",
     "section": "Writing quarto",
     "text": "Writing quarto\n\nPlatforms:\n\nVSCode: most used code editor. Works well for rendering python documents.\nRstudio: code editor for R. Works well for rendering R documents.\n\nSetup:\n\nStart with a template (Document, Presentation, Website or Book)\nStart coding!"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#quarto-project-files",
+    "href": "slides/introduction_quarto.html#quarto-project-files",
+    "title": "2. Introduction to Quarto",
+    "section": "Quarto project files",
+    "text": "Quarto project files\n\n_quarto.yml: YML file with project-wide settings\n.git: Everything required for version control with git\nmy_awesome_project.Rproj: R-project based settings\nmy_awesome_project.qmd: Where the work is done!"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#a-qmd-file",
+    "href": "slides/introduction_quarto.html#a-qmd-file",
+    "title": "2. Introduction to Quarto",
+    "section": "A qmd file",
+    "text": "A qmd file\n\nFront matter (YML format):\n\n---\ntitle: \"My awesome project\"\nauthor: \"Jan Janssen\"\ndate: 2023-06-20\nformat:\n  html:\n    theme: cosmo\n    toc: true\n---\n\nMarkdown text\nCode blocks\n\n\n```{r}\ntwo &lt;- 1 + 1\n```"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#quarto-example",
+    "href": "slides/introduction_quarto.html#quarto-example",
+    "title": "2. Introduction to Quarto",
+    "section": "Quarto example",
+    "text": "Quarto example\nContents of my_new_analysis.qmd:"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#quarto-example-1",
+    "href": "slides/introduction_quarto.html#quarto-example-1",
+    "title": "2. Introduction to Quarto",
+    "section": "Quarto example",
+    "text": "Quarto example\nAfter rendering:"
   },
   {
     "objectID": "slides/introduction_quarto.html#markdown---text-formatting",
@@ -119,18 +161,18 @@
     "text": "Markdown - lists\n\n\nUnordered list\n- item 1\n    - sub-item 1\n    - sum-item 2\n        - sub-sub-item 1\n\nitem 1\n\nsub-item 1\nsum-item 2\n\nsub-sub-item 1\n\n\n\n\nOrdered list\n1. ordered list\n2. item 2\n    i) sub-item 1\n         A.  sub-sub-item 1\n\nordered list\nitem 2\n\nsub-item 1\n\nsub-sub-item 1"
   },
   {
-    "objectID": "slides/introduction_quarto.html#writing-code---links-and-images",
-    "href": "slides/introduction_quarto.html#writing-code---links-and-images",
+    "objectID": "slides/introduction_quarto.html#markdown---links",
+    "href": "slides/introduction_quarto.html#markdown---links",
     "title": "2. Introduction to Quarto",
-    "section": "Writing code - links and images",
-    "text": "Writing code - links and images\n\nGO fair [website](https://www.go-fair.org)\nGO fair website"
+    "section": "Markdown - links",
+    "text": "Markdown - links\n\nGO fair [website](https://www.go-fair.org)\nGO fair website"
   },
   {
-    "objectID": "slides/introduction_quarto.html#images",
-    "href": "slides/introduction_quarto.html#images",
+    "objectID": "slides/introduction_quarto.html#markdown---images",
+    "href": "slides/introduction_quarto.html#markdown---images",
     "title": "2. Introduction to Quarto",
-    "section": "Images",
-    "text": "Images\n![logo of SIB](logo.svg){#fig-logo width=\"300\" fig-align=\"left\"}\n\nAs you can see from @fig-logo, it is red.\n\n\n\n\nFigure 1: logo of SIB\n\n\nAs you can see from Figure 1, it is red.\n\n\nMore markdown basics here"
+    "section": "Markdown - images",
+    "text": "Markdown - images\n![logo of SIB](logo.svg){#fig-logo width=\"300\" fig-align=\"left\"}\n\nAs you can see from @fig-logo, it is red.\n\n\n\n\nFigure 1: logo of SIB\n\n\nAs you can see from Figure 1, it is red.\n\n\nMore markdown basics here"
   },
   {
     "objectID": "slides/introduction_quarto.html#writing-code---chunks",
@@ -147,11 +189,11 @@
     "text": "Writing code - chunks\n\n```{r}\nhead(mtcars[, 1:3]) |&gt; knitr::kable()\n```\n\n\n\n\n\nmpg\ncyl\ndisp\n\n\n\n\nMazda RX4\n21.0\n6\n160\n\n\nMazda RX4 Wag\n21.0\n6\n160\n\n\nDatsun 710\n22.8\n4\n108\n\n\nHornet 4 Drive\n21.4\n6\n258\n\n\nHornet Sportabout\n18.7\n8\n360\n\n\nValiant\n18.1\n6\n225"
   },
   {
-    "objectID": "slides/introduction_quarto.html#writing-code---quarto-magic",
-    "href": "slides/introduction_quarto.html#writing-code---quarto-magic",
+    "objectID": "slides/introduction_quarto.html#markdown-code---quarto-magic",
+    "href": "slides/introduction_quarto.html#markdown-code---quarto-magic",
     "title": "2. Introduction to Quarto",
-    "section": "Writing code - quarto magic",
-    "text": "Writing code - quarto magic\n\n```{r}\n#| label: \"fig-mpg-vs-drat\"\n#| fig-cap: \"mpg versus drat\"\n#| fig-align: \"left\"\nlibrary(ggplot2)\nmtcars |&gt;\n  ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()\n```\n\n\nFigure 2: mpg versus dratFrom @fig-mpg-vs-drat you can see there is a positive correlation. \nFrom Figure 2 you can see there is a positive correlation."
+    "section": "Markdown & code - quarto magic",
+    "text": "Markdown & code - quarto magic\n\n```{r}\n#| label: \"fig-mpg-vs-drat\"\n#| fig-cap: \"mpg versus drat\"\n#| fig-align: \"left\"\nlibrary(ggplot2)\nmtcars |&gt;\n  ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()\n```\n\n\nFigure 2: mpg versus dratFrom @fig-mpg-vs-drat you can see there is a positive correlation. \nFrom Figure 2 you can see there is a positive correlation."
   },
   {
     "objectID": "slides/introduction_quarto.html#more-quarto",
@@ -159,6 +201,13 @@
     "title": "2. Introduction to Quarto",
     "section": "More Quarto",
     "text": "More Quarto\n\nFor example:\n\nCitations\nVisual editor - have a particular look at Insert Anything\nIntegrate shiny\n\nComplete overview at https://quarto.org/docs/guide/\nMore extensive ‘getting started’ tutorial at https://quarto.org/docs/get-started/"
+  },
+  {
+    "objectID": "slides/introduction_quarto.html#exercises",
+    "href": "slides/introduction_quarto.html#exercises",
+    "title": "2. Introduction to Quarto",
+    "section": "Exercises",
+    "text": "Exercises\nUse Rstudio to:\n\nInitiate a Quarto website project\nCreate a website of two pages with:\n\nMarkdown text and images\nCode and plots\n\nRender locally"
   },
   {
     "objectID": "slides/introduction.html#why-reusable-research",
@@ -208,12 +257,5 @@
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Tutorial overview",
     "text": "Tutorial overview\n\nPart 1:\n\nCreating notebooks with Quarto\nBasics of version control with git and GitHub\n\nPart 2:\n\nUsing GitHub pages to create a website with Quarto\nIntroduction to Zenodo"
-  },
-  {
-    "objectID": "exercises.html",
-    "href": "exercises.html",
-    "title": "Exercises",
-    "section": "",
-    "text": "Here will follow the exercises on:\n\nBuilding your first Quarto website\nUse version control\nHost your website with github pages\nStore your work on Zenodo and give it a DOI"
   }
 ]

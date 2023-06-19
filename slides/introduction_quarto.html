@@ -406,15 +406,17 @@ Geert van Geest
 </section>
 <section id="your-analysis-and-its-story" class="slide level2">
 <h2>Your analysis and its story</h2>
+<div>
 <ul>
-<li><p>Recording your data analysis story (= the choices you make) is important</p></li>
-<li><p>A story is not easy to extract from code:</p>
+<li class="fragment"><p>Recording your data analysis story (= the choices you make) is important</p></li>
+<li class="fragment"><p>A story is not easy to extract from code:</p>
 <ul>
-<li><p>Telling a story is not the main purpose of coding languages - the main goal is telling a computer what to do</p></li>
-<li><p>Not everybody can read code</p></li>
+<li class="fragment"><p>Telling a story is not the main purpose of coding languages - the main goal is telling a computer what to do</p></li>
+<li class="fragment"><p>Not everybody can read code</p></li>
 </ul></li>
-<li><p>Solution: tell your story together with your code!</p></li>
+<li class="fragment"><p>Solution: tell your story together with your code!</p></li>
 </ul>
+</div>
 </section>
 <section id="story-code-notebooks" class="slide level2">
 <h2>Story + code = notebooks</h2>
@@ -430,16 +432,20 @@ Geert van Geest
 <li><p>Code is in (executable) code chunks</p></li>
 </ul>
 </section>
-<section id="quarto-example" class="slide level2">
-<h2>Quarto example</h2>
-
-<img data-src="../img/quarto_code.png" class="r-stretch"></section>
-<section id="quarto-example-1" class="slide level2">
-<h2>Quarto example</h2>
-
-<img data-src="../img/quarto_rendered.png" class="r-stretch"></section>
-<section id="quarto-outputs" class="slide level2">
-<h2>Quarto outputs</h2>
+<section id="project---based-working" class="slide level2">
+<h2>Project - based working</h2>
+<ul>
+<li><p>Work in projects to:</p>
+<ul>
+<li><p>Define goals and tasks</p></li>
+<li><p>Organize yourself</p></li>
+<li><p>Keep a good documentation</p></li>
+<li><p>Communicate about methods, goals, results etc.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="quarto-projects" class="slide level2">
+<h2>Quarto projects</h2>
 <ul>
 <li><p><strong>Documents</strong>: html, pdf and MS word</p></li>
 <li><p><strong>Presentations</strong>: Revealjs (html), Powerpoint (pptx) and Beamer (pdf/latex)</p></li>
@@ -462,6 +468,50 @@ Geert van Geest
 </ul></li>
 </ul>
 </section>
+<section id="quarto-project-files" class="slide level2">
+<h2>Quarto project files</h2>
+<ul>
+<li><code>_quarto.yml</code>: YML file with project-wide settings</li>
+<li><code>.git</code>: Everything required for version control with git</li>
+<li><code>my_awesome_project.Rproj</code>: R-project based settings</li>
+<li><code>my_awesome_project.qmd</code>: Where the work is done!</li>
+</ul>
+
+<img data-src="../img/project_init.png" class="r-stretch quarto-figure-right"></section>
+<section id="a-qmd-file" class="slide level2">
+<h2>A <code>qmd</code> file</h2>
+<ul>
+<li>Front matter (YML format):</li>
+</ul>
+<pre><code>---
+title: "My awesome project"
+author: "Jan Janssen"
+date: 2023-06-20
+format:
+  html:
+    theme: cosmo
+    toc: true
+---</code></pre>
+<ul>
+<li><p>Markdown text</p></li>
+<li><p>Code blocks</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>two <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="quarto-example" class="slide level2">
+<h2>Quarto example</h2>
+<p>Contents of <code>my_new_analysis.qmd</code>:</p>
+
+<img data-src="../img/quarto_code.png" class="r-stretch"></section>
+<section id="quarto-example-1" class="slide level2">
+<h2>Quarto example</h2>
+<p>After rendering:</p>
+
+<img data-src="../img/quarto_rendered.png" class="r-stretch"></section>
 <section id="markdown---text-formatting" class="slide level2">
 <h2>Markdown - text formatting</h2>
 <table>
@@ -566,14 +616,14 @@ Geert van Geest
 </div>
 </div>
 </section>
-<section id="writing-code---links-and-images" class="slide level2">
-<h2>Writing code - links and images</h2>
+<section id="markdown---links" class="slide level2">
+<h2>Markdown - links</h2>
 <p><br></p>
 <pre><code>GO fair [website](https://www.go-fair.org)</code></pre>
 <p>GO fair <a href="https://www.go-fair.org">website</a></p>
 </section>
-<section id="images" class="slide level2">
-<h2>Images</h2>
+<section id="markdown---images" class="slide level2">
+<h2>Markdown - images</h2>
 <pre><code>![logo of SIB](logo.svg){#fig-logo width="300" fig-align="left"}
 
 As you can see from @fig-logo, it is red.</code></pre>
@@ -584,7 +634,7 @@ As you can see from @fig-logo, it is red.</code></pre>
 <figcaption>Figure&nbsp;1: logo of SIB</figcaption>
 </figure>
 </div>
-<p>As you can see from <a href="#/images">Figure&nbsp;1</a>, it is red.</p>
+<p>As you can see from <a href="#/markdown---images">Figure&nbsp;1</a>, it is red.</p>
 
 <aside><div>
 <p>More markdown basics <a href="https://quarto.org/docs/authoring/markdown-basics.html">here</a></p>
@@ -592,22 +642,22 @@ As you can see from @fig-logo, it is red.</code></pre>
 <section id="writing-code---chunks" class="slide level2">
 <h2>Writing code - chunks</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb13-3"><a href="#cb13-3"></a></span>
-<span id="cb13-4"><a href="#cb13-4"></a>mtcars <span class="sc">|&gt;</span></span>
-<span id="cb13-5"><a href="#cb13-5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> drat, <span class="at">y =</span> mpg, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
-<span id="cb13-6"><a href="#cb13-6"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb13-7"><a href="#cb13-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb15-3"><a href="#cb15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4"></a>mtcars <span class="sc">|&gt;</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> drat, <span class="at">y =</span> mpg, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb15-7"><a href="#cb15-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="introduction_quarto_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"></section>
+<img data-src="introduction_quarto_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="writing-code---chunks-1" class="slide level2">
 <h2>Writing code - chunks</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a><span class="in">```{r}</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="fu">head</span>(mtcars[, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]) <span class="sc">|&gt;</span> knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">head</span>(mtcars[, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]) <span class="sc">|&gt;</span> knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table>
 <thead>
@@ -660,17 +710,17 @@ As you can see from @fig-logo, it is red.</code></pre>
 </div>
 </div>
 </section>
-<section id="writing-code---quarto-magic" class="slide level2">
-<h2>Writing code - quarto magic</h2>
+<section id="markdown-code---quarto-magic" class="slide level2">
+<h2>Markdown &amp; code - quarto magic</h2>
 <div class="cell" data-layout-align="left">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1"></a><span class="in">```{r}</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="co">#| label: "fig-mpg-vs-drat"</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="co">#| fig-cap: "mpg versus drat"</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a><span class="co">#| fig-align: "left"</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb15-6"><a href="#cb15-6"></a>mtcars <span class="sc">|&gt;</span></span>
-<span id="cb15-7"><a href="#cb15-7"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> drat, <span class="at">y =</span> mpg)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
-<span id="cb15-8"><a href="#cb15-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="co">#| label: "fig-mpg-vs-drat"</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="co">#| fig-cap: "mpg versus drat"</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="co">#| fig-align: "left"</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb17-6"><a href="#cb17-6"></a>mtcars <span class="sc">|&gt;</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> drat, <span class="at">y =</span> mpg)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb17-8"><a href="#cb17-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="introduction_quarto_files/figure-revealjs/fig-mpg-vs-drat-1.png" width="960" class="r-stretch quarto-figure-left"><p class="caption">Figure&nbsp;2: mpg versus drat</p><pre><code>From @fig-mpg-vs-drat you can see there is a positive correlation. </code></pre>
@@ -687,6 +737,19 @@ As you can see from @fig-logo, it is red.</code></pre>
 </ul></li>
 <li><p>Complete overview at <a href="https://quarto.org/docs/guide/">https://quarto.org/docs/guide/</a></p></li>
 <li><p>More extensive ‘getting started’ tutorial at <a href="https://quarto.org/docs/get-started/">https://quarto.org/docs/get-started/</a></p></li>
+</ul>
+</section>
+<section id="exercises" class="slide level2">
+<h2>Exercises</h2>
+<p>Use Rstudio to:</p>
+<ul>
+<li><p>Initiate a Quarto website project</p></li>
+<li><p>Create a website of two pages with:</p>
+<ul>
+<li>Markdown text and images</li>
+<li>Code and plots</li>
+</ul></li>
+<li><p>Render locally</p></li>
 </ul>
 
 <div class="footer footer-default">
