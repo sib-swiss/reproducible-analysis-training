@@ -3,7 +3,8 @@
     "listing": "/slides.html",
     "items": [
       "/slides/introduction.html",
-      "/slides/introduction_quarto.html"
+      "/slides/introduction_quarto.html",
+      "/slides/introduction_git.html"
     ]
   }
 ]

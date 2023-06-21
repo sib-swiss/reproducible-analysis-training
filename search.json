@@ -4,7 +4,7 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\nAuthor\n\n\n\n\n\n\n16 Jun 2023\n\n\n1. Make your research FAIRer with Quarto, GitHub and Zenodo\n\n\nIntroduction of the tutorial\n\n\nGeert van Geest\n\n\n\n\n16 Jun 2023\n\n\n2. Introduction to Quarto\n\n\nBasics of writing with Quarto\n\n\nGeert van Geest\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\nAuthor\n\n\n\n\n\n\n16 Jun 2023\n\n\n1. Make your research FAIRer with Quarto, GitHub and Zenodo\n\n\nIntroduction of the tutorial\n\n\nGeert van Geest\n\n\n\n\n16 Jun 2023\n\n\n2. Introduction to Quarto\n\n\nBasics of writing with Quarto\n\n\nGeert van Geest\n\n\n\n\n16 Jun 2023\n\n\n3. Introduction to git\n\n\nGetting started with git for version control\n\n\nGeert van Geest\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "write_quarto.html",
@@ -208,6 +208,83 @@
     "title": "2. Introduction to Quarto",
     "section": "Exercises",
     "text": "Exercises\nUse Rstudio to:\n\nInitiate a Quarto website project\nCreate a website of two pages with:\n\nMarkdown text and images\nCode and plots\n\nRender locally"
+  },
+  {
+    "objectID": "slides/introduction_git.html#versions",
+    "href": "slides/introduction_git.html#versions",
+    "title": "3. Introduction to git",
+    "section": "Versions",
+    "text": "Versions\n\n\nfinal_version.docx 🎉\nfinal_version_supervisor_corrections.docx\nfinal_version_corrected.docx\nfinal_version_corrected_additional_comments_supervisor1.docx\nfinal_version_corrected_additional_comments_supervisor2.docx\nfinal_version_tookmehourstocombineallcomments.docx 🤯\nfinal_version_V1.docx\n.."
+  },
+  {
+    "objectID": "slides/introduction_git.html#take-control-of-your-versions",
+    "href": "slides/introduction_git.html#take-control-of-your-versions",
+    "title": "3. Introduction to git",
+    "section": "Take control of your versions!",
+    "text": "Take control of your versions!\n\nDare to break stuff ➡️ go back to any previous version\nDefine and describe changes\nCombine versions and changes that started experimentally\n\n\n\n\n\nflowchart LR\n  A(first version) --&gt; B(some changes)\n  B --&gt; C(Something experimental)\n  B --&gt; D(Bug fix)\n  C --&gt; E(Merge)\n  D --&gt; E\n  \n  linkStyle 1,3 stroke:red;"
+  },
+  {
+    "objectID": "slides/introduction_git.html#using-git-for-version-control",
+    "href": "slides/introduction_git.html#using-git-for-version-control",
+    "title": "3. Introduction to git",
+    "section": "Using git for version control",
+    "text": "Using git for version control\n\nAt the level of a directory, typically a project\nEverything is in .git/\nCommit: building block -&gt; defined step through versions\nBranch:\n\nindependent sequence of commits\ntypically merged with a main branch after work is done\n\n\n\n\n\n\nflowchart LR\n  A(first version) --commit--&gt; B(some changes)\n  B --new branch--&gt; C(Something experimental)\n  B --commit--&gt; D(Bug fix)\n  C --&gt; E((Merge commit))\n  D --&gt; E\n  \n  linkStyle 1,3 stroke:red;"
+  },
+  {
+    "objectID": "slides/introduction_git.html#collaborating-with-git",
+    "href": "slides/introduction_git.html#collaborating-with-git",
+    "title": "3. Introduction to git",
+    "section": "Collaborating with git",
+    "text": "Collaborating with git\n\nSync with a remote (e.g. on GitHub)\nAll commits are associated with a user"
+  },
+  {
+    "objectID": "slides/introduction_git.html#committing-changes",
+    "href": "slides/introduction_git.html#committing-changes",
+    "title": "3. Introduction to git",
+    "section": "Committing changes",
+    "text": "Committing changes\n\nStage the files with changes you’d like to commit\nCommit the changes with a descriptive message\n\ngit add index.qmd\ngit commit -m \"Adds a paragraph\""
+  },
+  {
+    "objectID": "slides/introduction_git.html#project-status",
+    "href": "slides/introduction_git.html#project-status",
+    "title": "3. Introduction to git",
+    "section": "Project status",
+    "text": "Project status\ngit status\ngit log --oneline"
+  },
+  {
+    "objectID": "slides/introduction_git.html#sync-with-remote",
+    "href": "slides/introduction_git.html#sync-with-remote",
+    "title": "3. Introduction to git",
+    "section": "Sync with remote",
+    "text": "Sync with remote\n\nCreate an empty repository on GitHub\nLink your local repository to the created repository:\n\ngit remote origin https://github.com/OWNER/REPOSITORY.git\n\nPush your local repository to the remote:\n\ngit push -u origin main"
+  },
+  {
+    "objectID": "slides/introduction_git.html#ignoring-files",
+    "href": "slides/introduction_git.html#ignoring-files",
+    "title": "3. Introduction to git",
+    "section": "Ignoring files",
+    "text": "Ignoring files\n\n.gitignore enables you to not version control files, e.g.:\n\noutput files\nuser-specific files\n\nFor a typical quarto project, that would be e.g.:\n\n_site/\n.Rproj.user"
+  },
+  {
+    "objectID": "slides/introduction_git.html#creating-tags",
+    "href": "slides/introduction_git.html#creating-tags",
+    "title": "3. Introduction to git",
+    "section": "Creating tags",
+    "text": "Creating tags\n\nTag a special commit\nTypically this is done to create versions, e.g. v1.0.0\nWith git tag or creating a release in GitHub\nFor Zenodo: a DOI is linked to a tag"
+  },
+  {
+    "objectID": "slides/introduction_git.html#quarto-and-github",
+    "href": "slides/introduction_git.html#quarto-and-github",
+    "title": "3. Introduction to git",
+    "section": "Quarto and GitHub",
+    "text": "Quarto and GitHub\n\nStore your raw files in the main branch\nUse quarto publish gh-pages to:\n\nRender the website locally\nCreate a branch called gh-pages and push the rendered html files\nTell GitHub to use the files in gh-pages to host it as a website\n\nFind your website at OWNER.github.io/REPOSITORY"
+  },
+  {
+    "objectID": "slides/introduction_git.html#quarto-and-github-actions",
+    "href": "slides/introduction_git.html#quarto-and-github-actions",
+    "title": "3. Introduction to git",
+    "section": "Quarto and GitHub actions",
+    "text": "Quarto and GitHub actions\n\nGitHub actions: computations running on the GitHub server that can be triggered by e.g. a push, merge, cron job etc.\nLet GitHub actions render the content - ultimate reproducibility but:\n\nNeed to define your environment (all required R packages etc.)\nRequires knowledge on the GitHub actions syntax and concepts\n\n\n\n\n\n\n\n\nMore info at the quarto docs"
   },
   {
     "objectID": "slides/introduction.html#why-reusable-research",
