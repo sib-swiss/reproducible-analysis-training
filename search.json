@@ -277,14 +277,21 @@
     "href": "slides/introduction_git.html#quarto-and-github",
     "title": "3. Introduction to git",
     "section": "Quarto and GitHub",
-    "text": "Quarto and GitHub\n\nStore your raw files in the main branch\nUse quarto publish gh-pages to:\n\nRender the website locally\nCreate a branch called gh-pages and push the rendered html files\nTell GitHub to use the files in gh-pages to host it as a website\n\nFind your website at OWNER.github.io/REPOSITORY"
+    "text": "Quarto and GitHub\n\nStore your raw files in the main branch\nUse quarto publish gh-pages:\n\nCreate a branch called gh-pages and push the rendered html files\nTell GitHub to use the files in gh-pages to host it as a website\n\nFind your website at OWNER.github.io/REPOSITORY"
   },
   {
     "objectID": "slides/introduction_git.html#quarto-and-github-actions",
     "href": "slides/introduction_git.html#quarto-and-github-actions",
     "title": "3. Introduction to git",
     "section": "Quarto and GitHub actions",
-    "text": "Quarto and GitHub actions\n\nGitHub actions: computations running on the GitHub server that can be triggered by e.g. a push, merge, cron job etc.\nLet GitHub actions render the content - ultimate reproducibility but:\n\nNeed to define your environment (all required R packages etc.)\nRequires knowledge on the GitHub actions syntax and concepts\n\n\n\n\n\n\n\n\nMore info at the quarto docs"
+    "text": "Quarto and GitHub actions\n\nGitHub actions: computations running on the GitHub server that can be triggered by e.g. a push, merge, cron job etc.\nLet GitHub actions render the content - ultimate reproducibility but:\n\nNeed to define your environment (all required R packages etc.)\nRequires knowledge on the GitHub actions syntax and concepts\n\n\n\n\nMore info at the quarto docs"
+  },
+  {
+    "objectID": "slides/introduction_git.html#more-git",
+    "href": "slides/introduction_git.html#more-git",
+    "title": "3. Introduction to git",
+    "section": "More git",
+    "text": "More git\n\nSpend some time to learn it! You’ll earn it back quickly 💸\nSome nice resources:\n\nHappy git with R\nCarpentries course on git\n\nIf you’re new (or smart) consider using a git client, e.g.:\n\nRstudio git interface\nGitKraken\nGitHub Desktop"
   },
   {
     "objectID": "slides/introduction.html#why-reusable-research",
