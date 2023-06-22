@@ -23,29 +23,33 @@ After this tutorial, the participants will be able to:
 
 -   Link the GitHub repository to Zenodo and give it a unique identifier (DOI)
 
-## Maximum number of attendees participating 
-
-This tutorial can be taught to a maximum of 30 participants. Tutorial mode This tutorial can be taught in person or online. 
-
 ## Provisional schedule
 
-| Block   	| From  	| To    	| Topic                                                                                              	| Types of teaching activity 	|
-|---------	|-------	|-------	|----------------------------------------------------------------------------------------------------	|----------------------------	|
-| Block 1 	| 9:00  	| 10:45 	| Creating notebooks in Markdown with Quarto                                                         	| Short talk + hands-on      	|
-|         	| 10:45 	| 11:00 	| BREAK                                                                                              	|                            	|
-| Block 2 	| 11:00 	| 13:00 	| Basics of version control with git and GitHub                                                      	| Short talk + hands-on      	|
-|         	| 13:00 	| 14:00 	| BREAK                                                                                              	|                            	|
-| Block 3 	| 14:00 	| 16:00 	| Using GitHub pages to host a website created with Quarto                                           	| Short talk + hands-on      	|
-|         	| 16:00 	| 16:15 	| BREAK                                                                                              	|                            	|
-| Block 4 	| 16:15 	| 18:00 	| Introduction to Zenodo and how to link GitHub repositories to Zenodo for long-term storage and DOI 	| Short talk + hands-on      	|
+The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6 PM CEST
 
-: {tbl-colwidths="\[10,10,10,40,30\]"}
+### Monday July 17th 2023
 
-## List of trainers 
+| Block   | From  | To    | Topic                                         |
+|---------|-------|-------|-----------------------------------------------|
+| Block 1 | 14:00 | 16:00 | Creating notebooks in Markdown with Quarto    |
+|         | 16:00 | 16:15 | BREAK                                         |
+| Block 2 | 16:15 | 18:00 | Basics of version control with git and GitHub |
+: {tbl-colwidths="[10,10,10,70]"}
 
-- Dr. Geert van Geest - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland
-- Dr. Wandrille Duchemin - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the sciCORE core facility of the University of Basel, Switzerland
-- Dr. Lea Taylor - Bioinformatician, affiliated to the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland 
+### Tuesday July 18th 2023
+
+| Block   | From  | To    | Topic                                                                                              |
+|-----------|-----------|-----------|---------------------------------------|
+| Block 3 | 14:00 | 16:00 | Using GitHub pages to host a website created with Quarto                                           |
+|         | 16:00 | 16:15 | BREAK                                                                                              |
+| Block 4 | 16:15 | 18:00 | Introduction to Zenodo and how to link GitHub repositories to Zenodo for long-term storage and DOI |
+: {tbl-colwidths="[10,10,10,70]"}
+
+## List of trainers
+
+-   **Dr. Geert van Geest** - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland
+-   **Dr. Wandrille Duchemin** - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the sciCORE core facility of the University of Basel, Switzerland
+-   **Dr. Lea Taylor** - Bioinformatician, affiliated to the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland
 
 ## Intended audience and level
 
