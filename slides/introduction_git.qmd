@@ -42,12 +42,12 @@ flowchart LR
 
 ## Using git for version control
 
-- At the level of a directory, typically a project
-- Everything is in `.git/`
-- **Commit**: building block -> defined step through versions
-- **Branch**: 
-  - independent sequence of commits 
-  - typically merged with a main branch after work is done
+-   At the level of a directory, typically a project
+-   Everything is in `.git/`
+-   **Commit**: building block -\> defined step through versions
+-   **Branch**:
+    -   independent sequence of commits
+    -   typically merged with a main branch after work is done
 
 ```{mermaid}
 flowchart LR
@@ -62,13 +62,13 @@ flowchart LR
 
 ## Collaborating with git
 
-- Sync with a remote (e.g. on GitHub)
-- All commits are associated with a user
+-   Sync with a remote (e.g. on GitHub)
+-   All commits are associated with a user
 
 ## Committing changes
 
-1. Stage the files with changes you'd like to commit
-2. Commit the changes with a descriptive message
+1.  Stage the files with changes you'd like to commit
+2.  Commit the changes with a descriptive message
 
 `git add index.qmd`
 
@@ -82,62 +82,68 @@ flowchart LR
 
 ## Sync with remote
 
-- Create an empty repository on GitHub
+-   Create an empty repository on GitHub
 
-- Link your local repository to the created repository:
+-   Link your local repository to the created repository:
 
 `git remote origin https://github.com/OWNER/REPOSITORY.git`
 
-- Push your local repository to the remote:
+-   Push your local repository to the remote:
 
 `git push -u origin main`
 
 ## Ignoring files
 
-- `.gitignore` enables you to **not** version control files, e.g.:
-  - output files
-  - user-specific files
-  
-- For a typical quarto project, that would be e.g.:
-  - `_site/`
-  - `.Rproj.user`
-  
+-   `.gitignore` enables you to **not** version control files, e.g.:
+    -   output files
+    -   user-specific files
+-   For a typical quarto project, that would be e.g.:
+    -   `_site/`
+    -   `.Rproj.user`
+
 ## Creating tags
 
-- Tag a special commit
+-   Tag a special commit
 
-- Typically this is done to create versions, e.g. `v1.0.0`
+-   Typically this is done to create versions, e.g. `v1.0.0`
 
-- With `git tag` or creating a release in GitHub
+-   With `git tag` or creating a release in GitHub
 
-- For Zenodo: a DOI is linked to a tag
+-   For Zenodo: a DOI is linked to a tag
 
 ## Quarto and GitHub
 
-- Store your raw files in the `main` branch
+-   Store your raw files in the `main` branch
 
-- Use `quarto publish gh-pages` to:
+-   Use `quarto publish gh-pages`:
 
-  - Render the website locally
+    -   Create a branch called `gh-pages` and push the rendered html files
 
-  - Create a branch called `gh-pages` and push the rendered html files
-  
-  - Tell GitHub to use the files in `gh-pages` to host it as a website
+    -   Tell GitHub to use the files in `gh-pages` to host it as a website
 
-- Find your website at OWNER.github.io/REPOSITORY
+-   Find your website at OWNER.github.io/REPOSITORY
 
 ## Quarto and GitHub actions
 
-- GitHub actions: computations running on the GitHub server that can be triggered by e.g. a push, merge, cron job etc. 
+-   GitHub actions: computations running on the GitHub server that can be triggered by e.g. a push, merge, cron job etc.
 
-- Let GitHub actions render the content - ultimate reproducibility but:
-  
-  - Need to define your environment (all required R packages etc.)
-  
-  - Requires knowledge on the GitHub actions syntax and concepts
-  
+-   Let GitHub actions render the content - ultimate reproducibility but:
+
+    -   Need to define your environment (all required R packages etc.)
+
+    -   Requires knowledge on the GitHub actions syntax and concepts
+
 ::: aside
 More info at the [quarto docs](https://quarto.org/docs/publishing/github-pages.html#github-action)
-::: 
+:::
 
+## More git
 
+-   Spend some time to learn it! You'll earn it back quickly 💸
+-   Some nice resources:
+    -   [Happy git with R](https://happygitwithr.com/)
+    -   [Carpentries course on git](http://swcarpentry.github.io/git-novice/)
+-   If you're new (or smart) consider using a git client, e.g.:
+    - Rstudio git interface
+    - [GitKraken](https://www.gitkraken.com/)
+    - [GitHub Desktop](https://desktop.github.com)

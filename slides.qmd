@@ -6,4 +6,6 @@ listing:
   sort: true
   date-format: "DD MMM YYYY"
   fields: [date, title, subtitle, author]
+filters:
+  - new_tab_link.lua
 ---

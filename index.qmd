@@ -49,4 +49,4 @@ This tutorial can be taught to a maximum of 30 participants. Tutorial mode This 
 
 ## Intended audience and level
 
-This tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a GitHub account (https://github.com/join) and bring their laptops with either the latest versions of RStudio or VSCode pre-installed.
+This tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a [GitHub account](https://github.com/join) and bring their laptops with either the latest versions of RStudio or VSCode pre-installed.
