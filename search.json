@@ -49,18 +49,11 @@
     "text": "Learning objectives\nAfter this tutorial, the participants will be able to:\n\nCreate notebooks and websites based on Markdown, and Python or R with Quarto Use Git and GitHub to version control the generated content\nHost a website by making use of GitHub actions and GitHub pages\nLink the GitHub repository to Zenodo and give it a unique identifier (DOI)"
   },
   {
-    "objectID": "index.html#maximum-number-of-attendees-participating",
-    "href": "index.html#maximum-number-of-attendees-participating",
-    "title": "ISMB tutorial",
-    "section": "Maximum number of attendees participating",
-    "text": "Maximum number of attendees participating\nThis tutorial can be taught to a maximum of 30 participants. Tutorial mode This tutorial can be taught in person or online."
-  },
-  {
     "objectID": "index.html#provisional-schedule",
     "href": "index.html#provisional-schedule",
     "title": "ISMB tutorial",
     "section": "Provisional schedule",
-    "text": "Provisional schedule\n\n\n\n\n\n\n\n\n\n\nBlock\nFrom\nTo\nTopic\nTypes of teaching activity\n\n\n\n\nBlock 1\n9:00\n10:45\nCreating notebooks in Markdown with Quarto\nShort talk + hands-on\n\n\n\n10:45\n11:00\nBREAK\n\n\n\nBlock 2\n11:00\n13:00\nBasics of version control with git and GitHub\nShort talk + hands-on\n\n\n\n13:00\n14:00\nBREAK\n\n\n\nBlock 3\n14:00\n16:00\nUsing GitHub pages to host a website created with Quarto\nShort talk + hands-on\n\n\n\n16:00\n16:15\nBREAK\n\n\n\nBlock 4\n16:15\n18:00\nIntroduction to Zenodo and how to link GitHub repositories to Zenodo for long-term storage and DOI\nShort talk + hands-on"
+    "text": "Provisional schedule\nThe tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6 PM CEST\n\nMonday July 17th 2023\n\n\n\n\n\n\n\n\n\nBlock\nFrom\nTo\nTopic\n\n\n\n\nBlock 1\n14:00\n16:00\nCreating notebooks in Markdown with Quarto\n\n\n\n16:00\n16:15\nBREAK\n\n\nBlock 2\n16:15\n18:00\nBasics of version control with git and GitHub\n\n\n\n\n\nTuesday July 18th 2023\n\n\n\n\n\n\n\n\n\nBlock\nFrom\nTo\nTopic\n\n\n\n\nBlock 3\n14:00\n16:00\nUsing GitHub pages to host a website created with Quarto\n\n\n\n16:00\n16:15\nBREAK\n\n\nBlock 4\n16:15\n18:00\nIntroduction to Zenodo and how to link GitHub repositories to Zenodo for long-term storage and DOI"
   },
   {
     "objectID": "index.html#list-of-trainers",
@@ -74,7 +67,7 @@
     "href": "index.html#intended-audience-and-level",
     "title": "ISMB tutorial",
     "section": "Intended audience and level",
-    "text": "Intended audience and level\nThis tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a GitHub account (https://github.com/join) and bring their laptops with either the latest versions of RStudio or VSCode pre-installed."
+    "text": "Intended audience and level\nThis tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a GitHub account and bring their laptops with either the latest versions of RStudio or VSCode pre-installed."
   },
   {
     "objectID": "slides/introduction_quarto.html#your-analysis-and-its-story",
@@ -341,5 +334,26 @@
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Tutorial overview",
     "text": "Tutorial overview\n\nPart 1:\n\nCreating notebooks with Quarto\nBasics of version control with git and GitHub\n\nPart 2:\n\nUsing GitHub pages to create a website with Quarto\nIntroduction to Zenodo"
+  },
+  {
+    "objectID": "course_preparations.html",
+    "href": "course_preparations.html",
+    "title": "Course preparations",
+    "section": "",
+    "text": "Follow the instructions here to download and install R and RStudio. We’re going to need R version &gt; 4.1.2 and the latest version of RStudio, so if you were planning to update, now is a good time to do so!\n\n\nFollow instructions to install quarto here.\n\n\n\nInstall and/or update the following packages from CRAN:\n\ninstall.packages(c(\"babynames\", \"knitr\", \"dplyr\", \"ggplot2\"))"
+  },
+  {
+    "objectID": "course_preparations.html#r-and-rstudio",
+    "href": "course_preparations.html#r-and-rstudio",
+    "title": "Course preparations",
+    "section": "",
+    "text": "Follow the instructions here to download and install R and RStudio. We’re going to need R version &gt; 4.1.2 and the latest version of RStudio, so if you were planning to update, now is a good time to do so!\n\n\nFollow instructions to install quarto here.\n\n\n\nInstall and/or update the following packages from CRAN:\n\ninstall.packages(c(\"babynames\", \"knitr\", \"dplyr\", \"ggplot2\"))"
+  },
+  {
+    "objectID": "course_preparations.html#git-and-github",
+    "href": "course_preparations.html#git-and-github",
+    "title": "Course preparations",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nTo install and/or update git, follow the instructions of Jennifer Bryan’s happy git with R.\nIf you haven’t already got one, make an account on GitHub, and make sure you can push and pull to GitHub either through https or with ssh key. If haven’t set that up yet, set up a Personal Access Token to enable a connection through https."
   }
 ]

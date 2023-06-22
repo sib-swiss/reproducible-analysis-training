@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sib-swiss.github.io/reproducible-analysis/git_pages_zenodo.html</loc>
-    <lastmod>2023-06-21T16:04:27.799Z</lastmod>
+    <lastmod>2023-06-22T08:59:26.957Z</lastmod>
   </url>
   <url>
     <loc>https://sib-swiss.github.io/reproducible-analysis/slides.html</loc>
-    <lastmod>2023-06-21T16:04:28.351Z</lastmod>
+    <lastmod>2023-06-22T08:59:27.524Z</lastmod>
   </url>
   <url>
     <loc>https://sib-swiss.github.io/reproducible-analysis/write_quarto.html</loc>
-    <lastmod>2023-06-21T16:04:32.731Z</lastmod>
+    <lastmod>2023-06-22T08:59:31.908Z</lastmod>
   </url>
   <url>
     <loc>https://sib-swiss.github.io/reproducible-analysis/index.html</loc>
-    <lastmod>2023-06-21T16:04:33.318Z</lastmod>
+    <lastmod>2023-06-22T08:59:32.490Z</lastmod>
   </url>
   <url>
     <loc>https://sib-swiss.github.io/reproducible-analysis/slides/introduction_quarto.html</loc>
-    <lastmod>2023-06-21T16:04:36.919Z</lastmod>
+    <lastmod>2023-06-22T08:59:36.107Z</lastmod>
   </url>
   <url>
     <loc>https://sib-swiss.github.io/reproducible-analysis/slides/introduction_git.html</loc>
-    <lastmod>2023-06-21T16:04:38.647Z</lastmod>
+    <lastmod>2023-06-22T08:59:37.856Z</lastmod>
   </url>
   <url>
     <loc>https://sib-swiss.github.io/reproducible-analysis/slides/introduction.html</loc>
-    <lastmod>2023-06-21T16:04:39.156Z</lastmod>
+    <lastmod>2023-06-22T08:59:38.367Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sib-swiss.github.io/reproducible-analysis/course_preparations.html</loc>
+    <lastmod>2023-06-22T08:59:39.926Z</lastmod>
   </url>
 </urlset>
