@@ -1,7 +1,57 @@
 ---
-title: "ISMB tutorial"
+title: "ISMB tutorial - reproducible analysis"
 subtitle: "Make your research FAIRer with Quarto, GitHub and Zenodo"
 ---
+
+::: {.callout-note}
+## Learning objectives
+
+**After this tutorial, you will be able to:**
+
+-   Create notebooks and websites based on Markdown, and R with Quarto 
+
+-   Use Git and GitHub to version control the generated content
+
+-   Host a website by making use of GitHub actions and GitHub pages
+
+-   Link the GitHub repository to Zenodo and give it a unique identifier (DOI)
+:::
+
+## Course schedule
+
+The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6 PM CEST
+
++---------+--------+--------+----------------------------------------------------------------------------+
+| Block   | From   | To     | Topic                                                                      |
++=========+========+========+============================================================================+
+| Block 1 | 14:00  | 16:00  | -   [General introduction](slides/introduction.html#/title-slide)          |
+|         |        |        |                                                                            |
+|         |        |        | <!-- -->                                                                   |
+|         |        |        |                                                                            |
+|         |        |        | -   [Introduction to Quarto](slides/introduction_quarto.html#/title-slide) |
++---------+--------+--------+----------------------------------------------------------------------------+
+| BREAK   | 16:00  | 16:15  |                                                                            |
++---------+--------+--------+----------------------------------------------------------------------------+
+| Block 2 | 16:15  | 18:00  | -   [Exercises - Quarto](write_quarto.html)                                |
++---------+--------+--------+----------------------------------------------------------------------------+
+
+: Day 1: Monday July 17th 2023 {tbl-colwidths="\[10,10,10,70\]"}
+
++---------+-------+-------+--------------------------------------------------------------------------------------------------------------------------+
+| Block   | From  | To    | Topic                                                                                                                    |
++=========+=======+=======+==========================================================================================================================+
+| Block 3 | 14:00 | 16:00 | -   [Introduction to git and GitHub](slides/introduction_git.html#/title-slide)                                          |
+|         |       |       |                                                                                                                          |
+|         |       |       | -   [Exercises on git, GitHub and GitHub pages](git_pages_zenodo.html)                                                   |
++---------+-------+-------+--------------------------------------------------------------------------------------------------------------------------+
+| BREAK   | 16:00 | 16:15 |                                                                                                                          |
++---------+-------+-------+--------------------------------------------------------------------------------------------------------------------------+
+| Block 4 | 16:15 | 18:00 | -   [Exercises on git, GitHub and GitHub pages](git_pages_zenodo.html) (continued)                                       |
+|         |       |       |                                                                                                                          |
+|         |       |       | -   [Introduction to Zenodo and how to link GitHub repositories to Zenodo](slides/introduction_zenodo.html#/title-slide) |
++---------+-------+-------+--------------------------------------------------------------------------------------------------------------------------+
+
+: Day 2: Tuesday July 18th 2023 {tbl-colwidths="\[10,10,10,70\]"}
 
 ## Course description
 
@@ -12,38 +62,6 @@ Sharing and reusing are at the heart of the FAIR principles and should be a rout
 The FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g. R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).
 
 By using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing.
-
-## Learning objectives
-
-After this tutorial, the participants will be able to:
-
--   Create notebooks and websites based on Markdown, and Python or R with Quarto Use Git and GitHub to version control the generated content
-
--   Host a website by making use of GitHub actions and GitHub pages
-
--   Link the GitHub repository to Zenodo and give it a unique identifier (DOI)
-
-## Provisional schedule
-
-The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6 PM CEST
-
-### Monday July 17th 2023
-
-| Block   | From  | To    | Topic                                         |
-|---------|-------|-------|-----------------------------------------------|
-| Block 1 | 14:00 | 16:00 | Creating notebooks in Markdown with Quarto    |
-|         | 16:00 | 16:15 | BREAK                                         |
-| Block 2 | 16:15 | 18:00 | Basics of version control with git and GitHub |
-: {tbl-colwidths="[10,10,10,70]"}
-
-### Tuesday July 18th 2023
-
-| Block   | From  | To    | Topic                                                                                              |
-|-----------|-----------|-----------|---------------------------------------|
-| Block 3 | 14:00 | 16:00 | Using GitHub pages to host a website created with Quarto                                           |
-|         | 16:00 | 16:15 | BREAK                                                                                              |
-| Block 4 | 16:15 | 18:00 | Introduction to Zenodo and how to link GitHub repositories to Zenodo for long-term storage and DOI |
-: {tbl-colwidths="[10,10,10,70]"}
 
 ## List of trainers
 

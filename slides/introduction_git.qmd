@@ -87,17 +87,17 @@ flowchart LR
 
 ## Undoing changes
 
-- Check out a previous commit:
-
-`git checkout fa4f3deac`
-
 - Remove unstaged changes:
 
 `git restore index.qmd`
 
-- Retrieve a file version after a commit: 
+- Retrieve a file version after a commit (unstaged in working directory): 
 
 `git restore --source fa4f3deac index.qmd`
+
+- Reset commits:
+
+`git reset [--soft|--hard|--mixed] fa4f3deac`
 
 ## Sync with remote
 

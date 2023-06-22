@@ -5,5 +5,5 @@ listing:
   type: table
   sort: true
   date-format: "DD MMM YYYY"
-  fields: [date, title, subtitle, author]
+  fields: [date, title, subtitle]
 ---

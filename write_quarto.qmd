@@ -2,16 +2,27 @@
 title: "Writing with Quarto"
 ---
 
-Here will follow the exercises on:
+::: callout-note
+## Learning outcomes
 
--   Building your first Quarto website
--   Use version control
--   Host your website with github pages
--   Store your work on Zenodo and give it a DOI
+**After finishing this chapter you will be able to:**
+
+-   Create a quarto project with RStudio
+
+-   Locally render and view a quarto website
+
+-   Add markdown content to a quarto document
+
+-   Add and execute code chunks to a quarto document
+
+-   Add and modify code-chunk options
+
+-   Execute code chunks that create figures and create cross references to them
+:::
 
 ## Initiate a website project
 
-In Rstudio:
+We'll start with creating a website project. In Rstudio:
 
 -   Choose **File** \> **New Project..**
 -   Choose **New Directory**
@@ -86,13 +97,14 @@ In this project we aim to visualize the trends of the most frequently used babyn
 
 You can add images with the following syntax:
 
-```
+```         
 ![image_alt_text](path/or/url/to/image.png)
 ```
 
-::: {.callout-important}
+::: callout-important
 ## Exercise
-Check out the [quarto figure guide](https://quarto.org/docs/authoring/figures.html). Find an image of a baby on the internet and get the full URL of the image. After that, add it to your `quarto.qmd`, make it 400 pixels in width and align it to the right side of the page. 
+
+Check out the [quarto figure guide](https://quarto.org/docs/authoring/figures.html). Find an image of a baby in the public domain on [creative commons](https://search.creativecommons.org/). Get the full URL of the image and add it to your `quarto.qmd`. Make it 400 pixels in width and align it to the right side of the page.
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -100,7 +112,7 @@ Check out the [quarto figure guide](https://quarto.org/docs/authoring/figures.ht
 
 Your `index.qmd` could look like this:
 
-```
+```         
 ---
 title: "quarto-tutorial"
 ---
@@ -119,11 +131,11 @@ In this project we aim to visualize the trends of the most frequently used babyn
 
 ### Adding a page
 
-We will now add a page for the analysis. We do this by clicking in Rstudio **File** > **New File..** > **Quarto Document..**. Choose a title, e.g. `analysis` and press **Create**. Save the newly created file as `analysis.qmd`.
+We will now add a page for the analysis. We do this by clicking in Rstudio **File** \> **New File..** \> **Quarto Document..**. Choose a title, e.g. `analysis` and press **Create**. Save the newly created file as `analysis.qmd`.
 
 In order to make our new page part of the website, we have to edit `_quarto.yml`. By adding it to the `navbar` item in the `website` markup:
 
-```yml
+``` yml
 website:
   title: "quarto-tutorial"
   navbar:
@@ -153,19 +165,20 @@ To plot the first 10 lines of the babynames table you can add:
 head(babynames) |> kable()
 ```
 
-::: {.callout-important}
+::: callout-important
 ## Exercise
+
 Add the two above code as an R code chunk to `analysis.qmd`, and do the following:
 
-- add some text to let the reader know what it does
-- suppress the package startup messages with `#| output: false` at the top of the chunk that loads the packages. More info about the hash-pipe [here](https://quarto.org/docs/reference/cells/cells-knitr.html) 
-- re-render the site. 
+-   add some text to let the reader know what it does
+-   suppress the package startup messages with `#| output: false` at the top of the chunk that loads the packages. More info about the hash-pipe [here](https://quarto.org/docs/reference/cells/cells-knitr.html)
+-   re-render the site.
 :::
 
 ::: {.callout-tip collapse="true"}
 ## Answer
 
-```
+```         
 ---
 title: "Analysis"
 ---
@@ -182,7 +195,8 @@ library(knitr)
 library(dplyr)
 library(ggplot2)
 ```
-```
+
+```         
 The first ten lines of the babynames dataset looks like:
 ```
 
@@ -191,15 +205,14 @@ The first ten lines of the babynames dataset looks like:
 #| output: false
 head(babynames) |> kable()
 ```
-
-::: 
+:::
 
 Here, I've created two functions that do the following:
 
-- `get_most_frequent`: Gets the most frequent babynames over a time-period.
-- `plot_top`: from the output of `get_most_frequent`. Plot the top n most popular names. 
+-   `get_most_frequent`: Gets the most frequent babynames over a time-period.
+-   `plot_top`: from the output of `get_most_frequent`. Plot the top n most popular names.
 
-This is not a coding tutorial, so you can ignore the code itself. Just know what is does. 
+This is not a coding tutorial, so you can ignore the code itself. Just know what is does.
 
 ```{r}
 #| eval: false
@@ -242,10 +255,78 @@ get_most_frequent(babynames, select_sex = "M") |>
   plot_top(babynames, select_sex = "M", top = 10)
 ```
 
-::: {.callout-important}
+::: callout-important
 ## Exercise
+
 Add the above three code chunks to `analysis.qmd`, and do the following:
 
-- Since the functions are a bit bulky we want to make the chunk foldable. Do this by `#| code-fold: true`
-- Describe in a text what you see in the figures. Refer to the individual figures in text by [cross-referencing](https://quarto.org/docs/authoring/figures.html#cross-references).  
+-   Since the functions are a bit bulky we want to make the chunk foldable. Do this by `#| code-fold: true`
+-   Describe in a text what you see in the figures. Refer to the individual figures in text by [cross-referencing](https://quarto.org/docs/authoring/figures.html#cross-references).\
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Here, the option `#| eval: false` is added to prevent code execution. In your document, you should not have those of course. 
+```
+To create a visualization of the most popular baby names, we have created two functions. Click the 'Code' link to view:
+```
+
+```{r}
+#| echo: fenced
+#| eval: false
+#| code-fold: true
+get_most_frequent <- function(babynames, select_sex, from = 1950) {
+  most_freq <- babynames |>
+    filter(sex == select_sex, year > from) |>
+    group_by(name) |>
+    summarise(average = mean(prop)) |>
+    arrange(desc(average))
+  return(most_freq)
+}
+
+plot_top <- function(x, babynames, select_sex, top = 10, from = 1950) {
+  topx <- x$name[1:top]
+  
+  p <- babynames |>
+    filter(name %in% topx, sex == select_sex, year > from) |>
+    ggplot(aes(x = year, y = prop, color = name)) +
+    geom_line() +
+    scale_color_brewer(palette = "Paired") +
+    theme_classic()
+  
+  return(p)
+}
+```
+
+```
+Here we call the code to visualize the top 10 most frequent girl names from 1950 onwards:
+```
+
+```{r}
+#| echo: fenced
+#| eval: false
+#| label: fig-line-girls
+#| fig-cap: "Line plot displaying proportion of top 10 girl names by year"
+get_most_frequent(babynames, select_sex = "F") |>
+  plot_top(babynames, select_sex = "F", top = 10)
+```
+
+```
+In @fig-line-girls you can see that there has been a peak in popularity for 'Lisa', 'Jennifer' and 'Jessica'. Interesting! Let's have a look at the boys names:
+```
+
+
+```{r}
+#| echo: fenced
+#| eval: false
+#| label: fig-line-boys
+#| fig-cap: "Line plot displaying proportion of top 10 boy names by year"
+most_freq_boys <- get_most_frequent(babynames, select_sex = "M")
+plot_top(most_freq_boys, babynames, select_sex = "M", top = 10)
+```
+
+```
+@fig-line-boys shows that names that were popular before 1990 are relatively infrequent after 2000. 
+```
 ::: 

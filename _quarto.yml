@@ -10,8 +10,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - slides.qmd
       - course_preparations.qmd
+      - slides.qmd
       - text: Exercises
         menu:
         - href: write_quarto.qmd
