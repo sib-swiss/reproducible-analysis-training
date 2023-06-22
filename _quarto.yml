@@ -26,9 +26,6 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    link-external-newwindow: true
 
 editor: visual
-
-filters:
-  - new_tab_link.lua
-
