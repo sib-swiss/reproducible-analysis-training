@@ -16,12 +16,15 @@ format:
 
 ::: incremental
 -   final_version.docx 🎉
--   final_version_supervisor_corrections.docx
--   final_version_corrected.docx
+
 -   final_version_corrected_additional_comments_supervisor1.docx
+
 -   final_version_corrected_additional_comments_supervisor2.docx
+
 -   final_version_tookmehourstocombineallcomments.docx 🤯
--   final_version_V1.docx
+
+-   final_version_corrected.docx
+
 -   ..
 :::
 
@@ -81,6 +84,20 @@ flowchart LR
 `git status`
 
 `git log --oneline`
+
+## Undoing changes
+
+- Check out a previous commit:
+
+`git checkout fa4f3deac`
+
+- Remove unstaged changes:
+
+`git restore index.qmd`
+
+- Retrieve a file version after a commit: 
+
+`git restore --source fa4f3deac index.qmd`
 
 ## Sync with remote
 
