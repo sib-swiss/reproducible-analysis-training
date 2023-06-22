@@ -8,6 +8,8 @@ format:
   revealjs:
     theme: default
     slide-number: true
+    preview-links: auto
+    link-external-newwindow: true
 ---
 
 ## Versions

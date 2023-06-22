@@ -7,12 +7,13 @@ format:
   revealjs:
     theme: default
     slide-number: true
+    preview-links: auto
+    link-external-newwindow: true
 ---
 
 ## Your analysis and its story
 
 ::: incremental
-
 -   Recording your data analysis story (= the choices you make) is important
 
 -   A story is not easy to extract from code:
@@ -22,7 +23,6 @@ format:
     -   Not everybody can read code
 
 -   Solution: tell your story together with your code!
-
 :::
 
 ## Story + code = notebooks
@@ -43,16 +43,17 @@ format:
 
 ## Project - based working
 
-- Work in projects to:
-  
-  - Define goals and tasks
-  
-  - Organize yourself
-  
-  - Keep a good documentation
-  
-  - Communicate about methods, goals, results etc.
+-   Work in projects to:
 
+    -   Define goals and tasks
+
+    -   Organize yourself
+
+    -   Keep a good documentation
+
+    -   Communicate about methods, goals, results etc.
+
+-   Word of advice: keep projects small!
 
 ## Quarto projects
 
@@ -77,23 +78,21 @@ format:
     -   Start with a template (Document, Presentation, Website or Book)
 
     -   Start coding!
-    
-
 
 ## Quarto project files
 
-- `_quarto.yml`: YML file with project-wide settings
-- `.git`: Everything required for version control with git
-- `my_awesome_project.Rproj`: R-project based settings
-- `my_awesome_project.qmd`: Where the work is done!
+-   `_quarto.yml`: YML file with project-wide settings
+-   `.git`: Everything required for version control with git
+-   `my_awesome_project.Rproj`: R-project based settings
+-   `my_awesome_project.qmd`: Where the work is done!
 
 ![](../img/project_init.png){fig-align="right"}
 
 ## A `qmd` file
 
-- Front matter (YML format):
+-   Front matter (YML format):
 
-```
+```         
 ---
 title: "My awesome project"
 author: "Jan Janssen"
@@ -105,9 +104,9 @@ format:
 ---
 ```
 
-- Markdown text
+-   Markdown text
 
-- Code blocks
+-   Code blocks
 
 ```{r}
 #| echo: fenced
@@ -150,26 +149,25 @@ After rendering:
 
 ## Markdown - heading
 
-+------------------+-----------------+
-| Markdown syntax  | Output          |
-+==================+=================+
-| ```              | # Header 1      |
-| # Header 1       |                 |
-| ```              |                 |
-+------------------+-----------------+
-| ```              | ## Header 2     |
-| ## Header 2      |                 |
-| ```              |                 |
-+------------------+-----------------+
-| ```              | ### Header 3    |
-| ### Header 3     |                 |
-| ```              |                 |
-+------------------+-----------------+
-| ```              | #### Header 4   |
-| #### Header 4    |                 |
-| ```              |                 |
-+------------------+-----------------+
-
++-----------------+----------------+
+| Markdown syntax | Output         |
++=================+================+
+| ```             | # Header 1     |
+| # Header 1      |                |
+| ```             |                |
++-----------------+----------------+
+| ```             | ## Header 2    |
+| ## Header 2     |                |
+| ```             |                |
++-----------------+----------------+
+| ```             | ### Header 3   |
+| ### Header 3    |                |
+| ```             |                |
++-----------------+----------------+
+| ```             | #### Header 4  |
+| #### Header 4   |                |
+| ```             |                |
++-----------------+----------------+
 
 : {tbl-colwidths="\[50,50\]"}
 
@@ -268,34 +266,42 @@ mtcars |>
   ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()
 ```
 
-```
+```         
 From @fig-mpg-vs-drat you can see there is a positive correlation. 
 ```
 
-From @fig-mpg-vs-drat you can see there is a positive correlation. 
+From @fig-mpg-vs-drat you can see there is a positive correlation.
 
 ## More Quarto
 
-- For example:
+-   For example:
 
-  - [Citations](https://quarto.org/docs/authoring/footnotes-and-citations.html)
-  
-  - [Visual editor](https://quarto.org/docs/visual-editor/#using-the-editor) - have a particular look at **Insert Anything**
-  
-  - [Integrate shiny](https://quarto.org/docs/interactive/shiny/)
+    -   [Citations](https://quarto.org/docs/authoring/footnotes-and-citations.html)
 
-- Complete overview at [https://quarto.org/docs/guide/](https://quarto.org/docs/guide/)
+    -   [Visual editor](https://quarto.org/docs/visual-editor/#using-the-editor) - have a particular look at **Insert Anything**
 
-- More extensive 'getting started' tutorial at [https://quarto.org/docs/get-started/](https://quarto.org/docs/get-started/)
+    -   [Integrate shiny](https://quarto.org/docs/interactive/shiny/)
+
+-   Complete overview at <https://quarto.org/docs/guide/>
+
+-   More extensive 'getting started' tutorial at <https://quarto.org/docs/get-started/>
+
+## Quarto - use cases
+
+-   You don't have to be a LaTeX nerd to write a manuscript from source code 🎉 More info [here](https://quarto.org/docs/journals/)
+-   Create [presentations](https://quarto.org/docs/presentations/) (including powerpoint exports!)
+-   Write your thesis in Quarto, more about [books](https://quarto.org/docs/books/)
+-   Maybe now is the time to get started with your [personal website](https://ucsb-meds.github.io/creating-quarto-websites/)
 
 ## Exercises
 
 Use Rstudio to:
 
-- Initiate a Quarto website project
+-   Initiate a Quarto website project
 
-- Create a website of two pages with:
-  - Markdown text and images
-  - Code and plots
-  
-- Render locally
+-   Create a website of two pages with:
+
+    -   Markdown text and images
+    -   Code and plots
+
+-   Render locally
