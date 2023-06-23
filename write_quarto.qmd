@@ -63,8 +63,8 @@ In this part, we will use quarto to display our project goals. In `index.qmd`, c
 
 -   *Understanding the different columns of the data set*
 -   *Find the top 10 most frequently used baby names in the data for:*
-  -   *girls*
-  -   *boys*
+    -   *girls*
+    -   *boys*
 -   *Plot the yearly trend of the top 10 baby names*
 
 ::: callout-important
