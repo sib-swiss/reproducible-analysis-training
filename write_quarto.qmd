@@ -63,8 +63,8 @@ In this part, we will use quarto to display our project goals. In `index.qmd`, c
 
 -   *Understanding the different columns of the data set*
 -   *Find the top 10 most frequently used baby names in the data for:*
-   -   *girls*
-   -   *boys*
+  -   *girls*
+  -   *boys*
 -   *Plot the yearly trend of the top 10 baby names*
 
 ::: callout-important
@@ -267,8 +267,9 @@ Add the above three code chunks to `analysis.qmd`, and do the following:
 ::: {.callout-tip collapse="true"}
 ## Answer
 
-Here, the option `#| eval: false` is added to prevent code execution. In your document, you should not have those of course. 
-```
+Here, the option `#| eval: false` is added to prevent code execution. In your document, you should not have those of course.
+
+```         
 To create a visualization of the most popular baby names, we have created two functions. Click the 'Code' link to view:
 ```
 
@@ -299,7 +300,7 @@ plot_top <- function(x, babynames, select_sex, top = 10, from = 1950) {
 }
 ```
 
-```
+```         
 Here we call the code to visualize the top 10 most frequent girl names from 1950 onwards:
 ```
 
@@ -312,10 +313,9 @@ get_most_frequent(babynames, select_sex = "F") |>
   plot_top(babynames, select_sex = "F", top = 10)
 ```
 
-```
+```         
 In @fig-line-girls you can see that there has been a peak in popularity for 'Lisa', 'Jennifer' and 'Jessica'. Interesting! Let's have a look at the boys names:
 ```
-
 
 ```{r}
 #| echo: fenced
@@ -326,8 +326,7 @@ most_freq_boys <- get_most_frequent(babynames, select_sex = "M")
 plot_top(most_freq_boys, babynames, select_sex = "M", top = 10)
 ```
 
-```
+```         
 @fig-line-boys shows that names that were popular before 1990 are relatively infrequent after 2000. 
 ```
-::: 
-
+:::
