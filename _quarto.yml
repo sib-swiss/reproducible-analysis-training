@@ -15,7 +15,7 @@ website:
       - text: Exercises
         menu:
         - href: write_quarto.qmd
-        - href: git_pages_zenodo.qmd
+        - href: git_pages_zenodo.md
         
     right:
       - icon: github
