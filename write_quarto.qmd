@@ -63,8 +63,8 @@ In this part, we will use quarto to display our project goals. In `index.qmd`, c
 
 -   *Understanding the different columns of the data set*
 -   *Find the top 10 most frequently used baby names in the data for:*
--   *girls*
--   *boys*
+   -   *girls*
+   -   *boys*
 -   *Plot the yearly trend of the top 10 baby names*
 
 ::: callout-important
@@ -87,8 +87,8 @@ In this project we aim to visualize the trends of the most frequently used babyn
 
 - Understanding the different columns of the data set
 - Find the top 10 most frequently used baby names in the data for:
-- girls
-- boys
+   - girls
+   - boys
 - Plot the yearly trend of the top 10 baby names 
 ```
 :::
@@ -104,7 +104,7 @@ You can add images with the following syntax:
 ::: callout-important
 ## Exercise
 
-Check out the [quarto figure guide](https://quarto.org/docs/authoring/figures.html). Find an image of a baby in the public domain on [creative commons](https://search.creativecommons.org/). Get the full URL of the image and add it to your `quarto.qmd`. Make it 400 pixels in width and align it to the right side of the page.
+Check out the [quarto figure guide](https://quarto.org/docs/authoring/figures.html). Find an image of a baby in the public domain on [creative commons](https://search.creativecommons.org/). Get the full URL of the image and add it to your `index.qmd`. Make it 400 pixels in width and align it to the right side of the page.
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -330,3 +330,4 @@ plot_top(most_freq_boys, babynames, select_sex = "M", top = 10)
 @fig-line-boys shows that names that were popular before 1990 are relatively infrequent after 2000. 
 ```
 ::: 
+
