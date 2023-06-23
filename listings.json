@@ -4,7 +4,8 @@
     "items": [
       "/slides/introduction.html",
       "/slides/introduction_quarto.html",
-      "/slides/introduction_git.html"
+      "/slides/introduction_git.html",
+      "/slides/introduction_zenodo.html"
     ]
   }
 ]

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Make your research FAIRer - ISMB tutorial</title>
+<title>Make your research FAIRer - ISMB tutorial - reproducible analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,12 +86,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./slides.html" rel="" target="">
- <span class="menu-text">Slides</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./course_preparations.html" rel="" target="">
  <span class="menu-text">Course preparations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./slides.html" rel="" target="">
+ <span class="menu-text">Slides</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-exercises" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
@@ -131,13 +131,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#course-description" id="toc-course-description" class="nav-link active" data-scroll-target="#course-description">Course description</a></li>
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#provisional-schedule" id="toc-provisional-schedule" class="nav-link" data-scroll-target="#provisional-schedule">Provisional schedule</a>
-  <ul class="collapse">
-  <li><a href="#monday-july-17th-2023" id="toc-monday-july-17th-2023" class="nav-link" data-scroll-target="#monday-july-17th-2023">Monday July 17th 2023</a></li>
-  <li><a href="#tuesday-july-18th-2023" id="toc-tuesday-july-18th-2023" class="nav-link" data-scroll-target="#tuesday-july-18th-2023">Tuesday July 18th 2023</a></li>
-  </ul></li>
+  <li><a href="#course-schedule" id="toc-course-schedule" class="nav-link active" data-scroll-target="#course-schedule">Course schedule</a></li>
+  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description">Course description</a></li>
   <li><a href="#list-of-trainers" id="toc-list-of-trainers" class="nav-link" data-scroll-target="#list-of-trainers">List of trainers</a></li>
   <li><a href="#intended-audience-and-level" id="toc-intended-audience-and-level" class="nav-link" data-scroll-target="#intended-audience-and-level">Intended audience and level</a></li>
   </ul>
@@ -148,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ISMB tutorial</h1>
+<h1 class="title">ISMB tutorial - reproducible analysis</h1>
 <p class="subtitle lead">Make your research FAIRer with Quarto, GitHub and Zenodo</p>
 </div>
 
@@ -164,28 +159,30 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="course-description" class="level2">
-<h2 class="anchored" data-anchor-id="course-description">Course description</h2>
-<p>The FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research’s impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.</p>
-<p>Sharing and reusing are at the heart of the FAIR principles and should be a routine task of any (life) scientist today. To enable others to use or reproduce our findings and work, we need to provide all the information: the data, software and parameters used, scripts for the analysis, databases and their versions, and any required documentation and contextualisation. To have all this information and code together in a single file, many use markdown. Such a markdown file can be created in a simple way, and after that rendered in a single web page that is easy to share and read.</p>
-<p>The FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g.&nbsp;R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).</p>
-<p>By using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing.</p>
-</section>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<p>After this tutorial, the participants will be able to:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>After this tutorial, you will be able to:</strong></p>
 <ul>
-<li><p>Create notebooks and websites based on Markdown, and Python or R with Quarto Use Git and GitHub to version control the generated content</p></li>
+<li><p>Create notebooks and websites based on Markdown, and R with Quarto</p></li>
+<li><p>Use Git and GitHub to version control the generated content</p></li>
 <li><p>Host a website by making use of GitHub actions and GitHub pages</p></li>
 <li><p>Link the GitHub repository to Zenodo and give it a unique identifier (DOI)</p></li>
 </ul>
-</section>
-<section id="provisional-schedule" class="level2">
-<h2 class="anchored" data-anchor-id="provisional-schedule">Provisional schedule</h2>
+</div>
+</div>
+<section id="course-schedule" class="level2">
+<h2 class="anchored" data-anchor-id="course-schedule">Course schedule</h2>
 <p>The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6 PM CEST</p>
-<section id="monday-july-17th-2023" class="level3">
-<h3 class="anchored" data-anchor-id="monday-july-17th-2023">Monday July 17th 2023</h3>
 <table class="table">
+<caption>Day 1: Monday July 17th 2023</caption>
 <colgroup>
 <col style="width: 10%">
 <col style="width: 10%">
@@ -205,26 +202,32 @@ ul.task-list li input[type="checkbox"] {
 <td>Block 1</td>
 <td>14:00</td>
 <td>16:00</td>
-<td>Creating notebooks in Markdown with Quarto</td>
+<td><ul>
+<li><a href="slides/introduction.html#/title-slide">General introduction</a></li>
+</ul>
+<!-- -->
+<ul>
+<li><a href="slides/introduction_quarto.html#/title-slide">Introduction to Quarto</a></li>
+</ul></td>
 </tr>
 <tr class="even">
-<td></td>
+<td>BREAK</td>
 <td>16:00</td>
 <td>16:15</td>
-<td>BREAK</td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>Block 2</td>
 <td>16:15</td>
 <td>18:00</td>
-<td>Basics of version control with git and GitHub</td>
+<td><ul>
+<li><a href="write_quarto.html">Exercises - Quarto</a></li>
+</ul></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="tuesday-july-18th-2023" class="level3">
-<h3 class="anchored" data-anchor-id="tuesday-july-18th-2023">Tuesday July 18th 2023</h3>
 <table class="table">
+<caption>Day 2: Tuesday July 18th 2023</caption>
 <colgroup>
 <col style="width: 10%">
 <col style="width: 10%">
@@ -244,23 +247,35 @@ ul.task-list li input[type="checkbox"] {
 <td>Block 3</td>
 <td>14:00</td>
 <td>16:00</td>
-<td>Using GitHub pages to host a website created with Quarto</td>
+<td><ul>
+<li><p><a href="slides/introduction_git.html#/title-slide">Introduction to git and GitHub</a></p></li>
+<li><p><a href="git_pages_zenodo.html">Exercises on git, GitHub and GitHub pages</a></p></li>
+</ul></td>
 </tr>
 <tr class="even">
-<td></td>
+<td>BREAK</td>
 <td>16:00</td>
 <td>16:15</td>
-<td>BREAK</td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>Block 4</td>
 <td>16:15</td>
 <td>18:00</td>
-<td>Introduction to Zenodo and how to link GitHub repositories to Zenodo for long-term storage and DOI</td>
+<td><ul>
+<li><p><a href="git_pages_zenodo.html">Exercises on git, GitHub and GitHub pages</a> (continued)</p></li>
+<li><p><a href="slides/introduction_zenodo.html#/title-slide">Introduction to Zenodo and how to link GitHub repositories to Zenodo</a></p></li>
+</ul></td>
 </tr>
 </tbody>
 </table>
 </section>
+<section id="course-description" class="level2">
+<h2 class="anchored" data-anchor-id="course-description">Course description</h2>
+<p>The FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research’s impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.</p>
+<p>Sharing and reusing are at the heart of the FAIR principles and should be a routine task of any (life) scientist today. To enable others to use or reproduce our findings and work, we need to provide all the information: the data, software and parameters used, scripts for the analysis, databases and their versions, and any required documentation and contextualisation. To have all this information and code together in a single file, many use markdown. Such a markdown file can be created in a simple way, and after that rendered in a single web page that is easy to share and read.</p>
+<p>The FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g.&nbsp;R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).</p>
+<p>By using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing.</p>
 </section>
 <section id="list-of-trainers" class="level2">
 <h2 class="anchored" data-anchor-id="list-of-trainers">List of trainers</h2>

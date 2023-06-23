@@ -442,6 +442,7 @@ Geert van Geest
 <li><p>Keep a good documentation</p></li>
 <li><p>Communicate about methods, goals, results etc.</p></li>
 </ul></li>
+<li><p>Word of advice: keep projects small!</p></li>
 </ul>
 </section>
 <section id="quarto-projects" class="slide level2">
@@ -735,8 +736,17 @@ As you can see from @fig-logo, it is red.</code></pre>
 <li><p><a href="https://quarto.org/docs/visual-editor/#using-the-editor">Visual editor</a> - have a particular look at <strong>Insert Anything</strong></p></li>
 <li><p><a href="https://quarto.org/docs/interactive/shiny/">Integrate shiny</a></p></li>
 </ul></li>
-<li><p>Complete overview at <a href="https://quarto.org/docs/guide/">https://quarto.org/docs/guide/</a></p></li>
-<li><p>More extensive ‘getting started’ tutorial at <a href="https://quarto.org/docs/get-started/">https://quarto.org/docs/get-started/</a></p></li>
+<li><p>Complete overview at <a href="https://quarto.org/docs/guide/" class="uri">https://quarto.org/docs/guide/</a></p></li>
+<li><p>More extensive ‘getting started’ tutorial at <a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a></p></li>
+</ul>
+</section>
+<section id="quarto---use-cases" class="slide level2">
+<h2>Quarto - use cases</h2>
+<ul>
+<li>You don’t have to be a LaTeX nerd to write a manuscript from source code 🎉 More info <a href="https://quarto.org/docs/journals/">here</a></li>
+<li>Create <a href="https://quarto.org/docs/presentations/">presentations</a> (including powerpoint exports!)</li>
+<li>Write your thesis in Quarto, more about <a href="https://quarto.org/docs/books/">books</a></li>
+<li>Maybe now is the time to get started with your <a href="https://ucsb-meds.github.io/creating-quarto-websites/">personal website</a></li>
 </ul>
 </section>
 <section id="exercises" class="slide level2">
@@ -781,7 +791,7 @@ As you can see from @fig-logo, it is red.</code></pre>
       // https://revealjs.com/config/
       Reveal.initialize({
 'controlsAuto': true,
-'previewLinksAuto': false,
+'previewLinksAuto': true,
 'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
@@ -1149,6 +1159,20 @@ As you can see from @fig-logo, it is red.</code></pre>
           });
         }
       }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var filterRegex = new RegExp("https:\/\/sib-swiss\.github\.io\/reproducible-analysis\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+              // target, if specified
+              link.setAttribute("target", "_blank");
+          }
+        }
     });
     </script>
     

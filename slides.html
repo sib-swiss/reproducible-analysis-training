@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-subtitle','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
       searchColumns: ["listing-date","listing-title","listing-author"],
     };
@@ -119,12 +119,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./slides.html" rel="" target="" aria-current="page">
- <span class="menu-text">Slides</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./course_preparations.html" rel="" target="">
  <span class="menu-text">Course preparations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./slides.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Slides</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-exercises" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
@@ -202,9 +202,6 @@ ul.task-list li input[type="checkbox"] {
          <option value="listing-title-sort" data-direction="asc">
           Title
         </option>
-         <option value="listing-author" data-direction="asc">
-          Author
-        </option>
      </select>
   </div>
     <div class="input-group input-group-sm quarto-listing-filter">
@@ -225,13 +222,10 @@ ul.task-list li input[type="checkbox"] {
 <th>
 Subtitle
 </th>
-<th>
-<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
-</th>
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1686907167167" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="1. Make your research FAIRer with Quarto, GitHub and Zenodo" data-listing-filename-sort="introduction.qmd">
+<tr data-index="0" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1687438588515" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="1. Make your research FAIRer with Quarto, GitHub and Zenodo" data-listing-filename-sort="introduction.qmd">
 <td>
 <span class="listing-date">16 Jun 2023</span>
 </td>
@@ -241,11 +235,8 @@ Subtitle
 <td>
 <span class="listing-subtitle">Introduction of the tutorial</span>
 </td>
-<td>
-<span class="listing-author">Geert van Geest</span>
-</td>
 </tr>
-<tr data-index="1" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1687169422720" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="2. Introduction to Quarto" data-listing-filename-sort="introduction_quarto.qmd">
+<tr data-index="1" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1687439111226" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-title-sort="2. Introduction to Quarto" data-listing-filename-sort="introduction_quarto.qmd">
 <td>
 <span class="listing-date">16 Jun 2023</span>
 </td>
@@ -255,11 +246,8 @@ Subtitle
 <td>
 <span class="listing-subtitle">Basics of writing with Quarto</span>
 </td>
-<td>
-<span class="listing-author">Geert van Geest</span>
-</td>
 </tr>
-<tr data-index="2" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1687363429990" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-title-sort="3. Introduction to git" data-listing-filename-sort="introduction_git.qmd">
+<tr data-index="2" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1687439004112" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-title-sort="3. Introduction to git" data-listing-filename-sort="introduction_git.qmd">
 <td>
 <span class="listing-date">16 Jun 2023</span>
 </td>
@@ -269,8 +257,16 @@ Subtitle
 <td>
 <span class="listing-subtitle">Getting started with git for version control</span>
 </td>
+</tr>
+<tr data-index="3" data-listing-date-sort="1686866400000" data-listing-file-modified-sort="1687441994484" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-title-sort="4. Introduction to zenodo" data-listing-filename-sort="introduction_zenodo.qmd">
 <td>
-<span class="listing-author">Geert van Geest</span>
+<span class="listing-date">16 Jun 2023</span>
+</td>
+<td>
+<a href="./slides/introduction_zenodo.html" class="title listing-title">4. Introduction to zenodo</a>
+</td>
+<td>
+<span class="listing-subtitle">Getting started with Zenodo for long-term storage</span>
 </td>
 </tr>
 </tbody>

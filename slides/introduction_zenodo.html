@@ -12,7 +12,7 @@
 
   <meta name="author" content="Geert van Geest">
   <meta name="dcterms.date" content="2023-06-16">
-  <title>Make your research FAIRer - 3. Introduction to git</title>
+  <title>Make your research FAIRer - 4. Introduction to zenodo</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -320,17 +320,14 @@
       margin-right: 0; 
     }
   </style>
-  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">3. Introduction to git</h1>
-  <p class="subtitle">Getting started with git for version control</p>
+  <h1 class="title">4. Introduction to zenodo</h1>
+  <p class="subtitle">Getting started with Zenodo for long-term storage</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -342,188 +339,8 @@ Geert van Geest
 
   <p class="date">2023-06-16</p>
 </section>
-<section id="versions" class="slide level2">
-<h2>Versions</h2>
-<div>
-<ul>
-<li class="fragment"><p>final_version.docx 🎉</p></li>
-<li class="fragment"><p>final_version_corrected_additional_comments_supervisor1.docx</p></li>
-<li class="fragment"><p>final_version_corrected_additional_comments_supervisor2.docx</p></li>
-<li class="fragment"><p>final_version_tookmehourstocombineallcomments.docx 🤯</p></li>
-<li class="fragment"><p>final_version_corrected.docx</p></li>
-<li class="fragment"><p>..</p></li>
-</ul>
-</div>
-</section>
-<section id="take-control-of-your-versions" class="slide level2">
-<h2>Take control of your versions!</h2>
-<ul>
-<li>Dare to break stuff ➡️ go back to any previous version</li>
-<li>Define and describe changes</li>
-<li>Combine versions and changes that started experimentally</li>
-</ul>
-<div class="cell" data-reveal="true">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  A(first version) --&gt; B(some changes)
-  B --&gt; C(Something experimental)
-  B --&gt; D(Bug fix)
-  C --&gt; E(Merge)
-  D --&gt; E
-  
-  linkStyle 1,3 stroke:red;
-</pre>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="using-git-for-version-control" class="slide level2">
-<h2>Using git for version control</h2>
-<ul>
-<li>At the level of a directory, typically a project</li>
-<li>Everything is in <code>.git/</code></li>
-<li><strong>Commit</strong>: building block -&gt; defined step through versions</li>
-<li><strong>Branch</strong>:
-<ul>
-<li>independent sequence of commits</li>
-<li>typically merged with a main branch after work is done</li>
-</ul></li>
-</ul>
-<div class="cell" data-reveal="true">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  A(first version) --commit--&gt; B(some changes)
-  B --new branch--&gt; C(Something experimental)
-  B --commit--&gt; D(Bug fix)
-  C --&gt; E((Merge commit))
-  D --&gt; E
-  
-  linkStyle 1,3 stroke:red;
-</pre>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="collaborating-with-git" class="slide level2">
-<h2>Collaborating with git</h2>
-<ul>
-<li>Sync with a remote (e.g.&nbsp;on GitHub)</li>
-<li>All commits are associated with a user</li>
-</ul>
-</section>
-<section id="committing-changes" class="slide level2">
-<h2>Committing changes</h2>
-<ol type="1">
-<li>Stage the files with changes you’d like to commit</li>
-<li>Commit the changes with a descriptive message</li>
-</ol>
-<p><code>git add index.qmd</code></p>
-<p><code>git commit -m "Adds a paragraph"</code></p>
-</section>
-<section id="project-status" class="slide level2">
-<h2>Project status</h2>
-<p><code>git status</code></p>
-<p><code>git log --oneline</code></p>
-</section>
-<section id="undoing-changes" class="slide level2">
-<h2>Undoing changes</h2>
-<ul>
-<li>Remove unstaged changes:</li>
-</ul>
-<p><code>git restore index.qmd</code></p>
-<ul>
-<li>Retrieve a file version after a commit (unstaged in working directory):</li>
-</ul>
-<p><code>git restore --source fa4f3deac index.qmd</code></p>
-<ul>
-<li>Reset commits:</li>
-</ul>
-<p><code>git reset [--soft|--hard|--mixed] fa4f3deac</code></p>
-</section>
-<section id="sync-with-remote" class="slide level2">
-<h2>Sync with remote</h2>
-<ul>
-<li><p>Create an empty repository on GitHub</p></li>
-<li><p>Link your local repository to the created repository:</p></li>
-</ul>
-<p><code>git remote origin https://github.com/OWNER/REPOSITORY.git</code></p>
-<ul>
-<li>Push your local repository to the remote:</li>
-</ul>
-<p><code>git push -u origin main</code></p>
-</section>
-<section id="ignoring-files" class="slide level2">
-<h2>Ignoring files</h2>
-<ul>
-<li><code>.gitignore</code> enables you to <strong>not</strong> version control files, e.g.:
-<ul>
-<li>output files</li>
-<li>user-specific files</li>
-</ul></li>
-<li>For a typical quarto project, that would be e.g.:
-<ul>
-<li><code>_site/</code></li>
-<li><code>.Rproj.user</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="creating-tags" class="slide level2">
-<h2>Creating tags</h2>
-<ul>
-<li><p>Tag a special commit</p></li>
-<li><p>Typically this is done to create versions, e.g.&nbsp;<code>v1.0.0</code></p></li>
-<li><p>With <code>git tag</code> or creating a release in GitHub</p></li>
-<li><p>For Zenodo: a DOI is linked to a tag</p></li>
-</ul>
-</section>
-<section id="quarto-and-github" class="slide level2">
-<h2>Quarto and GitHub</h2>
-<ul>
-<li><p>Store your raw files in the <code>main</code> branch</p></li>
-<li><p>Use <code>quarto publish gh-pages</code>:</p>
-<ul>
-<li><p>Create a branch called <code>gh-pages</code> and push the rendered html files</p></li>
-<li><p>Tell GitHub to use the files in <code>gh-pages</code> to host it as a website</p></li>
-</ul></li>
-<li><p>Find your website at OWNER.github.io/REPOSITORY</p></li>
-</ul>
-</section>
-<section id="quarto-and-github-actions" class="slide level2">
-<h2>Quarto and GitHub actions</h2>
-<ul>
-<li><p>GitHub actions: computations running on the GitHub server that can be triggered by e.g.&nbsp;a push, merge, cron job etc.</p></li>
-<li><p>Let GitHub actions render the content - ultimate reproducibility but:</p>
-<ul>
-<li><p>Need to define your environment (all required R packages etc.)</p></li>
-<li><p>Requires knowledge on the GitHub actions syntax and concepts</p></li>
-</ul></li>
-</ul>
+<section class="slide level2">
 
-<aside><div>
-<p>More info at the <a href="https://quarto.org/docs/publishing/github-pages.html#github-action">quarto docs</a></p>
-</div></aside></section>
-<section id="more-git" class="slide level2">
-<h2>More git</h2>
-<ul>
-<li>Spend some time to learn it! You’ll earn it back quickly 💸</li>
-<li>Some nice resources:
-<ul>
-<li><a href="https://happygitwithr.com/">Happy git with R</a></li>
-<li><a href="http://swcarpentry.github.io/git-novice/">Carpentries course on git</a></li>
-</ul></li>
-<li>If you’re new (or smart) consider using a git client, e.g.:
-<ul>
-<li>Rstudio git interface</li>
-<li><a href="https://www.gitkraken.com/">GitKraken</a></li>
-<li><a href="https://desktop.github.com">GitHub Desktop</a></li>
-</ul></li>
-</ul>
 
 <div class="footer footer-default">
 
