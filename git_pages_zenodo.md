@@ -86,6 +86,10 @@ The more descriptive you make your commits, the easier it is to find back a comm
 
 ## Using a remote repository
 
+::: {.callout-warning}
+This sub chapter assumes that you can connect with GitHub through https. If you haven't setup a PAT yet, follow the instructions [here](https://happygitwithr.com/https-pat.html) as stated in the [course preparations](course_preparations.qmd).
+:::
+
 We will now link our local repository to a remote repository on GitHub. First, we need to create an empty repository on GitHub. Do this by:
 
 -   Navigating to the [GitHub website](https://github.com) and login
@@ -96,7 +100,17 @@ We will now link our local repository to a remote repository on GitHub. First, w
     -   Leave the rest unchecked, so no README file and no `.gitignore` (these are already in our local repository)
 -   Click the green button with `Create repository`
 
-After you've created the empty repository, GitHub is already giving you suggestions what to do, we've already created the commit, and our current branch is the main branch (check it with `git branch`). The only thing we need to run is:
+After you've created the empty repository, GitHub is already giving you suggestions what to do. We've already created the commit, and our current branch is the main branch (check it with `git branch`). 
+
+::: {.callout-caution}
+If running `git branch` does not return `main` (if so, it's likely to return `master`), change the branch name with:
+
+```sh
+git branch -m main
+```
+:::
+
+Now, the only thing we need to run is:
 
 ``` bash
 git remote add origin https://github.com/USER/REPOSITORY.git
@@ -116,7 +130,7 @@ To publish your site, you only need to run two commands. To make sure `_site` co
 quarto render
 ```
 
-To create (if doesn't exist) a branch named `gh-pages` push the website files there, and tell GitHub that the website will be there:
+To create (if it doesn't exist) a branch named `gh-pages` push the website files there, and tell GitHub that the website will be there:
 
 ``` bash
 quarto publish gh-pages
