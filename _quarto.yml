@@ -3,9 +3,9 @@ project:
 
 website:
   title: "Make your research FAIRer"
-  repo-url: "https://github.com/sib-swiss/reproducible-analysis"
+  repo-url: "https://github.com/sib-swiss/reproducible-analysis-training"
   repo-actions: [edit, issue]
-  site-url: "https://sib-swiss.github.io/reproducible-analysis/"
+  site-url: "https://sib-swiss.github.io/reproducible-analysis-training/"
   navbar:
     left:
       - href: index.qmd
@@ -20,7 +20,7 @@ website:
         
     right:
       - icon: github
-        href: "https://github.com/sib-swiss/reproducible-analysis"
+        href: "https://github.com/sib-swiss/reproducible-analysis-training"
         aria-label: GitHub
 
 format:
