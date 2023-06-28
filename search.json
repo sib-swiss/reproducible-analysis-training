@@ -60,7 +60,7 @@
     "href": "index.html#intended-audience-and-level",
     "title": "ISMB tutorial - reproducible analysis",
     "section": "Intended audience and level",
-    "text": "Intended audience and level\nThis tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a GitHub account and bring their laptops with either the latest versions of R, Rstudio and quarto installed. Find detailed instructions at precourse preparations."
+    "text": "Intended audience and level\nThis tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a GitHub account and bring their laptops with either the latest versions of R, Rstudio and quarto installed. Find detailed instructions at course preparations."
   },
   {
     "objectID": "exercises_quarto.html",
