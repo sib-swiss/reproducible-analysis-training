@@ -1,0 +1,79 @@
+---
+title: "4. Introduction to Zenodo"
+subtitle: "Getting started with Zenodo for long-term storage"
+author: "Geert van Geest"
+date: "2023-06-16"
+engine: knitr
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    preview-links: auto
+    link-external-newwindow: true
+---
+
+## Data repositories
+
+-   Deposit data/files to resources that are:
+
+    -   **Specific**: best metadata annotations
+
+    -   **Widely used**: continuity and findability
+
+-   Find a repository on [re3data.org](https://www.re3data.org/) or [fairsharing.org](https://fairsharing.org/)
+
+-   If there's no specific repo, there are general ones, e.g.:
+
+    -   [figshare](http://figshare.com/)
+
+    -   [Open Science Framework](http://osf.io/)
+
+    -   [Zenodo](http://zenodo.org/)
+
+## General repositories - file types
+
+-   Documents (e.g. pdf/MS Word)
+
+-   Images
+
+-   Presentations
+
+-   Spreadsheets
+
+-   File collections, e.g. tarballs
+
+## Zenodo
+
+-   Initiative of CERN (you know, from the Large Hadron Collider), OpenAire and EU
+
+-   Aims for long-term storage
+
+-   Assign DOI and make digital objects citable
+
+-   Maximum file size: 50 Gb
+
+-   Versioning
+
+-   GitHub integration
+
+![](https://about.zenodo.org/static/img/logos/zenodo-gradient-round.svg){.absolute top="380" right="50" width="400"}
+
+## Zenodo - GitHub integration
+
+-   Create a record, version and DOI upon release
+
+-   Uses [`CITATION.cff`](https://citation-file-format.github.io/) for metadata annotation
+
+-   And/or `.zenodo.json` using the [deposity data schema](https://developers.zenodo.org/#deposit-metadata), with e.g.:
+
+    -   Creators
+
+    -   License
+
+    -   Title
+
+    -   Keywords
+
+    -   ..
+
+![](../img/zenodo_releases.png){.absolute top="340" right="50" width="500"}

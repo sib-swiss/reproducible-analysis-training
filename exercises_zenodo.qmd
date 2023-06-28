@@ -1,0 +1,99 @@
+---
+title: "Zenodo"
+---
+
+Before storing our repository in Zenodo, we will add some metadata to it, so our material is easily identifiable in Zenodo. We do this by adding a file called `.zenodo.json` to our repository. Here's an example of such a file:
+
+``` json
+{
+  "title": "Analysis of babynames",
+  "upload_type": "publication",
+  "publication_type": "report",
+  "keywords": [
+    "R",
+    "quarto",
+    "tutorial"
+  ],
+  "creators": [
+    {
+      "name": "Geert van Geest",
+      "affiliation": "SIB Swiss Institute of Bioinformatics",
+      "orcid": "0000-0002-1561-078X"
+    } 
+  ]
+}
+```
+
+::: callout-important
+## Exercise
+
+Add a `.zenodo.json` file to your repository, and change it accordingly (e.g. at least change the creator name and ORCiD). Consider adding attributes specified [here](https://developers.zenodo.org/#deposit-metadata). After that, add it to the repository, commit the change and push it to the remote.
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Modify the `.zenodo.json` file and add it to the repo. Stage, commit and push like so:
+
+``` bash
+git add .zenodo.json
+git commit -m "adds .zenodo.json file"
+git push
+```
+:::
+
+Now that we have added metadata to the repository, we can store it in Zenodo:
+
+-   Browse to [zenodo.org](https://zenodo.org) and sign up and use your GitHub account.
+
+-   On the top right, click the drop-down menu and select *GitHub*.
+
+-   All the public repositories in your namespace are in the list. Move the switch at the repository you have just created.
+
+-   Now, go to your repository on GitHub and create a release. Do this by selecting *Create a new release* on the right side.
+
+-   Choose a tag that starts with `v` and follows the rules of [semantic versioning](https://semver.org/), so a good first name would be e.g. `v1.0.0`.
+
+-   Choose a release title. This can be anything. The release title of R v4.2.0 is for example `Vigorous Calisthenics`.
+
+-   Click the green button **Publish release**
+
+-   Go back to the [GitHub page on Zenodo](https://zenodo.org/account/settings/github/) and click *Sync now* at the top right.
+
+-   There should now be a green bar at your repository, and it received a DOI. You can check out the record by clicking on the repository name
+
+::: callout-important
+## Exercise
+
+Off course we want to show off with the DOI we just assigned. In order to do that, click the DOI badge and copy-paste the markdown syntax to `index.qmd` to show it on the main page of your website. Now, stage, commit and push the change. After that, render and publish the website.
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+An example of the top of `index.qmd`:
+
+``` markdown
+---
+title: "quarto-tutorial"
+---
+
+[![DOI](https://zenodo.org/badge/657627364.svg)](https://zenodo.org/badge/latestdoi/657627364)
+```
+
+After that, we run the commands:
+
+``` bash
+git add index.qmd
+git commit -m "Adds a badge to the website"
+git push
+```
+
+And the quarto commands:
+
+``` bash
+quarto render
+quarto publish gh-pages
+```
+:::
+

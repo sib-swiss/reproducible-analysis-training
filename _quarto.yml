@@ -14,8 +14,9 @@ website:
       - slides.qmd
       - text: Exercises
         menu:
-        - href: write_quarto.qmd
-        - href: git_pages_zenodo.md
+        - href: exercises_quarto.qmd
+        - href: exercises_git.qmd
+        - href: exercises_zenodo.qmd
         
     right:
       - icon: github

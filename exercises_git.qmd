@@ -1,5 +1,5 @@
 ---
-title: "Git, GitHub pages and Zenodo"
+title: "Git and GitHub pages"
 ---
 
 ## Committing changes
@@ -86,7 +86,7 @@ The more descriptive you make your commits, the easier it is to find back a comm
 
 ## Using a remote repository
 
-::: {.callout-warning}
+::: callout-warning
 This sub chapter assumes that you can connect with GitHub through https. If you haven't setup a PAT yet, follow the instructions [here](https://happygitwithr.com/https-pat.html) as stated in the [course preparations](course_preparations.qmd).
 :::
 
@@ -100,12 +100,12 @@ We will now link our local repository to a remote repository on GitHub. First, w
     -   Leave the rest unchecked, so no README file and no `.gitignore` (these are already in our local repository)
 -   Click the green button with `Create repository`
 
-After you've created the empty repository, GitHub is already giving you suggestions what to do. We've already created the commit, and our current branch is the main branch (check it with `git branch`). 
+After you've created the empty repository, GitHub is already giving you suggestions what to do. We've already created the commit, and our current branch is the main branch (check it with `git branch`).
 
-::: {.callout-caution}
+::: callout-caution
 If running `git branch` does not return `main` (if so, it's likely to return `master`), change the branch name with:
 
-```sh
+``` sh
 git branch -m main
 ```
 :::
@@ -137,55 +137,3 @@ quarto publish gh-pages
 ```
 
 🤝 congrats! You've just published your first website with an analysis report!
-
-## Store it in Zenodo
-
-To store your repository in Zenodo:
-
-- Browse to [zenodo.org](https://zenodo.org) and sign up and use your GitHub account. 
-- On the top right, click the drop-down menu and select *GitHub*. 
-- All the public repositories in your namespace are in the list. Move the switch at the repository you have just created.
-- Now, go to your repository on GitHub and create a release. Do this by selecting *Create a new release* on the right side. 
-- Choose a tag that starts with `v` and follows the rules of [semantic versioning](https://semver.org/), so a good first name would be e.g. `v1.0.0`. 
-- Choose a release title. This can be anything. The release title of R v4.2.0 is for example `Vigorous Calisthenics`. 
-- Click the green button **Publish release**
-- Go back to the [GitHub page on Zenodo](https://zenodo.org/account/settings/github/) and click *Sync now* at the top right. 
-- There should now be a green bar at your repository, and it received a DOI. You can check out the record by clicking on the repository name
-
-::: {.callout-important}
-## Exercise
-
-Off course we want to show off with the DOI we just assigned. In order to do that, click the DOI badge and copy-paste the markdown syntax to `index.qmd` to show it on the main page of your website. Now, stage, commit and push the change. After that, render and publish the website. 
-:::
-
-::: {.callout-tip collapse="true"}
-## Answer
-
-An example of the top of `index.qmd`:
-
-```markdown
----
-title: "quarto-tutorial"
----
-
-[![DOI](https://zenodo.org/badge/657627364.svg)](https://zenodo.org/badge/latestdoi/657627364)
-```
-
-After that, we run the commands:
-
-```bash
-git add index.qmd
-git commit -m "Adds a badge to the website"
-git push
-```
-
-And the quarto commands:
-
-```bash
-quarto render
-quarto publish gh-pages
-```
-
-:::
-
-

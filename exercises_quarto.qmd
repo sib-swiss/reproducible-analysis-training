@@ -1,5 +1,8 @@
 ---
 title: "Writing with Quarto"
+format:
+  html:
+    code-overflow: wrap
 ---
 
 ::: callout-note
@@ -25,9 +28,13 @@ title: "Writing with Quarto"
 We'll start with creating a website project. In Rstudio:
 
 -   Choose **File** \> **New Project..**
+
 -   Choose **New Directory**
+
 -   Choose **Quarto website**
+
 -   Choose a location and name for the website. Leave **Create a git repository** checked
+
 -   Finish by pushing the button **Create Project**
 
 ![](img/create_project.gif)
@@ -38,22 +45,13 @@ Now we have created a template for a quarto website 👏 . It doesn't contain mu
 
 -   Or you can use the **Terminal** and type:
 
-```{bash}
-#| eval: false
-
+``` bash
 quarto preview
 ```
 
 In both cases your computer will open a browser and locally host the page at a random port.
 
 ## Adding content
-
-To play around, we will use the `babynames` package. Install it with:
-
-```{r}
-#| eval: false
-install.packages("babynames")
-```
 
 ### Adding text
 
@@ -78,7 +76,7 @@ Take the above introduction of your `babynames` project, convert it to markdown 
 
 This is what your `index.qmd` could look like:
 
-```         
+``` markdown
 ---
 title: "quarto-tutorial"
 ---
@@ -97,7 +95,7 @@ In this project we aim to visualize the trends of the most frequently used babyn
 
 You can add images with the following syntax:
 
-```         
+``` markdown    
 ![image_alt_text](path/or/url/to/image.png)
 ```
 
@@ -112,7 +110,7 @@ Check out the [quarto figure guide](https://quarto.org/docs/authoring/figures.ht
 
 Your `index.qmd` could look like this:
 
-```         
+``` markdown
 ---
 title: "quarto-tutorial"
 ---
@@ -150,20 +148,22 @@ website:
 
 We can add some code in there. First, we add a chunk that loads the libraries:
 
-```{r}
-#| eval: false
+````markdown
+```{{r}}
 library(babynames)
 library(knitr)
 library(dplyr)
 library(ggplot2)
 ```
+````
 
 To plot the first 10 lines of the babynames table you can add:
 
-```{r}
-#| eval: false
+```` markdown
+```{{r}}
 head(babynames) |> kable()
 ```
+````
 
 ::: callout-important
 ## Exercise
@@ -178,33 +178,27 @@ Add the two above code as an R code chunk to `analysis.qmd`, and do the followin
 ::: {.callout-tip collapse="true"}
 ## Answer
 
-```         
+```` markdown
 ---
 title: "Analysis"
 ---
 
 First we load the packages:
-```
 
-```{r}
-#| echo: fenced
-#| output: false
-
+```{{r}}
 library(babynames)
 library(knitr)
 library(dplyr)
 library(ggplot2)
 ```
 
-```         
 The first ten lines of the babynames dataset looks like:
-```
 
-```{r}
-#| echo: fenced
-#| output: false
+
+```{{r}}
 head(babynames) |> kable()
 ```
+````
 :::
 
 Here, I've created two functions that do the following:
@@ -214,8 +208,7 @@ Here, I've created two functions that do the following:
 
 This is not a coding tutorial, so you can ignore the code itself. Just know what is does.
 
-```{r}
-#| eval: false
+``` r
 get_most_frequent <- function(babynames, select_sex, from = 1950) {
   most_freq <- babynames |>
     filter(sex == select_sex, year > from) |>
@@ -241,16 +234,14 @@ plot_top <- function(x, babynames, select_sex, top = 10, from = 1950) {
 
 Plotting them for girls like this:
 
-```{r}
-#| eval: false
+``` r
 get_most_frequent(babynames, select_sex = "F") |>
   plot_top(babynames, select_sex = "F", top = 10)
 ```
 
 Plotting them for boys like this:
 
-```{r}
-#| eval: false
+``` r
 get_most_frequent(babynames, select_sex = "M") |>
   plot_top(babynames, select_sex = "M", top = 10)
 ```
@@ -267,15 +258,10 @@ Add the above three code chunks to `analysis.qmd`, and do the following:
 ::: {.callout-tip collapse="true"}
 ## Answer
 
-Here, the option `#| eval: false` is added to prevent code execution. In your document, you should not have those of course.
-
-```         
+```` markdown
 To create a visualization of the most popular baby names, we have created two functions. Click the 'Code' link to view:
-```
 
-```{r}
-#| echo: fenced
-#| eval: false
+```{{r}}
 #| code-fold: true
 get_most_frequent <- function(babynames, select_sex, from = 1950) {
   most_freq <- babynames |>
@@ -300,33 +286,25 @@ plot_top <- function(x, babynames, select_sex, top = 10, from = 1950) {
 }
 ```
 
-```         
 Here we call the code to visualize the top 10 most frequent girl names from 1950 onwards:
-```
 
-```{r}
-#| echo: fenced
-#| eval: false
+
+```{{r}}
 #| label: fig-line-girls
 #| fig-cap: "Line plot displaying proportion of top 10 girl names by year"
 get_most_frequent(babynames, select_sex = "F") |>
   plot_top(babynames, select_sex = "F", top = 10)
 ```
-
-```         
+    
 In @fig-line-girls you can see that there has been a peak in popularity for 'Lisa', 'Jennifer' and 'Jessica'. Interesting! Let's have a look at the boys names:
-```
 
-```{r}
-#| echo: fenced
-#| eval: false
+```{{r}}
 #| label: fig-line-boys
 #| fig-cap: "Line plot displaying proportion of top 10 boy names by year"
 most_freq_boys <- get_most_frequent(babynames, select_sex = "M")
 plot_top(most_freq_boys, babynames, select_sex = "M", top = 10)
 ```
 
-```         
 @fig-line-boys shows that names that were popular before 1990 are relatively infrequent after 2000. 
-```
+````
 :::
