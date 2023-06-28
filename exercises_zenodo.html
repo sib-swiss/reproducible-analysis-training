@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Make your research FAIRer - ISMB tutorial - reproducible analysis</title>
+<title>Make your research FAIRer - Zenodo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -82,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -131,24 +165,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#course-schedule" id="toc-course-schedule" class="nav-link active" data-scroll-target="#course-schedule">Course schedule</a></li>
-  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description">Course description</a></li>
-  <li><a href="#list-of-trainers" id="toc-list-of-trainers" class="nav-link" data-scroll-target="#list-of-trainers">List of trainers</a></li>
-  <li><a href="#intended-audience-and-level" id="toc-intended-audience-and-level" class="nav-link" data-scroll-target="#intended-audience-and-level">Intended audience and level</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sib-swiss/reproducible-analysis/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sib-swiss/reproducible-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ISMB tutorial - reproducible analysis</h1>
-<p class="subtitle lead">Make your research FAIRer with Quarto, GitHub and Zenodo</p>
+<h1 class="title">Zenodo</h1>
 </div>
 
 
@@ -163,138 +187,111 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="callout callout-style-default callout-note callout-titled">
+<p>Before storing our repository in Zenodo, we will add some metadata to it, so our material is easily identifiable in Zenodo. We do this by adding a file called <code>.zenodo.json</code> to our repository. Here’s an example of such a file:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"title"</span><span class="fu">:</span> <span class="st">"Analysis of babynames"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"upload_type"</span><span class="fu">:</span> <span class="st">"publication"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"publication_type"</span><span class="fu">:</span> <span class="st">"report"</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"keywords"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"R"</span><span class="ot">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"quarto"</span><span class="ot">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"tutorial"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"creators"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Geert van Geest"</span><span class="fu">,</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"affiliation"</span><span class="fu">:</span> <span class="st">"SIB Swiss Institute of Bioinformatics"</span><span class="fu">,</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"orcid"</span><span class="fu">:</span> <span class="st">"0000-0002-1561-078X"</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span> </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Learning objectives
+Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>After this tutorial, you will be able to:</strong></p>
-<ul>
-<li><p>Create notebooks and websites based on Markdown, and R with Quarto</p></li>
-<li><p>Use Git and GitHub to version control the generated content</p></li>
-<li><p>Host a website by making use of GitHub actions and GitHub pages</p></li>
-<li><p>Link the GitHub repository to Zenodo and give it a unique identifier (DOI)</p></li>
-</ul>
+<p>Add a <code>.zenodo.json</code> file to your repository, and change it accordingly (e.g.&nbsp;at least change the creator name and ORCiD). Consider adding attributes specified <a href="https://developers.zenodo.org/#deposit-metadata">here</a>. After that, add it to the repository, commit the change and push it to the remote.</p>
 </div>
 </div>
-<section id="course-schedule" class="level2">
-<h2 class="anchored" data-anchor-id="course-schedule">Course schedule</h2>
-<p>The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6 PM CEST</p>
-<table class="table">
-<caption>Day 1: Monday July 17th 2023</caption>
-<colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 70%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Block</th>
-<th>From</th>
-<th>To</th>
-<th>Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Block 1</td>
-<td>14:00</td>
-<td>16:00</td>
-<td><ul>
-<li><a href="slides/introduction.html#/title-slide">General introduction</a></li>
-</ul>
-<!-- -->
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Modify the <code>.zenodo.json</code> file and add it to the repo. Stage, commit and push like so:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .zenodo.json</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"adds .zenodo.json file"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have added metadata to the repository, we can store it in Zenodo:</p>
 <ul>
-<li><a href="slides/introduction_quarto.html#/title-slide">Introduction to Quarto</a></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>BREAK</td>
-<td>16:00</td>
-<td>16:15</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Block 2</td>
-<td>16:15</td>
-<td>18:00</td>
-<td><ul>
-<li><a href="write_quarto.html">Exercises - Quarto</a></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>Day 2: Tuesday July 18th 2023</caption>
-<colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 70%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Block</th>
-<th>From</th>
-<th>To</th>
-<th>Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Block 3</td>
-<td>14:00</td>
-<td>16:00</td>
-<td><ul>
-<li><p><a href="slides/introduction_git.html#/title-slide">Introduction to git and GitHub</a></p></li>
-<li><p><a href="git_pages_zenodo.html">Exercises on git, GitHub and GitHub pages</a></p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>BREAK</td>
-<td>16:00</td>
-<td>16:15</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Block 4</td>
-<td>16:15</td>
-<td>18:00</td>
-<td><ul>
-<li><p><a href="git_pages_zenodo.html">Exercises on git, GitHub and GitHub pages</a> (continued)</p></li>
-<li><p><a href="slides/introduction_zenodo.html#/title-slide">Introduction to Zenodo and how to link GitHub repositories to Zenodo</a></p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="course-description" class="level2">
-<h2 class="anchored" data-anchor-id="course-description">Course description</h2>
-<p>The FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research’s impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.</p>
-<p>Sharing and reusing are at the heart of the FAIR principles and should be a routine task of any (life) scientist today. To enable others to use or reproduce our findings and work, we need to provide all the information: the data, software and parameters used, scripts for the analysis, databases and their versions, and any required documentation and contextualisation. To have all this information and code together in a single file, many use markdown. Such a markdown file can be created in a simple way, and after that rendered in a single web page that is easy to share and read.</p>
-<p>The FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g.&nbsp;R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).</p>
-<p>By using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing.</p>
-</section>
-<section id="list-of-trainers" class="level2">
-<h2 class="anchored" data-anchor-id="list-of-trainers">List of trainers</h2>
-<ul>
-<li><strong>Dr.&nbsp;Geert van Geest</strong> - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland</li>
-<li><strong>Dr.&nbsp;Wandrille Duchemin</strong> - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the sciCORE core facility of the University of Basel, Switzerland</li>
-<li><strong>Dr.&nbsp;Lea Taylor</strong> - Bioinformatician, affiliated to the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland</li>
+<li><p>Browse to <a href="https://zenodo.org">zenodo.org</a> and sign up and use your GitHub account.</p></li>
+<li><p>On the top right, click the drop-down menu and select <em>GitHub</em>.</p></li>
+<li><p>All the public repositories in your namespace are in the list. Move the switch at the repository you have just created.</p></li>
+<li><p>Now, go to your repository on GitHub and create a release. Do this by selecting <em>Create a new release</em> on the right side.</p></li>
+<li><p>Choose a tag that starts with <code>v</code> and follows the rules of <a href="https://semver.org/">semantic versioning</a>, so a good first name would be e.g.&nbsp;<code>v1.0.0</code>.</p></li>
+<li><p>Choose a release title. This can be anything. The release title of R v4.2.0 is for example <code>Vigorous Calisthenics</code>.</p></li>
+<li><p>Click the green button <strong>Publish release</strong></p></li>
+<li><p>Go back to the <a href="https://zenodo.org/account/settings/github/">GitHub page on Zenodo</a> and click <em>Sync now</em> at the top right.</p></li>
+<li><p>There should now be a green bar at your repository, and it received a DOI. You can check out the record by clicking on the repository name</p></li>
 </ul>
-</section>
-<section id="intended-audience-and-level" class="level2">
-<h2 class="anchored" data-anchor-id="intended-audience-and-level">Intended audience and level</h2>
-<p>This tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a <a href="https://github.com/join">GitHub account</a> and bring their laptops with either the latest versions of R, Rstudio and quarto installed. Find detailed instructions at <a href="precourse_preparations.qmd">precourse preparations</a>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Off course we want to show off with the DOI we just assigned. In order to do that, click the DOI badge and copy-paste the markdown syntax to <code>index.qmd</code> to show it on the main page of your website. Now, stage, commit and push the change. After that, render and publish the website.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>An example of the top of <code>index.qmd</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "quarto-tutorial"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![DOI](https://zenodo.org/badge/657627364.svg)</span><span class="co">](https://zenodo.org/badge/latestdoi/657627364)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After that, we run the commands:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add index.qmd</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Adds a badge to the website"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And the quarto commands:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -548,4 +545,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sib-swiss/reproducible-analysis/edit/main/exercises_zenodo.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sib-swiss/reproducible-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></div></div></footer></body></html>

@@ -360,7 +360,7 @@ Geert van Geest
 <ul>
 <li>Dare to break stuff ➡️ go back to any previous version</li>
 <li>Define and describe changes</li>
-<li>Combine versions and changes that started experimentally</li>
+<li>Combine versions and suggested changes by pull requests and mergin</li>
 </ul>
 <div class="cell" data-reveal="true">
 <div class="cell-output-display">
@@ -420,15 +420,36 @@ Geert van Geest
 <section id="committing-changes" class="slide level2">
 <h2>Committing changes</h2>
 <ol type="1">
-<li>Stage the files with changes you’d like to commit</li>
-<li>Commit the changes with a descriptive message</li>
+<li>Stage: Pick files with changes or files to be tracked</li>
 </ol>
 <p><code>git add index.qmd</code></p>
+<ol start="2" type="1">
+<li>Commit: Create a new ‘version’ with a good description</li>
+</ol>
 <p><code>git commit -m "Adds a paragraph"</code></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Stage and commit in one command:</strong></p>
+</div>
+<div class="callout-content">
+<p><code>git commit -am "Adds a paragraph"</code></p>
+</div>
+</div>
+</div>
 </section>
 <section id="project-status" class="slide level2">
 <h2>Project status</h2>
+<ul>
+<li>Overview of changes and staged files in workdirectory:</li>
+</ul>
 <p><code>git status</code></p>
+<ul>
+<li>Get overview of commits with their hashes:</li>
+</ul>
 <p><code>git log --oneline</code></p>
 </section>
 <section id="undoing-changes" class="slide level2">

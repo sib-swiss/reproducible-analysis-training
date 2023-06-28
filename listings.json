@@ -2,10 +2,10 @@
   {
     "listing": "/slides.html",
     "items": [
-      "/slides/introduction.html",
-      "/slides/introduction_quarto.html",
-      "/slides/introduction_git.html",
-      "/slides/introduction_zenodo.html"
+      "/slides/slides_introduction.html",
+      "/slides/slides_quarto.html",
+      "/slides/slides_git.html",
+      "/slides/slides_zenodo.html"
     ]
   }
 ]

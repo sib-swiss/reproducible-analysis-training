@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Make your research FAIRer - ISMB tutorial - reproducible analysis</title>
+<title>Make your research FAIRer - Git and GitHub pages</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -82,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -135,20 +169,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#course-schedule" id="toc-course-schedule" class="nav-link active" data-scroll-target="#course-schedule">Course schedule</a></li>
-  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description">Course description</a></li>
-  <li><a href="#list-of-trainers" id="toc-list-of-trainers" class="nav-link" data-scroll-target="#list-of-trainers">List of trainers</a></li>
-  <li><a href="#intended-audience-and-level" id="toc-intended-audience-and-level" class="nav-link" data-scroll-target="#intended-audience-and-level">Intended audience and level</a></li>
+  <li><a href="#committing-changes" id="toc-committing-changes" class="nav-link active" data-scroll-target="#committing-changes">Committing changes</a></li>
+  <li><a href="#using-a-remote-repository" id="toc-using-a-remote-repository" class="nav-link" data-scroll-target="#using-a-remote-repository">Using a remote repository</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sib-swiss/reproducible-analysis/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sib-swiss/reproducible-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sib-swiss/reproducible-analysis/edit/main/exercises_git.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sib-swiss/reproducible-analysis/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ISMB tutorial - reproducible analysis</h1>
-<p class="subtitle lead">Make your research FAIRer with Quarto, GitHub and Zenodo</p>
+<h1 class="title">Git and GitHub pages</h1>
 </div>
 
 
@@ -163,135 +194,155 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="committing-changes" class="level2">
+<h2 class="anchored" data-anchor-id="committing-changes">Committing changes</h2>
+<p>In order to create commits, we need to make sure our directory is a git repository. We can check this in any directory by using the terminal. Make your project directory your current directory with <code>cd</code> (if you click the <strong>Terminal</strong> tab in Rstudio you will directly in the project directory) and type:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If your directory is not set up for git it will return something like:</p>
+<pre><code>fatal: not a git repository (or any of the parent directories): .git</code></pre>
+<p>Otherwise, it will give you an overview of files that are or can be staged and committed.</p>
+<p>If you followed the instructions, a git repository has been initiated upon creating the project, so you should be able to stage and commit your files.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Learning objectives
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>After this tutorial, you will be able to:</strong></p>
+<p>If your project directory isn’t a git repository yet, initialize it with</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Check out the untracked files with <code>git status</code> do all these files need to be version-controlled? If not, add the files/directories you don’t want to version control to the <code>.gitignore</code></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The directory <code>_site/</code> contains the rendered html files. These aren’t source files, so don’t have to be version controlled. We can add it to the <code>.gitignore</code>, which would look like:</p>
+<pre class="gitignore"><code>.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+/.quarto/
+_site/</code></pre>
+</div>
+</div>
+</div>
+<p>Now that we’re all set for our first commit we can start by staging the files, we could do that one-by-one by typing e.g.&nbsp;<code>git add index.qmd</code> and so on. To stage it and start tracking it. However, to stage all changed and untracked files we can use:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">--all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to check beforehand what you will stage, you can do a ‘dry run’ with:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">--all</span> <span class="at">-n</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And if you made a mistake and want to unstage a file:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rm <span class="at">--staged</span> file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>The command <code>git status</code> will now return all files in green, which that they are staged. The next step will be the commit itself:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"first commit"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The more descriptive you make your commits, the easier it is to find back a commit if you e.g.&nbsp;want to undo a change. It is generally advised to write in a tense that describes what the commit does, so e.g.</p>
 <ul>
-<li><p>Create notebooks and websites based on Markdown, and R with Quarto</p></li>
-<li><p>Use Git and GitHub to version control the generated content</p></li>
-<li><p>Host a website by making use of GitHub actions and GitHub pages</p></li>
-<li><p>Link the GitHub repository to Zenodo and give it a unique identifier (DOI)</p></li>
+<li>Fixes bug</li>
+<li>Adds image to main page</li>
+<li>Adds gene expression heatmap</li>
 </ul>
 </div>
 </div>
-<section id="course-schedule" class="level2">
-<h2 class="anchored" data-anchor-id="course-schedule">Course schedule</h2>
-<p>The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6 PM CEST</p>
-<table class="table">
-<caption>Day 1: Monday July 17th 2023</caption>
-<colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 70%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Block</th>
-<th>From</th>
-<th>To</th>
-<th>Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Block 1</td>
-<td>14:00</td>
-<td>16:00</td>
-<td><ul>
-<li><a href="slides/introduction.html#/title-slide">General introduction</a></li>
-</ul>
-<!-- -->
+</section>
+<section id="using-a-remote-repository" class="level2">
+<h2 class="anchored" data-anchor-id="using-a-remote-repository">Using a remote repository</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This sub chapter assumes that you can connect with GitHub through https. If you haven’t setup a PAT yet, follow the instructions <a href="https://happygitwithr.com/https-pat.html">here</a> as stated in the <a href="./course_preparations.html">course preparations</a>.</p>
+</div>
+</div>
+<p>We will now link our local repository to a remote repository on GitHub. First, we need to create an empty repository on GitHub. Do this by:</p>
 <ul>
-<li><a href="slides/introduction_quarto.html#/title-slide">Introduction to Quarto</a></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>BREAK</td>
-<td>16:00</td>
-<td>16:15</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Block 2</td>
-<td>16:15</td>
-<td>18:00</td>
-<td><ul>
-<li><a href="write_quarto.html">Exercises - Quarto</a></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>Day 2: Tuesday July 18th 2023</caption>
-<colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 70%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Block</th>
-<th>From</th>
-<th>To</th>
-<th>Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Block 3</td>
-<td>14:00</td>
-<td>16:00</td>
-<td><ul>
-<li><p><a href="slides/introduction_git.html#/title-slide">Introduction to git and GitHub</a></p></li>
-<li><p><a href="git_pages_zenodo.html">Exercises on git, GitHub and GitHub pages</a></p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>BREAK</td>
-<td>16:00</td>
-<td>16:15</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Block 4</td>
-<td>16:15</td>
-<td>18:00</td>
-<td><ul>
-<li><p><a href="git_pages_zenodo.html">Exercises on git, GitHub and GitHub pages</a> (continued)</p></li>
-<li><p><a href="slides/introduction_zenodo.html#/title-slide">Introduction to Zenodo and how to link GitHub repositories to Zenodo</a></p></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="course-description" class="level2">
-<h2 class="anchored" data-anchor-id="course-description">Course description</h2>
-<p>The FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research’s impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.</p>
-<p>Sharing and reusing are at the heart of the FAIR principles and should be a routine task of any (life) scientist today. To enable others to use or reproduce our findings and work, we need to provide all the information: the data, software and parameters used, scripts for the analysis, databases and their versions, and any required documentation and contextualisation. To have all this information and code together in a single file, many use markdown. Such a markdown file can be created in a simple way, and after that rendered in a single web page that is easy to share and read.</p>
-<p>The FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g.&nbsp;R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).</p>
-<p>By using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing.</p>
-</section>
-<section id="list-of-trainers" class="level2">
-<h2 class="anchored" data-anchor-id="list-of-trainers">List of trainers</h2>
+<li>Navigating to the <a href="https://github.com">GitHub website</a> and login</li>
+<li>Click the <code>+</code> sign at the top right and click <strong>New repository</strong></li>
+<li>Fill out the form:
 <ul>
-<li><strong>Dr.&nbsp;Geert van Geest</strong> - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland</li>
-<li><strong>Dr.&nbsp;Wandrille Duchemin</strong> - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the sciCORE core facility of the University of Basel, Switzerland</li>
-<li><strong>Dr.&nbsp;Lea Taylor</strong> - Bioinformatician, affiliated to the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland</li>
+<li>Choose a repository name. Typically this is the same name as your project directory</li>
+<li>We will host a website, so make sure it’s public</li>
+<li>Leave the rest unchecked, so no README file and no <code>.gitignore</code> (these are already in our local repository)</li>
+</ul></li>
+<li>Click the green button with <code>Create repository</code></li>
 </ul>
-</section>
-<section id="intended-audience-and-level" class="level2">
-<h2 class="anchored" data-anchor-id="intended-audience-and-level">Intended audience and level</h2>
-<p>This tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a <a href="https://github.com/join">GitHub account</a> and bring their laptops with either the latest versions of R, Rstudio and quarto installed. Find detailed instructions at <a href="precourse_preparations.qmd">precourse preparations</a>.</p>
+<p>After you’ve created the empty repository, GitHub is already giving you suggestions what to do. We’ve already created the commit, and our current branch is the main branch (check it with <code>git branch</code>).</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If running <code>git branch</code> does not return <code>main</code> (if so, it’s likely to return <code>master</code>), change the branch name with:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-m</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Now, the only thing we need to run is:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/USER/REPOSITORY.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Which tells the local repository to create a new remote connection called <code>origin</code> and to connect to the repository url. After that, we’ll synchronize with the remote repository with:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Which pushes the <code>main</code> branch from the local repository to the remote (named <code>origin</code>). The option <code>-u</code> makes sure that the <code>main</code> branch is used as default branch on the remote repository.</p>
+<p>To publish your site, you only need to run two commands. To make sure <code>_site</code> contains the latest version of your website:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To create (if it doesn’t exist) a branch named <code>gh-pages</code> push the website files there, and tell GitHub that the website will be there:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>🤝 congrats! You’ve just published your first website with an analysis report!</p>
 
 
 </section>

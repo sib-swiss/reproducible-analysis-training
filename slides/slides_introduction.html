@@ -12,7 +12,7 @@
 
   <meta name="author" content="Geert van Geest">
   <meta name="dcterms.date" content="2023-06-16">
-  <title>Make your research FAIRer - 4. Introduction to zenodo</title>
+  <title>Make your research FAIRer - 1. Make your research FAIRer with Quarto, GitHub and Zenodo</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -326,8 +326,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">4. Introduction to zenodo</h1>
-  <p class="subtitle">Getting started with Zenodo for long-term storage</p>
+  <h1 class="title">1. Make your research FAIRer with Quarto, GitHub and Zenodo</h1>
+  <p class="subtitle">Introduction of the tutorial</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -339,60 +339,155 @@ Geert van Geest
 
   <p class="date">2023-06-16</p>
 </section>
-<section id="data-repositories" class="slide level2">
-<h2>Data repositories</h2>
+<section id="why-reusable-research" class="slide level2">
+<h2>Why reusable research?</h2>
+<div>
+<ol type="1">
+<li class="fragment"><p>Redo your own experiments/analysis</p></li>
+<li class="fragment"><p>Colleagues can redo or reuse your experiments/analysis</p></li>
+<li class="fragment"><p>Get feedback - People will appreciate! + identify mistakes or bugs</p></li>
+<li class="fragment"><p>Because journals/funding agencies require you to..</p></li>
+</ol>
+</div>
+</section>
+<section id="why-can-reusable-data-analysis-be-difficult" class="slide level2">
+<h2>Why can reusable data analysis be difficult?</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
 <ul>
-<li><p>Deposit data/files to resources that are:</p>
+<li><p>Short term goal: get your results ASAP!</p></li>
+<li><p>Mid term goal: publish</p></li>
+<li><p>Long term goal: re-use and stand on the shoulder of giants!</p></li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>The longer it takes to reach goals ..</strong></p>
+</div>
+<div class="callout-content">
+<p>The less likely we are motivated to invest time ..</p>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="../img/giant_shoulder.png"></p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="software">Software</h3>
 <ul>
-<li><p><strong>Specific</strong>: best metadata annotations</p></li>
-<li><p><strong>Widely used</strong>: continuity and findability</p></li>
+<li><p>Developed continuously</p></li>
+<li><p>Developed by teams</p></li>
+<li><p>Developed for others</p></li>
+<li><p>Data is input</p></li>
+<li><p>Defined interface</p></li>
+<li><p>Extensive testing</p></li>
+<li><p><strong>Reusability is enforced</strong></p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="data-analysis">Data analysis</h3>
+<ul>
+<li><p>Developed ‘once’</p></li>
+<li><p>Usually single researcher</p></li>
+<li><p>Developer = user</p></li>
+<li><p>Developed for single dataset</p></li>
+<li><p>Users interact with code</p></li>
+<li><p>Mistakes can go undetected</p></li>
+<li><p><strong>Reusability is a choice</strong></p></li>
+</ul>
+</div>
+</div>
+
+<aside><div>
+<p>Slide from: Roland Krause ELIXIR-LU</p>
+</div></aside></section>
+<section id="think-like-a-software-engineer" class="slide level2">
+<h2>Think like a software engineer</h2>
+<ul>
+<li><p>Prepare to:</p>
+<ul>
+<li><p>Develop your code further and collaborate</p></li>
+<li><p>Let others reuse your code</p></li>
+<li><p>Allow for different data input</p></li>
 </ul></li>
-<li><p>Find a repository on <a href="https://www.re3data.org/">re3data.org</a> or <a href="https://fairsharing.org/">fairsharing.org</a></p></li>
-<li><p>If there’s no specific repo, there are general ones, e.g.:</p>
+<li><p>Important:</p>
 <ul>
-<li><p><a href="http://figshare.com/">figshare</a></p></li>
-<li><p><a href="http://osf.io/">Open Science Framework</a></p></li>
-<li><p><a href="http://zenodo.org/">Zenodo</a></p></li>
+<li><p>Good coding practices</p></li>
+<li><p>Documentation (this course)</p></li>
+<li><p>Version control (this course)</p></li>
+</ul></li>
+</ul>
+<p><img data-src="../img/software_engineer.jpg" class="absolute" style="top: 350px; right: 50px; width: 400px; "></p>
+</section>
+<section id="fair-principles" class="slide level2">
+<h2>FAIR principles</h2>
+<ul>
+<li><p><strong>Findable</strong></p></li>
+<li><p>Accessbile</p></li>
+<li><p>Interoperable</p></li>
+<li><p><strong>Reusable</strong></p></li>
+</ul>
+
+<aside><div>
+<p>More at: <a href="https://www.go-fair.org/fair-principles/">go-fair.org</a></p>
+</div></aside></section>
+<section id="how-to-apply-this" class="slide level2">
+<h2>How to apply this?</h2>
+<div>
+<ul>
+<li class="fragment"><p>Make your analysis reproducible and Reusable:</p>
+<ul>
+<li class="fragment"><p><strong>Code</strong>: style + context, version control (git)</p></li>
+<li class="fragment"><p><strong>Workflows</strong>: e.g.&nbsp;snakemake, nextflow</p></li>
+<li class="fragment"><p><strong>Environments</strong>: e.g.&nbsp;conda, renv, containers</p></li>
+</ul></li>
+<li class="fragment"><p>Make your analysis Findable:</p>
+<ul>
+<li class="fragment"><p>Unique identifier</p></li>
+<li class="fragment"><p>Long term storage</p></li>
+<li class="fragment"><p>Describe</p></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="this-tutorial" class="slide level2">
+<h2>This tutorial</h2>
+<ul>
+<li><p><strong>In</strong> this tutorial:</p>
+<ul>
+<li><p>Tell your story together with code by using <strong>Quarto</strong></p></li>
+<li><p>Version control your work with <strong>git and GitHub</strong></p></li>
+<li><p>Store it with <strong>Zenodo</strong></p></li>
+</ul></li>
+<li><p><strong>Not in</strong> this tutorial:</p>
+<ul>
+<li><p>Good coding practices</p></li>
+<li><p>Workflows</p></li>
+<li><p>Environments</p></li>
 </ul></li>
 </ul>
 </section>
-<section id="general-repositories---file-types" class="slide level2">
-<h2>General repositories - file types</h2>
+<section id="tutorial-overview" class="slide level2">
+<h2>Tutorial overview</h2>
 <ul>
-<li><p>Documents (e.g.&nbsp;pdf/MS Word)</p></li>
-<li><p>Images</p></li>
-<li><p>Presentations</p></li>
-<li><p>Spreadsheets</p></li>
-<li><p>File collections, e.g.&nbsp;tarballs</p></li>
-</ul>
-</section>
-<section id="zenodo" class="slide level2">
-<h2>Zenodo</h2>
+<li><p>Part 1:</p>
 <ul>
-<li><p>Initiative of CERN (you know, from the Large Hadron Collider), OpenAire and EU</p></li>
-<li><p>Aims for long-term storage</p></li>
-<li><p>Assign DOI and make digital objects citable</p></li>
-<li><p>Maximum file size: 50 Gb</p></li>
-<li><p>Versioning</p></li>
-<li><p>GitHub integration</p></li>
-</ul>
-<p><img data-src="https://about.zenodo.org/static/img/logos/zenodo-gradient-round.svg" class="absolute" style="top: 380px; right: 50px; width: 400px; "></p>
-</section>
-<section id="zenodo---github-integration" class="slide level2">
-<h2>Zenodo - GitHub integration</h2>
+<li><p>Creating notebooks with Quarto</p></li>
+<li><p>Basics of version control with git and GitHub</p></li>
+</ul></li>
+<li><p>Part 2:</p>
 <ul>
-<li><p>Create a record, version and DOI upon release</p></li>
-<li><p>Uses <a href="https://citation-file-format.github.io/"><code>CITATION.cff</code></a> for metadata annotation</p></li>
-<li><p>And/or <code>.zenodo.json</code> using the <a href="https://developers.zenodo.org/#deposit-metadata">deposity data schema</a>, with e.g.:</p>
-<ul>
-<li><p>Creators</p></li>
-<li><p>License</p></li>
-<li><p>Title</p></li>
-<li><p>Keywords</p></li>
-<li><p>..</p></li>
+<li><p>Using GitHub pages to create a website with Quarto</p></li>
+<li><p>Introduction to Zenodo</p></li>
 </ul></li>
 </ul>
-<p><img data-src="../img/zenodo_releases.png" class="absolute" style="top: 340px; right: 50px; width: 500px; "></p>
 
 <div class="footer footer-default">
 
@@ -609,44 +704,6 @@ Geert van Geest
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

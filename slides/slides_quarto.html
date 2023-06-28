@@ -12,7 +12,7 @@
 
   <meta name="author" content="Geert van Geest">
   <meta name="dcterms.date" content="2023-06-16">
-  <title>Make your research FAIRer - 4. Introduction to zenodo</title>
+  <title>Make your research FAIRer - 2. Introduction to Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -326,8 +391,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">4. Introduction to zenodo</h1>
-  <p class="subtitle">Getting started with Zenodo for long-term storage</p>
+  <h1 class="title">2. Introduction to Quarto</h1>
+  <p class="subtitle">Basics of writing with Quarto</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -339,60 +404,363 @@ Geert van Geest
 
   <p class="date">2023-06-16</p>
 </section>
-<section id="data-repositories" class="slide level2">
-<h2>Data repositories</h2>
+<section id="your-analysis-and-its-story" class="slide level2">
+<h2>Your analysis and its story</h2>
+<div>
 <ul>
-<li><p>Deposit data/files to resources that are:</p>
+<li class="fragment"><p>Recording your data analysis story (= the choices you make) is important</p></li>
+<li class="fragment"><p>A story is not easy to extract from code:</p>
 <ul>
-<li><p><strong>Specific</strong>: best metadata annotations</p></li>
-<li><p><strong>Widely used</strong>: continuity and findability</p></li>
+<li class="fragment"><p>Telling a story is not the main purpose of coding languages - the main goal is telling a computer what to do</p></li>
+<li class="fragment"><p>Not everybody can read code</p></li>
 </ul></li>
-<li><p>Find a repository on <a href="https://www.re3data.org/">re3data.org</a> or <a href="https://fairsharing.org/">fairsharing.org</a></p></li>
-<li><p>If there’s no specific repo, there are general ones, e.g.:</p>
+<li class="fragment"><p>Solution: tell your story together with your code!</p></li>
+</ul>
+</div>
+</section>
+<section id="story-code-notebooks" class="slide level2">
+<h2>Story + code = notebooks</h2>
 <ul>
-<li><p><a href="http://figshare.com/">figshare</a></p></li>
-<li><p><a href="http://osf.io/">Open Science Framework</a></p></li>
-<li><p><a href="http://zenodo.org/">Zenodo</a></p></li>
+<li><p>Some examples:</p>
+<ul>
+<li><p>Jupyter</p></li>
+<li><p>Google colab</p></li>
+<li><p>Rmarkdown</p></li>
+<li><p><strong>Quarto</strong></p></li>
+</ul></li>
+<li><p>Text is written in <a href="https://www.markdownguide.org/">markdown</a> <img data-src="https://raw.githubusercontent.com/dcurtis/markdown-mark/master/svg/markdown-mark.svg" height="40"></p></li>
+<li><p>Code is in (executable) code chunks</p></li>
+</ul>
+</section>
+<section id="project---based-working" class="slide level2">
+<h2>Project - based working</h2>
+<ul>
+<li><p>Work in projects to:</p>
+<ul>
+<li><p>Define goals and tasks</p></li>
+<li><p>Organize yourself</p></li>
+<li><p>Keep a good documentation</p></li>
+<li><p>Communicate about methods, goals, results etc.</p></li>
+</ul></li>
+<li><p>Word of advice: keep projects small!</p></li>
+</ul>
+</section>
+<section id="quarto-projects" class="slide level2">
+<h2>Quarto projects</h2>
+<ul>
+<li><p><strong>Documents</strong>: html, pdf and MS word</p></li>
+<li><p><strong>Presentations</strong>: Revealjs (html), Powerpoint (pptx) and Beamer (pdf/latex)</p></li>
+<li><p><strong>Websites</strong></p></li>
+<li><p><strong>Books</strong></p></li>
+</ul>
+</section>
+<section id="writing-quarto" class="slide level2">
+<h2>Writing quarto</h2>
+<ul>
+<li><p>Platforms:</p>
+<ul>
+<li><p>VSCode: most used code editor. Works well for rendering python documents.</p></li>
+<li><p>Rstudio: code editor for R. Works well for rendering R documents.</p></li>
+</ul></li>
+<li><p>Setup:</p>
+<ul>
+<li><p>Start with a template (Document, Presentation, Website or Book)</p></li>
+<li><p>Start coding!</p></li>
 </ul></li>
 </ul>
 </section>
-<section id="general-repositories---file-types" class="slide level2">
-<h2>General repositories - file types</h2>
+<section id="quarto-project-files" class="slide level2">
+<h2>Quarto project files</h2>
 <ul>
-<li><p>Documents (e.g.&nbsp;pdf/MS Word)</p></li>
-<li><p>Images</p></li>
-<li><p>Presentations</p></li>
-<li><p>Spreadsheets</p></li>
-<li><p>File collections, e.g.&nbsp;tarballs</p></li>
+<li><code>_quarto.yml</code>: YML file with project-wide settings</li>
+<li><code>.git</code>: Everything required for version control with git</li>
+<li><code>my_awesome_project.Rproj</code>: R-project based settings</li>
+<li><code>my_awesome_project.qmd</code>: Where the work is done!</li>
 </ul>
-</section>
-<section id="zenodo" class="slide level2">
-<h2>Zenodo</h2>
+
+<img data-src="../img/project_init.png" class="r-stretch quarto-figure-right"></section>
+<section id="a-qmd-file" class="slide level2">
+<h2>A <code>qmd</code> file</h2>
 <ul>
-<li><p>Initiative of CERN (you know, from the Large Hadron Collider), OpenAire and EU</p></li>
-<li><p>Aims for long-term storage</p></li>
-<li><p>Assign DOI and make digital objects citable</p></li>
-<li><p>Maximum file size: 50 Gb</p></li>
-<li><p>Versioning</p></li>
-<li><p>GitHub integration</p></li>
+<li>Front matter (YML format):</li>
 </ul>
-<p><img data-src="https://about.zenodo.org/static/img/logos/zenodo-gradient-round.svg" class="absolute" style="top: 380px; right: 50px; width: 400px; "></p>
+<pre><code>---
+title: "My awesome project"
+author: "Jan Janssen"
+date: 2023-06-20
+format:
+  html:
+    theme: cosmo
+    toc: true
+---</code></pre>
+<ul>
+<li><p>Markdown text</p></li>
+<li><p>Code blocks</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>two <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="zenodo---github-integration" class="slide level2">
-<h2>Zenodo - GitHub integration</h2>
+<section id="quarto-example" class="slide level2">
+<h2>Quarto example</h2>
+<p>Contents of <code>my_new_analysis.qmd</code>:</p>
+
+<img data-src="../img/quarto_code.png" class="r-stretch"></section>
+<section id="quarto-example-1" class="slide level2">
+<h2>Quarto example</h2>
+<p>After rendering:</p>
+
+<img data-src="../img/quarto_rendered.png" class="r-stretch"></section>
+<section id="markdown---text-formatting" class="slide level2">
+<h2>Markdown - text formatting</h2>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code>*italics*, **bold**, ***bold italics***</code></pre></td>
+<td><em>italics</em>, <strong>bold</strong>, <strong><em>bold italics</em></strong></td>
+</tr>
+<tr class="even">
+<td><pre><code>superscript^2^ / subscript~2~</code></pre></td>
+<td>superscript<sup>2</sup> / subscript<sub>2</sub></td>
+</tr>
+<tr class="odd">
+<td><pre><code>~~strikethrough~~</code></pre></td>
+<td><del>strikethrough</del></td>
+</tr>
+<tr class="even">
+<td><pre><code>`verbatim code`</code></pre></td>
+<td><code>verbatim code</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="markdown---heading" class="slide level2">
+<h2>Markdown - heading</h2>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown syntax</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code># Header 1</code></pre></td>
+<td><h1 id="header-1">Header 1</h1></td>
+</tr>
+<tr class="even">
+<td><pre><code>## Header 2</code></pre></td>
+<td><h2 id="header-2">Header 2</h2></td>
+</tr>
+<tr class="odd">
+<td><pre><code>### Header 3</code></pre></td>
+<td><h3 id="header-3">Header 3</h3></td>
+</tr>
+<tr class="even">
+<td><pre><code>#### Header 4</code></pre></td>
+<td><h4 id="header-4">Header 4</h4></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="markdown---lists" class="slide level2">
+<h2>Markdown - lists</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="unordered-list">Unordered list</h3>
+<pre><code>- item 1
+    - sub-item 1
+    - sum-item 2
+        - sub-sub-item 1</code></pre>
 <ul>
-<li><p>Create a record, version and DOI upon release</p></li>
-<li><p>Uses <a href="https://citation-file-format.github.io/"><code>CITATION.cff</code></a> for metadata annotation</p></li>
-<li><p>And/or <code>.zenodo.json</code> using the <a href="https://developers.zenodo.org/#deposit-metadata">deposity data schema</a>, with e.g.:</p>
+<li>item 1
 <ul>
-<li><p>Creators</p></li>
-<li><p>License</p></li>
-<li><p>Title</p></li>
-<li><p>Keywords</p></li>
-<li><p>..</p></li>
+<li>sub-item 1</li>
+<li>sum-item 2
+<ul>
+<li>sub-sub-item 1</li>
+</ul></li>
 </ul></li>
 </ul>
-<p><img data-src="../img/zenodo_releases.png" class="absolute" style="top: 340px; right: 50px; width: 500px; "></p>
+</div><div class="column" style="width:&quot;50%;">
+<h3 id="ordered-list">Ordered list</h3>
+<pre><code>1. ordered list
+2. item 2
+    i) sub-item 1
+         A.  sub-sub-item 1</code></pre>
+<ol type="1">
+<li>ordered list</li>
+<li>item 2
+<ol type="i">
+<li>sub-item 1
+<ol type="A">
+<li>sub-sub-item 1</li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="markdown---links" class="slide level2">
+<h2>Markdown - links</h2>
+<p><br></p>
+<pre><code>GO fair [website](https://www.go-fair.org)</code></pre>
+<p>GO fair <a href="https://www.go-fair.org">website</a></p>
+</section>
+<section id="markdown---images" class="slide level2">
+<h2>Markdown - images</h2>
+<pre><code>![logo of SIB](logo.svg){#fig-logo width="300" fig-align="left"}
+
+As you can see from @fig-logo, it is red.</code></pre>
+<p><br></p>
+<div id="fig-logo" class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="logo.svg" width="300"></p>
+<figcaption>Figure&nbsp;1: logo of SIB</figcaption>
+</figure>
+</div>
+<p>As you can see from <a href="#/markdown---images">Figure&nbsp;1</a>, it is red.</p>
+
+<aside><div>
+<p>More markdown basics <a href="https://quarto.org/docs/authoring/markdown-basics.html">here</a></p>
+</div></aside></section>
+<section id="writing-code---chunks" class="slide level2">
+<h2>Writing code - chunks</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb15-3"><a href="#cb15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4"></a>mtcars <span class="sc">|&gt;</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> drat, <span class="at">y =</span> mpg, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb15-7"><a href="#cb15-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="slides_quarto_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="writing-code---chunks-1" class="slide level2">
+<h2>Writing code - chunks</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="in">```{r}</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">head</span>(mtcars[, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]) <span class="sc">|&gt;</span> knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">mpg</th>
+<th style="text-align: right;">cyl</th>
+<th style="text-align: right;">disp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Mazda RX4</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mazda RX4 Wag</td>
+<td style="text-align: right;">21.0</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">160</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Datsun 710</td>
+<td style="text-align: right;">22.8</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">108</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hornet 4 Drive</td>
+<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">258</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hornet Sportabout</td>
+<td style="text-align: right;">18.7</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">360</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Valiant</td>
+<td style="text-align: right;">18.1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">225</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="markdown-code---quarto-magic" class="slide level2">
+<h2>Markdown &amp; code - quarto magic</h2>
+<div class="cell" data-layout-align="left">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="co">#| label: "fig-mpg-vs-drat"</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="co">#| fig-cap: "mpg versus drat"</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="co">#| fig-align: "left"</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb17-6"><a href="#cb17-6"></a>mtcars <span class="sc">|&gt;</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> drat, <span class="at">y =</span> mpg)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb17-8"><a href="#cb17-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="slides_quarto_files/figure-revealjs/fig-mpg-vs-drat-1.png" width="960" class="r-stretch quarto-figure-left"><p class="caption">Figure&nbsp;2: mpg versus drat</p><pre><code>From @fig-mpg-vs-drat you can see there is a positive correlation. </code></pre>
+<p>From <a href="#/fig-mpg-vs-drat">Figure&nbsp;2</a> you can see there is a positive correlation.</p>
+</section>
+<section id="more-quarto" class="slide level2">
+<h2>More Quarto</h2>
+<ul>
+<li><p>For example:</p>
+<ul>
+<li><p><a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">Citations</a></p></li>
+<li><p><a href="https://quarto.org/docs/visual-editor/#using-the-editor">Visual editor</a> - have a particular look at <strong>Insert Anything</strong></p></li>
+<li><p><a href="https://quarto.org/docs/interactive/shiny/">Integrate shiny</a></p></li>
+</ul></li>
+<li><p>Complete overview at <a href="https://quarto.org/docs/guide/" class="uri">https://quarto.org/docs/guide/</a></p></li>
+<li><p>More extensive ‘getting started’ tutorial at <a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a></p></li>
+</ul>
+</section>
+<section id="quarto---use-cases" class="slide level2">
+<h2>Quarto - use cases</h2>
+<ul>
+<li>You don’t have to be a LaTeX nerd to write a manuscript from source code 🎉 More info <a href="https://quarto.org/docs/journals/">here</a></li>
+<li>Create <a href="https://quarto.org/docs/presentations/">presentations</a> (including powerpoint exports!)</li>
+<li>Write your thesis in Quarto, more about <a href="https://quarto.org/docs/books/">books</a></li>
+<li>Maybe now is the time to get started with your <a href="https://ucsb-meds.github.io/creating-quarto-websites/">personal website</a></li>
+</ul>
+</section>
+<section id="exercises" class="slide level2">
+<h2>Exercises</h2>
+<p>Use Rstudio to:</p>
+<ul>
+<li><p>Initiate a Quarto website project</p></li>
+<li><p>Create a website of two pages with:</p>
+<ul>
+<li>Markdown text and images</li>
+<li>Code and plots</li>
+</ul></li>
+<li><p>Render locally</p></li>
+</ul>
 
 <div class="footer footer-default">
 
