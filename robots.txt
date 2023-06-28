@@ -1,1 +1,1 @@
-Sitemap: https://sib-swiss.github.io/reproducible-analysis/sitemap.xml
+Sitemap: https://sib-swiss.github.io/reproducible-analysis-training/sitemap.xml
