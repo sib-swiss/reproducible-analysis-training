@@ -200,7 +200,14 @@
     "href": "slides/slides_quarto.html#markdown-code---quarto-magic",
     "title": "2. Introduction to Quarto",
     "section": "Markdown & code - quarto magic",
-    "text": "Markdown & code - quarto magic\n\n```{r}\n#| label: \"fig-mpg-vs-drat\"\n#| fig-cap: \"mpg versus drat\"\n#| fig-align: \"left\"\nlibrary(ggplot2)\nmtcars |&gt;\n  ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()\n```\n\n\nFigure 2: mpg versus dratFrom @fig-mpg-vs-drat you can see there is a positive correlation. \nFrom Figure 2 you can see there is a positive correlation."
+    "text": "Markdown & code - quarto magic\n```{r}\n#| label: \"fig-mpg-vs-drat\"\n#| fig-cap: \"mpg versus drat\"\n#| fig-align: \"left\"\nlibrary(ggplot2)\nmtcars |&gt;\n  ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()\n```\n\nFrom @fig-mpg-vs-drat you can see there is a positive correlation. \n\nFigure 2: mpg versus dratFrom Figure 2 you can see there is a positive correlation."
+  },
+  {
+    "objectID": "slides/slides_quarto.html#quarto---use-cases",
+    "href": "slides/slides_quarto.html#quarto---use-cases",
+    "title": "2. Introduction to Quarto",
+    "section": "Quarto - use cases",
+    "text": "Quarto - use cases\n\nYou don’t have to be a LaTeX specialist to write a manuscript from source code 🎉 More info here\nCreate presentations (including powerpoint exports!)\nWrite your thesis in Quarto, more about books\nMaybe now is the time to get started with your personal website"
   },
   {
     "objectID": "slides/slides_quarto.html#more-quarto",
@@ -208,13 +215,6 @@
     "title": "2. Introduction to Quarto",
     "section": "More Quarto",
     "text": "More Quarto\n\nFor example:\n\nCitations\nVisual editor - have a particular look at Insert Anything\nIntegrate shiny\n\nComplete overview at https://quarto.org/docs/guide/\nMore extensive ‘getting started’ tutorial at https://quarto.org/docs/get-started/"
-  },
-  {
-    "objectID": "slides/slides_quarto.html#quarto---use-cases",
-    "href": "slides/slides_quarto.html#quarto---use-cases",
-    "title": "2. Introduction to Quarto",
-    "section": "Quarto - use cases",
-    "text": "Quarto - use cases\n\nYou don’t have to be a LaTeX nerd to write a manuscript from source code 🎉 More info here\nCreate presentations (including powerpoint exports!)\nWrite your thesis in Quarto, more about books\nMaybe now is the time to get started with your personal website"
   },
   {
     "objectID": "slides/slides_quarto.html#exercises",
@@ -235,28 +235,21 @@
     "href": "slides/slides_git.html#take-control-of-your-versions",
     "title": "3. Introduction to git, GitHub and GitHub pages",
     "section": "Take control of your versions!",
-    "text": "Take control of your versions!\n\nDare to break stuff ➡️ go back to any previous version\nDefine and describe changes\nCombine versions and suggested changes by pull requests and mergin\n\n\n\n\n\nflowchart LR\n  A(first version) --&gt; B(some changes)\n  B --&gt; C(Something experimental)\n  B --&gt; D(Bug fix)\n  C --&gt; E(Merge)\n  D --&gt; E\n  \n  linkStyle 1,3 stroke:red;"
+    "text": "Take control of your versions!\n\nDare to break stuff ➡️ go back to any previous version\nDefine and describe changes\nCombine versions and suggested changes by pull requests and merging\n\n\n\n\n\nflowchart LR\n  A(first version) --&gt; B(some changes)\n  B --&gt; C(Something experimental)\n  B --&gt; D(Bug fix)\n  C --&gt; E(Merge)\n  D --&gt; E\n  \n  linkStyle 1,3 stroke:red;"
   },
   {
     "objectID": "slides/slides_git.html#using-git-for-version-control",
     "href": "slides/slides_git.html#using-git-for-version-control",
     "title": "3. Introduction to git, GitHub and GitHub pages",
     "section": "Using git for version control",
-    "text": "Using git for version control\n\nAt the level of a directory, typically a project\nEverything is in .git/\nCommit: building block -&gt; defined step through versions\nBranch:\n\nindependent sequence of commits\ntypically merged with a main branch after work is done\n\n\n\n\n\n\nflowchart LR\n  A(first version) --commit--&gt; B(some changes)\n  B --new branch--&gt; C(Something experimental)\n  B --commit--&gt; D(Bug fix)\n  C --&gt; E((Merge commit))\n  D --&gt; E\n  \n  linkStyle 1,3 stroke:red;"
+    "text": "Using git for version control\n\nAt the level of a directory, typically a project\nEverything needed for version control is in .git/\nCommit: building block -&gt; defined step through versions\nBranch:\n\nindependent sequence of commits\ntypically merged with a main branch after work is done\n\n\n\n\n\n\nflowchart LR\n  A(first version) --commit--&gt; B(some changes)\n  B --new branch--&gt; C(Something experimental)\n  B --commit--&gt; D(Bug fix)\n  C --&gt; E((Merge commit))\n  D --&gt; E\n  \n  linkStyle 1,3 stroke:red;"
   },
   {
-    "objectID": "slides/slides_git.html#collaborating-with-git",
-    "href": "slides/slides_git.html#collaborating-with-git",
+    "objectID": "slides/slides_git.html#committing-changes---2-steps",
+    "href": "slides/slides_git.html#committing-changes---2-steps",
     "title": "3. Introduction to git, GitHub and GitHub pages",
-    "section": "Collaborating with git",
-    "text": "Collaborating with git\n\nSync with a remote (e.g. on GitHub)\nAll commits are associated with a user"
-  },
-  {
-    "objectID": "slides/slides_git.html#committing-changes",
-    "href": "slides/slides_git.html#committing-changes",
-    "title": "3. Introduction to git, GitHub and GitHub pages",
-    "section": "Committing changes",
-    "text": "Committing changes\n\nStage: Pick files with changes or files to be tracked\n\ngit add index.qmd\n\nCommit: Create a new ‘version’ with a good description\n\ngit commit -m \"Adds a paragraph\"\n\n\n\n\n\n\nStage and commit in one command:\n\n\ngit commit -am \"Adds a paragraph\""
+    "section": "Committing changes - 2 steps!",
+    "text": "Committing changes - 2 steps!\n\nStage: Pick files with changes or files to be tracked\n\ngit add index.qmd\n\nCommit: Create a new ‘version’ with a good description\n\ngit commit -m \"Adds a paragraph\"\n\n\n\n\n\n\nStage and commit in one command:\n\n\ngit commit -am \"Adds a paragraph\""
   },
   {
     "objectID": "slides/slides_git.html#project-status",
@@ -273,11 +266,18 @@
     "text": "Undoing changes\n\nRemove unstaged changes:\n\ngit restore index.qmd\n\nRetrieve a file version after a commit (unstaged in working directory):\n\ngit restore --source fa4f3deac index.qmd\n\nReset commits:\n\ngit reset [--soft|--hard|--mixed] fa4f3deac"
   },
   {
-    "objectID": "slides/slides_git.html#sync-with-remote",
-    "href": "slides/slides_git.html#sync-with-remote",
+    "objectID": "slides/slides_git.html#collaborating-with-git",
+    "href": "slides/slides_git.html#collaborating-with-git",
     "title": "3. Introduction to git, GitHub and GitHub pages",
-    "section": "Sync with remote",
-    "text": "Sync with remote\n\nCreate an empty repository on GitHub\nLink your local repository to the created repository:\n\ngit remote origin https://github.com/OWNER/REPOSITORY.git\n\nPush your local repository to the remote:\n\ngit push -u origin main"
+    "section": "Collaborating with git",
+    "text": "Collaborating with git\n\nSync with a remote (e.g. on GitHub)\nAll commits are associated with a user\nIf you’re collaborating:\n\nMake sure to sync with the remote regularly (git pull + git push)\nWork with branches"
+  },
+  {
+    "objectID": "slides/slides_git.html#creating-a-remote-repository",
+    "href": "slides/slides_git.html#creating-a-remote-repository",
+    "title": "3. Introduction to git, GitHub and GitHub pages",
+    "section": "Creating a remote repository",
+    "text": "Creating a remote repository\n\nCreate an empty repository on GitHub\nLink your local repository to the created repository:\n\ngit remote origin https://github.com/OWNER/REPOSITORY.git\n\nPush your local repository to the remote:\n\ngit push -u origin main"
   },
   {
     "objectID": "slides/slides_git.html#ignoring-files",
@@ -287,18 +287,18 @@
     "text": "Ignoring files\n\n.gitignore enables you to not version control files, e.g.:\n\noutput files\nuser-specific files\n\nFor a typical quarto project, that would be e.g.:\n\n_site/\n.Rproj.user"
   },
   {
-    "objectID": "slides/slides_git.html#creating-tags",
-    "href": "slides/slides_git.html#creating-tags",
+    "objectID": "slides/slides_git.html#tags-and-releases",
+    "href": "slides/slides_git.html#tags-and-releases",
     "title": "3. Introduction to git, GitHub and GitHub pages",
-    "section": "Creating tags",
-    "text": "Creating tags\n\nTag a special commit\nTypically this is done to create versions, e.g. v1.0.0\nWith git tag or creating a release in GitHub\nFor Zenodo: a DOI is linked to a tag"
+    "section": "Tags and releases",
+    "text": "Tags and releases\n\nTag a special commit\nTypically this is done to create versions, e.g. v1.0.0\nWith git tag or creating a release in GitHub\nFor Zenodo: a DOI is linked to a release\n\n\n\n\n\nflowchart LR\n  A(commit 1) --&gt; B(commit 2)\n  B --&gt; C(commit 3)\n  C --&gt; D(\"commit 4 \n        tag:v1.0.0\")\n  D --&gt; E(commit 5)\n  \n  style D fill:#f9f,stroke:#333,stroke-width:4px"
   },
   {
     "objectID": "slides/slides_git.html#quarto-and-github",
     "href": "slides/slides_git.html#quarto-and-github",
     "title": "3. Introduction to git, GitHub and GitHub pages",
     "section": "Quarto and GitHub",
-    "text": "Quarto and GitHub\n\nStore your raw files in the main branch\nUse quarto publish gh-pages:\n\nCreate a branch called gh-pages and push the rendered html files\nTell GitHub to use the files in gh-pages to host it as a website\n\nFind your website at OWNER.github.io/REPOSITORY"
+    "text": "Quarto and GitHub\n\nWork in the main branch - contains the source files\nUse quarto publish gh-pages to:\n\nCreate a branch called gh-pages and push the rendered html files\nTell GitHub to use the files in gh-pages to host it as a website\n\nFind your website at OWNER.github.io/REPOSITORY 🚀"
   },
   {
     "objectID": "slides/slides_git.html#quarto-and-github-actions",
@@ -312,7 +312,7 @@
     "href": "slides/slides_git.html#more-git",
     "title": "3. Introduction to git, GitHub and GitHub pages",
     "section": "More git",
-    "text": "More git\n\nSpend some time to learn it! You’ll earn it back quickly 💸\nSome nice resources:\n\nHappy git with R\nCarpentries course on git\n\nIf you’re new (or smart) consider using a git client, e.g.:\n\nRstudio git interface\nGitKraken\nGitHub Desktop"
+    "text": "More git\n\nSpend time to learn it! You’ll earn it back quickly 💸\nNice resources:\n\nHappy git with R\nCarpentries course on git\n\nIf you’re new (or smart) use a git client, e.g.:\n\nRstudio git interface\nGitKraken\nGitHub Desktop"
   },
   {
     "objectID": "slides/slides_zenodo.html#data-repositories",

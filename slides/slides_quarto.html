@@ -484,15 +484,15 @@ Geert van Geest
 <ul>
 <li>Front matter (YML format):</li>
 </ul>
-<pre><code>---
-title: "My awesome project"
-author: "Jan Janssen"
-date: 2023-06-20
-format:
-  html:
-    theme: cosmo
-    toc: true
----</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "My awesome project"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="an">author:</span><span class="co"> "Jan Janssen"</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="an">date:</span><span class="co"> 2023-06-20</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="an">format:</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="co">  html:</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="co">    theme: cosmo</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co">    toc: true</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p>Markdown text</p></li>
 <li><p>Code blocks</p></li>
@@ -584,10 +584,10 @@ format:
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="unordered-list">Unordered list</h3>
-<pre><code>- item 1
-    - sub-item 1
-    - sum-item 2
-        - sub-sub-item 1</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a><span class="ss">- </span>item 1</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="ss">    - </span>sub-item 1</span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="ss">    - </span>sum-item 2</span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="ss">        - </span>sub-sub-item 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>item 1
 <ul>
@@ -600,10 +600,10 @@ format:
 </ul>
 </div><div class="column" style="width:&quot;50%;">
 <h3 id="ordered-list">Ordered list</h3>
-<pre><code>1. ordered list
-2. item 2
-    i) sub-item 1
-         A.  sub-sub-item 1</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="ss">1. </span>ordered list</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="ss">2. </span>item 2</span>
+<span id="cb12-3"><a href="#cb12-3"></a>    i) sub-item 1</span>
+<span id="cb12-4"><a href="#cb12-4"></a>         A.  sub-sub-item 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol type="1">
 <li>ordered list</li>
 <li>item 2
@@ -620,14 +620,14 @@ format:
 <section id="markdown---links" class="slide level2">
 <h2>Markdown - links</h2>
 <p><br></p>
-<pre><code>GO fair [website](https://www.go-fair.org)</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1"></a>GO fair <span class="co">[</span><span class="ot">website</span><span class="co">](https://www.go-fair.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>GO fair <a href="https://www.go-fair.org">website</a></p>
 </section>
 <section id="markdown---images" class="slide level2">
 <h2>Markdown - images</h2>
-<pre><code>![logo of SIB](logo.svg){#fig-logo width="300" fig-align="left"}
-
-As you can see from @fig-logo, it is red.</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a><span class="al">![logo of SIB](logo.svg)</span>{#fig-logo width="300" fig-align="left"}</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a>As you can see from @fig-logo, it is red.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
 <div id="fig-logo" class="quarto-figure quarto-figure-left">
 <figure>
@@ -713,19 +713,27 @@ As you can see from @fig-logo, it is red.</code></pre>
 </section>
 <section id="markdown-code---quarto-magic" class="slide level2">
 <h2>Markdown &amp; code - quarto magic</h2>
-<div class="cell" data-layout-align="left">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1"></a><span class="in">```{r}</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a><span class="co">#| label: "fig-mpg-vs-drat"</span></span>
 <span id="cb17-3"><a href="#cb17-3"></a><span class="co">#| fig-cap: "mpg versus drat"</span></span>
 <span id="cb17-4"><a href="#cb17-4"></a><span class="co">#| fig-align: "left"</span></span>
 <span id="cb17-5"><a href="#cb17-5"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb17-6"><a href="#cb17-6"></a>mtcars <span class="sc">|&gt;</span></span>
 <span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> drat, <span class="at">y =</span> mpg)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
-<span id="cb17-8"><a href="#cb17-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-8"><a href="#cb17-8"></a><span class="in">```</span></span>
+<span id="cb17-9"><a href="#cb17-9"></a></span>
+<span id="cb17-10"><a href="#cb17-10"></a>From @fig-mpg-vs-drat you can see there is a positive correlation. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-</div>
-<img data-src="slides_quarto_files/figure-revealjs/fig-mpg-vs-drat-1.png" width="960" class="r-stretch quarto-figure-left"><p class="caption">Figure&nbsp;2: mpg versus drat</p><pre><code>From @fig-mpg-vs-drat you can see there is a positive correlation. </code></pre>
-<p>From <a href="#/fig-mpg-vs-drat">Figure&nbsp;2</a> you can see there is a positive correlation.</p>
+<img data-src="slides_quarto_files/figure-revealjs/fig-mpg-vs-drat-1.png" width="960" class="r-stretch quarto-figure-left"><p class="caption">Figure&nbsp;2: mpg versus drat</p><p>From <a href="#/fig-mpg-vs-drat">Figure&nbsp;2</a> you can see there is a positive correlation.</p>
+</section>
+<section id="quarto---use-cases" class="slide level2">
+<h2>Quarto - use cases</h2>
+<ul>
+<li>You don’t have to be a LaTeX specialist to write a manuscript from source code 🎉 More info <a href="https://quarto.org/docs/journals/">here</a></li>
+<li>Create <a href="https://quarto.org/docs/presentations/">presentations</a> (including powerpoint exports!)</li>
+<li>Write your thesis in Quarto, more about <a href="https://quarto.org/docs/books/">books</a></li>
+<li>Maybe now is the time to get started with your <a href="https://ucsb-meds.github.io/creating-quarto-websites/">personal website</a></li>
+</ul>
 </section>
 <section id="more-quarto" class="slide level2">
 <h2>More Quarto</h2>
@@ -738,15 +746,6 @@ As you can see from @fig-logo, it is red.</code></pre>
 </ul></li>
 <li><p>Complete overview at <a href="https://quarto.org/docs/guide/" class="uri">https://quarto.org/docs/guide/</a></p></li>
 <li><p>More extensive ‘getting started’ tutorial at <a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a></p></li>
-</ul>
-</section>
-<section id="quarto---use-cases" class="slide level2">
-<h2>Quarto - use cases</h2>
-<ul>
-<li>You don’t have to be a LaTeX nerd to write a manuscript from source code 🎉 More info <a href="https://quarto.org/docs/journals/">here</a></li>
-<li>Create <a href="https://quarto.org/docs/presentations/">presentations</a> (including powerpoint exports!)</li>
-<li>Write your thesis in Quarto, more about <a href="https://quarto.org/docs/books/">books</a></li>
-<li>Maybe now is the time to get started with your <a href="https://ucsb-meds.github.io/creating-quarto-websites/">personal website</a></li>
 </ul>
 </section>
 <section id="exercises" class="slide level2">

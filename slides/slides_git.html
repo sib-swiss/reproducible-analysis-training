@@ -360,7 +360,7 @@ Geert van Geest
 <ul>
 <li>Dare to break stuff ➡️ go back to any previous version</li>
 <li>Define and describe changes</li>
-<li>Combine versions and suggested changes by pull requests and mergin</li>
+<li>Combine versions and suggested changes by pull requests and merging</li>
 </ul>
 <div class="cell" data-reveal="true">
 <div class="cell-output-display">
@@ -384,7 +384,7 @@ Geert van Geest
 <h2>Using git for version control</h2>
 <ul>
 <li>At the level of a directory, typically a project</li>
-<li>Everything is in <code>.git/</code></li>
+<li>Everything needed for version control is in <code>.git/</code></li>
 <li><strong>Commit</strong>: building block -&gt; defined step through versions</li>
 <li><strong>Branch</strong>:
 <ul>
@@ -410,15 +410,8 @@ Geert van Geest
 </div>
 </div>
 </section>
-<section id="collaborating-with-git" class="slide level2">
-<h2>Collaborating with git</h2>
-<ul>
-<li>Sync with a remote (e.g.&nbsp;on GitHub)</li>
-<li>All commits are associated with a user</li>
-</ul>
-</section>
-<section id="committing-changes" class="slide level2">
-<h2>Committing changes</h2>
+<section id="committing-changes---2-steps" class="slide level2">
+<h2>Committing changes - 2 steps!</h2>
 <ol type="1">
 <li>Stage: Pick files with changes or files to be tracked</li>
 </ol>
@@ -467,8 +460,20 @@ Geert van Geest
 </ul>
 <p><code>git reset [--soft|--hard|--mixed] fa4f3deac</code></p>
 </section>
-<section id="sync-with-remote" class="slide level2">
-<h2>Sync with remote</h2>
+<section id="collaborating-with-git" class="slide level2">
+<h2>Collaborating with git</h2>
+<ul>
+<li><p>Sync with a remote (e.g.&nbsp;on GitHub)</p></li>
+<li><p>All commits are associated with a user</p></li>
+<li><p>If you’re collaborating:</p>
+<ul>
+<li><p>Make sure to sync with the remote regularly (<code>git pull</code> + <code>git push</code>)</p></li>
+<li><p>Work with branches</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="creating-a-remote-repository" class="slide level2">
+<h2>Creating a remote repository</h2>
 <ul>
 <li><p>Create an empty repository on GitHub</p></li>
 <li><p>Link your local repository to the created repository:</p></li>
@@ -494,25 +499,42 @@ Geert van Geest
 </ul></li>
 </ul>
 </section>
-<section id="creating-tags" class="slide level2">
-<h2>Creating tags</h2>
+<section id="tags-and-releases" class="slide level2">
+<h2>Tags and releases</h2>
 <ul>
 <li><p>Tag a special commit</p></li>
 <li><p>Typically this is done to create versions, e.g.&nbsp;<code>v1.0.0</code></p></li>
 <li><p>With <code>git tag</code> or creating a release in GitHub</p></li>
-<li><p>For Zenodo: a DOI is linked to a tag</p></li>
+<li><p>For Zenodo: a DOI is linked to a release</p></li>
 </ul>
+<div class="cell" data-reveal="true">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A(commit 1) --&gt; B(commit 2)
+  B --&gt; C(commit 3)
+  C --&gt; D("commit 4 
+        tag:v1.0.0")
+  D --&gt; E(commit 5)
+  
+  style D fill:#f9f,stroke:#333,stroke-width:4px
+</pre>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="quarto-and-github" class="slide level2">
 <h2>Quarto and GitHub</h2>
 <ul>
-<li><p>Store your raw files in the <code>main</code> branch</p></li>
-<li><p>Use <code>quarto publish gh-pages</code>:</p>
+<li><p>Work in the <code>main</code> branch - contains the source files</p></li>
+<li><p>Use <code>quarto publish gh-pages</code> to:</p>
 <ul>
 <li><p>Create a branch called <code>gh-pages</code> and push the rendered html files</p></li>
 <li><p>Tell GitHub to use the files in <code>gh-pages</code> to host it as a website</p></li>
 </ul></li>
-<li><p>Find your website at OWNER.github.io/REPOSITORY</p></li>
+<li><p>Find your website at OWNER.github.io/REPOSITORY 🚀</p></li>
 </ul>
 </section>
 <section id="quarto-and-github-actions" class="slide level2">
@@ -532,13 +554,13 @@ Geert van Geest
 <section id="more-git" class="slide level2">
 <h2>More git</h2>
 <ul>
-<li>Spend some time to learn it! You’ll earn it back quickly 💸</li>
-<li>Some nice resources:
+<li>Spend time to learn it! You’ll earn it back quickly 💸</li>
+<li>Nice resources:
 <ul>
 <li><a href="https://happygitwithr.com/">Happy git with R</a></li>
 <li><a href="http://swcarpentry.github.io/git-novice/">Carpentries course on git</a></li>
 </ul></li>
-<li>If you’re new (or smart) consider using a git client, e.g.:
+<li>If you’re new (or smart) use a git client, e.g.:
 <ul>
 <li>Rstudio git interface</li>
 <li><a href="https://www.gitkraken.com/">GitKraken</a></li>
