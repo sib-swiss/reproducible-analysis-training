@@ -92,7 +92,7 @@ format:
 
 -   Front matter (YML format):
 
-```         
+``` markdown
 ---
 title: "My awesome project"
 author: "Jan Janssen"
@@ -177,7 +177,7 @@ After rendering:
 ::: {.column width="50%"}
 ### Unordered list
 
-```         
+``` markdown        
 - item 1
     - sub-item 1
     - sum-item 2
@@ -193,7 +193,7 @@ After rendering:
 ::: {.column width="\"50%"}
 ### Ordered list
 
-```         
+``` markdown        
 1. ordered list
 2. item 2
     i) sub-item 1
@@ -211,7 +211,7 @@ After rendering:
 
 <br>
 
-```         
+``` markdown       
 GO fair [website](https://www.go-fair.org)
 ```
 
@@ -219,7 +219,7 @@ GO fair [website](https://www.go-fair.org)
 
 ## Markdown - images
 
-```         
+``` markdown         
 ![logo of SIB](logo.svg){#fig-logo width="300" fig-align="left"}
 
 As you can see from @fig-logo, it is red.
@@ -256,8 +256,8 @@ head(mtcars[, 1:3]) |> knitr::kable()
 
 ## Markdown & code - quarto magic
 
-```{r}
-#| echo: fenced
+```` markdown
+```{{r}}
 #| label: "fig-mpg-vs-drat"
 #| fig-cap: "mpg versus drat"
 #| fig-align: "left"
@@ -266,11 +266,27 @@ mtcars |>
   ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()
 ```
 
-```         
 From @fig-mpg-vs-drat you can see there is a positive correlation. 
+
+````
+
+```{r}
+#| label: "fig-mpg-vs-drat"
+#| fig-cap: "mpg versus drat"
+#| fig-align: "left"
+library(ggplot2)
+mtcars |>
+  ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()
 ```
 
 From @fig-mpg-vs-drat you can see there is a positive correlation.
+
+## Quarto - use cases
+
+-   You don't have to be a LaTeX specialist to write a manuscript from source code 🎉 More info [here](https://quarto.org/docs/journals/)
+-   Create [presentations](https://quarto.org/docs/presentations/) (including powerpoint exports!)
+-   Write your thesis in Quarto, more about [books](https://quarto.org/docs/books/)
+-   Maybe now is the time to get started with your [personal website](https://ucsb-meds.github.io/creating-quarto-websites/)
 
 ## More Quarto
 
@@ -285,13 +301,6 @@ From @fig-mpg-vs-drat you can see there is a positive correlation.
 -   Complete overview at <https://quarto.org/docs/guide/>
 
 -   More extensive 'getting started' tutorial at <https://quarto.org/docs/get-started/>
-
-## Quarto - use cases
-
--   You don't have to be a LaTeX nerd to write a manuscript from source code 🎉 More info [here](https://quarto.org/docs/journals/)
--   Create [presentations](https://quarto.org/docs/presentations/) (including powerpoint exports!)
--   Write your thesis in Quarto, more about [books](https://quarto.org/docs/books/)
--   Maybe now is the time to get started with your [personal website](https://ucsb-meds.github.io/creating-quarto-websites/)
 
 ## Exercises
 
