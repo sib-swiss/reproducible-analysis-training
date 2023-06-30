@@ -24,8 +24,8 @@ The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6
 +---------+--------+--------+----------------------------------------------------------------------------+
 | Block   | From   | To     | Topic                                                                      |
 +=========+========+========+============================================================================+
-| Block 1 | 14:00  | 16:00  | -   [General introduction](slides/introduction.html#/title-slide)          |
-|         |        |        | -   [Introduction to Quarto](slides/introduction_quarto.html#/title-slide) |
+| Block 1 | 14:00  | 16:00  | -   [General introduction](slides/slides_introduction.html#/title-slide)   |
+|         |        |        | -   [Introduction to Quarto](slides/slides_quarto.html#/title-slide)       |
 +---------+--------+--------+----------------------------------------------------------------------------+
 | BREAK   | 16:00  | 16:15  |                                                                            |
 +---------+--------+--------+----------------------------------------------------------------------------+
@@ -37,7 +37,7 @@ The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6
 +---------+-------+-------+---------------------------------------------------------------------------------+
 | Block   | From  | To    | Topic                                                                           |
 +=========+=======+=======+=================================================================================+
-| Block 3 | 14:00 | 16:00 | -   [Introduction to git and GitHub](slides/introduction_git.html#/title-slide) |
+| Block 3 | 14:00 | 16:00 | -   [Introduction to git and GitHub](slides/slides_git.html#/title-slide)       |
 |         |       |       |                                                                                 |
 |         |       |       | -   [Exercises on git, GitHub and GitHub pages](git_pages_zenodo.html)          |
 +---------+-------+-------+---------------------------------------------------------------------------------+
