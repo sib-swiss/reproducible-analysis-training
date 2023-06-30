@@ -27,14 +27,17 @@ format:
 
 ::: columns
 ::: {.column width="60%"}
--   Short term goal: get your results ASAP!
+::: incremental
+-   Short term goal: get your results ASAP
 
 -   Mid term goal: publish
 
 -   Long term goal: re-use and stand on the shoulder of giants!
 
+
 ::: {.callout-tip title="The longer it takes to reach goals .. "}
 The less likely we are motivated to invest time ..
+:::
 :::
 :::
 
@@ -123,7 +126,7 @@ Slide from: Roland Krause ELIXIR-LU
 More at: [go-fair.org](https://www.go-fair.org/fair-principles/)
 :::
 
-## How to apply this?
+## How to apply the FAIR principles in analysis?
 
 ::: incremental
 -   Make your analysis reproducible and Reusable:
