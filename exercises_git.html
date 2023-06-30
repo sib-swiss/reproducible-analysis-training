@@ -226,7 +226,7 @@ Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Check out the untracked files with <code>git status</code> do all these files need to be version-controlled? If not, add the files/directories you don’t want to version control to the <code>.gitignore</code></p>
+<p>Check out the untracked files with <code>git status</code>. Do all these files need to be version-controlled? If not, add the files/directories you don’t want to version control to the <code>.gitignore</code></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -252,7 +252,7 @@ _site/</code></pre>
 </div>
 </div>
 </div>
-<p>Now that we’re all set for our first commit we can start by staging the files, we could do that one-by-one by typing e.g.&nbsp;<code>git add index.qmd</code> and so on. To stage it and start tracking it. However, to stage all changed and untracked files we can use:</p>
+<p>Now that we’re all set for our first commit we can start by staging the files. We could do that one-by-one by typing e.g.&nbsp;<code>git add index.qmd</code>, <code>git add _quarto.yml</code> and so on. However, to stage all changed and untracked files we can use:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add <span class="at">--all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -270,7 +270,7 @@ Note
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> rm <span class="at">--staged</span> file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>The command <code>git status</code> will now return all files in green, which that they are staged. The next step will be the commit itself:</p>
+<p>The command <code>git status</code> will now return all files in green, which means that they are staged. The next step will be the commit itself:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"first commit"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -282,7 +282,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The more descriptive you make your commits, the easier it is to find back a commit if you e.g.&nbsp;want to undo a change. It is generally advised to write in a tense that describes what the commit does, so e.g.</p>
+<p>The more descriptive you make your commits, the easier it is to find back a commit. It is generally advised to write in a tense that describes what the commit does, so e.g.</p>
 <ul>
 <li>Fixes bug</li>
 <li>Adds image to main page</li>
@@ -308,17 +308,17 @@ Warning
 </div>
 <p>We will now link our local repository to a remote repository on GitHub. First, we need to create an empty repository on GitHub. Do this by:</p>
 <ul>
-<li>Navigating to the <a href="https://github.com">GitHub website</a> and login</li>
-<li>Click the <code>+</code> sign at the top right and click <strong>New repository</strong></li>
-<li>Fill out the form:
+<li><p>Navigating to the <a href="https://github.com">GitHub website</a> and login</p></li>
+<li><p>Click the <code>+</code> sign at the top right and click <strong>New repository</strong></p></li>
+<li><p>Fill out the form:</p>
 <ul>
-<li>Choose a repository name. Typically this is the same name as your project directory</li>
-<li>We will host a website, so make sure it’s public</li>
-<li>Leave the rest unchecked, so no README file and no <code>.gitignore</code> (these are already in our local repository)</li>
+<li><p>Choose a repository name. Typically this is the same name as your project directory</p></li>
+<li><p>We will host a website, so make sure it’s public</p></li>
+<li><p>Leave the rest unchecked, so no README file and no <code>.gitignore</code> (these are already in our local repository)</p></li>
 </ul></li>
-<li>Click the green button with <code>Create repository</code></li>
+<li><p>Click the green button with <code>Create repository</code></p></li>
 </ul>
-<p>After you’ve created the empty repository, GitHub is already giving you suggestions what to do. We’ve already created the commit, and our current branch is the main branch (check it with <code>git branch</code>).</p>
+<p>After you have created the empty repository, GitHub is already giving you suggestions what to do. We have already created the commit, and our current branch is the main branch (check it with <code>git branch</code>).</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -333,15 +333,21 @@ Caution
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-m</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>Now, the only thing we need to run is:</p>
+<p>To make a new connection called <code>origin</code> between the local and remote repositories we run:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/USER/REPOSITORY.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Which tells the local repository to create a new remote connection called <code>origin</code> and to connect to the repository url. After that, we’ll synchronize with the remote repository with:</p>
+<p>After that, we’ll synchronize with the remote repository with:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Which pushes the <code>main</code> branch from the local repository to the remote (named <code>origin</code>). The option <code>-u</code> makes sure that the <code>main</code> branch is used as default branch on the remote repository.</p>
 <p>To publish your site, you only need to run two commands. To make sure <code>_site</code> contains the latest version of your website:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To create (if it doesn’t exist) a branch named <code>gh-pages</code> push the website files there, and tell GitHub that the website will be there:</p>
+<p>And after that:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command will:</p>
+<ul>
+<li><p>Create a branch named <code>gh-pages</code> (if it doesn’t exist)</p></li>
+<li><p>Push the website files to <code>gh-pages</code></p></li>
+<li><p>Change the settings in your GitHub repository to tell that the website will be in <code>gh-pages</code></p></li>
+</ul>
 <p>🤝 congrats! You’ve just published your first website with an analysis report!</p>
 
 
