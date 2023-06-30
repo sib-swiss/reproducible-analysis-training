@@ -42,9 +42,9 @@ git push
 ```
 :::
 
-Now that we have added metadata to the repository, we can store it in Zenodo:
+Now that we have added metadata to the repository, we can link our repository to Zenodo:
 
--   Browse to [zenodo.org](https://zenodo.org) and sign up and use your GitHub account.
+-   Browse to [zenodo.org](https://zenodo.org) and sign up by using your GitHub account.
 
 -   On the top right, click the drop-down menu and select *GitHub*.
 
@@ -65,7 +65,13 @@ Now that we have added metadata to the repository, we can store it in Zenodo:
 ::: callout-important
 ## Exercise
 
-Off course we want to show off with the DOI we just assigned. In order to do that, click the DOI badge and copy-paste the markdown syntax to `index.qmd` to show it on the main page of your website. Now, stage, commit and push the change. After that, render and publish the website.
+Off course we want to show off with the DOI we just assigned. In order to do that:
+
+- Click the DOI badge. A window will appear with code chunks that you can use to display the badge.
+
+- Copy-paste the markdown syntax to your main page (`index.qmd`) to show it on your website. 
+
+- Stage, commit and push the change. After that, render and publish the website.
 :::
 
 ::: {.callout-tip collapse="true"}
