@@ -53,6 +53,21 @@ The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6
 
 : Day 2: Tuesday July 18th 2023 {tbl-colwidths="\[10,10,10,70\]"}
 
+## List of trainers
+
+-   **Dr. Geert van Geest** - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland
+-   **Dr. Wandrille Duchemin** - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the sciCORE core facility of the University of Basel, Switzerland
+-   **Dr. Lea Taylor** - Bioinformatician, affiliated to the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland
+
+## Acknowledgements
+
+This course is inspired and based on the following material:
+
+- Data Management and Data Stewardship course at the University of Luxemburg (Roland Krause & Milena Zizovic)
+- [Getting Started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/) course at rstudio::conf 2022 (Tom Mock)
+- [Happy git with R](https://happygitwithr.com/) course (Jennifer Bryan)
+
+
 ## Course description
 
 The FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research's impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.
@@ -62,12 +77,6 @@ Sharing and reusing are at the heart of the FAIR principles and should be a rout
 The FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g. R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).
 
 By using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing.
-
-## List of trainers
-
--   **Dr. Geert van Geest** - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland
--   **Dr. Wandrille Duchemin** - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the sciCORE core facility of the University of Basel, Switzerland
--   **Dr. Lea Taylor** - Bioinformatician, affiliated to the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland
 
 ## Intended audience and level
 
