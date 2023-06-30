@@ -25,9 +25,6 @@ The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6
 | Block   | From   | To     | Topic                                                                      |
 +=========+========+========+============================================================================+
 | Block 1 | 14:00  | 16:00  | -   [General introduction](slides/introduction.html#/title-slide)          |
-|         |        |        |                                                                            |
-|         |        |        | <!-- -->                                                                   |
-|         |        |        |                                                                            |
 |         |        |        | -   [Introduction to Quarto](slides/introduction_quarto.html#/title-slide) |
 +---------+--------+--------+----------------------------------------------------------------------------+
 | BREAK   | 16:00  | 16:15  |                                                                            |
@@ -37,19 +34,19 @@ The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6
 
 : Day 1: Monday July 17th 2023 {tbl-colwidths="\[10,10,10,70\]"}
 
-+---------+-------+-------+--------------------------------------------------------------------------------------------------------------------------+
-| Block   | From  | To    | Topic                                                                                                                    |
-+=========+=======+=======+==========================================================================================================================+
-| Block 3 | 14:00 | 16:00 | -   [Introduction to git and GitHub](slides/introduction_git.html#/title-slide)                                          |
-|         |       |       |                                                                                                                          |
-|         |       |       | -   [Exercises on git, GitHub and GitHub pages](git_pages_zenodo.html)                                                   |
-+---------+-------+-------+--------------------------------------------------------------------------------------------------------------------------+
-| BREAK   | 16:00 | 16:15 |                                                                                                                          |
-+---------+-------+-------+--------------------------------------------------------------------------------------------------------------------------+
-| Block 4 | 16:15 | 18:00 | -   [Exercises on git, GitHub and GitHub pages](git_pages_zenodo.html) (continued)                                       |
-|         |       |       |                                                                                                                          |
-|         |       |       | -   [Introduction to Zenodo and how to link GitHub repositories to Zenodo](slides/introduction_zenodo.html#/title-slide) |
-+---------+-------+-------+--------------------------------------------------------------------------------------------------------------------------+
++---------+-------+-------+---------------------------------------------------------------------------------+
+| Block   | From  | To    | Topic                                                                           |
++=========+=======+=======+=================================================================================+
+| Block 3 | 14:00 | 16:00 | -   [Introduction to git and GitHub](slides/introduction_git.html#/title-slide) |
+|         |       |       |                                                                                 |
+|         |       |       | -   [Exercises on git, GitHub and GitHub pages](git_pages_zenodo.html)          |
++---------+-------+-------+---------------------------------------------------------------------------------+
+| BREAK   | 16:00 | 16:15 |                                                                                 |
++---------+-------+-------+---------------------------------------------------------------------------------+
+| Block 4 | 16:15 | 18:00 | -   [Introduction to Zenodo](slides/slides_zenodo.qmd)                          |
+|         |       |       |                                                                                 |
+|         |       |       | -   [Exercises Zenodo](exercises_zenodo.qmd)                                    |
++---------+-------+-------+---------------------------------------------------------------------------------+
 
 : Day 2: Tuesday July 18th 2023 {tbl-colwidths="\[10,10,10,70\]"}
 
@@ -63,10 +60,9 @@ The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6
 
 This course is inspired and based on the following material:
 
-- Data Management and Data Stewardship course at the University of Luxemburg (Roland Krause & Milena Zizovic)
-- [Getting Started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/) course at rstudio::conf 2022 (Tom Mock)
-- [Happy git with R](https://happygitwithr.com/) course (Jennifer Bryan)
-
+-   Data Management and Data Stewardship course at the University of Luxemburg (Roland Krause & Milena Zizovic)
+-   [Getting Started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/) course at rstudio::conf 2022 (Tom Mock)
+-   [Happy git with R](https://happygitwithr.com/) course (Jennifer Bryan)
 
 ## Course description
 
