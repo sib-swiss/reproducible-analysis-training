@@ -4,7 +4,7 @@ title: "Course preparations"
 
 ## R and Rstudio
 
-Follow the instructions [here](https://posit.co/download/rstudio-desktop/) to download and install R and RStudio. We're going to need R version > 4.1.2 and the latest version of RStudio, so if you were planning to update, now is a good time to do so!
+Follow the instructions [here](https://posit.co/download/rstudio-desktop/) to download and install R and RStudio. We're going to need R version \> 4.1.2 and the latest version of RStudio, so if you were planning to update, now is a good time to do so!
 
 ### Quarto
 
@@ -21,7 +21,14 @@ install.packages(c("babynames", "knitr", "dplyr", "ggplot2"))
 
 ## Git and GitHub
 
-To install and/or update git, follow the instructions of Jennifer Bryan's [happy git with R](https://happygitwithr.com/install-git.html). 
+To install and/or update git, follow the instructions of Jennifer Bryan's [happy git with R](https://happygitwithr.com/install-git.html).
 
-If you haven't already got one, make an account on [GitHub](https://github.com/join), and make sure you can push and pull to GitHub either through https or with ssh key. If you haven't set that up yet, set up a [Personal Access Token](https://happygitwithr.com/https-pat.html) to enable a connection through https. 
+If you haven't already got one, make an account on [GitHub](https://github.com/join), and make sure you can push and pull to GitHub either through https or with an ssh key. If you haven't set that up yet, set up a [Personal Access Token](https://happygitwithr.com/https-pat.html) to enable a connection through https. In short, this means that you have to:
 
+-   Go to <https://github.com/settings/tokens> and click *Generate new token* \> *New personal access token (classic)*
+
+-   Write a note, give it an expiration date and select the full **repo** scope
+
+-   Click **Generate token**
+
+-   If git asks for a password, use the PAT as your password
