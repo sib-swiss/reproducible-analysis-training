@@ -31,7 +31,7 @@ git init
 ::: callout-important
 ## Exercise
 
-Check out the untracked files with `git status` do all these files need to be version-controlled? If not, add the files/directories you don't want to version control to the `.gitignore`
+Check out the untracked files with `git status`. Do all these files need to be version-controlled? If not, add the files/directories you don't want to version control to the `.gitignore`
 :::
 
 ::: {.callout-tip collapse="true"}
@@ -50,7 +50,7 @@ _site/
 ```
 :::
 
-Now that we're all set for our first commit we can start by staging the files, we could do that one-by-one by typing e.g. `git add index.qmd` and so on. To stage it and start tracking it. However, to stage all changed and untracked files we can use:
+Now that we're all set for our first commit we can start by staging the files. We could do that one-by-one by typing e.g. `git add index.qmd`, `git add _quarto.yml` and so on. However, to stage all changed and untracked files we can use:
 
 ``` bash
 git add --all
@@ -70,14 +70,14 @@ git rm --staged file.txt
 ```
 :::
 
-The command `git status` will now return all files in green, which that they are staged. The next step will be the commit itself:
+The command `git status` will now return all files in green, which means that they are staged. The next step will be the commit itself:
 
 ``` bash
 git commit -m "first commit"
 ```
 
 ::: callout-note
-The more descriptive you make your commits, the easier it is to find back a commit if you e.g. want to undo a change. It is generally advised to write in a tense that describes what the commit does, so e.g.
+The more descriptive you make your commits, the easier it is to find back a commit. It is generally advised to write in a tense that describes what the commit does, so e.g.
 
 -   Fixes bug
 -   Adds image to main page
@@ -93,14 +93,20 @@ This sub chapter assumes that you can connect with GitHub through https. If you 
 We will now link our local repository to a remote repository on GitHub. First, we need to create an empty repository on GitHub. Do this by:
 
 -   Navigating to the [GitHub website](https://github.com) and login
+
 -   Click the `+` sign at the top right and click **New repository**
+
 -   Fill out the form:
+
     -   Choose a repository name. Typically this is the same name as your project directory
+    
     -   We will host a website, so make sure it's public
+    
     -   Leave the rest unchecked, so no README file and no `.gitignore` (these are already in our local repository)
+    
 -   Click the green button with `Create repository`
 
-After you've created the empty repository, GitHub is already giving you suggestions what to do. We've already created the commit, and our current branch is the main branch (check it with `git branch`).
+After you have created the empty repository, GitHub is already giving you suggestions what to do. We have already created the commit, and our current branch is the main branch (check it with `git branch`).
 
 ::: callout-caution
 If running `git branch` does not return `main` (if so, it's likely to return `master`), change the branch name with:
@@ -110,13 +116,13 @@ git branch -m main
 ```
 :::
 
-Now, the only thing we need to run is:
+To make a new connection called `origin` between the local and remote repositories we run:
 
 ``` bash
 git remote add origin https://github.com/USER/REPOSITORY.git
 ```
 
-Which tells the local repository to create a new remote connection called `origin` and to connect to the repository url. After that, we'll synchronize with the remote repository with:
+After that, we'll synchronize with the remote repository with:
 
 ``` bash
 git push -u origin main
@@ -130,10 +136,18 @@ To publish your site, you only need to run two commands. To make sure `_site` co
 quarto render
 ```
 
-To create (if it doesn't exist) a branch named `gh-pages` push the website files there, and tell GitHub that the website will be there:
+And after that:
 
 ``` bash
 quarto publish gh-pages
 ```
+
+This command will:
+
+- Create a branch named `gh-pages` (if it doesn't exist)  
+
+- Push the website files to `gh-pages`
+
+- Change the settings in your GitHub repository to tell that the website will be in `gh-pages`
 
 🤝 congrats! You've just published your first website with an analysis report!
