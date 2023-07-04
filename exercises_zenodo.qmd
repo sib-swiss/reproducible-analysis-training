@@ -2,7 +2,7 @@
 title: "Zenodo"
 ---
 
-Before storing our repository in Zenodo, we will add some metadata to it, so our material is easily identifiable in Zenodo. We do this by adding a file called `.zenodo.json` to our repository. Here's an example of such a file:
+Before storing our repository in Zenodo, we will add some metadata to it, so our material is easily identifiable in Zenodo. We do this by adding a file called `.zenodo.json` to our repository, a [json](https://en.wikipedia.org/wiki/JSON) file specifying the [different metadata attributes](https://developers.zenodo.org/#deposit-metadata) for zenodo. Here's an example of such a file:
 
 ``` json
 {
