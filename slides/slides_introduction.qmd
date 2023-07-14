@@ -14,13 +14,17 @@ format:
 ## Why reusable research?
 
 ::: incremental
-1.  Redo your own experiments/analysis
+1.  Because journals/funding agencies require you to..
 
-2.  Colleagues can redo or reuse your experiments/analysis
+2.  Share with others:
 
-3.  Get feedback - People will appreciate! + identify mistakes or bugs
+    -   People will appreciate!
 
-4.  Because journals/funding agencies require you to..
+    -   Identify mistakes or bugs
+
+3.  Colleagues can redo or reuse your experiments/analysis
+
+4.  [Redo your own experiments/analysis]{.underline}
 :::
 
 ## Why can reusable data analysis be difficult?
@@ -33,11 +37,6 @@ format:
 -   Mid term goal: publish
 
 -   Long term goal: re-use and stand on the shoulder of giants!
-
-
-::: {.callout-tip title="The longer it takes to reach goals .. "}
-The less likely we are motivated to invest time ..
-:::
 :::
 :::
 
@@ -45,6 +44,36 @@ The less likely we are motivated to invest time ..
 ![](../img/giant_shoulder.png)
 :::
 :::
+
+------------------------------------------------------------------------
+
+## Make it a habit
+
+::: columns
+::: {.column width="60%"}
+::: {.callout-tip title="The longer it takes to reach goals .. "}
+The less likely we are motivated to invest time ..
+:::
+
+-   Like dieting, exercise, proper sleeping..
+
+-   Be successful by making reproducibility a habit!
+:::
+
+::: {.column width="40%"}
+![](../img/healthy_food.jpg)
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Data analysis & software development have similarities
+
+-   Both require programming skills
+
+-   Both use version control
+
+-   But there are differences ..
 
 ------------------------------------------------------------------------
 
@@ -112,7 +141,12 @@ Slide from: Roland Krause ELIXIR-LU
 
 ![](../img/software_engineer.jpg){.absolute top="350" right="50" width="400"}
 
+------------------------------------------------------------------------
+
 ## FAIR principles
+
+::: columns
+::: {.column width="40%"}
 
 -   **Findable**
 
@@ -121,10 +155,20 @@ Slide from: Roland Krause ELIXIR-LU
 -   Interoperable
 
 -   **Reusable**
+:::
+
+::: {.column width="60%"}
+![](../img/fair_image.png)
+:::
+:::
 
 ::: aside
 More at: [go-fair.org](https://www.go-fair.org/fair-principles/)
+
+Image from: European Commission, Directorate-General for Research and Innovation, Turning FAIR into reality, Publications Office, 2018, https://data.europa.eu/doi/10.2777/1524
 :::
+
+------------------------------------------------------------------------
 
 ## How to apply the FAIR principles in analysis?
 
@@ -146,6 +190,8 @@ More at: [go-fair.org](https://www.go-fair.org/fair-principles/)
     -   Describe
 :::
 
+------------------------------------------------------------------------
+
 ## This tutorial
 
 -   **In** this tutorial:
@@ -163,6 +209,8 @@ More at: [go-fair.org](https://www.go-fair.org/fair-principles/)
     -   Workflows
 
     -   Environments
+
+------------------------------------------------------------------------
 
 ## Tutorial overview
 
