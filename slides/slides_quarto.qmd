@@ -27,6 +27,8 @@ format:
 
 ## Question
 
+![](../img/qr_vevox.svg)
+
 ## Story + code = notebooks
 
 -   Some examples:

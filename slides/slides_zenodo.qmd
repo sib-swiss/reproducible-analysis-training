@@ -12,6 +12,10 @@ format:
     link-external-newwindow: true
 ---
 
+## Question
+
+![](../img/qr_vevox.svg)
+
 ## Data repositories
 
 -   Deposit data/files to resources that are:
