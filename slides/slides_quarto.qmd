@@ -25,11 +25,13 @@ format:
 -   **Solution**: tell your story together with your code!
 :::
 
+## Question
+
 ## Story + code = notebooks
 
 -   Some examples:
 
-    -   Jupyter
+    -   JupyterLab / notebook
 
     -   Google colab
 
