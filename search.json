@@ -98,11 +98,18 @@
     "text": "Your analysis and its story 📖\n\n\nRecording your data analysis story (= the choices you make) is important ⚠️\nA story is not easy to extract from code:\n\nTelling a story is not the main purpose of coding languages (it’s telling a computer what to do)\nNot everybody can read code\n\nSolution: tell your story together with your code!"
   },
   {
+    "objectID": "slides/slides_quarto.html#question",
+    "href": "slides/slides_quarto.html#question",
+    "title": "2. Introduction to Quarto",
+    "section": "Question",
+    "text": "Question"
+  },
+  {
     "objectID": "slides/slides_quarto.html#story-code-notebooks",
     "href": "slides/slides_quarto.html#story-code-notebooks",
     "title": "2. Introduction to Quarto",
     "section": "Story + code = notebooks",
-    "text": "Story + code = notebooks\n\nSome examples:\n\nJupyter\nGoogle colab\nRmarkdown\nQuarto\n\nText is written in markdown \nCode is in (executable) code chunks"
+    "text": "Story + code = notebooks\n\nSome examples:\n\nJupyterLab / notebook\nGoogle colab\nRmarkdown\nQuarto\n\nText is written in markdown \nCode is in (executable) code chunks"
   },
   {
     "objectID": "slides/slides_quarto.html#project---based-working",
@@ -245,6 +252,13 @@
     "text": "Take control of your versions!\n\nDare to break stuff ➡️ go back to any previous version\nDefine and describe changes\nCombine versions and suggested changes by pull requests and merging\n\n\n\n\n\nflowchart LR\n  A(first version) --&gt; B(some changes)\n  B --&gt; C(Something experimental)\n  B --&gt; D(Bug fix)\n  C --&gt; E(Merge)\n  D --&gt; E\n  \n  linkStyle 1,3 stroke:red;"
   },
   {
+    "objectID": "slides/slides_git.html#question",
+    "href": "slides/slides_git.html#question",
+    "title": "3. Introduction to git, GitHub and GitHub pages",
+    "section": "Question",
+    "text": "Question"
+  },
+  {
     "objectID": "slides/slides_git.html#using-git-for-version-control",
     "href": "slides/slides_git.html#using-git-for-version-control",
     "title": "3. Introduction to git, GitHub and GitHub pages",
@@ -301,6 +315,13 @@
     "text": "Tags and releases\n\nTag a special commit\nTypically this is done to create versions, e.g. v1.0.0\nWith git tag or creating a release in GitHub\nFor Zenodo: a DOI is linked to a release\n\n\n\n\n\nflowchart LR\n  A(commit 1) --&gt; B(commit 2)\n  B --&gt; C(commit 3)\n  C --&gt; D(\"commit 4 \n        tag:v1.0.0\")\n  D --&gt; E(commit 5)\n  \n  style D fill:#f9f,stroke:#333,stroke-width:4px"
   },
   {
+    "objectID": "slides/slides_git.html#question-1",
+    "href": "slides/slides_git.html#question-1",
+    "title": "3. Introduction to git, GitHub and GitHub pages",
+    "section": "Question",
+    "text": "Question"
+  },
+  {
     "objectID": "slides/slides_git.html#quarto-and-github",
     "href": "slides/slides_git.html#quarto-and-github",
     "title": "3. Introduction to git, GitHub and GitHub pages",
@@ -319,7 +340,14 @@
     "href": "slides/slides_git.html#more-git",
     "title": "3. Introduction to git, GitHub and GitHub pages",
     "section": "More git",
-    "text": "More git\n\nSpend time to learn it! You’ll earn it back quickly 💸\nNice resources:\n\nHappy git with R\nCarpentries course on git\n\nIf you’re new (or smart) use a git client, e.g.:\n\nRstudio git interface\nGitKraken\nGitHub Desktop"
+    "text": "More git\n\nSpend time to learn it! You’ll earn it back quickly 💸\nNice resources:\n\nHappy git with R\nCarpentries course on git\nLearn git branching\n\nIf you’re new (or smart) use a git client, e.g.:\n\nRstudio git interface\nGitKraken\nGitHub Desktop"
+  },
+  {
+    "objectID": "slides/slides_zenodo.html#question",
+    "href": "slides/slides_zenodo.html#question",
+    "title": "4. Introduction to Zenodo",
+    "section": "Question",
+    "text": "Question"
   },
   {
     "objectID": "slides/slides_zenodo.html#data-repositories",
@@ -355,6 +383,41 @@
     "title": "4. Introduction to Zenodo",
     "section": "Some final remarks",
     "text": "Some final remarks\n\nYour feedback is highly appreciated, please fill out the feedback form\nThe website will stay online - might evolve through time\nHappy coding!"
+  },
+  {
+    "objectID": "slides/slides_introduction.html#teachers",
+    "href": "slides/slides_introduction.html#teachers",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Teachers",
+    "text": "Teachers\n\nWandrille Duchemin - Bioinformatician and Trainer, SIB and the sciCORE University of Basel, Switzerland\nLea Taylor - Bioinformatician, IBU Bern, Switzerland\nPradeep Eranti - Bioinformatician & PhD candidate, Université Paris Cité, France\nGeert van Geest - Bioinformatician and trainer, SIB and IBU Bern, Switzerland"
+  },
+  {
+    "objectID": "slides/slides_introduction.html#learning-outcomes",
+    "href": "slides/slides_introduction.html#learning-outcomes",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Learning outcomes",
+    "text": "Learning outcomes\n\nCreate notebooks and websites based on Markdown, and R with Quarto\nUse Git and GitHub to version control the generated content\nHost a website by making use of GitHub actions and GitHub pages\nLink the GitHub repository to Zenodo and give it a unique identifier (DOI)"
+  },
+  {
+    "objectID": "slides/slides_introduction.html#learning-experiences",
+    "href": "slides/slides_introduction.html#learning-experiences",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Learning experiences",
+    "text": "Learning experiences\n\nLectures\nPolls/quiz questions\nExercises"
+  },
+  {
+    "objectID": "slides/slides_introduction.html#question-1-3",
+    "href": "slides/slides_introduction.html#question-1-3",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Question 1-3",
+    "text": "Question 1-3\n\n\n\nScan the QR code\nOR: go to vevox.com and use the following code: 141-325-946"
+  },
+  {
+    "objectID": "slides/slides_introduction.html#communication",
+    "href": "slides/slides_introduction.html#communication",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Communication",
+    "text": "Communication\n\nTutorial website: sib-swiss.github.io/reproducible-analysis-training\nDuring exercises: Slack\nDuring lectures: Voice 👄"
   },
   {
     "objectID": "slides/slides_introduction.html#why-reusable-research",
