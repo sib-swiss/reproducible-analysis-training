@@ -25,7 +25,7 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n16 Jun 2023\n\n\n1. Make your research FAIRer with Quarto, GitHub and Zenodo\n\n\nIntroduction of the tutorial\n\n\n\n\n16 Jun 2023\n\n\n2. Introduction to Quarto\n\n\nBasics of writing with Quarto\n\n\n\n\n16 Jun 2023\n\n\n3. Introduction to git, GitHub and GitHub pages\n\n\nGetting started with git for version control\n\n\n\n\n16 Jun 2023\n\n\n4. Introduction to Zenodo\n\n\nGetting started with Zenodo for long-term storage\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n17 Jul 2023\n\n\n1. Make your research FAIRer with Quarto, GitHub and Zenodo\n\n\nIntroduction of the tutorial\n\n\n\n\n17 Jul 2023\n\n\n2. Introduction to Quarto\n\n\nBasics of writing with Quarto\n\n\n\n\n18 Jul 2023\n\n\n3. Introduction to git, GitHub and GitHub pages\n\n\nGetting started with git for version control\n\n\n\n\n18 Jul 2023\n\n\n4. Introduction to Zenodo\n\n\nGetting started with Zenodo for long-term storage\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -39,7 +39,7 @@
     "href": "index.html#course-schedule",
     "title": "ISMB tutorial - reproducible analysis",
     "section": "Course schedule",
-    "text": "Course schedule\nThe tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6 PM CEST\n\nDay 1: Monday July 17th 2023\n\n\n\n\n\n\n\n\nBlock\nFrom\nTo\nTopic\n\n\n\n\nBlock 1\n14:00\n16:00\n\nGeneral introduction\nIntroduction to Quarto\n\n\n\nBREAK\n16:00\n16:15\n\n\n\nBlock 2\n16:15\n18:00\n\nExercises - Quarto\n\n\n\n\n\nDay 2: Tuesday July 18th 2023\n\n\n\n\n\n\n\n\nBlock\nFrom\nTo\nTopic\n\n\n\n\nBlock 3\n14:00\n16:00\n\nIntroduction to git and GitHub\nExercises on git, GitHub and GitHub pages\n\n\n\nBREAK\n16:00\n16:15\n\n\n\nBlock 4\n16:15\n18:00\n\nIntroduction to Zenodo\nExercises Zenodo"
+    "text": "Course schedule\nThe tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6 PM CEST\n\nDay 1: Monday July 17th 2023\n\n\n\n\n\n\n\n\n\nBlock\nBlock 1\nFrom\n14:00\nTo\n16:00\nTopic\n\nGeneral introduction\nIntroduction to Quarto\n\n\n\n\n\n\n\n\n\n\n\nBREAK\n16:00\n16:15\n\n\n\n\nBlock 2\n16:15\n18:00\n\nExercises - Quarto\n\n\n\n\n\n\nDay 2: Tuesday July 18th 2023\n\n\n\n\n\n\n\n\nBlock\nFrom\nTo\nTopic\n\n\n\n\nBlock 3\n14:00\n16:00\n\nIntroduction to git and GitHub\nExercises on git, GitHub and GitHub pages\n\n\n\nBREAK\n16:00\n16:15\n\n\n\nBlock 4\n16:15\n18:00\n\nIntroduction to Zenodo\nExercises Zenodo"
   },
   {
     "objectID": "index.html#list-of-trainers",
@@ -94,8 +94,8 @@
     "objectID": "slides/slides_quarto.html#your-analysis-and-its-story",
     "href": "slides/slides_quarto.html#your-analysis-and-its-story",
     "title": "2. Introduction to Quarto",
-    "section": "Your analysis and its story",
-    "text": "Your analysis and its story\n\n\nRecording your data analysis story (= the choices you make) is important\nA story is not easy to extract from code:\n\nTelling a story is not the main purpose of coding languages - the main goal is telling a computer what to do\nNot everybody can read code\n\nSolution: tell your story together with your code!"
+    "section": "Your analysis and its story 📖",
+    "text": "Your analysis and its story 📖\n\n\nRecording your data analysis story (= the choices you make) is important ⚠️\nA story is not easy to extract from code:\n\nTelling a story is not the main purpose of coding languages (it’s telling a computer what to do)\nNot everybody can read code\n\nSolution: tell your story together with your code!"
   },
   {
     "objectID": "slides/slides_quarto.html#story-code-notebooks",
@@ -109,7 +109,7 @@
     "href": "slides/slides_quarto.html#project---based-working",
     "title": "2. Introduction to Quarto",
     "section": "Project - based working",
-    "text": "Project - based working\n\nWork in projects to:\n\nDefine goals and tasks\nOrganize yourself\nKeep a good documentation\nCommunicate about methods, goals, results etc.\n\nWord of advice: keep projects small!"
+    "text": "Project - based working\n\nProject: a collection of code, notebooks, environments and data that serve the same analysis aim\nWork in projects to:\n\nDefine goals and tasks\nOrganize yourself\nKeep a good documentation\nCommunicate about methods, goals, results etc.\n\nWord of advice: keep projects small!"
   },
   {
     "objectID": "slides/slides_quarto.html#quarto-projects",
@@ -130,7 +130,7 @@
     "href": "slides/slides_quarto.html#quarto-project-files",
     "title": "2. Introduction to Quarto",
     "section": "Quarto project files",
-    "text": "Quarto project files\n\n_quarto.yml: YML file with project-wide settings\n.git: Everything required for version control with git\nmy_awesome_project.Rproj: R-project based settings\nmy_awesome_project.qmd: Where the work is done!"
+    "text": "Quarto project files\n\n\n_quarto.yml: YML file with project-wide settings\n.git: Everything required for version control with git\nmy_awesome_project.Rproj: R-project based settings\nmy_awesome_project.qmd: Where the work is done!"
   },
   {
     "objectID": "slides/slides_quarto.html#a-qmd-file",
@@ -214,7 +214,7 @@
     "href": "slides/slides_quarto.html#quarto---use-cases",
     "title": "2. Introduction to Quarto",
     "section": "Quarto - use cases",
-    "text": "Quarto - use cases\n\nYou don’t have to be a LaTeX specialist to write a manuscript from source code 🎉 More info here\nCreate presentations (including powerpoint exports!)\nWrite your thesis in Quarto, more about books\nMaybe now is the time to get started with your personal website"
+    "text": "Quarto - use cases\n\n\nYou don’t have to be a LaTeX specialist to write a manuscript from source code 🎉 More info here\nCreate presentations (including powerpoint exports!)\nWrite your thesis in Quarto, more about books\nMaybe now is the time to get started with your personal website"
   },
   {
     "objectID": "slides/slides_quarto.html#more-quarto",
@@ -361,14 +361,28 @@
     "href": "slides/slides_introduction.html#why-reusable-research",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Why reusable research?",
-    "text": "Why reusable research?\n\n\nRedo your own experiments/analysis\nColleagues can redo or reuse your experiments/analysis\nGet feedback - People will appreciate! + identify mistakes or bugs\nBecause journals/funding agencies require you to.."
+    "text": "Why reusable research?\n\n\nBecause journals/funding agencies require you to..\nShare with others:\n\nPeople will appreciate!\nIdentify mistakes or bugs\n\nColleagues can redo or reuse your experiments/analysis\nRedo your own experiments/analysis"
   },
   {
     "objectID": "slides/slides_introduction.html#why-can-reusable-data-analysis-be-difficult",
     "href": "slides/slides_introduction.html#why-can-reusable-data-analysis-be-difficult",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Why can reusable data analysis be difficult?",
-    "text": "Why can reusable data analysis be difficult?\n\n\n\n\nShort term goal: get your results ASAP\nMid term goal: publish\nLong term goal: re-use and stand on the shoulder of giants!\n\n\n\n\n\n\n\nThe longer it takes to reach goals ..\n\n\nThe less likely we are motivated to invest time .."
+    "text": "Why can reusable data analysis be difficult?\n\n\n\n\nShort term goal: get your results ASAP\nMid term goal: publish\nLong term goal: re-use and stand on the shoulder of giants!"
+  },
+  {
+    "objectID": "slides/slides_introduction.html#make-it-a-habit",
+    "href": "slides/slides_introduction.html#make-it-a-habit",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Make it a habit",
+    "text": "Make it a habit\n\n\n\n\n\n\n\n\nThe longer it takes to reach goals ..\n\n\nThe less likely we are motivated to invest time ..\n\n\n\n\nLike dieting, exercise, proper sleeping..\nBe successful by making reproducibility a habit!"
+  },
+  {
+    "objectID": "slides/slides_introduction.html#data-analysis-software-development-have-similarities",
+    "href": "slides/slides_introduction.html#data-analysis-software-development-have-similarities",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Data analysis & software development have similarities",
+    "text": "Data analysis & software development have similarities\n\nBoth require programming skills\nBoth use version control\nBut there are differences .."
   },
   {
     "objectID": "slides/slides_introduction.html#think-like-a-software-engineer",
@@ -382,7 +396,7 @@
     "href": "slides/slides_introduction.html#fair-principles",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "FAIR principles",
-    "text": "FAIR principles\n\nFindable\nAccessbile\nInteroperable\nReusable\n\n\n\nMore at: go-fair.org"
+    "text": "FAIR principles\n\n\n\nFindable\nAccessbile\nInteroperable\nReusable\n\n\n\n\n\n\n\nMore at: go-fair.org\nImage from: European Commission, Directorate-General for Research and Innovation, Turning FAIR into reality, Publications Office, 2018, https://data.europa.eu/doi/10.2777/1524"
   },
   {
     "objectID": "slides/slides_introduction.html#how-to-apply-the-fair-principles-in-analysis",
