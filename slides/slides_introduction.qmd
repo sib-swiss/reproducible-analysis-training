@@ -11,6 +11,63 @@ format:
     link-external-newwindow: true
 ---
 
+## Teachers
+
+-   **Wandrille Duchemin** - Bioinformatician and Trainer, SIB and the sciCORE University of Basel, Switzerland
+-   **Lea Taylor** - Bioinformatician, IBU Bern, Switzerland
+-   **Pradeep Eranti** - Bioinformatician & PhD candidate, Université Paris Cité, France
+-   **Geert van Geest** - Bioinformatician and trainer, SIB and IBU Bern, Switzerland
+
+## Learning outcomes
+
+-   Create notebooks and websites based on Markdown, and R with Quarto
+
+-   Use Git and GitHub to version control the generated content
+
+-   Host a website by making use of GitHub actions and GitHub pages
+
+-   Link the GitHub repository to Zenodo and give it a unique identifier (DOI)
+
+## Learning experiences
+
+-   Lectures
+
+-   Polls/quiz questions
+
+-   Exercises
+
+## Question 1-3
+
+::: columns
+
+::: {.column width="50%"}
+
+-   Scan the QR code
+
+-   OR: go to vevox.com and use the following code: `141-325-946`
+
+:::
+
+::: {.column width="10%"}
+
+:::
+
+::: {.column width="40%"}
+
+![](../img/qr_vevox.svg)
+
+:::
+
+:::
+
+## Communication
+
+-   Tutorial website: sib-swiss.github.io/reproducible-analysis-training
+
+-   During exercises: **Slack**
+
+-   During lectures: **Voice** 👄
+
 ## Why reusable research?
 
 ::: incremental
@@ -147,7 +204,6 @@ Slide from: Roland Krause ELIXIR-LU
 
 ::: columns
 ::: {.column width="40%"}
-
 -   **Findable**
 
 -   Accessbile
