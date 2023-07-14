@@ -11,18 +11,18 @@ format:
     link-external-newwindow: true
 ---
 
-## Your analysis and its story
+## Your analysis and its story 📖
 
 ::: incremental
--   Recording your data analysis story (= the choices you make) is important
+-   Recording your data analysis story (= the choices you make) is important ⚠️
 
 -   A story is not easy to extract from code:
 
-    -   Telling a story is not the main purpose of coding languages - the main goal is telling a computer what to do
+    -   Telling a story **is not** the main purpose of coding languages *(it's telling a computer what to do)*
 
     -   Not everybody can read code
 
--   Solution: tell your story together with your code!
+-   **Solution**: tell your story together with your code!
 :::
 
 ## Story + code = notebooks
@@ -42,6 +42,8 @@ format:
 -   Code is in (executable) code chunks
 
 ## Project - based working
+
+-   **Project**: a collection of code, notebooks, environments and data that serve the same analysis aim
 
 -   Work in projects to:
 
@@ -81,10 +83,12 @@ format:
 
 ## Quarto project files
 
+::: incremental
 -   `_quarto.yml`: YML file with project-wide settings
 -   `.git`: Everything required for version control with git
 -   `my_awesome_project.Rproj`: R-project based settings
 -   `my_awesome_project.qmd`: Where the work is done!
+:::
 
 ![](../img/project_init.png){fig-align="right"}
 
@@ -177,7 +181,7 @@ After rendering:
 ::: {.column width="50%"}
 ### Unordered list
 
-``` markdown        
+``` markdown
 - item 1
     - sub-item 1
     - sum-item 2
@@ -193,7 +197,7 @@ After rendering:
 ::: {.column width="\"50%"}
 ### Ordered list
 
-``` markdown        
+``` markdown
 1. ordered list
 2. item 2
     i) sub-item 1
@@ -211,7 +215,7 @@ After rendering:
 
 <br>
 
-``` markdown       
+``` markdown
 GO fair [website](https://www.go-fair.org)
 ```
 
@@ -219,7 +223,7 @@ GO fair [website](https://www.go-fair.org)
 
 ## Markdown - images
 
-``` markdown         
+``` markdown
 ![logo of SIB](logo.svg){#fig-logo width="300" fig-align="left"}
 
 As you can see from @fig-logo, it is red.
@@ -267,7 +271,6 @@ mtcars |>
 ```
 
 From @fig-mpg-vs-drat you can see there is a positive correlation. 
-
 ````
 
 ```{r}
@@ -283,10 +286,12 @@ From @fig-mpg-vs-drat you can see there is a positive correlation.
 
 ## Quarto - use cases
 
+::: incremental
 -   You don't have to be a LaTeX specialist to write a manuscript from source code 🎉 More info [here](https://quarto.org/docs/journals/)
 -   Create [presentations](https://quarto.org/docs/presentations/) (including powerpoint exports!)
 -   Write your thesis in Quarto, more about [books](https://quarto.org/docs/books/)
 -   Maybe now is the time to get started with your [personal website](https://ucsb-meds.github.io/creating-quarto-websites/)
+:::
 
 ## More Quarto
 
