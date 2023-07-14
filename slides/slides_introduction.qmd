@@ -2,7 +2,7 @@
 title: "1. Make your research FAIRer with Quarto, GitHub and Zenodo"
 subtitle: "Introduction of the tutorial"
 author: "Geert van Geest"
-date: "2023-06-16"
+date: "2023-07-17"
 format:
   revealjs:
     theme: default
