@@ -150,6 +150,7 @@ We can add some code in there. First, we add a chunk that loads the libraries:
 
 ````markdown
 ```{{r}}
+#| output: false
 library(babynames)
 library(knitr)
 library(dplyr)
