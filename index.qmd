@@ -40,7 +40,7 @@ The tutorial is scheduled for Monday July 17th and Tuesday, July 18th, 2 PM to 6
 +=========+=======+=======+===========================================================================+
 | Block 3 | 14:00 | 16:00 | -   [Introduction to git and GitHub](slides/slides_git.html#/title-slide) |
 |         |       |       |                                                                           |
-|         |       |       | -   [Exercises on git, GitHub and GitHub pages](slides/slides_git.qmd)    |
+|         |       |       | -   [Exercises on git, GitHub and GitHub pages](git_pages_zenodo.html)    |
 +---------+-------+-------+---------------------------------------------------------------------------+
 | BREAK   | 16:00 | 16:15 |                                                                           |
 +---------+-------+-------+---------------------------------------------------------------------------+
