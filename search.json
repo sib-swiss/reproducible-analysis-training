@@ -417,7 +417,7 @@
     "href": "slides/slides_introduction.html#communication",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Communication",
-    "text": "Communication\n\nTutorial website: sib-swiss.github.io/reproducible-analysis-training\nDuring exercises: Slack\nDuring lectures: Voice 👄"
+    "text": "Communication\n\nTutorial website:\nsib-swiss.github.io/reproducible-analysis-training\nDuring exercises: Slack\nDuring lectures: Voice 👄"
   },
   {
     "objectID": "slides/slides_introduction.html#why-reusable-research",
