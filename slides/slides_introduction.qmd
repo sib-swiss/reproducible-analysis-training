@@ -20,13 +20,13 @@ format:
 
 ## Learning outcomes
 
--   Create notebooks and websites based on Markdown, and R with Quarto
+-   Create **notebooks** and **websites** based on Markdown, and R with **Quarto**
 
--   Use Git and GitHub to version control the generated content
+-   Use **Git** and **GitHub** to version control the generated content
 
--   Host a website by making use of GitHub actions and GitHub pages
+-   Host a **website** by making use of GitHub actions and GitHub pages
 
--   Link the GitHub repository to Zenodo and give it a unique identifier (DOI)
+-   **Link** the **GitHub** repository to **Zenodo** and give it a unique identifier (DOI)
 
 ## Learning experiences
 
@@ -42,7 +42,7 @@ format:
 ::: {.column width="50%"}
 -   Scan the QR code
 
--   OR: go to vevox.com and use the following code: `141-325-946`
+-   OR: go to **vevox.com** and use the following code: `141-325-946`
 :::
 
 ::: {.column width="10%"}
@@ -55,7 +55,9 @@ format:
 
 ## Communication
 
--   Tutorial website: sib-swiss.github.io/reproducible-analysis-training
+-   Tutorial website:
+
+    `sib-swiss.github.io/reproducible-analysis-training`
 
 -   During exercises: **Slack**
 

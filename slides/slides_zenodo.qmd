@@ -84,8 +84,8 @@ format:
 
 ## Some final remarks
 
-- Your feedback is highly appreciated, please fill out the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSf_0RTzbDDMYLoB6sshSJ_uKtbTrC1xESEknfIexsdboh7lHA/viewform)
+-   Your feedback is highly appreciated, please fill out the [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSf_0RTzbDDMYLoB6sshSJ_uKtbTrC1xESEknfIexsdboh7lHA/viewform)
 
-- The website will stay online - might evolve through time
+-   The website will stay online - might evolve through time
 
-- Happy coding!
+-   Happy coding!
