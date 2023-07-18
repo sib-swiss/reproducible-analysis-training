@@ -57,17 +57,26 @@ git add --all
 ```
 
 ::: callout-note
+## Staging convenience
+
 If you want to check beforehand what you will stage, you can do a 'dry run' with:
 
 ``` bash
 git add --all -n
 ```
 
-And if you made a mistake and want to unstage a file:
+If you made a mistake and want to unstage a file that is not tracked yet, you can run:
 
 ``` bash
-git rm --staged file.txt
+git rm --cached file.txt
 ```
+
+If the file is tracked (i.e. you have committed changes before), you can use:
+
+```bash
+git restore --staged file.txt
+```
+
 :::
 
 The command `git status` will now return all files in green, which means that they are staged. The next step will be the commit itself:
