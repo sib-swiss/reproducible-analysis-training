@@ -1,0 +1,17 @@
+{
+  "title": "Analysis of babynames",
+  "upload_type": "publication",
+  "publication_type": "report",
+  "keywords": [
+    "R",
+    "quarto",
+    "tutorial"
+  ],
+  "creators": [
+    {
+      "name": "Geert van Geest",
+      "affiliation": "SIB Swiss Institute of Bioinformatics",
+      "orcid": "0000-0002-1561-078X"
+    } 
+  ]
+}
