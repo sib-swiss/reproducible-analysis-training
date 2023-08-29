@@ -95,7 +95,7 @@ In this project we aim to visualize the trends of the most frequently used babyn
 
 You can add images with the following syntax:
 
-``` markdown    
+``` markdown
 ![image_alt_text](path/or/url/to/image.png)
 ```
 
@@ -148,9 +148,8 @@ website:
 
 We can add some code in there. First, we add a chunk that loads the libraries:
 
-````markdown
+```` markdown
 ```{{r}}
-#| output: false
 library(babynames)
 library(knitr)
 library(dplyr)
@@ -179,7 +178,7 @@ Add the two above code as an R code chunk to `analysis.qmd`, and do the followin
 ::: {.callout-tip collapse="true"}
 ## Answer
 
-```` markdown
+````markdown
 ---
 title: "Analysis"
 ---
@@ -187,6 +186,7 @@ title: "Analysis"
 First we load the packages:
 
 ```{{r}}
+#| output: false
 library(babynames)
 library(knitr)
 library(dplyr)
@@ -207,7 +207,9 @@ Here, I've created two functions that do the following:
 -   `get_most_frequent`: Gets the most frequent babynames over a time-period.
 -   `plot_top`: from the output of `get_most_frequent`. Plot the top n most popular names.
 
+::: callout-note
 This is not a coding tutorial, so you can ignore the code itself. Just know what is does.
+:::
 
 ``` r
 get_most_frequent <- function(babynames, select_sex, from = 1950) {
@@ -308,4 +310,75 @@ plot_top(most_freq_boys, babynames, select_sex = "M", top = 10)
 
 @fig-line-boys shows that names that were popular before 1990 are relatively infrequent after 2000. 
 ````
+:::
+
+### Multiple figures
+
+The size and position of figures is quite well configurable with quarto. For example, you can quite easily create figure panels. 
+
+::: callout-important
+## Exercise
+Check out the quarto documentation on [computed figures and cross-referencing](https://quarto.org/docs/authoring/cross-references.html#computations) and [custom layout](https://quarto.org/docs/authoring/figures.html#custom-layout). Create a panel with three figures:
+
+- Line plot of top 5 girl names from 2010 onwards
+- Line plot of top 10 girl names from 2010 onwards
+- Heatmap of top 30 girl names from 2010 onwards
+
+Create two rows, and keep the two lines plots next to each other. On the second row let the heatmap span the entire column.
+
+You can use this code in the chunk:
+
+```{{r}}
+# get most frequent girl names from 2010 onwards
+from_year <- 2010
+most_freq_girls <- get_most_frequent(babynames, select_sex = "F",
+                                     from = from_year)
+
+# plot top 5 girl names
+most_freq_girls |>
+  plot_top(babynames, select_sex = "F", from = from_year, top = 5)
+
+# plot top 10 girl names
+most_freq_girls |>
+  plot_top(babynames, select_sex = "F", from = from_year, top = 10)
+
+# get top 30 girl names in a matrix
+# with names in rows and years in columns
+prop_df <- babynames |> 
+  filter(name %in% most_freq_girls$name[1:30] & sex == "F") |>
+  filter(year >= from_year) |> 
+  select(year, name, prop) |>
+  pivot_wider(names_from = year,
+              values_from = prop)
+
+prop_mat <- as.matrix(prop_df[, 2:ncol(prop_df)])
+rownames(prop_mat) <- prop_df$name
+
+# create heatmap
+pheatmap(prop_mat, cluster_cols = FALSE, scale = "row")
+```
+
+The exercise is to add the hash-pipe options.
+
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Add the follow to the top of the code chunk:
+```{{r}}
+#| label: fig-line-2010
+#| layout: [[50,50], [100]]
+#| fig-cap: "Most popular girl names from 2010 onwards"
+#| fig-subcap: 
+#|   - "Top 5"
+#|   - "Top 10"
+#|   - "Top 30"
+```
+
+You can refer to the figures in the markdown text like this:
+
+```md
+In @fig-line-2010-1 and @fig-line-2010-1 the line plots are shown. To view trends of many names at once, @fig-line2010-3 displays a heatmap.
+```
 :::
