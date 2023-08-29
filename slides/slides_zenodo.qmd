@@ -68,7 +68,7 @@ format:
 
 -   Uses [`CITATION.cff`](https://citation-file-format.github.io/) for metadata annotation
 
--   And/or `.zenodo.json` using the [deposity data schema](https://developers.zenodo.org/#deposit-metadata), with e.g.:
+-   And/or `.zenodo.json` using the [deposit metadata schema](https://developers.zenodo.org/#deposit-metadata), with e.g.:
 
     -   Creators
 
