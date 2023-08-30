@@ -3,6 +3,9 @@ project:
 
 website:
   title: "Make your research FAIRer"
+  favicon: assets/SIB_logo.svg
+  search: true
+  page-navigation: true
   repo-url: "https://github.com/sib-swiss/reproducible-analysis-training"
   repo-actions: [edit, issue]
   site-url: "https://sib-swiss.github.io/reproducible-analysis-training/"
@@ -22,10 +25,12 @@ website:
       - icon: github
         href: "https://github.com/sib-swiss/reproducible-analysis-training"
         aria-label: GitHub
+  sidebar:
+    logo: assets/SIB_LogoQ_GBv.svg
 
 format:
   html:
-    theme: cosmo
+    theme: [cosmo, custom.scss]
     css: styles.css
     toc: true
     link-external-newwindow: true
