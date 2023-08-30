@@ -2,7 +2,7 @@
 title: "3. Introduction to git, GitHub and GitHub pages"
 subtitle: "Getting started with git for version control"
 author: "Geert van Geest"
-date: "2023-07-18"
+date: "2023-09-11"
 engine: knitr
 format:
   revealjs:
