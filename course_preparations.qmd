@@ -16,7 +16,12 @@ Install and/or update the following packages from CRAN:
 
 ```{r}
 #| eval: false
-install.packages(c("babynames", "knitr", "dplyr", "ggplot2"))
+install.packages(c("babynames",
+                   "knitr",
+                   "dplyr",
+                   "ggplot2",
+                   "tidyr",
+                   "pheatmap"))
 ```
 
 ## Git and GitHub
