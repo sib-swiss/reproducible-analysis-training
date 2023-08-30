@@ -73,10 +73,9 @@ git rm --cached file.txt
 
 If the file is tracked (i.e. you have committed changes before), you can use:
 
-```bash
+``` bash
 git restore --staged file.txt
 ```
-
 :::
 
 The command `git status` will now return all files in green, which means that they are staged. The next step will be the commit itself:
@@ -108,11 +107,11 @@ We will now link our local repository to a remote repository on GitHub. First, w
 -   Fill out the form:
 
     -   Choose a repository name. Typically this is the same name as your project directory
-    
+
     -   We will host a website, so make sure it's public
-    
+
     -   Leave the rest unchecked, so no README file and no `.gitignore` (these are already in our local repository)
-    
+
 -   Click the green button with `Create repository`
 
 After you have created the empty repository, GitHub is already giving you suggestions what to do. We have already created the commit, and our current branch is the main branch (check it with `git branch`).
@@ -153,10 +152,190 @@ quarto publish gh-pages
 
 This command will:
 
-- Create a branch named `gh-pages` (if it doesn't exist)  
+-   Create a branch named `gh-pages` (if it doesn't exist)
 
-- Push the website files to `gh-pages`
+-   Push the website files to `gh-pages`
 
-- Change the settings in your GitHub repository to tell that the website will be in `gh-pages`
+-   Change the settings in your GitHub repository to tell that the website will be in `gh-pages`
 
 🤝 congrats! You've just published your first website with an analysis report!
+
+## Creating a branch and pull request to add a figure panel
+
+Let's add a feature to our website: we will add a sub-chapter where we create a block of multiple figures and cross reference them in the text. It is important that we don't with the main branch while we are developing it.
+
+### From issue to branch
+
+When adding a new feature, a good practice would be to first write an issue. Here you describe clearly what you want to do. If you decide you will work on the issue, you can make a branch out of the issue, so the branch has a clear aim - described in the issue.
+
+::: callout-important
+## Exercise
+
+Go to your repository on GitHub. Write an issue (Click the *Issues* tab) with the following content:
+
+**Title**: *Create a panel of figures*
+
+**Description**:
+
+*The figure panel should contain:*
+
+-   *Line plot of top 5 girl names from 2010 onwards*
+-   *Line plot of top 10 girl names from 2010 onwards*
+-   *Heatmap of top 30 girl names from 2010 onwards*
+
+*Describe and cross-reference the individual figures in the text*
+
+After that, save the issue, and at the issue page, on the right panel click on **Create a branch** under **Development**. This will automatically suggest a good branch name. Use the default settings and click **Create branch**. GitHub will automatically suggest what code to run to work on the branch locally. This will be:
+
+```sh
+git fetch origin
+git checkout 1-create-a-panel-of-figures
+```
+
+Run these commands in your local terminal at the root directory of your quarto project.
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+You can validate whether you are in the right branch by typing:
+
+```sh
+git branch
+```
+
+The branch `1-create-a-panel-of-figures` should appear in green. 
+:::
+
+### Creating a figure panel
+
+Nice! Now we have a new branch so we can develop in our repository without interfering with our stable main branch. Let's work on the issue. To create the three figures that you just described in the issue, the required code will be provided by us. Your job would be to add hash-pipe (i.e. `#|`) options to the code chunk to render the plots as we want. 
+
+::: callout-important
+## Exercise
+
+Check out the quarto documentation on [computed figures and cross-referencing](https://quarto.org/docs/authoring/cross-references.html#computations) and [custom layout](https://quarto.org/docs/authoring/figures.html#custom-layout). 
+
+The code below will create the three figures that are displayed in two rows:
+
+- The two line graphs: should be in the first row, and next to each other
+- The heatmap: should be in the second row and span the entire column.
+
+Use this code and add the required chunk options:
+
+```{{r}}
+# get most frequent girl names from 2010 onwards
+from_year <- 2010
+most_freq_girls <- get_most_frequent(babynames, select_sex = "F",
+                                     from = from_year)
+
+# plot top 5 girl names
+most_freq_girls |>
+  plot_top(babynames, select_sex = "F", from = from_year, top = 5)
+
+# plot top 10 girl names
+most_freq_girls |>
+  plot_top(babynames, select_sex = "F", from = from_year, top = 10)
+
+# get top 30 girl names in a matrix
+# with names in rows and years in columns
+prop_df <- babynames |> 
+  filter(name %in% most_freq_girls$name[1:30] & sex == "F") |>
+  filter(year >= from_year) |> 
+  select(year, name, prop) |>
+  pivot_wider(names_from = year,
+              values_from = prop)
+
+prop_mat <- as.matrix(prop_df[, 2:ncol(prop_df)])
+rownames(prop_mat) <- prop_df$name
+
+# create heatmap
+pheatmap(prop_mat, cluster_cols = FALSE, scale = "row")
+```
+
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Add the following to the top of the code chunk: 
+
+```r
+#| label: fig-line-2010
+#| layout: [[50,50], [100]]
+#| fig-cap: "Most popular girl names from 2010 onwards"
+#| fig-subcap: 
+#|   - "Top 5"
+#|   - "Top 10"
+#|   - "Top 30"
+```
+
+You can refer to the figures in the markdown text like this:
+
+```md
+In @fig-line-2010-1 and @fig-line-2010-1 the line plots are shown. To view trends of many names at once, @fig-line2010-3 displays a heatmap.
+```
+:::
+
+### Creating a pull request
+
+If the panel is appearing as it should, it might be time to merge it to the main branch. For this we'd first need to commit our changes:
+
+```sh
+git commit -am "adds the figure panel"
+```
+
+::: callout-note
+
+Now, we could merge by (**do not run this now!**):
+
+```sh
+# go to the main branch
+git checkout main
+# merge the development branch to the main branch
+git merge 1-create-a-panel-of-figures
+```
+:::
+
+As shown above, we could directly merge our development branch locally. However, if we are working with multiple people on the same project, we want to be explicit that we want to perform this merge. For example, you might want your colleague to test/review your change before merging. The way to do this would be by a pull request. 
+
+To create a pull request we first need to push our changes to the remote repository:
+
+```sh
+# make sure you are on the development branch
+git checkout 1-create-a-panel-of-figures
+# push the changes to the remote repository
+git push
+```
+
+Now browse to the repository on GitHub. You will already see a yellow banner with the question whether you want to create a pull request. However, we will do it in a more explicit way. Go to the tab **Pull requests**. Click the button **New pull request**. As **base** specify the `main` branch. At **compare** specify `1-create-a-panel-of-figures`. Now review the displayed changes and click the button **Create pull request**. Add comments if necessary. In the same page, you can specify reviewers and assignees if you want others to become involved. We skip this for now, and click **Merge pull request** to merge `1-create-a-panel-of-figures` to `main`. 
+
+::: callout-important
+## Exercise
+
+- Check out the issue. Has anything happened to it?
+- Switch to the main branch locally and pull the changes your local repository
+- Validate whether the development branch is merged to main
+- Re-publish the website
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+The issue should be marked as 'Closed'. This has happened automatically after merging the pull request, because GitHub created a reference between the issue and the branch. 
+
+To switch to `main` and pull the changes:
+
+```sh
+git checkout main
+git pull
+```
+
+Now the code with the figure panel should be added to `analysis.qmd`. 
+
+To publish
+
+```sh
+quarto publish gh-pages
+```
+::: 
