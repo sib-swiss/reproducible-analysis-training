@@ -32,7 +32,7 @@
     "href": "slides.html",
     "title": "Slides",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n17 Jul 2023\n\n\n1. Make your research FAIRer with Quarto, GitHub and Zenodo\n\n\nIntroduction of the tutorial\n\n\n\n\n17 Jul 2023\n\n\n2. Introduction to Quarto\n\n\nBasics of writing with Quarto\n\n\n\n\n18 Jul 2023\n\n\n3. Introduction to git, GitHub and GitHub pages\n\n\nGetting started with git for version control\n\n\n\n\n18 Jul 2023\n\n\n4. Introduction to Zenodo\n\n\nGetting started with Zenodo for long-term storage\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n11 Sep 2023\n\n\n1. Make your research FAIRer with Quarto, GitHub and Zenodo\n\n\nIntroduction of the tutorial\n\n\n\n\n11 Sep 2023\n\n\n2. Introduction to Quarto\n\n\nBasics of writing with Quarto\n\n\n\n\n11 Sep 2023\n\n\n3. Introduction to git, GitHub and GitHub pages\n\n\nGetting started with git for version control\n\n\n\n\n11 Sep 2023\n\n\n4. Introduction to Zenodo\n\n\nGetting started with Zenodo for long-term storage\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -46,7 +46,7 @@
     "href": "index.html#course-schedule",
     "title": "Reproducible analysis",
     "section": "Course schedule",
-    "text": "Course schedule\n\n\n\n\n\n\n\nBlock\nTopic\n\n\n\n\nBlock 1\n\nGeneral introduction\nIntroduction to Quarto\n\n\n\nBREAK\n\n\n\nBlock 2\n\nExercises - Quarto\n\n\n\nBREAK\n\n\n\nBlock 3\n\nIntroduction to git and GitHub\nExercises on git, GitHub and GitHub pages\n\n\n\nBREAK\n\n\n\nBlock 4\n\nIntroduction to Zenodo\nExercises Zenodo"
+    "text": "Course schedule\n\n\n\n\n\n\n\nBlock\nTopic\n\n\n\n\nBlock 1\n\nPresentation - General introduction\nPresentation - Introduction to Quarto\n\n\n\nBREAK\n\n\n\nBlock 2\n\nExercises - Quarto\n\n\n\nBREAK\n\n\n\nBlock 3\n\nPresentation - Introduction to git and GitHub\nExercises - Git, GitHub and GitHub pages\n\n\n\nBREAK\n\n\n\nBlock 4\n\nPresentation - Introduction to Zenodo\nExercises - Zenodo"
   },
   {
     "objectID": "index.html#list-of-trainers",
