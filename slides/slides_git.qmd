@@ -200,16 +200,15 @@ More info at the [quarto docs](https://quarto.org/docs/publishing/github-pages.h
 -   Nice resources:
 
     -   [Happy git with R](https://happygitwithr.com/)
-    
+
     -   [Carpentries course on git](http://swcarpentry.github.io/git-novice/)
-    
+
     -   [Learn git branching](https://learngitbranching.js.org/)
-    
+
 -   If you're new (or smart) use a git client, e.g.:
 
     -   Rstudio git interface
-    
+
     -   [GitKraken](https://www.gitkraken.com/)
-    
+
     -   [GitHub Desktop](https://desktop.github.com)
-    
