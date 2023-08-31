@@ -314,6 +314,7 @@ Now browse to the repository on GitHub. You will already see a yellow banner wit
 -   Check out the issue. Has anything happened to it?
 -   Switch to the main branch locally and pull the changes your local repository
 -   Validate whether the development branch is merged to main
+-   Check out the commits with `git log --oneline`. Anything changed in the commit history?
 -   Re-publish the website
 :::
 
@@ -329,7 +330,11 @@ git checkout main
 git pull
 ```
 
-Now the code with the figure panel should be added to `analysis.qmd`.
+Now the code with the figure panel should be added to `analysis.qmd`. If you run `git log --oneline` you will see that the merge is stored as a commit, looking something like this:
+
+```
+4fdf90e Merge pull request #1 from yourusername/1-create-a-panel-of-figures
+```
 
 To publish
 
