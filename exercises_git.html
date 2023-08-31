@@ -456,11 +456,11 @@ Exercise
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># plot top 5 girl names</span></span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>most_freq_girls <span class="sc">|&gt;</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_top</span>(babynames, <span class="at">select_sex =</span> <span class="st">"F"</span>, <span class="at">from =</span> from_year, <span class="at">top =</span> <span class="dv">5</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_top</span>(<span class="at">top =</span> <span class="dv">5</span>)</span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co"># plot top 10 girl names</span></span>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>most_freq_girls <span class="sc">|&gt;</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_top</span>(babynames, <span class="at">select_sex =</span> <span class="st">"F"</span>, <span class="at">from =</span> from_year, <span class="at">top =</span> <span class="dv">10</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_top</span>(<span class="at">top =</span> <span class="dv">10</span>)</span>
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co"># get top 30 girl names in a matrix</span></span>
 <span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="co"># with names in rows and years in columns</span></span>
@@ -547,6 +547,7 @@ Exercise
 <li>Check out the issue. Has anything happened to it?</li>
 <li>Switch to the main branch locally and pull the changes your local repository</li>
 <li>Validate whether the development branch is merged to main</li>
+<li>Check out the commits with <code>git log --oneline</code>. Anything changed in the commit history?</li>
 <li>Re-publish the website</li>
 </ul>
 </div>
@@ -567,9 +568,10 @@ Answer
 <p>To switch to <code>main</code> and pull the changes:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> checkout main</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now the code with the figure panel should be added to <code>analysis.qmd</code>.</p>
+<p>Now the code with the figure panel should be added to <code>analysis.qmd</code>. If you run <code>git log --oneline</code> you will see that the merge is stored as a commit, looking something like this:</p>
+<pre><code>4fdf90e Merge pull request #1 from yourusername/1-create-a-panel-of-figures</code></pre>
 <p>To publish</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> publish gh-pages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
