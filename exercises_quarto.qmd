@@ -180,7 +180,7 @@ Add the two above code as an R code chunk to `analysis.qmd`, and do the followin
 ::: {.callout-tip collapse="true"}
 ## Answer
 
-````markdown
+```` markdown
 ---
 title: "Analysis"
 ---
@@ -213,21 +213,26 @@ Here, I've created two functions that do the following:
 This is not a coding tutorial, so you can ignore the code itself. Just know what is does.
 :::
 
-``` r
+```{r}
 get_most_frequent <- function(babynames, select_sex, from = 1950) {
   most_freq <- babynames |>
     filter(sex == select_sex, year > from) |>
     group_by(name) |>
     summarise(average = mean(prop)) |>
     arrange(desc(average))
-  return(most_freq)
+    
+  return(list(
+    babynames = babynames,
+    most_frequent = most_freq,
+    sex = select_sex,
+    from = from))
 }
 
-plot_top <- function(x, babynames, select_sex, top = 10, from = 1950) {
-  topx <- x$name[1:top]
+plot_top <- function(x, top = 10) {
+  topx <- x$most_frequent$name[1:top]
   
-  p <- babynames |>
-    filter(name %in% topx, sex == select_sex, year > from) |>
+  p <- x$babynames |>
+    filter(name %in% topx, sex == x$sex, year > x$from) |>
     ggplot(aes(x = year, y = prop, color = name)) +
     geom_line() +
     scale_color_brewer(palette = "Paired") +
@@ -241,14 +246,14 @@ Plotting them for girls like this:
 
 ``` r
 get_most_frequent(babynames, select_sex = "F") |>
-  plot_top(babynames, select_sex = "F", top = 10)
+  plot_top()
 ```
 
 Plotting them for boys like this:
 
 ``` r
 get_most_frequent(babynames, select_sex = "M") |>
-  plot_top(babynames, select_sex = "M", top = 10)
+  plot_top()
 ```
 
 ::: callout-important
@@ -274,14 +279,19 @@ get_most_frequent <- function(babynames, select_sex, from = 1950) {
     group_by(name) |>
     summarise(average = mean(prop)) |>
     arrange(desc(average))
-  return(most_freq)
+    
+  return(list(
+    babynames = babynames,
+    most_frequent = most_freq,
+    sex = select_sex,
+    from = from))
 }
 
-plot_top <- function(x, babynames, select_sex, top = 10, from = 1950) {
-  topx <- x$name[1:top]
+plot_top <- function(x, top = 10) {
+  topx <- x$most_frequent$name[1:top]
   
-  p <- babynames |>
-    filter(name %in% topx, sex == select_sex, year > from) |>
+  p <- x$babynames |>
+    filter(name %in% topx, sex == x$sex, year > x$from) |>
     ggplot(aes(x = year, y = prop, color = name)) +
     geom_line() +
     scale_color_brewer(palette = "Paired") +
@@ -298,7 +308,7 @@ Here we call the code to visualize the top 10 most frequent girl names from 1950
 #| label: fig-line-girls
 #| fig-cap: "Line plot displaying proportion of top 10 girl names by year"
 get_most_frequent(babynames, select_sex = "F") |>
-  plot_top(babynames, select_sex = "F", top = 10)
+  plot_top()
 ```
     
 In @fig-line-girls you can see that there has been a peak in popularity for 'Lisa', 'Jennifer' and 'Jessica'. Interesting! Let's have a look at the boys names:
@@ -306,8 +316,8 @@ In @fig-line-girls you can see that there has been a peak in popularity for 'Lis
 ```{{r}}
 #| label: fig-line-boys
 #| fig-cap: "Line plot displaying proportion of top 10 boy names by year"
-most_freq_boys <- get_most_frequent(babynames, select_sex = "M")
-plot_top(most_freq_boys, babynames, select_sex = "M", top = 10)
+most_freq_boys <- get_most_frequent(babynames, select_sex = "M") |>
+  plot_top()
 ```
 
 @fig-line-boys shows that names that were popular before 1990 are relatively infrequent after 2000. 
