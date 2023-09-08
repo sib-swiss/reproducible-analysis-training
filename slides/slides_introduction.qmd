@@ -14,8 +14,6 @@ format:
 ## Teachers
 
 -   **Wandrille Duchemin** - Bioinformatician and Trainer, SIB and the sciCORE University of Basel, Switzerland
--   **Lea Taylor** - Bioinformatician, IBU Bern, Switzerland
--   **Pradeep Eranti** - Bioinformatician & PhD candidate, Université Paris Cité, France
 -   **Geert van Geest** - Bioinformatician and trainer, SIB and IBU Bern, Switzerland
 
 ## Learning outcomes
@@ -59,11 +57,18 @@ format:
 
     `sib-swiss.github.io/reproducible-analysis-training`
 
--   During exercises: **Slack**
+-   Ask questions at any time!
 
--   During lectures: **Voice** 👄
+## Reproducible research
 
-## Why reusable research?
+- *Reproducibility:* The principle that states that results ... should be achieved again with a high degree of reliability when the study/analysis is replicated.
+- Main purpose: the ability to validate
+- Resulting in: 
+  - Transparency and open science
+  - Improved collaboration and innovation
+
+
+## Why would I make my research reproducible?
 
 ::: incremental
 1.  Because journals/funding agencies require you to..
@@ -74,9 +79,40 @@ format:
 
     -   Identify mistakes or bugs
 
-3.  Colleagues can redo or reuse your experiments/analysis
+3.  Colleagues can redo your experiments/analysis
 
 4.  [Redo your own experiments/analysis]{.underline}
+:::
+
+## Reusability is even better
+
+- *Reproducibility:* The principle that states that results ... should be achieved again with a high degree of reliability when the study/analysis is replicated.
+- *Reusability:* The extend to which existing digital objects can be used for other purposes than their initial purpose. 
+
+------------------------------------------------------------------------
+
+## FAIR principles
+
+::: columns
+::: {.column width="40%"}
+-   **Findable**
+
+-   Accessbile
+
+-   Interoperable
+
+-   **Reusable**
+:::
+
+::: {.column width="60%"}
+![](../img/fair_image.png)
+:::
+:::
+
+::: aside
+More at: [go-fair.org](https://www.go-fair.org/fair-principles/)
+
+Image from: European Commission, Directorate-General for Research and Innovation, Turning FAIR into reality, Publications Office, 2018, https://data.europa.eu/doi/10.2777/1524
 :::
 
 ## Why can reusable data analysis be difficult?
@@ -109,7 +145,7 @@ The less likely we are motivated to invest time ..
 
 -   Like dieting, exercise, proper sleeping..
 
--   Be successful by making reproducibility a habit!
+-   Be successful by making reusability a habit!
 :::
 
 ::: {.column width="40%"}
@@ -117,15 +153,6 @@ The less likely we are motivated to invest time ..
 :::
 :::
 
-------------------------------------------------------------------------
-
-## Data analysis & software development have similarities
-
--   Both require programming skills
-
--   Both use version control
-
--   But there are differences ..
 
 ------------------------------------------------------------------------
 
@@ -193,38 +220,14 @@ Slide from: Roland Krause ELIXIR-LU
 
 ![](../img/software_engineer.jpg){.absolute top="350" right="50" width="400"}
 
-------------------------------------------------------------------------
 
-## FAIR principles
-
-::: columns
-::: {.column width="40%"}
--   **Findable**
-
--   Accessbile
-
--   Interoperable
-
--   **Reusable**
-:::
-
-::: {.column width="60%"}
-![](../img/fair_image.png)
-:::
-:::
-
-::: aside
-More at: [go-fair.org](https://www.go-fair.org/fair-principles/)
-
-Image from: European Commission, Directorate-General for Research and Innovation, Turning FAIR into reality, Publications Office, 2018, https://data.europa.eu/doi/10.2777/1524
-:::
 
 ------------------------------------------------------------------------
 
-## How to apply the FAIR principles in analysis?
+## Applying FAIR principles to your analysis
 
 ::: incremental
--   Make your analysis reproducible and Reusable:
+-   Make your analysis Reusable:
 
     -   **Code**: style + context, version control (git)
 

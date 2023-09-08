@@ -1,5 +1,5 @@
 ---
-title: "Reproducible analysis"
+title: "Reusable analysis"
 subtitle: "Make your research FAIRer with Quarto, GitHub and Zenodo"
 ---
 
