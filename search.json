@@ -25,7 +25,7 @@
     "href": "exercises_git.html#creating-a-branch-and-pull-request-to-add-a-figure-panel",
     "title": "Git and GitHub pages",
     "section": "Creating a branch and pull request to add a figure panel",
-    "text": "Creating a branch and pull request to add a figure panel\nLet’s add a feature to our website: we will add a sub-chapter where we create a block of multiple figures and cross reference them in the text. It is important that we don’t interfere with the main branch while we are developing it.\n\nFrom issue to branch\nWhen adding a new feature, a good practice would be to first write an issue. Here you describe clearly what you want to do. With an issue, it is straightforward to discuss about it, maintain a backlog, and give it a the priority. At the point you decide you will work on the issue, you can make a branch out of the issue. In this way the branch has a clear aim - described in the issue.\n\n\n\n\n\n\nExercise\n\n\n\nGo to your repository on GitHub. Write an issue (Click the Issues tab) with the following content:\nTitle: Create a panel of figures\nDescription:\nThe figure panel should contain:\n\nLine plot of top 5 girl names from 2010 onwards\nLine plot of top 10 girl names from 2010 onwards\nHeatmap of top 30 girl names from 2010 onwards\n\nDescribe and cross-reference the individual figures in the text\nAfter that, save the issue, and at the issue page, on the right panel click on Create a branch under Development. This will automatically suggest a good branch name. Use the default settings and click Create branch. GitHub will automatically suggest what code to run to work on the branch locally. This will be:\ngit fetch origin\ngit checkout 1-create-a-panel-of-figures\nRun these commands in your local terminal at the root directory of your quarto project.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nYou can validate whether you are in the right branch by typing:\ngit branch\nThe branch 1-create-a-panel-of-figures should appear in green.\n\n\n\n\n\nCreating a figure panel\nNice! Now we have a new branch so we can develop in our repository without interfering with our stable main branch. Let’s work on the issue. To create the three figures that you just described in the issue, the required code will be provided by us. Your job would be to add hash-pipe (i.e. #|) options to the code chunk to render the plots as we want.\n\n\n\n\n\n\nExercise\n\n\n\nCheck out the quarto documentation on computed figures and cross-referencing and custom layout.\nThe code below will create the three figures that are displayed in two rows:\n\nThe two line graphs: should be in the first row, and next to each other\nThe heatmap: should be in the second row and span the entire column.\n\nUse this code and add the required chunk options:\n```{r}\n# get most frequent girl names from 2010 onwards\nfrom_year &lt;- 2010\nmost_freq_girls &lt;- get_most_frequent(babynames, select_sex = \"F\",\n                                     from = from_year)\n\n# plot top 5 girl names\nmost_freq_girls |&gt;\n  plot_top(top = 5)\n\n# plot top 10 girl names\nmost_freq_girls |&gt;\n  plot_top(top = 10)\n\n# get top 30 girl names in a matrix\n# with names in rows and years in columns\nprop_df &lt;- babynames |&gt; \n  filter(name %in% most_freq_girls$name[1:30] & sex == \"F\") |&gt;\n  filter(year &gt;= from_year) |&gt; \n  select(year, name, prop) |&gt;\n  pivot_wider(names_from = year,\n              values_from = prop)\n\nprop_mat &lt;- as.matrix(prop_df[, 2:ncol(prop_df)])\nrownames(prop_mat) &lt;- prop_df$name\n\n# create heatmap\npheatmap(prop_mat, cluster_cols = FALSE, scale = \"row\")\n```\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nAdd the following to the top of the code chunk:\n#| label: fig-line-2010\n#| layout: [[50,50], [100]]\n#| fig-cap: \"Most popular girl names from 2010 onwards\"\n#| fig-subcap: \n#|   - \"Top 5\"\n#|   - \"Top 10\"\n#|   - \"Top 30\"\nYou can refer to the figures in the markdown text like this:\nIn @fig-line-2010-1 and @fig-line-2010-1 the line plots are shown. To view trends of many names at once, @fig-line2010-3 displays a heatmap.\n\n\n\n\n\nCreating a pull request\nIf the panel is appearing as it should, it might be time to merge it to the main branch. For this we’d first need to commit our changes:\ngit commit -am \"adds the figure panel\"\n\n\n\n\n\n\nNote\n\n\n\nNow, we could merge by (do not run this now!):\n# go to the main branch\ngit checkout main\n# merge the development branch to the main branch\ngit merge 1-create-a-panel-of-figures\n\n\nAs shown above, we could directly merge our development branch locally. However, if we are working with multiple people on the same project, we want to be explicit that we want to perform this merge. For example, you might want your colleague to test/review your change before merging. The way to do this would be by a pull request.\nTo create a pull request we first need to push our changes to the remote repository:\n# make sure you are on the development branch\ngit checkout 1-create-a-panel-of-figures\n# push the changes to the remote repository\ngit push\nNow browse to the repository on GitHub. You will already see a yellow banner with the question whether you want to create a pull request. However, we will do it in a more explicit way. Go to the tab Pull requests. Click the button New pull request. As base specify the main branch. At compare specify 1-create-a-panel-of-figures. Now review the displayed changes and click the button Create pull request. Add comments if necessary. In the same page, you can specify reviewers and assignees if you want others to become involved. We skip this for now, and click Merge pull request to merge 1-create-a-panel-of-figures to main.\n\n\n\n\n\n\nExercise\n\n\n\n\nCheck out the issue. Has anything happened to it?\nSwitch to the main branch locally and pull the changes your local repository\nValidate whether the development branch is merged to main\nCheck out the commits with git log --oneline. Anything changed in the commit history?\nRe-publish the website\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nThe issue should be marked as ‘Closed’. This has happened automatically after merging the pull request, because GitHub created a reference between the issue and the branch.\nTo switch to main and pull the changes:\ngit checkout main\ngit pull\nNow the code with the figure panel should be added to analysis.qmd. If you run git log --oneline you will see that the merge is stored as a commit, looking something like this:\n4fdf90e Merge pull request #1 from yourusername/1-create-a-panel-of-figures\nTo publish\nquarto publish gh-pages"
+    "text": "Creating a branch and pull request to add a figure panel\nLet’s add a feature to our website: we will add a sub-chapter where we create a block of multiple figures and cross reference them in the text. It is important that we don’t interfere with the main branch while we are developing it.\n\nFrom issue to branch\nWhen adding a new feature, a good practice would be to first write an issue. Here you describe clearly what you want to do. With an issue, it is straightforward to discuss about it, maintain a backlog, and give it a priority. At the point you decide you will work on the issue, you can make a branch out of the issue. In this way the branch has a clear aim - described in the issue.\n\n\n\n\n\n\nExercise\n\n\n\nGo to your repository on GitHub. Write an issue (Click the Issues tab) with the following content:\nTitle: Create a panel of figures\nDescription:\nThe figure panel should contain:\n\nLine plot of top 5 girl names from 2010 onwards\nLine plot of top 10 girl names from 2010 onwards\nHeatmap of top 30 girl names from 2010 onwards\n\nDescribe and cross-reference the individual figures in the text\nAfter that, save the issue, and at the issue page, on the right panel click on Create a branch under Development. This will automatically suggest a good branch name. Use the default settings and click Create branch. GitHub will automatically suggest what code to run to work on the branch locally. This will be:\ngit fetch origin\ngit checkout 1-create-a-panel-of-figures\nRun these commands in your local terminal at the root directory of your quarto project.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nYou can validate whether you are in the right branch by typing:\ngit branch\nThe branch 1-create-a-panel-of-figures should appear in green.\n\n\n\n\n\nCreating a figure panel\nNice! Now we have a new branch so we can develop in our repository without interfering with our stable main branch. Let’s work on the issue. To create the three figures that you just described in the issue, the required code will be provided by us. Your job would be to add hash-pipe (i.e. #|) options to the code chunk to render the plots as we want.\n\n\n\n\n\n\nExercise\n\n\n\nCheck out the quarto documentation on computed figures and cross-referencing and custom layout.\nThe code below will create the three figures that are displayed in two rows:\n\nThe two line graphs: should be in the first row, and next to each other\nThe heatmap: should be in the second row and span the entire column.\n\nUse this code and add the required chunk options:\n```{r}\n# get most frequent girl names from 2010 onwards\nfrom_year &lt;- 2010\nmost_freq_girls &lt;- get_most_frequent(babynames, select_sex = \"F\",\n                                     from = from_year)\n\n# plot top 5 girl names\nmost_freq_girls |&gt;\n  plot_top(top = 5)\n\n# plot top 10 girl names\nmost_freq_girls |&gt;\n  plot_top(top = 10)\n\n# get top 30 girl names in a matrix\n# with names in rows and years in columns\nprop_df &lt;- babynames |&gt; \n  filter(name %in% most_freq_girls$name[1:30] & sex == \"F\") |&gt;\n  filter(year &gt;= from_year) |&gt; \n  select(year, name, prop) |&gt;\n  pivot_wider(names_from = year,\n              values_from = prop)\n\nprop_mat &lt;- as.matrix(prop_df[, 2:ncol(prop_df)])\nrownames(prop_mat) &lt;- prop_df$name\n\n# create heatmap\npheatmap(prop_mat, cluster_cols = FALSE, scale = \"row\")\n```\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nAdd the following to the top of the code chunk:\n#| label: fig-line-2010\n#| layout: [[50,50], [100]]\n#| fig-cap: \"Most popular girl names from 2010 onwards\"\n#| fig-subcap: \n#|   - \"Top 5\"\n#|   - \"Top 10\"\n#|   - \"Top 30\"\nYou can refer to the figures in the markdown text like this:\nIn @fig-line-2010-1 and @fig-line-2010-1 the line plots are shown. To view trends of many names at once, @fig-line2010-3 displays a heatmap.\n\n\n\n\n\nCreating a pull request\nIf the panel is appearing as it should, it might be time to merge it to the main branch. For this we’d first need to commit our changes:\ngit commit -am \"adds the figure panel\"\n\n\n\n\n\n\nNote\n\n\n\nNow, we could merge by (do not run this now!):\n# go to the main branch\ngit checkout main\n# merge the development branch to the main branch\ngit merge 1-create-a-panel-of-figures\n\n\nAs shown above, we could directly merge our development branch locally. However, if we are working with multiple people on the same project, we want to be explicit that we want to perform this merge. For example, you might want your colleague to test/review your change before merging. The way to do this would be by a pull request.\nTo create a pull request we first need to push our changes to the remote repository:\n# make sure you are on the development branch\ngit checkout 1-create-a-panel-of-figures\n# push the changes to the remote repository\ngit push\nNow browse to the repository on GitHub. You will already see a yellow banner with the question whether you want to create a pull request. However, we will do it in a more explicit way. Go to the tab Pull requests. Click the button New pull request. As base specify the main branch. At compare specify 1-create-a-panel-of-figures. Now review the displayed changes and click the button Create pull request. Add comments if necessary. In the same page, you can specify reviewers and assignees if you want others to become involved. We skip this for now, and click Merge pull request to merge 1-create-a-panel-of-figures to main.\n\n\n\n\n\n\nExercise\n\n\n\n\nCheck out the issue. Has anything happened to it?\nSwitch to the main branch locally and pull the changes your local repository\nValidate whether the development branch is merged to main\nCheck out the commits with git log --oneline. Anything changed in the commit history?\nRe-publish the website\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nThe issue should be marked as ‘Closed’. This has happened automatically after merging the pull request, because GitHub created a reference between the issue and the branch.\nTo switch to main and pull the changes:\ngit checkout main\ngit pull\nNow the code with the figure panel should be added to analysis.qmd. If you run git log --oneline you will see that the merge is stored as a commit, looking something like this:\n4fdf90e Merge pull request #1 from yourusername/1-create-a-panel-of-figures\nTo publish\nquarto publish gh-pages"
   },
   {
     "objectID": "slides.html",
@@ -37,42 +37,42 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Reproducible analysis",
+    "title": "Reusable analysis",
     "section": "",
     "text": "Learning objectives\n\n\n\nAfter this tutorial, you will be able to:\n\nCreate notebooks and websites based on Markdown, and R with Quarto\nUse Git and GitHub to version control the generated content\nHost a website by making use of GitHub actions and GitHub pages\nLink the GitHub repository to Zenodo and give it a unique identifier (DOI)"
   },
   {
     "objectID": "index.html#course-schedule",
     "href": "index.html#course-schedule",
-    "title": "Reproducible analysis",
+    "title": "Reusable analysis",
     "section": "Course schedule",
     "text": "Course schedule\n\n\n\n\n\n\n\nBlock\nTopic\n\n\n\n\nBlock 1\n\nPresentation - General introduction\nPresentation - Introduction to Quarto\n\n\n\nBREAK\n\n\n\nBlock 2\n\nExercises - Quarto\n\n\n\nBREAK\n\n\n\nBlock 3\n\nPresentation - Introduction to git and GitHub\nExercises - Git, GitHub and GitHub pages\n\n\n\nBREAK\n\n\n\nBlock 4\n\nPresentation - Introduction to Zenodo\nExercises - Zenodo"
   },
   {
     "objectID": "index.html#list-of-trainers",
     "href": "index.html#list-of-trainers",
-    "title": "Reproducible analysis",
+    "title": "Reusable analysis",
     "section": "List of trainers",
     "text": "List of trainers\n\nDr. Geert van Geest - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland\nDr. Wandrille Duchemin - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the sciCORE core facility of the University of Basel, Switzerland"
   },
   {
     "objectID": "index.html#acknowledgements",
     "href": "index.html#acknowledgements",
-    "title": "Reproducible analysis",
+    "title": "Reusable analysis",
     "section": "Acknowledgements",
     "text": "Acknowledgements\nThis course is inspired and based on the following material:\n\nData Management and Data Stewardship course at the University of Luxemburg (Roland Krause & Milena Zizovic)\nGetting Started with Quarto course at rstudio::conf 2022 (Tom Mock)\nHappy git with R course (Jennifer Bryan)"
   },
   {
     "objectID": "index.html#course-description",
     "href": "index.html#course-description",
-    "title": "Reproducible analysis",
+    "title": "Reusable analysis",
     "section": "Course description",
     "text": "Course description\nThe FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research’s impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.\nSharing and reusing are at the heart of the FAIR principles and should be a routine task of any (life) scientist today. To enable others to use or reproduce our findings and work, we need to provide all the information: the data, software and parameters used, scripts for the analysis, databases and their versions, and any required documentation and contextualisation. To have all this information and code together in a single file, many use markdown. Such a markdown file can be created in a simple way, and after that rendered in a single web page that is easy to share and read.\nThe FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g. R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).\nBy using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing."
   },
   {
     "objectID": "index.html#intended-audience-and-level",
     "href": "index.html#intended-audience-and-level",
-    "title": "Reproducible analysis",
+    "title": "Reusable analysis",
     "section": "Intended audience and level",
     "text": "Intended audience and level\nThis tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a GitHub account and bring their laptops with either the latest versions of R, Rstudio and quarto installed. Find detailed instructions at course preparations."
   },
@@ -119,11 +119,11 @@
     "text": "Story + code = notebooks\n\nSome examples:\n\nJupyterLab / notebook\nGoogle colab\nRmarkdown\nQuarto\n\nText is written in markdown \nCode is in (executable) code chunks"
   },
   {
-    "objectID": "slides/slides_quarto.html#project---based-working",
-    "href": "slides/slides_quarto.html#project---based-working",
+    "objectID": "slides/slides_quarto.html#tell-the-story-of-your-project",
+    "href": "slides/slides_quarto.html#tell-the-story-of-your-project",
     "title": "2. Introduction to Quarto",
-    "section": "Project - based working",
-    "text": "Project - based working\n\nProject: a collection of code, notebooks, environments and data that serve the same analysis aim\nWork in projects to:\n\nDefine goals and tasks\nOrganize yourself\nKeep a good documentation\nCommunicate about methods, goals, results etc.\n\nWord of advice: keep projects small!"
+    "section": "Tell the story of your project",
+    "text": "Tell the story of your project\n\nProject: a collection of code, notebooks, environments and data that serve the same analysis aim\nWork in projects to:\n\nDefine goals and tasks\nOrganize yourself\nKeep a good documentation\nCommunicate about methods, goals, results etc.\n\nWord of advice: keep projects small!"
   },
   {
     "objectID": "slides/slides_quarto.html#quarto-projects",
@@ -224,11 +224,11 @@
     "text": "Markdown & code - quarto magic\n```{r}\n#| label: \"fig-mpg-vs-drat\"\n#| fig-cap: \"mpg versus drat\"\n#| fig-align: \"left\"\nlibrary(ggplot2)\nmtcars |&gt;\n  ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()\n```\n\nFrom @fig-mpg-vs-drat you can see there is a positive correlation. \n\nFigure 2: mpg versus dratFrom Figure 2 you can see there is a positive correlation."
   },
   {
-    "objectID": "slides/slides_quarto.html#quarto---use-cases",
-    "href": "slides/slides_quarto.html#quarto---use-cases",
+    "objectID": "slides/slides_quarto.html#quarto---other-use-cases",
+    "href": "slides/slides_quarto.html#quarto---other-use-cases",
     "title": "2. Introduction to Quarto",
-    "section": "Quarto - use cases",
-    "text": "Quarto - use cases\n\n\nYou don’t have to be a LaTeX specialist to write a manuscript from source code 🎉 More info here\nCreate presentations (including powerpoint exports!)\nWrite your thesis in Quarto, more about books\nMaybe now is the time to get started with your personal website"
+    "section": "Quarto - other use cases",
+    "text": "Quarto - other use cases\n\n\nWrite a manuscript from source code 🎉 More info here\nCreate presentations (including powerpoint exports!)\nWrite your thesis in Quarto, more about books\nMaybe now is the time to get started with your personal website"
   },
   {
     "objectID": "slides/slides_quarto.html#more-quarto",
@@ -249,7 +249,7 @@
     "href": "slides/slides_git.html#versions",
     "title": "3. Introduction to git, GitHub and GitHub pages",
     "section": "Versions",
-    "text": "Versions\n\n\nfinal_version.docx 🎉\nfinal_version_corrected_additional_comments_supervisor1.docx\nfinal_version_corrected_additional_comments_supervisor2.docx\nfinal_version_tookmehourstocombineallcomments.docx 🤯\nfinal_version_corrected.docx\n.."
+    "text": "Versions\n\n\nfinal_version.docx 🎉\nfinal_version_corrected_supervisor1.docx\nfinal_version_corrected_supervisor2.docx\nfinal_version_tookmehourstocombineallcomments.docx 🤯\nfinal_version_corrected.docx\n.."
   },
   {
     "objectID": "slides/slides_git.html#take-control-of-your-versions",
@@ -298,7 +298,7 @@
     "href": "slides/slides_git.html#collaborating-with-git",
     "title": "3. Introduction to git, GitHub and GitHub pages",
     "section": "Collaborating with git",
-    "text": "Collaborating with git\n\nSync with a remote (e.g. on GitHub)\nAll commits are associated with a user\nIf you’re collaborating:\n\nMake sure to sync with the remote regularly (git pull + git push)\nWork with branches"
+    "text": "Collaborating with git\n\nSync with a remote (e.g. on GitHub)\nAll commits are associated with a user\nIf you’re collaborating:\n\nMake sure to sync with the remote regularly (git pull + git push)\nWork with branches and pull requests"
   },
   {
     "objectID": "slides/slides_git.html#creating-a-remote-repository",
@@ -396,7 +396,7 @@
     "href": "slides/slides_introduction.html#teachers",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Teachers",
-    "text": "Teachers\n\nWandrille Duchemin - Bioinformatician and Trainer, SIB and the sciCORE University of Basel, Switzerland\nLea Taylor - Bioinformatician, IBU Bern, Switzerland\nPradeep Eranti - Bioinformatician & PhD candidate, Université Paris Cité, France\nGeert van Geest - Bioinformatician and trainer, SIB and IBU Bern, Switzerland"
+    "text": "Teachers\n\nWandrille Duchemin - Bioinformatician and Trainer, SIB and the sciCORE University of Basel, Switzerland\nGeert van Geest - Bioinformatician and trainer, SIB and IBU Bern, Switzerland"
   },
   {
     "objectID": "slides/slides_introduction.html#learning-outcomes",
@@ -424,14 +424,35 @@
     "href": "slides/slides_introduction.html#communication",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Communication",
-    "text": "Communication\n\nTutorial website:\nsib-swiss.github.io/reproducible-analysis-training\nDuring exercises: Slack\nDuring lectures: Voice 👄"
+    "text": "Communication\n\nTutorial website:\nsib-swiss.github.io/reproducible-analysis-training\nAsk questions at any time!"
   },
   {
-    "objectID": "slides/slides_introduction.html#why-reusable-research",
-    "href": "slides/slides_introduction.html#why-reusable-research",
+    "objectID": "slides/slides_introduction.html#reproducible-research",
+    "href": "slides/slides_introduction.html#reproducible-research",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
-    "section": "Why reusable research?",
-    "text": "Why reusable research?\n\n\nBecause journals/funding agencies require you to..\nShare with others:\n\nPeople will appreciate!\nIdentify mistakes or bugs\n\nColleagues can redo or reuse your experiments/analysis\nRedo your own experiments/analysis"
+    "section": "Reproducible research",
+    "text": "Reproducible research\n\nReproducibility: The principle that states that results … should be achieved again with a high degree of reliability when the study/analysis is replicated.\nMain purpose: the ability to validate\nResulting in:\n\nTransparency and open science\nImproved collaboration and innovation"
+  },
+  {
+    "objectID": "slides/slides_introduction.html#why-would-i-make-my-research-reproducible",
+    "href": "slides/slides_introduction.html#why-would-i-make-my-research-reproducible",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Why would I make my research reproducible?",
+    "text": "Why would I make my research reproducible?\n\n\nBecause journals/funding agencies require you to..\nShare with others:\n\nPeople will appreciate!\nIdentify mistakes or bugs\n\nColleagues can redo your experiments/analysis\nRedo your own experiments/analysis"
+  },
+  {
+    "objectID": "slides/slides_introduction.html#reusability-is-even-better",
+    "href": "slides/slides_introduction.html#reusability-is-even-better",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Reusability is even better",
+    "text": "Reusability is even better\n\nReproducibility: The principle that states that results … should be achieved again with a high degree of reliability when the study/analysis is replicated.\nReusability: The extend to which existing digital objects can be used for other purposes than their initial purpose."
+  },
+  {
+    "objectID": "slides/slides_introduction.html#fair-principles",
+    "href": "slides/slides_introduction.html#fair-principles",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "FAIR principles",
+    "text": "FAIR principles\n\n\n\nFindable\nAccessbile\nInteroperable\nReusable\n\n\n\n\n\n\n\nMore at: go-fair.org\nImage from: European Commission, Directorate-General for Research and Innovation, Turning FAIR into reality, Publications Office, 2018, https://data.europa.eu/doi/10.2777/1524"
   },
   {
     "objectID": "slides/slides_introduction.html#why-can-reusable-data-analysis-be-difficult",
@@ -445,14 +466,7 @@
     "href": "slides/slides_introduction.html#make-it-a-habit",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Make it a habit",
-    "text": "Make it a habit\n\n\n\n\n\n\n\n\nThe longer it takes to reach goals ..\n\n\nThe less likely we are motivated to invest time ..\n\n\n\n\nLike dieting, exercise, proper sleeping..\nBe successful by making reproducibility a habit!"
-  },
-  {
-    "objectID": "slides/slides_introduction.html#data-analysis-software-development-have-similarities",
-    "href": "slides/slides_introduction.html#data-analysis-software-development-have-similarities",
-    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
-    "section": "Data analysis & software development have similarities",
-    "text": "Data analysis & software development have similarities\n\nBoth require programming skills\nBoth use version control\nBut there are differences .."
+    "text": "Make it a habit\n\n\n\n\n\n\n\n\nThe longer it takes to reach goals ..\n\n\nThe less likely we are motivated to invest time ..\n\n\n\n\nLike dieting, exercise, proper sleeping..\nBe successful by making reusability a habit!"
   },
   {
     "objectID": "slides/slides_introduction.html#think-like-a-software-engineer",
@@ -462,18 +476,11 @@
     "text": "Think like a software engineer\n\nPrepare to:\n\nDevelop your code further and collaborate\nLet others reuse your code\nAllow for different data input\n\nImportant:\n\nGood coding practices\nDocumentation (this course)\nVersion control (this course)"
   },
   {
-    "objectID": "slides/slides_introduction.html#fair-principles",
-    "href": "slides/slides_introduction.html#fair-principles",
+    "objectID": "slides/slides_introduction.html#applying-fair-principles-to-your-analysis",
+    "href": "slides/slides_introduction.html#applying-fair-principles-to-your-analysis",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
-    "section": "FAIR principles",
-    "text": "FAIR principles\n\n\n\nFindable\nAccessbile\nInteroperable\nReusable\n\n\n\n\n\n\n\nMore at: go-fair.org\nImage from: European Commission, Directorate-General for Research and Innovation, Turning FAIR into reality, Publications Office, 2018, https://data.europa.eu/doi/10.2777/1524"
-  },
-  {
-    "objectID": "slides/slides_introduction.html#how-to-apply-the-fair-principles-in-analysis",
-    "href": "slides/slides_introduction.html#how-to-apply-the-fair-principles-in-analysis",
-    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
-    "section": "How to apply the FAIR principles in analysis?",
-    "text": "How to apply the FAIR principles in analysis?\n\n\nMake your analysis reproducible and Reusable:\n\nCode: style + context, version control (git)\nWorkflows: e.g. snakemake, nextflow\nEnvironments: e.g. conda, renv, containers\n\nMake your analysis Findable:\n\nUnique identifier\nLong term storage\nDescribe"
+    "section": "Applying FAIR principles to your analysis",
+    "text": "Applying FAIR principles to your analysis\n\n\nMake your analysis Reusable:\n\nCode: style + context, version control (git)\nWorkflows: e.g. snakemake, nextflow\nEnvironments: e.g. conda, renv, containers\n\nMake your analysis Findable:\n\nUnique identifier\nLong term storage\nDescribe"
   },
   {
     "objectID": "slides/slides_introduction.html#this-tutorial",
