@@ -45,7 +45,7 @@ format:
 
 -   Code is in (executable) code chunks
 
-## Project - based working
+## Tell the story of your project
 
 -   **Project**: a collection of code, notebooks, environments and data that serve the same analysis aim
 
@@ -288,10 +288,10 @@ mtcars |>
 
 From @fig-mpg-vs-drat you can see there is a positive correlation.
 
-## Quarto - use cases
+## Quarto - other use cases
 
 ::: incremental
--   You don't have to be a LaTeX specialist to write a manuscript from source code 🎉 More info [here](https://quarto.org/docs/journals/)
+-   Write a manuscript from source code 🎉 More info [here](https://quarto.org/docs/journals/)
 -   Create [presentations](https://quarto.org/docs/presentations/) (including powerpoint exports!)
 -   Write your thesis in Quarto, more about [books](https://quarto.org/docs/books/)
 -   Maybe now is the time to get started with your [personal website](https://ucsb-meds.github.io/creating-quarto-websites/)

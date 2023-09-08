@@ -17,9 +17,9 @@ format:
 ::: incremental
 -   final_version.docx 🎉
 
--   final_version_corrected_additional_comments_supervisor1.docx
+-   final_version_corrected_supervisor1.docx
 
--   final_version_corrected_additional_comments_supervisor2.docx
+-   final_version_corrected_supervisor2.docx
 
 -   final_version_tookmehourstocombineallcomments.docx 🤯
 
@@ -119,7 +119,7 @@ flowchart LR
 
     -   Make sure to sync with the remote regularly (`git pull` + `git push`)
 
-    -   Work with branches
+    -   Work with branches and pull requests
 
 ## Creating a remote repository
 
