@@ -166,7 +166,7 @@ Let's add a feature to our website: we will add a sub-chapter where we create a 
 
 ### From issue to branch
 
-When adding a new feature, a good practice would be to first write an issue. Here you describe clearly what you want to do. With an issue, it is straightforward to discuss about it, maintain a backlog, and give it a the priority. At the point you decide you will work on the issue, you can make a branch out of the issue. In this way the branch has a clear aim - described in the issue.
+When adding a new feature, a good practice would be to first write an issue. Here you describe clearly what you want to do. With an issue, it is straightforward to discuss about it, maintain a backlog, and give it a priority. At the point you decide you will work on the issue, you can make a branch out of the issue. In this way the branch has a clear aim - described in the issue.
 
 ::: callout-important
 ## Exercise
@@ -332,7 +332,7 @@ git pull
 
 Now the code with the figure panel should be added to `analysis.qmd`. If you run `git log --oneline` you will see that the merge is stored as a commit, looking something like this:
 
-```
+```         
 4fdf90e Merge pull request #1 from yourusername/1-create-a-panel-of-figures
 ```
 
