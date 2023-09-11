@@ -86,4 +86,7 @@ format:
 
 -   The website will stay online - might evolve through time
 
--   Happy coding!
+-   Looking for bioinformatics training material? Check out [glittr.org](https://www.glittr.org)
+
+
+![](../img/logo-with-domain-tagline.svg){.absolute top="340" right="50" width="500"}
