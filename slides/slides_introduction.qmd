@@ -98,7 +98,7 @@ format:
 ::: {.column width="40%"}
 -   **Findable**
 
--   Accessbile
+-   Accessible
 
 -   Interoperable
 
