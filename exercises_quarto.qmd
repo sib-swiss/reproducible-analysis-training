@@ -193,6 +193,8 @@ library(babynames)
 library(knitr)
 library(dplyr)
 library(ggplot2)
+library(tidyr)
+library(pheatmap)
 ```
 
 The first ten lines of the babynames dataset looks like:

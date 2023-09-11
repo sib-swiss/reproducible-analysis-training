@@ -110,7 +110,7 @@ We will now link our local repository to a remote repository on GitHub. First, w
 
     -   We will host a website, so make sure it's public
 
-    -   Leave the rest unchecked, so no README file and no `.gitignore` (these are already in our local repository)
+    -   Leave the rest unchecked, so no README file and no `.gitignore` (we'll leave the `README.md` for now, and `.gitignore` is already in our local repository)
 
 -   Click the green button with `Create repository`
 
@@ -138,13 +138,7 @@ git push -u origin main
 
 Which pushes the `main` branch from the local repository to the remote (named `origin`). The option `-u` makes sure that the `main` branch is used as default branch on the remote repository.
 
-To publish your site, you only need to run two commands. To make sure `_site` contains the latest version of your website:
-
-``` bash
-quarto render
-```
-
-And after that:
+To publish your site, you only need to run one command:
 
 ``` bash
 quarto publish gh-pages
@@ -162,7 +156,7 @@ This command will:
 
 ## Creating a branch and pull request to add a figure panel
 
-Let's add a feature to our website: we will add a sub-chapter where we create a block of multiple figures and cross reference them in the text. It is important that we don't interfere with the main branch while we are developing it.
+Let's add a feature to our website: we will add a sub-chapter where we create a panel of multiple figures and cross reference them in the text. It is important that we don't interfere with the main branch while we are developing it.
 
 ### From issue to branch
 
@@ -240,7 +234,7 @@ most_freq_girls |>
 # get top 30 girl names in a matrix
 # with names in rows and years in columns
 prop_df <- babynames |> 
-  filter(name %in% most_freq_girls$name[1:30] & sex == "F") |>
+  filter(name %in% most_freq_girls$most_frequent$name[1:30] & sex == "F") |>
   filter(year >= from_year) |> 
   select(year, name, prop) |>
   pivot_wider(names_from = year,
@@ -281,7 +275,8 @@ In @fig-line-2010-1 and @fig-line-2010-1 the line plots are shown. To view trend
 If the panel is appearing as it should, it might be time to merge it to the main branch. For this we'd first need to commit our changes:
 
 ``` sh
-git commit -am "adds the figure panel"
+git add analysis.qmd
+git commit -m "adds the figure panel"
 ```
 
 ::: callout-note
