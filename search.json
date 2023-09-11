@@ -431,7 +431,7 @@
     "href": "slides/slides_introduction.html#reproducible-research",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Reproducible research",
-    "text": "Reproducible research\n\nReproducibility: The principle that states that results … should be achieved again with a high degree of reliability when the study/analysis is replicated.\nMain purpose: the ability to validate\nResulting in:\n\nTransparency and open science\nImproved collaboration and innovation"
+    "text": "Reproducible research\n\n\nReproducibility: The principle stating that results … should be achieved again with a high degree of reliability when the study/analysis is replicated.\nMain purpose: the ability to validate\nResulting in:\n\nTransparency and open science\nImproved collaboration and innovation"
   },
   {
     "objectID": "slides/slides_introduction.html#why-would-i-make-my-research-reproducible",
@@ -445,7 +445,7 @@
     "href": "slides/slides_introduction.html#reusability-is-even-better",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Reusability is even better",
-    "text": "Reusability is even better\n\nReproducibility: The principle that states that results … should be achieved again with a high degree of reliability when the study/analysis is replicated.\nReusability: The extend to which existing digital objects can be used for other purposes than their initial purpose."
+    "text": "Reusability is even better\n\nReproducibility: The principle stating that results … should be achieved again with a high degree of reliability when the study/analysis is replicated.\nReusability: The extend to which existing digital objects can be used for other purposes than their initial purpose."
   },
   {
     "objectID": "slides/slides_introduction.html#fair-principles",
