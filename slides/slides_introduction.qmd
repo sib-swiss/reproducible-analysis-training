@@ -51,6 +51,14 @@ format:
 :::
 :::
 
+## Introduction round
+
+Introduce yourself:
+
+- Your job/study
+
+- Why you are joining
+
 ## Communication
 
 -   Tutorial website:
