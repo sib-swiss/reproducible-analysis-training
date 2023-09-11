@@ -61,12 +61,13 @@ format:
 
 ## Reproducible research
 
-- *Reproducibility:* The principle that states that results ... should be achieved again with a high degree of reliability when the study/analysis is replicated.
-- Main purpose: the ability to validate
-- Resulting in: 
-  - Transparency and open science
-  - Improved collaboration and innovation
-
+::: incremental
+-   *Reproducibility:* The principle stating that results ... should be achieved again with a high degree of reliability when the study/analysis is replicated.
+-   Main purpose: the ability to validate
+-   Resulting in:
+    -   Transparency and open science
+    -   Improved collaboration and innovation
+:::
 
 ## Why would I make my research reproducible?
 
@@ -86,8 +87,8 @@ format:
 
 ## Reusability is even better
 
-- *Reproducibility:* The principle that states that results ... should be achieved again with a high degree of reliability when the study/analysis is replicated.
-- *Reusability:* The extend to which existing digital objects can be used for other purposes than their initial purpose. 
+-   *Reproducibility:* The principle stating that results ... should be achieved again with a high degree of reliability when the study/analysis is replicated.
+-   *Reusability:* The extend to which existing digital objects can be used for other purposes than their initial purpose.
 
 ------------------------------------------------------------------------
 
@@ -152,7 +153,6 @@ The less likely we are motivated to invest time ..
 ![](../img/healthy_food.jpg)
 :::
 :::
-
 
 ------------------------------------------------------------------------
 
@@ -219,8 +219,6 @@ Slide from: Roland Krause ELIXIR-LU
     -   Version control (this course)
 
 ![](../img/software_engineer.jpg){.absolute top="350" right="50" width="400"}
-
-
 
 ------------------------------------------------------------------------
 
