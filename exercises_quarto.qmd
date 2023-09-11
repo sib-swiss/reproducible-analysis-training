@@ -159,7 +159,7 @@ library(ggplot2)
 
 ### Plotting and cross-referencing
 
-To plot the first 10 lines of the babynames table you can add:
+To display the first 10 lines of the babynames table you can add:
 
 ```` markdown
 ```{{r}}
@@ -316,7 +316,7 @@ In @fig-line-girls you can see that there has been a peak in popularity for 'Lis
 ```{{r}}
 #| label: fig-line-boys
 #| fig-cap: "Line plot displaying proportion of top 10 boy names by year"
-most_freq_boys <- get_most_frequent(babynames, select_sex = "M") |>
+get_most_frequent(babynames, select_sex = "M") |>
   plot_top()
 ```
 
