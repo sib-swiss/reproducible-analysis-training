@@ -1,5 +1,26 @@
 [
   {
+    "objectID": "course_preparations.html",
+    "href": "course_preparations.html",
+    "title": "Course preparations",
+    "section": "",
+    "text": "Follow the instructions here to download and install R and RStudio. We’re going to need R version &gt; 4.1.2 and the latest version of RStudio, so if you were planning to update, now is a good time to do so!\n\n\nFollow instructions to install quarto here.\n\n\n\nInstall and/or update the following packages from CRAN:\n\ninstall.packages(c(\"babynames\",\n                   \"knitr\",\n                   \"dplyr\",\n                   \"ggplot2\",\n                   \"tidyr\",\n                   \"pheatmap\"))"
+  },
+  {
+    "objectID": "course_preparations.html#r-and-rstudio",
+    "href": "course_preparations.html#r-and-rstudio",
+    "title": "Course preparations",
+    "section": "",
+    "text": "Follow the instructions here to download and install R and RStudio. We’re going to need R version &gt; 4.1.2 and the latest version of RStudio, so if you were planning to update, now is a good time to do so!\n\n\nFollow instructions to install quarto here.\n\n\n\nInstall and/or update the following packages from CRAN:\n\ninstall.packages(c(\"babynames\",\n                   \"knitr\",\n                   \"dplyr\",\n                   \"ggplot2\",\n                   \"tidyr\",\n                   \"pheatmap\"))"
+  },
+  {
+    "objectID": "course_preparations.html#git-and-github",
+    "href": "course_preparations.html#git-and-github",
+    "title": "Course preparations",
+    "section": "Git and GitHub",
+    "text": "Git and GitHub\nTo install and/or update git, follow the instructions of Jennifer Bryan’s happy git with R.\nIf you haven’t already got one, make an account on GitHub, and make sure you can push and pull to GitHub either through https or with an ssh key. If you haven’t set that up yet, set up a Personal Access Token to enable a connection through https. In short, this means that you have to:\n\nGo to https://github.com/settings/tokens and click Generate new token &gt; New personal access token (classic)\nWrite a note, give it an expiration date and select the full repo scope\nClick Generate token\nIf git asks for a password, use the PAT as your password"
+  },
+  {
     "objectID": "exercises_git.html",
     "href": "exercises_git.html",
     "title": "Git and GitHub pages",
@@ -18,84 +39,21 @@
     "href": "exercises_git.html#using-a-remote-repository",
     "title": "Git and GitHub pages",
     "section": "Using a remote repository",
-    "text": "Using a remote repository\n\n\n\n\n\n\nWarning\n\n\n\nThis sub chapter assumes that you can connect with GitHub through https. If you haven’t setup a PAT yet, follow the instructions here as stated in the course preparations.\n\n\nWe will now link our local repository to a remote repository on GitHub. First, we need to create an empty repository on GitHub. Do this by:\n\nNavigating to the GitHub website and login\nClick the + sign at the top right and click New repository\nFill out the form:\n\nChoose a repository name. Typically this is the same name as your project directory\nWe will host a website, so make sure it’s public\nLeave the rest unchecked, so no README file and no .gitignore (we’ll leave the README.md for now, and .gitignore is already in our local repository)\n\nClick the green button with Create repository\n\nAfter you have created the empty repository, GitHub is already giving you suggestions what to do. We have already created the commit, and our current branch is the main branch (check it with git branch).\n\n\n\n\n\n\nCaution\n\n\n\nIf running git branch does not return main (if so, it’s likely to return master), change the branch name with:\ngit branch -m main\n\n\nTo make a new connection called origin between the local and remote repositories we run:\ngit remote add origin https://github.com/USER/REPOSITORY.git\nAfter that, we’ll synchronize with the remote repository with:\ngit push -u origin main\nWhich pushes the main branch from the local repository to the remote (named origin). The option -u makes sure that the main branch is used as default branch on the remote repository.\nTo publish your site, you only need to run one command:\nquarto publish gh-pages\nThis command will:\n\nCreate a branch named gh-pages (if it doesn’t exist)\nPush the website files to gh-pages\nChange the settings in your GitHub repository to tell that the website will be in gh-pages\n\n🤝 congrats! You’ve just published your first website with an analysis report!"
+    "text": "Using a remote repository\n\n\n\n\n\n\nWarning\n\n\n\nThis sub chapter assumes that you can connect with GitHub through https. If you haven’t setup a PAT yet, follow the instructions here as stated in the course preparations.\n\n\nWe will now link our local repository to a remote repository on GitHub. First, we need to create an empty repository on GitHub. Do this by:\n\nNavigating to the GitHub website and login\nClick the + sign at the top right and click New repository\nFill out the form:\n\nChoose a repository name. Typically this is the same name as your project directory\nWe will host a website, so make sure it’s public\nLeave the rest unchecked, so no README file and no .gitignore (we’ll leave the README.md for now, and .gitignore is already in our local repository)\n\nClick the green button with Create repository\n\nAfter you have created the empty repository, GitHub is already giving you suggestions what to do. We have already created the commit, and our current branch is the main branch (check it with git branch).\n\n\n\n\n\n\nCaution\n\n\n\nIf running git branch does not return main (if so, it’s likely to return master), change the branch name with:\ngit branch -m main\n\n\nTo make a new connection called origin between the local and remote repositories we run:\ngit remote add origin https://github.com/USER/REPOSITORY.git\nAfter that, we’ll synchronize with the remote repository with:\ngit push -u origin main\nWhich pushes the main branch from the local repository to the remote (named origin). The option -u makes sure that the main branch is used as default branch on the remote repository. Now you can check whether your local repository is synced with the remote by refreshing the repository page in your browser. The files you have committed should appear.\nNow we can publish our site. To do this, you only need to run one command:\nquarto publish gh-pages\nThis command will:\n\nCreate a branch named gh-pages (if it doesn’t exist)\nPush the website files to gh-pages\nChange the settings in your GitHub repository to tell that the website files will be in gh-pages\n\n🤝 congrats! You’ve just published your first website with an analysis report! Find it at USER.github.io/REPO."
   },
   {
     "objectID": "exercises_git.html#creating-a-branch-and-pull-request-to-add-a-figure-panel",
     "href": "exercises_git.html#creating-a-branch-and-pull-request-to-add-a-figure-panel",
     "title": "Git and GitHub pages",
     "section": "Creating a branch and pull request to add a figure panel",
-    "text": "Creating a branch and pull request to add a figure panel\nLet’s add a feature to our website: we will add a sub-chapter where we create a panel of multiple figures and cross reference them in the text. It is important that we don’t interfere with the main branch while we are developing it.\n\nFrom issue to branch\nWhen adding a new feature, a good practice would be to first write an issue. Here you describe clearly what you want to do. With an issue, it is straightforward to discuss about it, maintain a backlog, and give it a priority. At the point you decide you will work on the issue, you can make a branch out of the issue. In this way the branch has a clear aim - described in the issue.\n\n\n\n\n\n\nExercise\n\n\n\nGo to your repository on GitHub. Write an issue (Click the Issues tab) with the following content:\nTitle: Create a panel of figures\nDescription:\nThe figure panel should contain:\n\nLine plot of top 5 girl names from 2010 onwards\nLine plot of top 10 girl names from 2010 onwards\nHeatmap of top 30 girl names from 2010 onwards\n\nDescribe and cross-reference the individual figures in the text\nAfter that, save the issue, and at the issue page, on the right panel click on Create a branch under Development. This will automatically suggest a good branch name. Use the default settings and click Create branch. GitHub will automatically suggest what code to run to work on the branch locally. This will be:\ngit fetch origin\ngit checkout 1-create-a-panel-of-figures\nRun these commands in your local terminal at the root directory of your quarto project.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nYou can validate whether you are in the right branch by typing:\ngit branch\nThe branch 1-create-a-panel-of-figures should appear in green.\n\n\n\n\n\nCreating a figure panel\nNice! Now we have a new branch so we can develop in our repository without interfering with our stable main branch. Let’s work on the issue. To create the three figures that you just described in the issue, the required code will be provided by us. Your job would be to add hash-pipe (i.e. #|) options to the code chunk to render the plots as we want.\n\n\n\n\n\n\nExercise\n\n\n\nCheck out the quarto documentation on computed figures and cross-referencing and custom layout.\nThe code below will create the three figures that are displayed in two rows:\n\nThe two line graphs: should be in the first row, and next to each other\nThe heatmap: should be in the second row and span the entire column.\n\nUse this code and add the required chunk options:\n```{r}\n# get most frequent girl names from 2010 onwards\nfrom_year &lt;- 2010\nmost_freq_girls &lt;- get_most_frequent(babynames, select_sex = \"F\",\n                                     from = from_year)\n\n# plot top 5 girl names\nmost_freq_girls |&gt;\n  plot_top(top = 5)\n\n# plot top 10 girl names\nmost_freq_girls |&gt;\n  plot_top(top = 10)\n\n# get top 30 girl names in a matrix\n# with names in rows and years in columns\nprop_df &lt;- babynames |&gt; \n  filter(name %in% most_freq_girls$most_frequent$name[1:30] & sex == \"F\") |&gt;\n  filter(year &gt;= from_year) |&gt; \n  select(year, name, prop) |&gt;\n  pivot_wider(names_from = year,\n              values_from = prop)\n\nprop_mat &lt;- as.matrix(prop_df[, 2:ncol(prop_df)])\nrownames(prop_mat) &lt;- prop_df$name\n\n# create heatmap\npheatmap(prop_mat, cluster_cols = FALSE, scale = \"row\")\n```\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nAdd the following to the top of the code chunk:\n#| label: fig-line-2010\n#| layout: [[50,50], [100]]\n#| fig-cap: \"Most popular girl names from 2010 onwards\"\n#| fig-subcap: \n#|   - \"Top 5\"\n#|   - \"Top 10\"\n#|   - \"Top 30\"\nYou can refer to the figures in the markdown text like this:\nIn @fig-line-2010-1 and @fig-line-2010-2 the line plots are shown. To view trends of many names at once, @fig-line-2010-3 displays a heatmap.\n\n\n\n\n\nCreating a pull request\nIf the panel is appearing as it should, it might be time to merge it to the main branch. For this we’d first need to commit our changes:\ngit add analysis.qmd\ngit commit -m \"adds the figure panel\"\n\n\n\n\n\n\nNote\n\n\n\nNow, we could merge by (do not run this now!):\n# go to the main branch\ngit checkout main\n# merge the development branch to the main branch\ngit merge 1-create-a-panel-of-figures\n\n\nAs shown above, we could directly merge our development branch locally. However, if we are working with multiple people on the same project, we want to be explicit that we want to perform this merge. For example, you might want your colleague to test/review your change before merging. The way to do this would be by a pull request.\nTo create a pull request we first need to push our changes to the remote repository:\n# make sure you are on the development branch\ngit checkout 1-create-a-panel-of-figures\n# push the changes to the remote repository\ngit push\nNow browse to the repository on GitHub. You will already see a yellow banner with the question whether you want to create a pull request. However, we will do it in a more explicit way. Go to the tab Pull requests. Click the button New pull request. As base specify the main branch. At compare specify 1-create-a-panel-of-figures. Now review the displayed changes and click the button Create pull request. Add comments if necessary. In the same page, you can specify reviewers and assignees if you want others to become involved. We skip this for now, and click Merge pull request to merge 1-create-a-panel-of-figures to main.\n\n\n\n\n\n\nExercise\n\n\n\n\nCheck out the issue. Has anything happened to it?\nSwitch to the main branch locally and pull the changes your local repository\nValidate whether the development branch is merged to main\nCheck out the commits with git log --oneline. Anything changed in the commit history?\nRe-publish the website\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nThe issue should be marked as ‘Closed’. This has happened automatically after merging the pull request, because GitHub created a reference between the issue and the branch.\nTo switch to main and pull the changes:\ngit checkout main\ngit pull\nNow the code with the figure panel should be added to analysis.qmd. If you run git log --oneline you will see that the merge is stored as a commit, looking something like this:\n4fdf90e Merge pull request #1 from yourusername/1-create-a-panel-of-figures\nTo publish\nquarto publish gh-pages"
+    "text": "Creating a branch and pull request to add a figure panel\nLet’s add a feature to our website: we will add a sub-chapter where we create a panel of multiple figures and cross reference them in the text. It is important that we don’t interfere with the main branch while we are developing it.\n\nFrom issue to branch\nWhen adding a new feature, a good practice would be to first write an issue. Here you describe clearly what you want to do. With an issue, it is straightforward to discuss about it, maintain a backlog, and give it a priority. At the point you decide you will work on the issue, you can make a branch out of the issue. In this way the branch has a clear aim - described in the issue.\n\n\n\n\n\n\nExercise\n\n\n\nGo to your repository on GitHub. Write an issue (Click the Issues tab) with the following content:\nTitle: Create a panel of figures\nDescription:\nThe figure panel should contain:\n\nLine plot of top 5 girl names from 2010 onwards\nLine plot of top 10 girl names from 2010 onwards\nHeatmap of top 30 girl names from 2010 onwards\n\nDescribe and cross-reference the individual figures in the text\nAfter that, save the issue, and at the issue page, on the right panel click on Create a branch under Development. This will automatically suggest a good branch name. Use the default settings and click Create branch. GitHub will automatically suggest what code to run to work on the branch locally. This will be:\ngit fetch origin\ngit checkout 1-create-a-panel-of-figures\nRun these commands in your local terminal at the root directory of your quarto project.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nYou can validate whether you are in the right branch by typing:\ngit branch\nThe branch 1-create-a-panel-of-figures should appear in green.\n\n\n\n\n\nCreating a figure panel\nNice! Now we have a new branch so we can develop in our repository without interfering with our stable main branch. Let’s work on the issue. To create the three figures that you just described in the issue, the required code will be provided by us. Your job would be to add hash-pipe (i.e. #|) options to the code chunk to render the plots as we want.\n\n\n\n\n\n\nExercise\n\n\n\nCheck out the quarto documentation on computed figures and cross-referencing and custom layout.\nThe code below will create the three figures that are displayed in two rows:\n\nThe two line graphs: should be in the first row, and next to each other\nThe heatmap: should be in the second row and span the entire column.\n\nUse this code and add the required chunk options:\n```{r}\n# get most frequent girl names from 2010 onwards\nfrom_year &lt;- 2010\nmost_freq_girls &lt;- get_most_frequent(babynames, select_sex = \"F\",\n                                     from = from_year)\n\n# plot top 5 girl names\nmost_freq_girls |&gt;\n  plot_top(top = 5)\n\n# plot top 10 girl names\nmost_freq_girls |&gt;\n  plot_top(top = 10)\n\n# get top 30 girl names in a matrix\n# with names in rows and years in columns\nprop_df &lt;- babynames |&gt; \n  filter(name %in% most_freq_girls$most_frequent$name[1:30] & sex == \"F\") |&gt;\n  filter(year &gt;= from_year) |&gt; \n  select(year, name, prop) |&gt;\n  pivot_wider(names_from = year,\n              values_from = prop)\n\nprop_mat &lt;- as.matrix(prop_df[, 2:ncol(prop_df)])\nrownames(prop_mat) &lt;- prop_df$name\n\n# create heatmap\npheatmap(prop_mat, cluster_cols = FALSE, scale = \"row\")\n```\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nAdd the following to the top of the code chunk:\n#| label: fig-line-2010\n#| layout: [[50,50], [100]]\n#| fig-cap: \"Most popular girl names from 2010 onwards\"\n#| fig-subcap: \n#|   - \"Top 5\"\n#|   - \"Top 10\"\n#|   - \"Top 30\"\nYou can refer to the figures in the markdown text like this:\nIn @fig-line-2010-1 and @fig-line-2010-1 the line plots are shown. To view trends of many names at once, @fig-line-2010-3 displays a heatmap.\n\n\n\n\n\nCreating a pull request\nIf the panel is appearing as it should, it might be time to merge it to the main branch. For this we’d first need to commit our changes:\ngit add analysis.qmd\ngit commit -m \"adds the figure panel\"\n\n\n\n\n\n\nNote\n\n\n\nNow, we could merge by (do not run this now!):\n# go to the main branch\ngit checkout main\n# merge the development branch to the main branch\ngit merge 1-create-a-panel-of-figures\n\n\nAs shown above, we could directly merge our development branch locally. However, if we are working with multiple people on the same project, we want to be explicit that we want to perform this merge. For example, you might want your colleague to test/review your change before merging. The way to do this would be by a pull request.\nTo create a pull request we first need to push our changes to the remote repository:\n# make sure you are on the development branch\ngit checkout 1-create-a-panel-of-figures\n# push the changes to the remote repository\ngit push\nNow browse to the repository on GitHub. You will already see a yellow banner with the question whether you want to create a pull request. However, we will do it in a more explicit way. Go to the tab Pull requests. Click the button New pull request. As base specify the main branch. At compare specify 1-create-a-panel-of-figures. Now review the displayed changes and click the button Create pull request. Add comments if necessary. In the same page, you can specify reviewers and assignees if you want others to become involved. We skip this for now, and click Merge pull request to merge 1-create-a-panel-of-figures to main.\n\n\n\n\n\n\nExercise\n\n\n\n\nCheck out the issue. Has anything happened to it?\nSwitch to the main branch locally and pull the changes your local repository\nValidate whether the development branch is merged to main\nCheck out the commits with git log --oneline. Anything changed in the commit history?\nRe-publish the website\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nThe issue should be marked as ‘Closed’. This has happened automatically after merging the pull request, because GitHub created a reference between the issue and the branch.\nTo switch to main and pull the changes:\ngit checkout main\ngit pull\nNow the code with the figure panel should be added to analysis.qmd. If you run git log --oneline you will see that the merge is stored as a commit, looking something like this:\n4fdf90e Merge pull request #1 from yourusername/1-create-a-panel-of-figures\nTo publish\nquarto publish gh-pages"
   },
   {
-    "objectID": "slides.html",
-    "href": "slides.html",
-    "title": "Slides",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n11 Sep 2023\n\n\n1. Make your research FAIRer with Quarto, GitHub and Zenodo\n\n\nIntroduction of the tutorial\n\n\n\n\n11 Sep 2023\n\n\n2. Introduction to Quarto\n\n\nBasics of writing with Quarto\n\n\n\n\n11 Sep 2023\n\n\n3. Introduction to git, GitHub and GitHub pages\n\n\nGetting started with git for version control\n\n\n\n\n11 Sep 2023\n\n\n4. Introduction to Zenodo\n\n\nGetting started with Zenodo for long-term storage\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Reusable analysis",
-    "section": "",
-    "text": "Learning objectives\n\n\n\nAfter this tutorial, you will be able to:\n\nCreate notebooks and websites based on Markdown, and R with Quarto\nUse Git and GitHub to version control the generated content\nHost a website by making use of GitHub actions and GitHub pages\nLink the GitHub repository to Zenodo and give it a unique identifier (DOI)"
-  },
-  {
-    "objectID": "index.html#course-schedule",
-    "href": "index.html#course-schedule",
-    "title": "Reusable analysis",
-    "section": "Course schedule",
-    "text": "Course schedule\n\n\n\n\n\n\n\nBlock\nTopic\n\n\n\n\nBlock 1\n\nPresentation - General introduction\nPresentation - Introduction to Quarto\n\n\n\nBREAK\n\n\n\nBlock 2\n\nExercises - Quarto\n\n\n\nBREAK\n\n\n\nBlock 3\n\nPresentation - Introduction to git and GitHub\nExercises - Git, GitHub and GitHub pages\n\n\n\nBREAK\n\n\n\nBlock 4\n\nPresentation - Introduction to Zenodo\nExercises - Zenodo"
-  },
-  {
-    "objectID": "index.html#list-of-trainers",
-    "href": "index.html#list-of-trainers",
-    "title": "Reusable analysis",
-    "section": "List of trainers",
-    "text": "List of trainers\n\nDr. Geert van Geest - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland\nDr. Wandrille Duchemin - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the sciCORE core facility of the University of Basel, Switzerland"
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Reusable analysis",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis course is inspired and based on the following material:\n\nData Management and Data Stewardship course at the University of Luxemburg (Roland Krause & Milena Zizovic)\nGetting Started with Quarto course at rstudio::conf 2022 (Tom Mock)\nHappy git with R course (Jennifer Bryan)"
-  },
-  {
-    "objectID": "index.html#course-description",
-    "href": "index.html#course-description",
-    "title": "Reusable analysis",
-    "section": "Course description",
-    "text": "Course description\nThe FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research’s impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.\nSharing and reusing are at the heart of the FAIR principles and should be a routine task of any (life) scientist today. To enable others to use or reproduce our findings and work, we need to provide all the information: the data, software and parameters used, scripts for the analysis, databases and their versions, and any required documentation and contextualisation. To have all this information and code together in a single file, many use markdown. Such a markdown file can be created in a simple way, and after that rendered in a single web page that is easy to share and read.\nThe FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g. R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).\nBy using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing."
-  },
-  {
-    "objectID": "index.html#intended-audience-and-level",
-    "href": "index.html#intended-audience-and-level",
-    "title": "Reusable analysis",
-    "section": "Intended audience and level",
-    "text": "Intended audience and level\nThis tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a GitHub account and bring their laptops with either the latest versions of R, Rstudio and quarto installed. Find detailed instructions at course preparations."
-  },
-  {
-    "objectID": "exercises_quarto.html",
-    "href": "exercises_quarto.html",
-    "title": "Writing with Quarto",
-    "section": "",
-    "text": "Learning outcomes\n\n\n\nAfter finishing this chapter you will be able to:\n\nCreate a quarto project with RStudio\nLocally render and view a quarto website\nAdd markdown content to a quarto document\nAdd and execute code chunks to a quarto document\nAdd and modify code-chunk options\nExecute code chunks that create figures and create cross references to them"
-  },
-  {
-    "objectID": "exercises_quarto.html#initiate-a-website-project",
-    "href": "exercises_quarto.html#initiate-a-website-project",
-    "title": "Writing with Quarto",
-    "section": "Initiate a website project",
-    "text": "Initiate a website project\nWe’ll start with creating a website project. In Rstudio:\n\nChoose File &gt; New Project..\nChoose New Directory\nChoose Quarto website\nChoose a location and name for the website. Leave Create a git repository checked\nFinish by pushing the button Create Project\n\n\nNow we have created a template for a quarto website 👏 . It doesn’t contain much, but we can already render it and use it as a functional website. In order to view it locally in your browser you can either:\n\nOpen index.qmd in Rstudio and press the button Render\nOr you can use the Terminal and type:\n\nquarto preview\nIn both cases your computer will open a browser and locally host the page at a random port."
-  },
-  {
-    "objectID": "exercises_quarto.html#adding-content",
-    "href": "exercises_quarto.html#adding-content",
-    "title": "Writing with Quarto",
-    "section": "Adding content",
-    "text": "Adding content\n\nAdding text\nIn this part, we will use quarto to display our project goals. In index.qmd, create an introduction where you will state:\nIn this project we aim to visualize the trends of the most frequently used babynames from 1880 to 2017 in the United States. We do this by:\n\nUnderstanding the different columns of the data set\nFind the top 10 most frequently used baby names in the data for:\n\ngirls\nboys\n\nPlot the yearly trend of the top 10 baby names\n\n\n\n\n\n\n\nExercise\n\n\n\nTake the above introduction of your babynames project, convert it to markdown text, and add it to index.qmd.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nThis is what your index.qmd could look like:\n---\ntitle: \"quarto-tutorial\"\n---\n\nIn this project we aim to visualize the trends of the most frequently used babynames from 1880 to 2017 in the United States. We do this by:\n\n- Understanding the different columns of the data set\n- Find the top 10 most frequently used baby names in the data for:\n   - girls\n   - boys\n- Plot the yearly trend of the top 10 baby names \n\n\n\n\n\nAdding an image\nYou can add images with the following syntax:\n![image_alt_text](path/or/url/to/image.png)\n\n\n\n\n\n\nExercise\n\n\n\nCheck out the quarto figure guide. Find an image of a baby in the public domain on creative commons. Get the full URL of the image and add it to your index.qmd. Make it 400 pixels in width and align it to the right side of the page.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nYour index.qmd could look like this:\n---\ntitle: \"quarto-tutorial\"\n---\n\nIn this project we aim to visualize the trends of the most frequently used babynames from 1880 to 2017 in the United States. We do this by:\n\n- Understanding the different columns of the data set\n- Find the top 10 most frequently used baby names in the data for:\n  - girls\n  - boys\n- Plot the yearly trend of the top 10 baby names \n\n![](https://cdn.pixabay.com/photo/2016/10/02/06/27/baby-1709013_1280.jpg){fig-align=\"right\" width=400}\n\n\n\n\n\nAdding a page\nWe will now add a page for the analysis. We do this by clicking in Rstudio File &gt; New File.. &gt; Quarto Document... Choose a title, e.g. analysis and press Create. Save the newly created file as analysis.qmd.\nIn order to make our new page part of the website, we have to edit _quarto.yml. By adding it to the navbar item in the website markup:\nwebsite:\n  title: \"quarto-tutorial\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - about.qmd\n      - analysis.qmd\n\n\nAdding code chunks\nWe can add some code in there. First, we add a chunk that loads the libraries:\n```{r}\nlibrary(babynames)\nlibrary(knitr)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(tidyr)\nlibrary(pheatmap)\n```\n\n\nPlotting and cross-referencing\nTo display the first 10 lines of the babynames table you can add:\n```{r}\nhead(babynames) |&gt; kable()\n```\n\n\n\n\n\n\nExercise\n\n\n\nAdd the two above code as an R code chunk to analysis.qmd, and do the following:\n\nadd some text to let the reader know what it does\nsuppress the package startup messages with #| output: false at the top of the chunk that loads the packages. More info about the hash-pipe here\nre-render the site.\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n---\ntitle: \"Analysis\"\n---\n\nFirst we load the packages:\n\n```{r}\n#| output: false\nlibrary(babynames)\nlibrary(knitr)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(tidyr)\nlibrary(pheatmap)\n```\n\nThe first ten lines of the babynames dataset looks like:\n\n\n```{r}\nhead(babynames) |&gt; kable()\n```\n\n\n\nHere, I’ve created two functions that do the following:\n\nget_most_frequent: Gets the most frequent babynames over a time-period.\nplot_top: from the output of get_most_frequent. Plot the top n most popular names.\n\n\n\n\n\n\n\nNote\n\n\n\nThis is not a coding tutorial, so you can ignore the code itself. Just know what is does.\n\n\n\nget_most_frequent &lt;- function(babynames, select_sex, from = 1950) {\n  most_freq &lt;- babynames |&gt;\n    filter(sex == select_sex, year &gt; from) |&gt;\n    group_by(name) |&gt;\n    summarise(average = mean(prop)) |&gt;\n    arrange(desc(average))\n    \n  return(list(\n    babynames = babynames,\n    most_frequent = most_freq,\n    sex = select_sex,\n    from = from))\n}\n\nplot_top &lt;- function(x, top = 10) {\n  topx &lt;- x$most_frequent$name[1:top]\n  \n  p &lt;- x$babynames |&gt;\n    filter(name %in% topx, sex == x$sex, year &gt; x$from) |&gt;\n    ggplot(aes(x = year, y = prop, color = name)) +\n    geom_line() +\n    scale_color_brewer(palette = \"Paired\") +\n    theme_classic()\n  \n  return(p)\n}\n\nPlotting them for girls like this:\nget_most_frequent(babynames, select_sex = \"F\") |&gt;\n  plot_top()\nPlotting them for boys like this:\nget_most_frequent(babynames, select_sex = \"M\") |&gt;\n  plot_top()\n\n\n\n\n\n\nExercise\n\n\n\nAdd the above three code chunks to analysis.qmd, and do the following:\n\nSince the functions are a bit bulky we want to make the chunk foldable. Do this by #| code-fold: true\nDescribe in a text what you see in the figures. Refer to the individual figures in text by cross-referencing.\n\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nTo create a visualization of the most popular baby names, we have created two functions. Click the 'Code' link to view:\n\n```{r}\n#| code-fold: true\nget_most_frequent &lt;- function(babynames, select_sex, from = 1950) {\n  most_freq &lt;- babynames |&gt;\n    filter(sex == select_sex, year &gt; from) |&gt;\n    group_by(name) |&gt;\n    summarise(average = mean(prop)) |&gt;\n    arrange(desc(average))\n    \n  return(list(\n    babynames = babynames,\n    most_frequent = most_freq,\n    sex = select_sex,\n    from = from))\n}\n\nplot_top &lt;- function(x, top = 10) {\n  topx &lt;- x$most_frequent$name[1:top]\n  \n  p &lt;- x$babynames |&gt;\n    filter(name %in% topx, sex == x$sex, year &gt; x$from) |&gt;\n    ggplot(aes(x = year, y = prop, color = name)) +\n    geom_line() +\n    scale_color_brewer(palette = \"Paired\") +\n    theme_classic()\n  \n  return(p)\n}\n```\n\nHere we call the code to visualize the top 10 most frequent girl names from 1950 onwards:\n\n\n```{r}\n#| label: fig-line-girls\n#| fig-cap: \"Line plot displaying proportion of top 10 girl names by year\"\nget_most_frequent(babynames, select_sex = \"F\") |&gt;\n  plot_top()\n```\n    \nIn @fig-line-girls you can see that there has been a peak in popularity for 'Lisa', 'Jennifer' and 'Jessica'. Interesting! Let's have a look at the boys names:\n\n```{r}\n#| label: fig-line-boys\n#| fig-cap: \"Line plot displaying proportion of top 10 boy names by year\"\nget_most_frequent(babynames, select_sex = \"M\") |&gt;\n  plot_top()\n```\n\n@fig-line-boys shows that names that were popular before 1990 are relatively infrequent after 2000."
+    "objectID": "exercises_git.html#extra-render-with-github-actions",
+    "href": "exercises_git.html#extra-render-with-github-actions",
+    "title": "Git and GitHub pages",
+    "section": "[Extra] render with GitHub actions",
+    "text": "[Extra] render with GitHub actions\nWouldn’t it be nice if the website would be updated automatically when we push changes to the main branch? This can be done with GitHub actions. GitHub actions are a set of jobs that run after certain changes (triggers) to your repository. For example, you can run a job after you push to a specific branch. In this case, we want to render the website after a push to the main branch.\n\nSet up renv\nIn order to render the website as a github action, we need to define the R package dependencies that are required to run the code. For us, that would be among others ggplot, pheatmap, babynames and others. To conveniently handle this, we use the package renv, which basically looks for packages you are using in your project and creates an environment definition file (called renv.lock) based on which packages it finds.\nTo set up renv for you project, run the following:\ninstall.packages(\"renv\")\nrenv::init()\nrenv::snapshot()\nHere, init will initiate renv in your project by creating the required files, among which renv.lock. The function snapshot will create a snapshot of your current project dependencies and add it to renv.lock.\n\n\n\n\n\n\nExercise\n\n\n\nAfter running renv::init() and renv::snapshot() see what is in renv.lock and commit the changes of your repository to the main branch.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nThe file renv.lock is a json file containing all package metadata. To add it to your repository:\ngit checkout main\ngit add --all\ngit commit -m \"set up renv\"\n\n\n\n\n\nDefine the GitHub action\nNow that we have defined the required dependencies, we can define the action. We will provide you with a template for this:\nname: Quarto Publish\n\n# the on statement tells github actions whnen to run the action\non:\n  # pushing to main\n  push:\n    branches: main\n    \n# set permissions so the actions in the workflow can write files to your repository\npermissions: write-all\n\n# define the job\njobs:\n  # we name it quarto-deploy\n  quarto-deploy:\n    # define the virtual environment\n    runs-on: ubuntu-latest\n    # the steps are the individual actions that are needed to complete the job\n\n    steps:\n        \n        # first step is check out the repository so we have access to the files\n        # inside the repository in our virtual environment\n      - name: Check out repository\n        uses: actions/checkout@v4\n        \n        # now we install quarto in the environment\n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n        \n        # we also install R\n      - name: Install R\n        uses: r-lib/actions/setup-r@v2\n        with:\n          r-version: '4.3.1'\n\n        # and the required R dependencies\n      - name: Install R Dependencies\n        uses: r-lib/actions/setup-renv@v2\n        with:\n          cache-version: 1\n\n        # now we use a pre-created action to basically run \n        # quarto publish gh-pages\n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\nStore this file in your repository as .github/workflows/quarto-publish.yml. Also add and commit this file to you repository with:\ngit add .github/workflows/quarto-publish.yml\ngit commit -m \"adds action yaml\"\nNow, we’re ready to push and with that trigger the run of our first action. Go ahead and push the commits to remote repository with:\ngit push\nAfter pushing, go to the Actions tab in your repository on GitHub. You should see a new action running named ‘Quarto Publish’. After it finishes, you can check out the rendered website, which will be hosted on USER.github.io/REPOSITORY.\n\n\n\n\n\n\nNote\n\n\n\nThis will take a while, because all packages need to be compiled.\n\n\nFrom now on, every time you push to main, the action will run and the website will be updated."
   },
   {
     "objectID": "slides/slides_quarto.html#your-analysis-and-its-story",
@@ -112,11 +70,18 @@
     "text": "Question"
   },
   {
+    "objectID": "slides/slides_quarto.html#literate-programming",
+    "href": "slides/slides_quarto.html#literate-programming",
+    "title": "2. Introduction to Quarto",
+    "section": "Literate programming",
+    "text": "Literate programming\n\nLiterate programming combines programming with documentation language\nCoined by Donald E. Knuth in 1984 (!)\nCode follows the documentation (and not the other way around)"
+  },
+  {
     "objectID": "slides/slides_quarto.html#story-code-notebooks",
     "href": "slides/slides_quarto.html#story-code-notebooks",
     "title": "2. Introduction to Quarto",
     "section": "Story + code = notebooks",
-    "text": "Story + code = notebooks\n\nSome examples:\n\nJupyterLab / notebook\nGoogle colab\nRmarkdown\nQuarto\n\nText is written in markdown \nCode is in (executable) code chunks"
+    "text": "Story + code = notebooks\n\nSome examples:\n\nJupyterLab / notebook\nGoogle colab\nRmarkdown\nQuarto\n\nText is typically written in markdown \nCode is in (executable) code chunks"
   },
   {
     "objectID": "slides/slides_quarto.html#tell-the-story-of-your-project",
@@ -200,7 +165,7 @@
     "href": "slides/slides_quarto.html#markdown---images",
     "title": "2. Introduction to Quarto",
     "section": "Markdown - images",
-    "text": "Markdown - images\n![logo of SIB](logo.svg){#fig-logo width=\"300\" fig-align=\"left\"}\n\nAs you can see from @fig-logo, it is red.\n\n\n\n\nFigure 1: logo of SIB\n\n\nAs you can see from Figure 1, it is red.\n\n\nMore markdown basics here"
+    "text": "Markdown - images\n![logo of SIB](logo.svg){#fig-logo width=\"300\" fig-align=\"left\"}\n\nAs you can see from @fig-logo, it is red.\n\n\n\n\n\n\n\nFigure 1: logo of SIB\n\n\n\nAs you can see from Figure 1, it is red.\n\n\nMore markdown basics here"
   },
   {
     "objectID": "slides/slides_quarto.html#writing-code---chunks",
@@ -221,7 +186,7 @@
     "href": "slides/slides_quarto.html#markdown-code---quarto-magic",
     "title": "2. Introduction to Quarto",
     "section": "Markdown & code - quarto magic",
-    "text": "Markdown & code - quarto magic\n```{r}\n#| label: \"fig-mpg-vs-drat\"\n#| fig-cap: \"mpg versus drat\"\n#| fig-align: \"left\"\nlibrary(ggplot2)\nmtcars |&gt;\n  ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()\n```\n\nFrom @fig-mpg-vs-drat you can see there is a positive correlation. \n\nFigure 2: mpg versus dratFrom Figure 2 you can see there is a positive correlation."
+    "text": "Markdown & code - quarto magic\n```{r}\n#| label: \"fig-mpg-vs-drat\"\n#| fig-cap: \"mpg versus drat\"\n#| fig-align: \"left\"\nlibrary(ggplot2)\nmtcars |&gt;\n  ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()\n```\n\nFrom @fig-mpg-vs-drat you can see there is a positive correlation. \n\n\nFigure 2: mpg versus drat\nFrom Figure 2 you can see there is a positive correlation."
   },
   {
     "objectID": "slides/slides_quarto.html#quarto---other-use-cases",
@@ -256,7 +221,7 @@
     "href": "slides/slides_git.html#take-control-of-your-versions",
     "title": "3. Introduction to git, GitHub and GitHub pages",
     "section": "Take control of your versions!",
-    "text": "Take control of your versions!\n\nDare to break stuff ➡️ go back to any previous version\nDefine and describe changes\nCombine versions and suggested changes by pull requests and merging\n\n\n\n\n\nflowchart LR\n  A(first version) --&gt; B(some changes)\n  B --&gt; C(Something experimental)\n  B --&gt; D(Bug fix)\n  C --&gt; E(Merge)\n  D --&gt; E\n  \n  linkStyle 1,3 stroke:red;"
+    "text": "Take control of your versions!\n\nDare to break stuff ➡️ go back to any previous version\nDefine and describe changes\nCombine versions and suggested changes by pull requests and merging\n\n\n\n\n\n\nflowchart LR\n  A(first version) --&gt; B(some changes)\n  B --&gt; C(Something experimental)\n  B --&gt; D(Bug fix)\n  C --&gt; E(Merge)\n  D --&gt; E\n  \n  linkStyle 1,3 stroke:red;"
   },
   {
     "objectID": "slides/slides_git.html#question",
@@ -270,7 +235,7 @@
     "href": "slides/slides_git.html#using-git-for-version-control",
     "title": "3. Introduction to git, GitHub and GitHub pages",
     "section": "Using git for version control",
-    "text": "Using git for version control\n\nAt the level of a directory, typically a project\nEverything needed for version control is in .git/\nCommit: building block -&gt; defined step through versions\nBranch:\n\nindependent sequence of commits\ntypically merged with a main branch after work is done\n\n\n\n\n\n\nflowchart LR\n  A(first version) --commit--&gt; B(some changes)\n  B --new branch--&gt; C(Something experimental)\n  B --commit--&gt; D(Bug fix)\n  C --&gt; E((Merge commit))\n  D --&gt; E\n  \n  linkStyle 1,3 stroke:red;"
+    "text": "Using git for version control\n\nAt the level of a directory, typically a project\nEverything needed for version control is in .git/\nCommit: building block -&gt; defined step through versions\nBranch:\n\nindependent sequence of commits\ntypically merged with a main branch after work is done\n\n\n\n\n\n\n\nflowchart LR\n  A(first version) --commit--&gt; B(some changes)\n  B --new branch--&gt; C(Something experimental)\n  B --commit--&gt; D(Bug fix)\n  C --&gt; E((Merge commit))\n  D --&gt; E\n  \n  linkStyle 1,3 stroke:red;"
   },
   {
     "objectID": "slides/slides_git.html#committing-changes---2-steps",
@@ -319,7 +284,7 @@
     "href": "slides/slides_git.html#tags-and-releases",
     "title": "3. Introduction to git, GitHub and GitHub pages",
     "section": "Tags and releases",
-    "text": "Tags and releases\n\nTag a special commit\nTypically this is done to create versions, e.g. v1.0.0\nWith git tag or creating a release in GitHub\nFor Zenodo: a DOI is linked to a release\n\n\n\n\n\nflowchart LR\n  A(commit 1) --&gt; B(commit 2)\n  B --&gt; C(commit 3)\n  C --&gt; D(\"commit 4 \n        tag:v1.0.0\")\n  D --&gt; E(commit 5)\n  \n  style D fill:#f9f,stroke:#333,stroke-width:4px"
+    "text": "Tags and releases\n\nTag a special commit\nTypically this is done to create versions, e.g. v1.0.0\nWith git tag or creating a release in GitHub\nFor Zenodo: a DOI is linked to a release\n\n\n\n\n\n\nflowchart LR\n  A(commit 1) --&gt; B(commit 2)\n  B --&gt; C(commit 3)\n  C --&gt; D(\"commit 4 \n        tag:v1.0.0\")\n  D --&gt; E(commit 5)\n  \n  style D fill:#f9f,stroke:#333,stroke-width:4px"
   },
   {
     "objectID": "slides/slides_git.html#question-1",
@@ -350,53 +315,25 @@
     "text": "More git\n\nSpend time to learn it! You’ll earn it back quickly 💸\nNice resources:\n\nHappy git with R\nCarpentries course on git\nLearn git branching\n\nIf you’re new (or smart) use a git client, e.g.:\n\nRstudio git interface\nGitKraken\nGitHub Desktop"
   },
   {
-    "objectID": "slides/slides_zenodo.html#question",
-    "href": "slides/slides_zenodo.html#question",
-    "title": "4. Introduction to Zenodo",
-    "section": "Question",
-    "text": "Question"
+    "objectID": "exercises_zenodo.html",
+    "href": "exercises_zenodo.html",
+    "title": "Zenodo",
+    "section": "",
+    "text": "Before storing our repository in Zenodo, we will add some metadata to it, so our material is easily identifiable in Zenodo. We do this by adding a file called .zenodo.json to our repository, a json file specifying the different metadata attributes for zenodo. Here’s an example of such a file:\n{\n  \"title\": \"Analysis of babynames\",\n  \"upload_type\": \"publication\",\n  \"publication_type\": \"report\",\n  \"keywords\": [\n    \"R\",\n    \"quarto\",\n    \"tutorial\"\n  ],\n  \"creators\": [\n    {\n      \"name\": \"Geert van Geest\",\n      \"affiliation\": \"SIB Swiss Institute of Bioinformatics\",\n      \"orcid\": \"0000-0002-1561-078X\"\n    } \n  ]\n}\n\n\n\n\n\n\nExercise\n\n\n\nAdd a .zenodo.json file to your repository, and change it accordingly (e.g. at least change the creator name and ORCiD). Consider adding attributes specified here. After that, add it to the repository, commit the change and push it to the remote.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nModify the .zenodo.json file and add it to the repo. Stage, commit and push like so:\ngit add .zenodo.json\ngit commit -m \"adds .zenodo.json file\"\ngit push\n\n\n\nNow that we have added metadata to the repository, we can link our repository to Zenodo:\n\nBrowse to zenodo.org and sign up by using your GitHub account.\nOn the top right, click the drop-down menu and select GitHub.\nAll the public repositories in your namespace are in the list. Move the switch at the repository you have just created.\nNow, go to your repository on GitHub and create a release. Do this by selecting Create a new release on the right side.\nChoose a tag that starts with v and follows the rules of semantic versioning, so a good first name would be e.g. v1.0.0.\nChoose a release title. This can be anything.\nClick the green button Publish release\nGo back to the GitHub page on Zenodo and click Sync now at the top right.\nThere should now be a green bar at your repository, and it received a DOI. You can check out the record by clicking on the repository name\n\n\n\n\n\n\n\nExercise\n\n\n\nOff course we want to show off with the DOI we just assigned. In order to do that:\n\nClick the DOI badge. A window will appear with code chunks that you can use to display the badge.\nCopy-paste the markdown syntax to your main page (index.qmd) to show it on your website.\nStage, commit and push the change. After that, render and publish the website.\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nAn example of the top of index.qmd:\n---\ntitle: \"quarto-tutorial\"\n---\n\n[![DOI](https://zenodo.org/badge/657627364.svg)](https://zenodo.org/badge/latestdoi/657627364)\nAfter that, we run the commands:\ngit add index.qmd\ngit commit -m \"Adds a badge to the website\"\ngit push\nAnd the quarto commands (not required if you’ve set up the action!):\nquarto render\nquarto publish gh-pages"
   },
   {
-    "objectID": "slides/slides_zenodo.html#data-repositories",
-    "href": "slides/slides_zenodo.html#data-repositories",
-    "title": "4. Introduction to Zenodo",
-    "section": "Data repositories",
-    "text": "Data repositories\n\nDeposit data/files to resources that are:\n\nSpecific: best metadata annotations\nWidely used: continuity and findability\n\nFind a repository on re3data.org or fairsharing.org\nIf there’s no specific repo, there are general ones, e.g.:\n\nfigshare\nOpen Science Framework\nZenodo"
-  },
-  {
-    "objectID": "slides/slides_zenodo.html#general-repositories---file-types",
-    "href": "slides/slides_zenodo.html#general-repositories---file-types",
-    "title": "4. Introduction to Zenodo",
-    "section": "General repositories - file types",
-    "text": "General repositories - file types\n\nDocuments (e.g. pdf/MS Word)\nImages\nPresentations\nSpreadsheets\nFile collections, e.g. tarballs"
-  },
-  {
-    "objectID": "slides/slides_zenodo.html#zenodo",
-    "href": "slides/slides_zenodo.html#zenodo",
-    "title": "4. Introduction to Zenodo",
-    "section": "Zenodo",
-    "text": "Zenodo\n\nInitiative of CERN (you know, from the Large Hadron Collider), OpenAire and EU\nAims for long-term storage\nAssign DOI and make digital objects citable\nMaximum file size: 50 Gb\nVersioning\nGitHub integration"
-  },
-  {
-    "objectID": "slides/slides_zenodo.html#zenodo---github-integration",
-    "href": "slides/slides_zenodo.html#zenodo---github-integration",
-    "title": "4. Introduction to Zenodo",
-    "section": "Zenodo - GitHub integration",
-    "text": "Zenodo - GitHub integration\n\nCreate a record, version and DOI upon release\nUses CITATION.cff for metadata annotation\nAnd/or .zenodo.json using the deposit metadata schema, with e.g.:\n\nCreators\nLicense\nTitle\nKeywords\n.."
-  },
-  {
-    "objectID": "slides/slides_zenodo.html#some-final-remarks",
-    "href": "slides/slides_zenodo.html#some-final-remarks",
-    "title": "4. Introduction to Zenodo",
-    "section": "Some final remarks",
-    "text": "Some final remarks\n\nThe website will stay online - might evolve through time\nLooking for bioinformatics training material? Check out glittr.org"
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Slides",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Title\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nDate\n\n\nTitle\n\n\nSubtitle\n\n\n\n\n\n\n12 Jul 2024\n\n\n1. Make your research FAIRer with Quarto, GitHub and Zenodo\n\n\nIntroduction of the tutorial\n\n\n\n\n12 Jul 2024\n\n\n2. Introduction to Quarto\n\n\nBasics of writing with Quarto\n\n\n\n\n12 Jul 2024\n\n\n3. Introduction to git, GitHub and GitHub pages\n\n\nGetting started with git for version control\n\n\n\n\n12 Jul 2024\n\n\n4. Introduction to Zenodo\n\n\nGetting started with Zenodo for long-term storage\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "slides/slides_introduction.html#teachers",
     "href": "slides/slides_introduction.html#teachers",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Teachers",
-    "text": "Teachers\n\nWandrille Duchemin - Bioinformatician and Trainer, SIB and the sciCORE University of Basel, Switzerland\nGeert van Geest - Bioinformatician and trainer, SIB and IBU Bern, Switzerland"
+    "text": "Teachers\n\nGrégoire Rossier - Training coordinator at SIB\nGeert van Geest - Bioinformatician and trainer, SIB and IBU Bern, Switzerland"
   },
   {
     "objectID": "slides/slides_introduction.html#learning-outcomes",
@@ -459,7 +396,7 @@
     "href": "slides/slides_introduction.html#fair-principles",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "FAIR principles",
-    "text": "FAIR principles\n\n\n\nFindable\nAccessible\nInteroperable\nReusable\n\n\n\n\n\n\n\nMore at: go-fair.org\nImage from: European Commission, Directorate-General for Research and Innovation, Turning FAIR into reality, Publications Office, 2018, https://data.europa.eu/doi/10.2777/1524"
+    "text": "FAIR principles\n\n\n\nFindable\nAccessible\nInteroperable\nReusable\n\n\n\n\n\n\nMore at: go-fair.org\nImage from: European Commission, Directorate-General for Research and Innovation, Turning FAIR into reality, Publications Office, 2018, https://data.europa.eu/doi/10.2777/1524"
   },
   {
     "objectID": "slides/slides_introduction.html#why-can-reusable-data-analysis-be-difficult",
@@ -473,7 +410,7 @@
     "href": "slides/slides_introduction.html#make-it-a-habit",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Make it a habit",
-    "text": "Make it a habit\n\n\n\n\n\n\n\n\nThe longer it takes to reach goals ..\n\n\nThe less likely we are motivated to invest time ..\n\n\n\n\nLike dieting, exercise, proper sleeping..\nBe successful by making reusability a habit!"
+    "text": "Make it a habit\n\n\n\n\n\n\n\n\n\nThe longer it takes to reach goals ..\n\n\nThe less likely we are motivated to invest time ..\n\n\n\n\n\nLike dieting, exercise, proper sleeping..\nBe successful by making reusability a habit!"
   },
   {
     "objectID": "slides/slides_introduction.html#think-like-a-software-engineer",
@@ -504,31 +441,108 @@
     "text": "Tutorial overview\n\nPart 1:\n\nCreating notebooks with Quarto\nBasics of version control with git and GitHub\n\nPart 2:\n\nUsing GitHub pages to create a website with Quarto\nIntroduction to Zenodo"
   },
   {
-    "objectID": "course_preparations.html",
-    "href": "course_preparations.html",
-    "title": "Course preparations",
-    "section": "",
-    "text": "Follow the instructions here to download and install R and RStudio. We’re going to need R version &gt; 4.1.2 and the latest version of RStudio, so if you were planning to update, now is a good time to do so!\n\n\nFollow instructions to install quarto here.\n\n\n\nInstall and/or update the following packages from CRAN:\n\ninstall.packages(c(\"babynames\",\n                   \"knitr\",\n                   \"dplyr\",\n                   \"ggplot2\",\n                   \"tidyr\",\n                   \"pheatmap\"))"
+    "objectID": "slides/slides_zenodo.html#question",
+    "href": "slides/slides_zenodo.html#question",
+    "title": "4. Introduction to Zenodo",
+    "section": "Question",
+    "text": "Question"
   },
   {
-    "objectID": "course_preparations.html#r-and-rstudio",
-    "href": "course_preparations.html#r-and-rstudio",
-    "title": "Course preparations",
-    "section": "",
-    "text": "Follow the instructions here to download and install R and RStudio. We’re going to need R version &gt; 4.1.2 and the latest version of RStudio, so if you were planning to update, now is a good time to do so!\n\n\nFollow instructions to install quarto here.\n\n\n\nInstall and/or update the following packages from CRAN:\n\ninstall.packages(c(\"babynames\",\n                   \"knitr\",\n                   \"dplyr\",\n                   \"ggplot2\",\n                   \"tidyr\",\n                   \"pheatmap\"))"
+    "objectID": "slides/slides_zenodo.html#data-repositories",
+    "href": "slides/slides_zenodo.html#data-repositories",
+    "title": "4. Introduction to Zenodo",
+    "section": "Data repositories",
+    "text": "Data repositories\n\nDeposit data/files to resources that are:\n\nSpecific: best metadata annotations\nWidely used: continuity and findability\n\nFind a repository on re3data.org or fairsharing.org\nIf there’s no specific repo, there are general ones, e.g.:\n\nfigshare\nOpen Science Framework\nZenodo"
   },
   {
-    "objectID": "course_preparations.html#git-and-github",
-    "href": "course_preparations.html#git-and-github",
-    "title": "Course preparations",
-    "section": "Git and GitHub",
-    "text": "Git and GitHub\nTo install and/or update git, follow the instructions of Jennifer Bryan’s happy git with R.\nIf you haven’t already got one, make an account on GitHub, and make sure you can push and pull to GitHub either through https or with an ssh key. If you haven’t set that up yet, set up a Personal Access Token to enable a connection through https. In short, this means that you have to:\n\nGo to https://github.com/settings/tokens and click Generate new token &gt; New personal access token (classic)\nWrite a note, give it an expiration date and select the full repo scope\nClick Generate token\nIf git asks for a password, use the PAT as your password"
+    "objectID": "slides/slides_zenodo.html#general-repositories---file-types",
+    "href": "slides/slides_zenodo.html#general-repositories---file-types",
+    "title": "4. Introduction to Zenodo",
+    "section": "General repositories - file types",
+    "text": "General repositories - file types\n\nDocuments (e.g. pdf/MS Word)\nImages\nPresentations\nSpreadsheets\nFile collections, e.g. tarballs"
   },
   {
-    "objectID": "exercises_zenodo.html",
-    "href": "exercises_zenodo.html",
-    "title": "Zenodo",
+    "objectID": "slides/slides_zenodo.html#zenodo",
+    "href": "slides/slides_zenodo.html#zenodo",
+    "title": "4. Introduction to Zenodo",
+    "section": "Zenodo",
+    "text": "Zenodo\n\nInitiative of CERN (you know, from the Large Hadron Collider), OpenAire and EU\nAims for long-term storage\nAssign DOI and make digital objects citable\nMaximum file size: 50 Gb\nVersioning\nGitHub integration"
+  },
+  {
+    "objectID": "slides/slides_zenodo.html#zenodo---github-integration",
+    "href": "slides/slides_zenodo.html#zenodo---github-integration",
+    "title": "4. Introduction to Zenodo",
+    "section": "Zenodo - GitHub integration",
+    "text": "Zenodo - GitHub integration\n\nCreate a record, version and DOI upon release\nUses CITATION.cff for metadata annotation\nAnd/or .zenodo.json using the deposit metadata schema, with e.g.:\n\nCreators\nLicense\nTitle\nKeywords\n.."
+  },
+  {
+    "objectID": "slides/slides_zenodo.html#some-final-remarks",
+    "href": "slides/slides_zenodo.html#some-final-remarks",
+    "title": "4. Introduction to Zenodo",
+    "section": "Some final remarks",
+    "text": "Some final remarks\n\nThe website will stay online - might evolve through time\nLooking for bioinformatics training material? Check out glittr.org"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reusable analysis",
     "section": "",
-    "text": "Before storing our repository in Zenodo, we will add some metadata to it, so our material is easily identifiable in Zenodo. We do this by adding a file called .zenodo.json to our repository, a json file specifying the different metadata attributes for zenodo. Here’s an example of such a file:\n{\n  \"title\": \"Analysis of babynames\",\n  \"upload_type\": \"publication\",\n  \"publication_type\": \"report\",\n  \"keywords\": [\n    \"R\",\n    \"quarto\",\n    \"tutorial\"\n  ],\n  \"creators\": [\n    {\n      \"name\": \"Geert van Geest\",\n      \"affiliation\": \"SIB Swiss Institute of Bioinformatics\",\n      \"orcid\": \"0000-0002-1561-078X\"\n    } \n  ]\n}\n\n\n\n\n\n\nExercise\n\n\n\nAdd a .zenodo.json file to your repository, and change it accordingly (e.g. at least change the creator name and ORCiD). Consider adding attributes specified here. After that, add it to the repository, commit the change and push it to the remote.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nModify the .zenodo.json file and add it to the repo. Stage, commit and push like so:\ngit add .zenodo.json\ngit commit -m \"adds .zenodo.json file\"\ngit push\n\n\n\nNow that we have added metadata to the repository, we can link our repository to Zenodo:\n\nBrowse to zenodo.org and sign up by using your GitHub account.\nOn the top right, click the drop-down menu and select GitHub.\nAll the public repositories in your namespace are in the list. Move the switch at the repository you have just created.\nNow, go to your repository on GitHub and create a release. Do this by selecting Create a new release on the right side.\nChoose a tag that starts with v and follows the rules of semantic versioning, so a good first name would be e.g. v1.0.0.\nChoose a release title. This can be anything.\nClick the green button Publish release\nGo back to the GitHub page on Zenodo and click Sync now at the top right.\nThere should now be a green bar at your repository, and it received a DOI. You can check out the record by clicking on the repository name\n\n\n\n\n\n\n\nExercise\n\n\n\nOff course we want to show off with the DOI we just assigned. In order to do that:\n\nClick the DOI badge. A window will appear with code chunks that you can use to display the badge.\nCopy-paste the markdown syntax to your main page (index.qmd) to show it on your website.\nStage, commit and push the change. After that, render and publish the website.\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nAn example of the top of index.qmd:\n---\ntitle: \"quarto-tutorial\"\n---\n\n[![DOI](https://zenodo.org/badge/657627364.svg)](https://zenodo.org/badge/latestdoi/657627364)\nAfter that, we run the commands:\ngit add index.qmd\ngit commit -m \"Adds a badge to the website\"\ngit push\nAnd the quarto commands:\nquarto render\nquarto publish gh-pages"
+    "text": "Learning objectives\n\n\n\nAfter this tutorial, you will be able to:\n\nCreate notebooks and websites based on Markdown, and R with Quarto\nUse Git and GitHub to version control the generated content\nHost a website by making use of GitHub actions and GitHub pages\nLink the GitHub repository to Zenodo and give it a unique identifier (DOI)"
+  },
+  {
+    "objectID": "index.html#course-schedule",
+    "href": "index.html#course-schedule",
+    "title": "Reusable analysis",
+    "section": "Course schedule",
+    "text": "Course schedule\n\n\n\n\n\n\n\nBlock\nTopic\n\n\n\n\nBlock 1\n\nPresentation - General introduction\nPresentation - Introduction to Quarto\n\n\n\nBREAK\n\n\n\nBlock 2\n\nExercises - Quarto\n\n\n\nBREAK\n\n\n\nBlock 3\n\nPresentation - Introduction to git and GitHub\nExercises - Git, GitHub and GitHub pages\n\n\n\nBREAK\n\n\n\nBlock 4\n\nPresentation - Introduction to Zenodo\nExercises - Zenodo"
+  },
+  {
+    "objectID": "index.html#trainer-and-authors",
+    "href": "index.html#trainer-and-authors",
+    "title": "Reusable analysis",
+    "section": "Trainer and authors",
+    "text": "Trainer and authors\n\nDr. Geert van Geest - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland\nDr. Wandrille Duchemin - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the sciCORE core facility of the University of Basel, Switzerland"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Reusable analysis",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis course is inspired and based on the following material:\n\nData Management and Data Stewardship course at the University of Luxemburg (Roland Krause & Milena Zizovic)\nGetting Started with Quarto course at rstudio::conf 2022 (Tom Mock)\nHappy git with R course (Jennifer Bryan)"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Reusable analysis",
+    "section": "Course description",
+    "text": "Course description\nThe FAIR (Findable, Accessible, Interoperable and Reusable) principles provide guidelines for making research data and other resources more easily discoverable and reusable, which can help increase your research’s impact and exposure. Adhering to these principles also ensures that your research is more reliable and reproducible, as others can more easily access and provide feedback. In addition, making your research FAIR can promote the principles of open science and make it easier for others to contribute to and build upon your work. Finally, many funding agencies and journals now expect that your research outputs be made FAIR as a condition of funding or publication, so adhering to these principles can help to ensure that your research meets these requirements.\nSharing and reusing are at the heart of the FAIR principles and should be a routine task of any (life) scientist today. To enable others to use or reproduce our findings and work, we need to provide all the information: the data, software and parameters used, scripts for the analysis, databases and their versions, and any required documentation and contextualisation. To have all this information and code together in a single file, many use markdown. Such a markdown file can be created in a simple way, and after that rendered in a single web page that is easy to share and read.\nThe FAIR principles are a continuum of steps, and FAIRrer research is better than not FAIR at all. In this tutorial, the participants will be introduced to some FAIR steps. They will learn how to write documentation containing Markdown and code (e.g. R or Python) and render it into nicely formatted pages with Quarto. Afterwards, the participants will learn the basics of git and GitHub and how to host the version-controlled source files in a GitHub repository. Third, the participants will learn how to automatically render the source files into a nicely formatted web page hosted with GitHub. Lastly, the participant will learn how to store the source files in a longer term by linking a GitHub repository to Zenodo and giving it a unique identifier (DOI).\nBy using the taught tools and concepts, the participants will take significant steps in adhering to the FAIR principles and therefore boost the benefits of sharing."
+  },
+  {
+    "objectID": "index.html#intended-audience-and-level",
+    "href": "index.html#intended-audience-and-level",
+    "title": "Reusable analysis",
+    "section": "Intended audience and level",
+    "text": "Intended audience and level\nThis tutorial is aimed at computational biologists, bioinformaticians, researchers, scientists and trainers working in the life sciences who want to learn how to make their research and training FAIRer with reproducible notebooks and websites. Participants are expected to have an introductory level in programming with R or Python. Participants should have a GitHub account and bring their laptops with either the latest versions of R, Rstudio and quarto installed. Find detailed instructions at course preparations."
+  },
+  {
+    "objectID": "exercises_quarto.html",
+    "href": "exercises_quarto.html",
+    "title": "Writing with Quarto",
+    "section": "",
+    "text": "Learning outcomes\n\n\n\nAfter finishing this chapter you will be able to:\n\nCreate a quarto project with RStudio\nLocally render and view a quarto website\nAdd markdown content to a quarto document\nAdd and execute code chunks to a quarto document\nAdd and modify code-chunk options\nExecute code chunks that create figures and create cross references to them"
+  },
+  {
+    "objectID": "exercises_quarto.html#initiate-a-website-project",
+    "href": "exercises_quarto.html#initiate-a-website-project",
+    "title": "Writing with Quarto",
+    "section": "Initiate a website project",
+    "text": "Initiate a website project\nWe’ll start with creating a website project. In Rstudio:\n\nChoose File &gt; New Project..\nChoose New Directory\nChoose Quarto website\nChoose a location and name for the website. Leave Create a git repository checked\nFinish by pushing the button Create Project\n\n\nNow we have created a template for a quarto website 👏 . It doesn’t contain much, but we can already render it and use it as a functional website. In order to view it locally in your browser you can either:\n\nOpen index.qmd in Rstudio and press the button Render\nOr you can use the Terminal and type:\n\nquarto preview\nIn both cases your computer will open a browser and locally host the page at a random port."
+  },
+  {
+    "objectID": "exercises_quarto.html#adding-content",
+    "href": "exercises_quarto.html#adding-content",
+    "title": "Writing with Quarto",
+    "section": "Adding content",
+    "text": "Adding content\n\nAdding text\nIn this part, we will use quarto to display our project goals. In index.qmd, create an introduction where you will state:\nIn this project we aim to visualize the trends of the most frequently used babynames from 1880 to 2017 in the United States. We do this by:\n\nUnderstanding the different columns of the data set\nFind the top 10 most frequently used baby names in the data for:\n\ngirls\nboys\n\nPlot the yearly trend of the top 10 baby names\n\n\n\n\n\n\n\nExercise\n\n\n\nTake the above introduction of your babynames project, convert it to markdown text, and add it to index.qmd.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nThis is what your index.qmd could look like:\n---\ntitle: \"quarto-tutorial\"\n---\n\nIn this project we aim to visualize the trends of the most frequently used babynames from 1880 to 2017 in the United States. We do this by:\n\n- Understanding the different columns of the data set\n- Find the top 10 most frequently used baby names in the data for:\n   - girls\n   - boys\n- Plot the yearly trend of the top 10 baby names \n\n\n\n\n\nAdding an image\nYou can add images with the following syntax:\n![image_alt_text](path/or/url/to/image.png)\n\n\n\n\n\n\nExercise\n\n\n\nCheck out the quarto figure guide. Find an image of a baby in the public domain on creative commons. Get the full URL of the image and add it to your index.qmd. Make it 400 pixels in width and align it to the right side of the page.\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nYour index.qmd could look like this:\n---\ntitle: \"quarto-tutorial\"\n---\n\nIn this project we aim to visualize the trends of the most frequently used babynames from 1880 to 2017 in the United States. We do this by:\n\n- Understanding the different columns of the data set\n- Find the top 10 most frequently used baby names in the data for:\n  - girls\n  - boys\n- Plot the yearly trend of the top 10 baby names \n\n![](https://cdn.pixabay.com/photo/2016/10/02/06/27/baby-1709013_1280.jpg){fig-align=\"right\" width=400}\n\n\n\n\n\nAdding a page\nWe will now add a page for the analysis. We do this by clicking in Rstudio File &gt; New File.. &gt; Quarto Document... Choose a title, e.g. analysis and press Create. Save the newly created file as analysis.qmd.\nIn order to make our new page part of the website, we have to edit _quarto.yml. By adding it to the navbar item in the website markup:\nwebsite:\n  title: \"quarto-tutorial\"\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - about.qmd\n      - analysis.qmd\n\n\nAdding code chunks\nWe can add some code to analysis.qmd. First, we add a chunk that loads the libraries:\n```{r}\nlibrary(babynames)\nlibrary(knitr)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(tidyr)\nlibrary(pheatmap)\n```\n\n\nPlotting and cross-referencing\nTo display the first 10 lines of the babynames table you can add:\n```{r}\nhead(babynames) |&gt; kable()\n```\n\n\n\n\n\n\nExercise\n\n\n\nAdd the two above code chunks as an R code chunk to analysis.qmd, and do the following:\n\nadd some text to let the reader know what it does\nsuppress the package startup messages with #| output: false at the top of the chunk that loads the packages. More info about the hash-pipe here\nre-render the site.\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n---\ntitle: \"Analysis\"\n---\n\nFirst we load the packages:\n\n```{r}\n#| output: false\nlibrary(babynames)\nlibrary(knitr)\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(tidyr)\nlibrary(pheatmap)\n```\n\nThe first ten lines of the babynames dataset looks like:\n\n\n```{r}\nhead(babynames) |&gt; kable()\n```\n\n\n\nHere, I’ve created two functions that do the following:\n\nget_most_frequent: Gets the most frequent babynames over a time-period.\nplot_top: from the output of get_most_frequent. Plot the top n most popular names.\n\n\n\n\n\n\n\nNote\n\n\n\nThis is not a coding tutorial, so you can ignore the code itself. Just know what is does.\n\n\n\nget_most_frequent &lt;- function(babynames, select_sex, from = 1950) {\n  most_freq &lt;- babynames |&gt;\n    filter(sex == select_sex, year &gt; from) |&gt;\n    group_by(name) |&gt;\n    summarise(average = mean(prop)) |&gt;\n    arrange(desc(average))\n    \n  return(list(\n    babynames = babynames,\n    most_frequent = most_freq,\n    sex = select_sex,\n    from = from))\n}\n\nplot_top &lt;- function(x, top = 10) {\n  topx &lt;- x$most_frequent$name[1:top]\n  \n  p &lt;- x$babynames |&gt;\n    filter(name %in% topx, sex == x$sex, year &gt; x$from) |&gt;\n    ggplot(aes(x = year, y = prop, color = name)) +\n    geom_line() +\n    scale_color_brewer(palette = \"Paired\") +\n    theme_classic()\n  \n  return(p)\n}\n\nPlotting them for girls like this:\nget_most_frequent(babynames, select_sex = \"F\") |&gt;\n  plot_top()\nPlotting them for boys like this:\nget_most_frequent(babynames, select_sex = \"M\") |&gt;\n  plot_top()\n\n\n\n\n\n\nExercise\n\n\n\nAdd the above three code chunks to analysis.qmd, and do the following:\n\nSince the functions are a bit bulky we want to make the chunk foldable. Do this by #| code-fold: true\nDescribe in a text what you see in the figures. Refer to the individual figures in text by cross-referencing.\n\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\nTo create a visualization of the most popular baby names, we have created two functions. Click the 'Code' link to view:\n\n```{r}\n#| code-fold: true\nget_most_frequent &lt;- function(babynames, select_sex, from = 1950) {\n  most_freq &lt;- babynames |&gt;\n    filter(sex == select_sex, year &gt; from) |&gt;\n    group_by(name) |&gt;\n    summarise(average = mean(prop)) |&gt;\n    arrange(desc(average))\n    \n  return(list(\n    babynames = babynames,\n    most_frequent = most_freq,\n    sex = select_sex,\n    from = from))\n}\n\nplot_top &lt;- function(x, top = 10) {\n  topx &lt;- x$most_frequent$name[1:top]\n  \n  p &lt;- x$babynames |&gt;\n    filter(name %in% topx, sex == x$sex, year &gt; x$from) |&gt;\n    ggplot(aes(x = year, y = prop, color = name)) +\n    geom_line() +\n    scale_color_brewer(palette = \"Paired\") +\n    theme_classic()\n  \n  return(p)\n}\n```\n\nHere we call the code to visualize the top 10 most frequent girl names from 1950 onwards:\n\n\n```{r}\n#| label: fig-line-girls\n#| fig-cap: \"Line plot displaying proportion of top 10 girl names by year\"\nget_most_frequent(babynames, select_sex = \"F\") |&gt;\n  plot_top()\n```\n    \nIn @fig-line-girls you can see that there has been a peak in popularity for 'Lisa', 'Jennifer' and 'Jessica'. Interesting! Let's have a look at the boys names:\n\n```{r}\n#| label: fig-line-boys\n#| fig-cap: \"Line plot displaying proportion of top 10 boy names by year\"\nget_most_frequent(babynames, select_sex = \"M\") |&gt;\n  plot_top()\n```\n\n@fig-line-boys shows that names that were popular before 1990 are relatively infrequent after 2000."
   }
 ]

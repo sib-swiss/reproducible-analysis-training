@@ -9,11 +9,11 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.361">
+  <meta name="generator" content="quarto-1.5.53">
 
   <meta name="author" content="Geert van Geest">
-  <meta name="dcterms.date" content="2023-09-11">
-  <title>Make your research FAIRer - 2. Introduction to Quarto</title>
+  <meta name="dcterms.date" content="2024-07-12">
+  <title>Make your research FAIRer – 2. Introduction to Quarto</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -33,7 +33,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -44,7 +44,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -72,7 +72,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -86,7 +86,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -223,7 +223,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -403,7 +404,7 @@ Geert van Geest
 </div>
 </div>
 
-  <p class="date">2023-09-11</p>
+  <p class="date">2024-07-12</p>
 </section>
 <section id="your-analysis-and-its-story" class="slide level2">
 <h2>Your analysis and its story 📖</h2>
@@ -423,6 +424,14 @@ Geert van Geest
 <h2>Question</h2>
 
 <img data-src="../img/qr_vevox.svg" class="r-stretch"></section>
+<section id="literate-programming" class="slide level2">
+<h2>Literate programming</h2>
+<ul>
+<li><p><a href="https://en.wikipedia.org/wiki/Literate_programming">Literate programming</a> combines programming with documentation language</p></li>
+<li><p>Coined by Donald E. Knuth in 1984 (!)</p></li>
+<li><p>Code follows the documentation (and not the other way around)</p></li>
+</ul>
+</section>
 <section id="story-code-notebooks" class="slide level2">
 <h2>Story + code = notebooks</h2>
 <ul>
@@ -433,7 +442,7 @@ Geert van Geest
 <li><p>Rmarkdown</p></li>
 <li><p><strong>Quarto</strong></p></li>
 </ul></li>
-<li><p>Text is written in <a href="https://www.markdownguide.org/">markdown</a> <img data-src="https://raw.githubusercontent.com/dcurtis/markdown-mark/master/svg/markdown-mark.svg" height="40"></p></li>
+<li><p>Text is typically written in <a href="https://www.markdownguide.org/">markdown</a> <img data-src="https://raw.githubusercontent.com/dcurtis/markdown-mark/master/svg/markdown-mark.svg" height="40"></p></li>
 <li><p>Code is in (executable) code chunks</p></li>
 </ul>
 </section>
@@ -486,29 +495,29 @@ Geert van Geest
 </ul>
 </div>
 
-<img data-src="../img/project_init.png" class="r-stretch quarto-figure-right"></section>
+<img data-src="../img/project_init.png" class="quarto-figure quarto-figure-right r-stretch"></section>
 <section id="a-qmd-file" class="slide level2">
 <h2>A <code>qmd</code> file</h2>
 <ul>
 <li>Front matter (YML format):</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "My awesome project"</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="an">author:</span><span class="co"> "Jan Janssen"</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="an">date:</span><span class="co"> 2023-06-20</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="an">format:</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="co">  html:</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="co">    theme: cosmo</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="co">    toc: true</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a></a><span class="co">---</span></span>
+<span id="cb1-2"><a></a><span class="an">title:</span><span class="co"> "My awesome project"</span></span>
+<span id="cb1-3"><a></a><span class="an">author:</span><span class="co"> "Jan Janssen"</span></span>
+<span id="cb1-4"><a></a><span class="an">date:</span><span class="co"> 2023-06-20</span></span>
+<span id="cb1-5"><a></a><span class="an">format:</span></span>
+<span id="cb1-6"><a></a><span class="co">  html:</span></span>
+<span id="cb1-7"><a></a><span class="co">    theme: cosmo</span></span>
+<span id="cb1-8"><a></a><span class="co">    toc: true</span></span>
+<span id="cb1-9"><a></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p>Markdown text</p></li>
 <li><p>Code blocks</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>two <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a></a><span class="in">two &lt;- 1 + 1</span></span>
+<span id="cb2-3"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="quarto-example" class="slide level2">
@@ -523,7 +532,7 @@ Geert van Geest
 <img data-src="../img/quarto_rendered.png" class="r-stretch"></section>
 <section id="markdown---text-formatting" class="slide level2">
 <h2>Markdown - text formatting</h2>
-<table>
+<table class="caption-top">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -556,7 +565,7 @@ Geert van Geest
 </section>
 <section id="markdown---heading" class="slide level2">
 <h2>Markdown - heading</h2>
-<table>
+<table class="caption-top">
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -592,10 +601,10 @@ Geert van Geest
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="unordered-list">Unordered list</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a><span class="ss">- </span>item 1</span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="ss">    - </span>sub-item 1</span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="ss">    - </span>sum-item 2</span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="ss">        - </span>sub-sub-item 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a></a><span class="ss">- </span>item 1</span>
+<span id="cb11-2"><a></a><span class="ss">    - </span>sub-item 1</span>
+<span id="cb11-3"><a></a><span class="ss">    - </span>sum-item 2</span>
+<span id="cb11-4"><a></a><span class="ss">        - </span>sub-sub-item 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>item 1
 <ul>
@@ -608,10 +617,10 @@ Geert van Geest
 </ul>
 </div><div class="column" style="width:&quot;50%;">
 <h3 id="ordered-list">Ordered list</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="ss">1. </span>ordered list</span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="ss">2. </span>item 2</span>
-<span id="cb12-3"><a href="#cb12-3"></a>    i) sub-item 1</span>
-<span id="cb12-4"><a href="#cb12-4"></a>         A.  sub-sub-item 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a></a><span class="ss">1. </span>ordered list</span>
+<span id="cb12-2"><a></a><span class="ss">2. </span>item 2</span>
+<span id="cb12-3"><a></a>    i) sub-item 1</span>
+<span id="cb12-4"><a></a>         A.  sub-sub-item 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol type="1">
 <li>ordered list</li>
 <li>item 2
@@ -622,28 +631,31 @@ Geert van Geest
 </ol></li>
 </ol></li>
 </ol>
-</div>
-</div>
+</div></div>
 </section>
 <section id="markdown---links" class="slide level2">
 <h2>Markdown - links</h2>
 <p><br></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1"></a>GO fair <span class="co">[</span><span class="ot">website</span><span class="co">](https://www.go-fair.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a></a>GO fair <span class="co">[</span><span class="ot">website</span><span class="co">](https://www.go-fair.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>GO fair <a href="https://www.go-fair.org">website</a></p>
 </section>
 <section id="markdown---images" class="slide level2">
 <h2>Markdown - images</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a><span class="al">![logo of SIB](logo.svg)</span>{#fig-logo width="300" fig-align="left"}</span>
-<span id="cb14-2"><a href="#cb14-2"></a></span>
-<span id="cb14-3"><a href="#cb14-3"></a>As you can see from @fig-logo, it is red.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a></a><span class="al">![logo of SIB](logo.svg)</span>{#fig-logo width="300" fig-align="left"}</span>
+<span id="cb14-2"><a></a></span>
+<span id="cb14-3"><a></a>As you can see from @fig-logo, it is red.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><br></p>
-<div id="fig-logo" class="quarto-figure quarto-figure-left">
-<figure>
-<p><img data-src="logo.svg" width="300"></p>
-<figcaption>Figure&nbsp;1: logo of SIB</figcaption>
+<div id="fig-logo" class="quarto-float quarto-figure quarto-figure-left" data-fig-align="left">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img data-src="logo.svg" class="quarto-figure quarto-figure-left" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: logo of SIB
+</figcaption>
 </figure>
 </div>
-<p>As you can see from <a href="#/markdown---images">Figure&nbsp;1</a>, it is red.</p>
+<p>As you can see from <a href="#/markdown---images" class="quarto-xref">Figure&nbsp;1</a>, it is red.</p>
 
 <aside><div>
 <p>More markdown basics <a href="https://quarto.org/docs/authoring/markdown-basics.html">here</a></p>
@@ -651,24 +663,24 @@ Geert van Geest
 <section id="writing-code---chunks" class="slide level2">
 <h2>Writing code - chunks</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1"></a><span class="in">```{r}</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb15-3"><a href="#cb15-3"></a></span>
-<span id="cb15-4"><a href="#cb15-4"></a>mtcars <span class="sc">|&gt;</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> drat, <span class="at">y =</span> mpg, <span class="at">color =</span> cyl)) <span class="sc">+</span></span>
-<span id="cb15-6"><a href="#cb15-6"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb15-7"><a href="#cb15-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb15-2"><a></a><span class="in">library(ggplot2)</span></span>
+<span id="cb15-3"><a></a></span>
+<span id="cb15-4"><a></a><span class="in">mtcars |&gt;</span></span>
+<span id="cb15-5"><a></a><span class="in">  ggplot(aes(x = drat, y = mpg, color = cyl)) +</span></span>
+<span id="cb15-6"><a></a><span class="in">  geom_point()</span></span>
+<span id="cb15-7"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="slides_quarto_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
 <section id="writing-code---chunks-1" class="slide level2">
 <h2>Writing code - chunks</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="in">```{r}</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">head</span>(mtcars[, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]) <span class="sc">|&gt;</span> knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb16-2"><a></a><span class="in">head(mtcars[, 1:3]) |&gt; knitr::kable()</span></span>
+<span id="cb16-3"><a></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -721,18 +733,20 @@ Geert van Geest
 </section>
 <section id="markdown-code---quarto-magic" class="slide level2">
 <h2>Markdown &amp; code - quarto magic</h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1"></a><span class="in">```{r}</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="co">#| label: "fig-mpg-vs-drat"</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a><span class="co">#| fig-cap: "mpg versus drat"</span></span>
-<span id="cb17-4"><a href="#cb17-4"></a><span class="co">#| fig-align: "left"</span></span>
-<span id="cb17-5"><a href="#cb17-5"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb17-6"><a href="#cb17-6"></a>mtcars <span class="sc">|&gt;</span></span>
-<span id="cb17-7"><a href="#cb17-7"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> drat, <span class="at">y =</span> mpg)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
-<span id="cb17-8"><a href="#cb17-8"></a><span class="in">```</span></span>
-<span id="cb17-9"><a href="#cb17-9"></a></span>
-<span id="cb17-10"><a href="#cb17-10"></a>From @fig-mpg-vs-drat you can see there is a positive correlation. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a></a><span class="in">```{r}</span></span>
+<span id="cb17-2"><a></a><span class="in">#| label: "fig-mpg-vs-drat"</span></span>
+<span id="cb17-3"><a></a><span class="in">#| fig-cap: "mpg versus drat"</span></span>
+<span id="cb17-4"><a></a><span class="in">#| fig-align: "left"</span></span>
+<span id="cb17-5"><a></a><span class="in">library(ggplot2)</span></span>
+<span id="cb17-6"><a></a><span class="in">mtcars |&gt;</span></span>
+<span id="cb17-7"><a></a><span class="in">  ggplot(aes(x = drat, y = mpg)) + geom_point() + theme_bw()</span></span>
+<span id="cb17-8"><a></a><span class="in">```</span></span>
+<span id="cb17-9"><a></a></span>
+<span id="cb17-10"><a></a>From @fig-mpg-vs-drat you can see there is a positive correlation. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<img data-src="slides_quarto_files/figure-revealjs/fig-mpg-vs-drat-1.png" width="960" class="r-stretch quarto-figure-left"><p class="caption">Figure&nbsp;2: mpg versus drat</p><p>From <a href="#/fig-mpg-vs-drat">Figure&nbsp;2</a> you can see there is a positive correlation.</p>
+<img data-src="slides_quarto_files/figure-revealjs/fig-mpg-vs-drat-1.png" class="quarto-figure quarto-figure-left r-stretch" width="960"><p class="caption">
+Figure&nbsp;2: mpg versus drat
+</p><p>From <a href="#/fig-mpg-vs-drat" class="quarto-xref">Figure&nbsp;2</a> you can see there is a positive correlation.</p>
 </section>
 <section id="quarto---other-use-cases" class="slide level2">
 <h2>Quarto - other use cases</h2>
@@ -771,8 +785,10 @@ Geert van Geest
 <li><p>Render locally</p></li>
 </ul>
 
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section>
     </div>
@@ -801,7 +817,6 @@ Geert van Geest
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': true,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1056,18 +1071,7 @@ Geert van Geest
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1099,11 +1103,55 @@ Geert van Geest
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("https:\/\/sib-swiss\.github\.io\/reproducible-analysis-training\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+              // target, if specified
+              link.setAttribute("target", "_blank");
+              if (link.getAttribute("rel") === null) {
+                link.setAttribute("rel", "noopener");
+              }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1113,8 +1161,17 @@ Geert van Geest
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1128,7 +1185,11 @@ Geert van Geest
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
@@ -1168,20 +1229,6 @@ Geert van Geest
           });
         }
       }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var filterRegex = new RegExp("https:\/\/sib-swiss\.github\.io\/reproducible-analysis-training\/");
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-              // target, if specified
-              link.setAttribute("target", "_blank");
-          }
-        }
     });
     </script>
     
