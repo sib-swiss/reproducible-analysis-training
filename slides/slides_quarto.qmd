@@ -2,7 +2,7 @@
 title: "2. Introduction to Quarto"
 subtitle: "Basics of writing with Quarto"
 author: "Geert van Geest"
-date: "2023-09-11"
+date: "2024-07-12"
 format: 
   revealjs:
     theme: default
@@ -29,6 +29,14 @@ format:
 
 ![](../img/qr_vevox.svg)
 
+## Literate programming
+
+- [Literate programming](https://en.wikipedia.org/wiki/Literate_programming) combines programming with documentation language
+
+- Coined by Donald E. Knuth in 1984 (!)
+
+- Code follows the documentation (and not the other way around)
+
 ## Story + code = notebooks
 
 -   Some examples:
@@ -41,7 +49,7 @@ format:
 
     -   **Quarto**
 
--   Text is written in [markdown](https://www.markdownguide.org/) ![](https://raw.githubusercontent.com/dcurtis/markdown-mark/master/svg/markdown-mark.svg){height="40"}
+-   Text is typically written in [markdown](https://www.markdownguide.org/) ![](https://raw.githubusercontent.com/dcurtis/markdown-mark/master/svg/markdown-mark.svg){height="40"}
 
 -   Code is in (executable) code chunks
 

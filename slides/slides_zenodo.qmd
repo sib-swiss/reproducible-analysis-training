@@ -2,7 +2,7 @@
 title: "4. Introduction to Zenodo"
 subtitle: "Getting started with Zenodo for long-term storage"
 author: "Geert van Geest"
-date: "2023-09-11"
+date: "2024-07-12"
 engine: knitr
 format:
   revealjs:
@@ -87,6 +87,5 @@ format:
 -   The website will stay online - might evolve through time
 
 -   Looking for bioinformatics training material? Check out [glittr.org](https://www.glittr.org)
-
 
 ![](../img/logo-with-domain-tagline.svg){.absolute top="340" right="50" width="500"}

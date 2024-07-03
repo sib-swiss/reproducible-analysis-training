@@ -146,7 +146,7 @@ website:
 
 ### Adding code chunks
 
-We can add some code in there. First, we add a chunk that loads the libraries:
+We can add some code to `analysis.qmd`. First, we add a chunk that loads the libraries:
 
 ```` markdown
 ```{{r}}
@@ -172,7 +172,7 @@ head(babynames) |> kable()
 ::: callout-important
 ## Exercise
 
-Add the two above code as an R code chunk to `analysis.qmd`, and do the following:
+Add the two above code chunks as an R code chunk to `analysis.qmd`, and do the following:
 
 -   add some text to let the reader know what it does
 -   suppress the package startup messages with `#| output: false` at the top of the chunk that loads the packages. More info about the hash-pipe [here](https://quarto.org/docs/reference/cells/cells-knitr.html)

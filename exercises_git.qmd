@@ -136,9 +136,9 @@ After that, we'll synchronize with the remote repository with:
 git push -u origin main
 ```
 
-Which pushes the `main` branch from the local repository to the remote (named `origin`). The option `-u` makes sure that the `main` branch is used as default branch on the remote repository.
+Which pushes the `main` branch from the local repository to the remote (named `origin`). The option `-u` makes sure that the `main` branch is used as default branch on the remote repository. Now you can check whether your local repository is synced with the remote by refreshing the repository page in your browser. The files you have committed should appear. 
 
-To publish your site, you only need to run one command:
+Now we can publish our site. To do this, you only need to run one command:
 
 ``` bash
 quarto publish gh-pages
@@ -150,9 +150,9 @@ This command will:
 
 -   Push the website files to `gh-pages`
 
--   Change the settings in your GitHub repository to tell that the website will be in `gh-pages`
+-   Change the settings in your GitHub repository to tell that the website files will be in `gh-pages`
 
-🤝 congrats! You've just published your first website with an analysis report!
+🤝 congrats! You've just published your first website with an analysis report! Find it at USER.github.io/REPO. 
 
 ## Creating a branch and pull request to add a figure panel
 
@@ -266,7 +266,7 @@ Add the following to the top of the code chunk:
 You can refer to the figures in the markdown text like this:
 
 ``` md
-In @fig-line-2010-1 and @fig-line-2010-1 the line plots are shown. To view trends of many names at once, @fig-line2010-3 displays a heatmap.
+In @fig-line-2010-1 and @fig-line-2010-1 the line plots are shown. To view trends of many names at once, @fig-line-2010-3 displays a heatmap.
 ```
 :::
 
@@ -337,3 +337,122 @@ To publish
 quarto publish gh-pages
 ```
 :::
+
+## [Extra] render with GitHub actions
+
+Wouldn't it be nice if the website would be updated automatically when we push changes to the main branch? This can be done with GitHub actions. GitHub actions are a set of jobs that run after certain changes (triggers) to your repository. For example, you can run a job after you push to a specific branch. In this case, we want to render the website after a push to the main branch. 
+
+### Set up `renv`
+
+In order to render the website as a github action, we need to define the R package dependencies that are required to run the code. For us, that would be among others `ggplot`, `pheatmap`, `babynames` and others. To conveniently handle this, we use the package `renv`, which basically looks for packages you are using in your project and creates an environment definition file (called `renv.lock`) based on which packages it finds.
+
+To set up `renv` for you project, run the following:
+
+```r
+install.packages("renv")
+renv::init()
+renv::snapshot()
+```
+
+Here, `init` will initiate renv in your project by creating the required files, among which `renv.lock`. The function `snapshot` will create a snapshot of your current project dependencies and add it to `renv.lock`.
+
+::: callout-important
+## Exercise
+
+After running `renv::init()` and `renv::snapshot()` see what is in `renv.lock` and commit the changes of your repository to the main branch. 
+
+:::
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+The file `renv.lock` is a json file containing all package metadata. To add it to your repository:
+
+``` sh
+git checkout main
+git add --all
+git commit -m "set up renv"
+```
+
+:::
+
+### Define the GitHub action
+
+Now that we have defined the required dependencies, we can define the action. We will provide you with a template for this:
+
+```yaml
+name: Quarto Publish
+
+# the on statement tells github actions whnen to run the action
+on:
+  # pushing to main
+  push:
+    branches: main
+    
+# set permissions so the actions in the workflow can write files to your repository
+permissions: write-all
+
+# define the job
+jobs:
+  # we name it quarto-deploy
+  quarto-deploy:
+    # define the virtual environment
+    runs-on: ubuntu-latest
+    # the steps are the individual actions that are needed to complete the job
+
+    steps:
+        
+        # first step is check out the repository so we have access to the files
+        # inside the repository in our virtual environment
+      - name: Check out repository
+        uses: actions/checkout@v4
+        
+        # now we install quarto in the environment
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        
+        # we also install R
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.3.1'
+
+        # and the required R dependencies
+      - name: Install R Dependencies
+        uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 1
+
+        # now we use a pre-created action to basically run 
+        # quarto publish gh-pages
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+Store this file in your repository as `.github/workflows/quarto-publish.yml`. Also add and commit this file to you repository with:
+
+```sh
+git add .github/workflows/quarto-publish.yml
+git commit -m "adds action yaml"
+```
+
+
+Now, we're ready to push and with that trigger the run of our first action. Go ahead and push the commits to remote repository with:
+
+```sh
+git push
+```
+
+After pushing, go to the **Actions** tab in your repository on GitHub. You should see a new action running named 'Quarto Publish'. After it finishes, you can check out the rendered website, which will be hosted on USER.github.io/REPOSITORY. 
+
+::: callout-note
+
+This will take a while, because all packages need to be compiled.
+
+::: 
+
+From now on, every time you push to main, the action will run and the website will be updated. 

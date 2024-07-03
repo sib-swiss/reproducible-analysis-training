@@ -19,33 +19,33 @@ subtitle: "Make your research FAIRer with Quarto, GitHub and Zenodo"
 
 ## Course schedule
 
-+---------+------------------------------------------------------------------------------------------+
-| Block   | Topic                                                                                    |
-+=========+==========================================================================================+
-| Block 1 | -   [Presentation - General introduction](slides/slides_introduction.html#/title-slide)  |
-|         |                                                                                          |
-|         | -   [Presentation - Introduction to Quarto](slides/slides_quarto.html#/title-slide)      |
-+---------+------------------------------------------------------------------------------------------+
-| BREAK   |                                                                                          |
-+---------+------------------------------------------------------------------------------------------+
-| Block 2 | -   [Exercises - Quarto](exercises_quarto.qmd)                                           |
-+---------+------------------------------------------------------------------------------------------+
-| BREAK   |                                                                                          |
-+---------+------------------------------------------------------------------------------------------+
-| Block 3 | -   [Presentation - Introduction to git and GitHub](slides/slides_git.html#/title-slide) |
-|         |                                                                                          |
-|         | -   [Exercises - Git, GitHub and GitHub pages](exercises_git.qmd)                        |
-+---------+------------------------------------------------------------------------------------------+
-| BREAK   |                                                                                          |
-+---------+------------------------------------------------------------------------------------------+
-| Block 4 | -   [Presentation - Introduction to Zenodo](slides/slides_zenodo.qmd)                    |
-|         |                                                                                          |
-|         | -   [Exercises - Zenodo](exercises_zenodo.qmd)                                           |
-+---------+------------------------------------------------------------------------------------------+
++-----------+------------------------------------------------------------------------------------------+
+| Block     | Topic                                                                                    |
++===========+==========================================================================================+
+| Block 1   | -   [Presentation - General introduction](slides/slides_introduction.html#/title-slide)  |
+|           |                                                                                          |
+|           | -   [Presentation - Introduction to Quarto](slides/slides_quarto.html#/title-slide)      |
++-----------+------------------------------------------------------------------------------------------+
+| BREAK     |                                                                                          |
++-----------+------------------------------------------------------------------------------------------+
+| Block 2   | -   [Exercises - Quarto](exercises_quarto.qmd)                                           |
++-----------+------------------------------------------------------------------------------------------+
+| BREAK     |                                                                                          |
++-----------+------------------------------------------------------------------------------------------+
+| Block 3   | -   [Presentation - Introduction to git and GitHub](slides/slides_git.html#/title-slide) |
+|           |                                                                                          |
+|           | -   [Exercises - Git, GitHub and GitHub pages](exercises_git.qmd)                        |
++-----------+------------------------------------------------------------------------------------------+
+| BREAK     |                                                                                          |
++-----------+------------------------------------------------------------------------------------------+
+| Block 4   | -   [Presentation - Introduction to Zenodo](slides/slides_zenodo.qmd)                    |
+|           |                                                                                          |
+|           | -   [Exercises - Zenodo](exercises_zenodo.qmd)                                           |
++-----------+------------------------------------------------------------------------------------------+
 
 : {tbl-colwidths="\[20,80\]"}
 
-## List of trainers
+## Trainer and authors
 
 -   **Dr. Geert van Geest** - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the Interfaculty Bioinformatics Unit of the University of Bern, Switzerland
 -   **Dr. Wandrille Duchemin** - Bioinformatician, Data Analysis and Trainer, affiliated to the SIB Swiss Institute of Bioinformatics and the sciCORE core facility of the University of Basel, Switzerland

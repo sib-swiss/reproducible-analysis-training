@@ -54,7 +54,7 @@ Now that we have added metadata to the repository, we can link our repository to
 
 -   Choose a tag that starts with `v` and follows the rules of [semantic versioning](https://semver.org/), so a good first name would be e.g. `v1.0.0`.
 
--   Choose a release title. This can be anything. 
+-   Choose a release title. This can be anything.
 
 -   Click the green button **Publish release**
 
@@ -95,7 +95,7 @@ git commit -m "Adds a badge to the website"
 git push
 ```
 
-And the quarto commands:
+And the quarto commands (not required if you've set up the action!):
 
 ``` bash
 quarto render
