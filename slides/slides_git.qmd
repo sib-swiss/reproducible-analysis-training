@@ -181,17 +181,38 @@ flowchart LR
 
 ## Quarto and GitHub actions
 
--   GitHub actions: computations running on the GitHub server that can be triggered by e.g. a push, merge, cron job etc.
+-   GitHub actions: jobs running on the GitHub server that can be triggered by e.g. a push, merge, cron job etc.
 
--   Let GitHub actions render the content - ultimate reproducibility but:
-
-    -   Need to define your environment (all required R packages etc.)
-
-    -   Requires knowledge on the GitHub actions syntax and concepts
+-   Let GitHub actions render the content - ultimate reproducibility 
 
 ::: aside
 More info at the [quarto docs](https://quarto.org/docs/publishing/github-pages.html#github-action)
 :::
+
+## GitHub actions
+
+- `.github/workflows/my_workflow.yml`
+
+- For most purposes steps have predefined actions
+
+```yaml
+name: Install R
+
+on:
+  push:
+    branches: main
+    
+jobs:
+  my_job:
+    runs_on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.3.1'
+```
 
 ## More git
 
