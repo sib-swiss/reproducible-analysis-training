@@ -340,7 +340,7 @@
     "href": "slides/slides_introduction.html#teachers",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Teachers",
-    "text": "Teachers\n\nGrégoire Rossier - Training coordinator at SIB\nGeert van Geest - Bioinformatician and trainer, SIB and IBU Bern, Switzerland"
+    "text": "Teachers\n\nGrégoire Rossier - Training coordinator at SIB\nGeert van Geest - Bioinformatician and trainer, SIB and IBU Bern"
   },
   {
     "objectID": "slides/slides_introduction.html#learning-outcomes",
@@ -357,11 +357,11 @@
     "text": "Learning experiences\n\nLectures\nPolls/quiz questions\nExercises"
   },
   {
-    "objectID": "slides/slides_introduction.html#question-1-4",
-    "href": "slides/slides_introduction.html#question-1-4",
+    "objectID": "slides/slides_introduction.html#question-1-3",
+    "href": "slides/slides_introduction.html#question-1-3",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
-    "section": "Question 1-4",
-    "text": "Question 1-4\n\n\n\nScan the QR code\nOR: go to vevox.com and use the following code: 141-325-946"
+    "section": "Question 1-3",
+    "text": "Question 1-3\n\n\n\nScan the QR code\nOR: go to vevox.com and use the following code: 141-325-946"
   },
   {
     "objectID": "slides/slides_introduction.html#introduction-round",
@@ -382,21 +382,21 @@
     "href": "slides/slides_introduction.html#reproducible-research",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Reproducible research",
-    "text": "Reproducible research\n\n\nReproducibility: The principle stating that results … should be achieved again with a high degree of reliability when the study/analysis is replicated.\nMain purpose: the ability to validate\nResulting in:\n\nTransparency and open science\nImproved collaboration and innovation"
+    "text": "Reproducible research\n\n\nReproducibility: The principle stating that results … should be achieved again with a high degree of reliability when the analysis is replicated.\nMain purpose: the ability to validate\nResulting in transparency and open science"
   },
   {
-    "objectID": "slides/slides_introduction.html#why-would-i-make-my-research-reproducible",
-    "href": "slides/slides_introduction.html#why-would-i-make-my-research-reproducible",
+    "objectID": "slides/slides_introduction.html#five-pillars-of-reproducible-research",
+    "href": "slides/slides_introduction.html#five-pillars-of-reproducible-research",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
-    "section": "Why would I make my research reproducible?",
-    "text": "Why would I make my research reproducible?\n\n\nBecause journals/funding agencies require you to..\nShare with others:\n\nPeople will appreciate!\nIdentify mistakes or bugs\n\nColleagues can redo your experiments/analysis\nRedo your own experiments/analysis"
+    "section": "Five pillars of reproducible research",
+    "text": "Five pillars of reproducible research\n\n\n\n\n\n\n\nBrief Bioinform, Volume 24, Issue 6, November 2023, bbad375, https://doi.org/10.1093/bib/bbad375"
   },
   {
     "objectID": "slides/slides_introduction.html#reusability-is-even-better",
     "href": "slides/slides_introduction.html#reusability-is-even-better",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Reusability is even better",
-    "text": "Reusability is even better\n\nReproducibility: The principle stating that results … should be achieved again with a high degree of reliability when the study/analysis is replicated.\nReusability: The extend to which existing digital objects can be used for other purposes than their initial purpose."
+    "text": "Reusability is even better\n\nReproducibility: The principle stating that results … should be achieved again with a high degree of reliability when the analysis is replicated.\nReusability: The extend to which existing digital objects can be used for other purposes than their initial purpose."
   },
   {
     "objectID": "slides/slides_introduction.html#fair-principles",
@@ -404,6 +404,13 @@
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "FAIR principles",
     "text": "FAIR principles\n\n\n\nFindable\nAccessible\nInteroperable\nReusable\n\n\n\n\n\n\nMore at: go-fair.org\nImage from: European Commission, Directorate-General for Research and Innovation, Turning FAIR into reality, Publications Office, 2018, https://data.europa.eu/doi/10.2777/1524"
+  },
+  {
+    "objectID": "slides/slides_introduction.html#why-would-i-make-my-analysis-reusable",
+    "href": "slides/slides_introduction.html#why-would-i-make-my-analysis-reusable",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Why would I make my analysis reusable?",
+    "text": "Why would I make my analysis reusable?\n\n\nBecause journals/funding agencies require you to..\nShare with others:\n\nPeople will appreciate!\nIdentify mistakes or bugs\n\nColleagues can redo your experiments/analysis\nRedo your own experiments/analysis"
   },
   {
     "objectID": "slides/slides_introduction.html#why-can-reusable-data-analysis-be-difficult",
