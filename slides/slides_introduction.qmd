@@ -14,7 +14,7 @@ format:
 ## Teachers
 
 -   **Grégoire Rossier** - Training coordinator at SIB
--   **Geert van Geest** - Bioinformatician and trainer, SIB and IBU Bern, Switzerland
+-   **Geert van Geest** - Bioinformatician and trainer, SIB and IBU Bern
 
 ## Learning outcomes
 
@@ -34,7 +34,7 @@ format:
 
 -   Exercises
 
-## Question 1-4
+## Question 1-3
 
 ::: columns
 ::: {.column width="50%"}
@@ -70,32 +70,24 @@ Introduce yourself:
 ## Reproducible research
 
 ::: incremental
--   *Reproducibility:* The principle stating that results ... should be achieved again with a high degree of reliability when the study/analysis is replicated.
+-   *Reproducibility:* The principle stating that results ... should be achieved again with a high degree of reliability when the analysis is replicated.
 -   Main purpose: the ability to validate
--   Resulting in:
-    -   Transparency and open science
-    -   Improved collaboration and innovation
+-   Resulting in transparency and open science
+
 :::
 
-## Why would I make my research reproducible?
 
-::: incremental
-1.  Because journals/funding agencies require you to..
+## Five pillars of reproducible research
 
-2.  Share with others:
+![](../img/five_pillars.jpg){fig-align="center"}
 
-    -   People will appreciate!
-
-    -   Identify mistakes or bugs
-
-3.  Colleagues can redo your experiments/analysis
-
-4.  [Redo your own experiments/analysis]{.underline}
+::: aside
+Brief Bioinform, Volume 24, Issue 6, November 2023, bbad375, <https://doi.org/10.1093/bib/bbad375>
 :::
 
 ## Reusability is even better
 
--   *Reproducibility:* The principle stating that results ... should be achieved again with a high degree of reliability when the study/analysis is replicated.
+-   *Reproducibility:* The principle stating that results ... should be achieved again with a high degree of reliability when the analysis is replicated.
 -   *Reusability:* The extend to which existing digital objects can be used for other purposes than their initial purpose.
 
 ------------------------------------------------------------------------
@@ -123,6 +115,23 @@ More at: [go-fair.org](https://www.go-fair.org/fair-principles/)
 
 Image from: European Commission, Directorate-General for Research and Innovation, Turning FAIR into reality, Publications Office, 2018, https://data.europa.eu/doi/10.2777/1524
 :::
+
+## Why would I make my analysis reusable?
+
+::: incremental
+1.  Because journals/funding agencies require you to..
+
+2.  Share with others:
+
+    -   People will appreciate!
+
+    -   Identify mistakes or bugs
+
+3.  Colleagues can redo your experiments/analysis
+
+4.  [Redo your own experiments/analysis]{.underline}
+:::
+
 
 ## Why can reusable data analysis be difficult?
 
