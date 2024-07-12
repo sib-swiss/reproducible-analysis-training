@@ -84,6 +84,13 @@
     "text": "Learning experiences\n\nLectures\nPolls/quiz questions\nExercises"
   },
   {
+    "objectID": "slides/slides_introduction.html#communication",
+    "href": "slides/slides_introduction.html#communication",
+    "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
+    "section": "Communication",
+    "text": "Communication\n\nsib-swiss.github.io/reproducible-analysis-training/\nDuring lectures: Zoom\nDuring exercises: Slack\nShared document"
+  },
+  {
     "objectID": "slides/slides_introduction.html#question-1-3",
     "href": "slides/slides_introduction.html#question-1-3",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
@@ -98,8 +105,8 @@
     "text": "Introduction round\nIntroduce yourself:\n\nYour job/study\nWhy you are joining"
   },
   {
-    "objectID": "slides/slides_introduction.html#communication",
-    "href": "slides/slides_introduction.html#communication",
+    "objectID": "slides/slides_introduction.html#communication-1",
+    "href": "slides/slides_introduction.html#communication-1",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Communication",
     "text": "Communication\n\nTutorial website:\nsib-swiss.github.io/reproducible-analysis-training\nAsk questions at any time!"
