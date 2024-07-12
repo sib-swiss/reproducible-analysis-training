@@ -39,6 +39,16 @@ format:
 
 -   Exercises
 
+## Communication
+
+- [sib-swiss.github.io/reproducible-analysis-training/](sib-swiss.github.io/reproducible-analysis-training/)
+
+- During lectures: Zoom
+
+- During exercises: Slack
+
+- Shared document
+
 ## Question 1-3
 
 ::: columns
