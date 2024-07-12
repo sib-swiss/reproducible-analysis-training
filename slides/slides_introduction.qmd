@@ -14,17 +14,22 @@ format:
 ## Teachers
 
 -   **Grégoire Rossier** - Training coordinator at SIB
+-   **Wandrille Duchemin** - Bioinformatician and trainer, SIB and sciCORE Basel
 -   **Geert van Geest** - Bioinformatician and trainer, SIB and IBU Bern
 
 ## Learning outcomes
 
--   Create **notebooks** and **websites** based on Markdown, and R with **Quarto**
+::: {.incremental}
+
+-   Create **notebooks** and **websites** based on Markdown and R with **Quarto**
 
 -   Use **Git** and **GitHub** to version control the generated content
 
 -   Host a **website** by making use of GitHub actions and GitHub pages
 
 -   **Link** the **GitHub** repository to **Zenodo** and give it a unique identifier (DOI)
+
+:::
 
 ## Learning experiences
 
@@ -261,9 +266,9 @@ Slide from: Roland Krause ELIXIR-LU
 
 ------------------------------------------------------------------------
 
-## This tutorial
+## This course
 
--   **In** this tutorial:
+-   **In** this course:
 
     -   Tell your story together with code by using **Quarto**
 
@@ -271,7 +276,7 @@ Slide from: Roland Krause ELIXIR-LU
 
     -   Store it with **Zenodo**
 
--   **Not in** this tutorial:
+-   **Not in** this course:
 
     -   Good coding practices
 

@@ -31,11 +31,11 @@ format:
 
 ## Literate programming
 
-- [Literate programming](https://en.wikipedia.org/wiki/Literate_programming) combines programming with documentation language
+-   [Literate programming](https://en.wikipedia.org/wiki/Literate_programming) combines programming with documentation language
 
-- Coined by Donald E. Knuth in 1984 (!)
+-   Coined by Donald E. Knuth in 1984 (!)
 
-- Code follows the documentation (and not the other way around)
+-   Code follows the documentation (and not the other way around)
 
 ## Story + code = notebooks
 
