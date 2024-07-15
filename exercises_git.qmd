@@ -415,6 +415,8 @@ jobs:
       - name: Install R
         uses: r-lib/actions/setup-r@v2
         with:
+          # ! important: change this version to your local R version 
+          # i.e. the version that is specified in renv.lock
           r-version: '4.3.1'
 
         # and the required R dependencies
@@ -433,7 +435,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-Store this file in your repository as `.github/workflows/quarto-publish.yml`. Also add and commit this file to you repository with:
+Compare the version of R that is installed on your local machine with the one specified in the yaml file. Update it to the version that you have locally installed (and is specified in `renv.lock`). Store the file in your repository as `.github/workflows/quarto-publish.yml`. Also add and commit this file to you repository with:
 
 ```sh
 git add .github/workflows/quarto-publish.yml
