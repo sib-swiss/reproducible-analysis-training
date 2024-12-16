@@ -1,11 +1,14 @@
 {
-  "title": "Analysis of babynames",
-  "upload_type": "publication",
-  "publication_type": "report",
+  "upload_type": "lesson",
+  "license": "cc-by-4.0",
+  "title": "Course material Make your research FAIRer with Quarto, GitHub and Zenodo",
   "keywords": [
     "R",
     "quarto",
-    "tutorial"
+    "tutorial",
+    "literate programming",
+    "training",
+    "course"
   ],
   "creators": [
     {
