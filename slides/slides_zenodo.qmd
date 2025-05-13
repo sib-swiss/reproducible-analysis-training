@@ -1,8 +1,8 @@
 ---
 title: "4. Introduction to Zenodo"
 subtitle: "Getting started with Zenodo for long-term storage"
-author: "Geert van Geest"
-date: "2024-07-12"
+author: "Geert van Geest, Wandrille Duchemin"
+date: "2025-07-08"
 engine: knitr
 format:
   revealjs:

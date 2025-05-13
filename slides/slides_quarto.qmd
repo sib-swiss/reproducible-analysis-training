@@ -1,8 +1,8 @@
 ---
 title: "2. Introduction to Quarto"
 subtitle: "Basics of writing with Quarto"
-author: "Geert van Geest"
-date: "2024-07-12"
+author: "Geert van Geest, Wandrille Duchemin"
+date: "2025-07-08"
 format: 
   revealjs:
     theme: default

@@ -19,6 +19,9 @@ subtitle: "Make your research FAIRer with Quarto, GitHub and Zenodo"
 
 ## Course schedule
 
+
+Before the course: [Course preparation](course_preparations.html)
+
 +-----------+------------------------------------------------------------------------------------------+
 | Block     | Topic                                                                                    |
 +===========+==========================================================================================+

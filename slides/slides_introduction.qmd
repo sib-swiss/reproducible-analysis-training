@@ -1,8 +1,8 @@
 ---
 title: "1. Make your research FAIRer with Quarto, GitHub and Zenodo"
 subtitle: "Introduction of the tutorial"
-author: "Geert van Geest"
-date: "2024-07-12"
+author: "Geert van Geest, Wandrille Duchemin"
+date: "2025-07-08"
 format:
   revealjs:
     theme: default
@@ -13,9 +13,9 @@ format:
 
 ## Teachers
 
--   **Grégoire Rossier** - Training coordinator at SIB
+-   **Monique Zahn** - Training coordinator at SIB
+-   **Geert van Geest** - Training coordinator at SIB, original author of this course
 -   **Wandrille Duchemin** - Bioinformatician and trainer, SIB and sciCORE Basel
--   **Geert van Geest** - Bioinformatician and trainer, SIB and IBU Bern
 
 ## Learning outcomes
 
@@ -47,7 +47,12 @@ format:
 
 - During exercises: Slack
 
-- Shared document
+-   Tutorial website:
+
+    `sib-swiss.github.io/reproducible-analysis-training`
+
+-   Ask questions at any time!
+
 
 ## Question 1-3
 
@@ -74,13 +79,7 @@ Introduce yourself:
 
 -   Why you are joining
 
-## Communication
 
--   Tutorial website:
-
-    `sib-swiss.github.io/reproducible-analysis-training`
-
--   Ask questions at any time!
 
 ## Reproducible research
 
