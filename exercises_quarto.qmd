@@ -65,6 +65,12 @@ In this part, we will use quarto to display our project goals. In `index.qmd`, c
     -   *boys*
 -   *Plot the yearly trend of the top 10 baby names*
 
+
+::: callout-note
+Throughout this course, do not hesitate to refer to this [quarto markdown  basic sheet](https://quarto.org/docs/authoring/markdown-basics.html).
+
+:::
+
 ::: callout-important
 ## Exercise
 
