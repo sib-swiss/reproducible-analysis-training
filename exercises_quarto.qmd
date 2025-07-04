@@ -333,3 +333,210 @@ get_most_frequent(babynames, select_sex = "M") |>
 @fig-line-boys shows that names that were popular before 1990 are relatively infrequent after 2000. 
 ````
 :::
+
+
+
+## Extra: quarto extension and webassembly
+
+Quarto offers the possiblity to personnalise and extend its base capability with [extensions](https://quarto.org/docs/extensions/) built by the quarto community.
+
+These include [extra fonts and emojis](https://quarto-ext.github.io/fontawesome/), additionnal document template (like [scientific journal template](https://github.com/christopherkenny/nature)), extra graphical components (like the [accordion](https://github.com/royfrancis/quarto-accordion?tab=readme-ov-file) ).
+
+Extensions can be installed with the terminal command:
+
+```Terminal
+quarto add EXTENSIONNAME
+```
+ 
+The extension will be installed in `_extensions/` folder.
+
+Note that **extension are specific to a quarto project**, meaning that they need to be installed separately for each project. This may sound tedious, but in practice it makes sharing and automatically building websites or documents with these extensions easier.
+
+Let's try it with an extension that extends quarto with webassembly components for python and R: [quarto-live](https://r-wasm.github.io/quarto-live).
+
+
+### quarto-live : web assembly for "*free*" interactive computing
+
+Using web-assembly, we can have python or R code executed on the fly **in the browser**. In quarto, this can be achieved with the [quarto-live extension](https://r-wasm.github.io/quarto-live).
+
+This is very nice as it lets you build fully interactive app without the need to host them with a server architecture (because all the computations happen on the user's computer),
+which lets us host it as a static website (potentially for free, as for our github page!).
+
+Of course there is a downside: upon loading the page, the user's browser will need to install all the R webassembly components and associated libraries. This generally takes around 10 to 30 seconds if you don't have many complex libraries. Also, the execution of the R or python code is often a bit slower than what you would experience outside the web browser.
+
+---
+
+We start by **installing the extension**. 
+
+In the terminal, navigate to your quarto project folder and type:
+
+```Terminal
+quarto add r-wasm/quarto-live
+```
+
+The command will ask you to type "Y" and press Enter in order to validate the installation.
+
+
+Then, you can start adding webassembly components in your qmd files.
+
+For example, try adding a new file `interactive_compute.qmd` 
+
+> this example is heavily inspired by [this page](https://r-wasm.github.io/quarto-live/interactive/reactivity.html).
+
+
+We start the page by the yaml preamble:
+
+```` markdown
+---
+title: Interactive work without a server with web assembly
+format: live-html
+engine: knitr
+---
+
+{{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}}
+
+````
+
+Note here the `format: live-html`, and `engine: knitr`.
+The first marks the document as a `live` document (that uses quarto-live), and the second set the rendering engine (the alternative is `engine: jupyter`, which requires a python installation).
+
+The last line is required if you use the knitr rendering engine. According to the extension documentation in the future it will not be needed anymore, but for now we have to include it.
+
+
+Then, you can (finally) start adding some code:
+
+```` markdown
+
+```{{webr}}
+#| output: false
+#| echo: FALSE
+#| edit: false
+#| autorun: true
+library(babynames)
+library(ggplot2)
+library(magrittr)
+library(dplyr)
+```
+
+Histogram interacting with a javascript [Observable input](https://github.com/observablehq/inputs?tab=readme-ov-file) component:
+
+```{ojs}
+//| echo: false
+viewof sex_box = Inputs.checkbox(
+  ["M", "F"],
+  {
+    value: ["M", "F"],
+    label: "Shown sexes:",
+  }
+)
+```
+
+```{{webr}}
+#| echo: FALSE
+#| edit: false
+#| autorun: true
+#| input:
+#|   - sex_box
+
+nbins = 100
+data = babynames %>% filter( sex %in% sex_box  )
+
+ggplot( data , aes(x=n , fill = sex) ) + geom_histogram(bins = nbins) + scale_x_log10()
+```
+
+````
+
+You can note that the code cells types are different:
+
+ * `{webr}` : contains R that will be in web-assembly: rather than being executed once during the html rendering, they will be executed live in the browser.
+ * `{ojs}` : [Observable](https://github.com/observablehq) javascript - we use these cells to include interactive javascript input/outputs
+
+Also, in addition to the base quarto chunk options, we see:
+
+ * `//|` in `{ojs}` cells, because javascript comments start with `//` rather than `#`
+ * `#| edit:` : make a cell editable or not
+ * `#| autorun: true` : when true the cell is automatically executed at startup and whenever its content is changed.
+
+And importantly:
+```
+#| input:
+#|   - sex_box
+```
+
+This tells R to go grab a javascript variable we defined with `viewof` in another `{ojs}` block.
+
+
+From there, even more components can be added to create the interactive plot of dashboard of your choice:
+
+```` markdown
+```{{webr}}
+#| echo: false
+#| edit: false
+#| autorun: true
+
+get_most_frequent <- function(babynames, select_sex, from = 1950) {
+  most_freq <- babynames |>
+    filter(sex == select_sex, year > from) |>
+    group_by(name) |>
+    summarise(average = mean(prop)) |>
+    arrange(desc(average))
+    
+  return(list(
+    babynames = babynames,
+    most_frequent = most_freq,
+    sex = select_sex,
+    from = from))
+}
+
+plot_top <- function(x, top = 10) {
+  topx <- x$most_frequent$name[1:top]
+  
+  p <- x$babynames |>
+    filter(name %in% topx, sex == x$sex, year > x$from) |>
+    ggplot(aes(x = year, y = prop, color = name)) +
+    geom_line() +
+    scale_color_brewer(palette = "Paired") +
+    theme_classic()
+  
+  return(p)
+}
+```
+
+
+A more complex examples with more interactive inputs (NB: it seems that when moving the slider the image get re-computed for each intermediate value, leading to some slowness sometimes)  :
+```{{webr}}
+#| echo: FALSE
+#| edit: false
+#| autorun: true
+#| input:
+#|   - sex_show
+#|   - year
+#|   - n_names
+
+get_most_frequent(babynames, select_sex = sex_show , from = year ) |>
+  plot_top(top=n_names)
+
+```
+
+
+```{ojs}
+//| echo: false
+viewof sex_show = Inputs.radio(["M", "F"], {label: "Sex:",value:"F"})
+
+viewof year = Inputs.range([1880, 2010], {step: 10, label: "starting year:"})
+
+viewof n_names = Inputs.range([1, 12], {step: 1, label: "number of top names:"})
+```
+````
+---
+
+You can also just have interactive R/python cells where you can write and execute code :
+
+```` markdown
+```{{webr}}
+for (x in 1:5) {
+  print(x ** 2)
+}
+```
+
+````
