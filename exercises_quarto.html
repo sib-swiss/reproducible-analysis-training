@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-855e826b171f9eb6eeb17ead211e8cd1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e01e3b8a18c73f0244a9bcdbbea8eb79.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,6 +103,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <!-- Matomo -->
 <script>
   var _paq = window._paq = window._paq || [];
@@ -220,6 +222,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#adding-a-page" id="toc-adding-a-page" class="nav-link" data-scroll-target="#adding-a-page">Adding a page</a></li>
   <li><a href="#adding-code-chunks" id="toc-adding-code-chunks" class="nav-link" data-scroll-target="#adding-code-chunks">Adding code chunks</a></li>
   <li><a href="#plotting-and-cross-referencing" id="toc-plotting-and-cross-referencing" class="nav-link" data-scroll-target="#plotting-and-cross-referencing">Plotting and cross-referencing</a></li>
+  </ul></li>
+  <li><a href="#extra-quarto-extension-and-webassembly" id="toc-extra-quarto-extension-and-webassembly" class="nav-link" data-scroll-target="#extra-quarto-extension-and-webassembly">Extra: quarto extension and webassembly</a>
+  <ul class="collapse">
+  <li><a href="#quarto-live-web-assembly-for-free-interactive-computing" id="toc-quarto-live-web-assembly-for-free-interactive-computing" class="nav-link" data-scroll-target="#quarto-live-web-assembly-for-free-interactive-computing">quarto-live : web assembly for “<em>free</em>” interactive computing</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/sib-swiss/reproducible-analysis-training/edit/main/exercises_quarto.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/sib-swiss/reproducible-analysis-training/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -625,12 +631,178 @@ Answer
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="extra-quarto-extension-and-webassembly" class="level2">
+<h2 class="anchored" data-anchor-id="extra-quarto-extension-and-webassembly">Extra: quarto extension and webassembly</h2>
+<p>Quarto offers the possiblity to personnalise and extend its base capability with <a href="https://quarto.org/docs/extensions/">extensions</a> built by the quarto community.</p>
+<p>These include <a href="https://quarto-ext.github.io/fontawesome/">extra fonts and emojis</a>, additionnal document template (like <a href="https://github.com/christopherkenny/nature">scientific journal template</a>), extra graphical components (like the <a href="https://github.com/royfrancis/quarto-accordion?tab=readme-ov-file">accordion</a> ).</p>
+<p>Extensions can be installed with the terminal command:</p>
+<pre class="terminal"><code>quarto add EXTENSIONNAME</code></pre>
+<p>The extension will be installed in <code>_extensions/</code> folder.</p>
+<p>Note that <strong>extension are specific to a quarto project</strong>, meaning that they need to be installed separately for each project. This may sound tedious, but in practice it makes sharing and automatically building websites or documents with these extensions easier.</p>
+<p>Let’s try it with an extension that extends quarto with webassembly components for python and R: <a href="https://r-wasm.github.io/quarto-live">quarto-live</a>.</p>
+<section id="quarto-live-web-assembly-for-free-interactive-computing" class="level3">
+<h3 class="anchored" data-anchor-id="quarto-live-web-assembly-for-free-interactive-computing">quarto-live : web assembly for “<em>free</em>” interactive computing</h3>
+<p>Using web-assembly, we can have python or R code executed on the fly <strong>in the browser</strong>. In quarto, this can be achieved with the <a href="https://r-wasm.github.io/quarto-live">quarto-live extension</a>.</p>
+<p>This is very nice as it lets you build fully interactive app without the need to host them with a server architecture (because all the computations happen on the user’s computer), which lets us host it as a static website (potentially for free, as for our github page!).</p>
+<p>Of course there is a downside: upon loading the page, the user’s browser will need to install all the R webassembly components and associated libraries. This generally takes around 10 to 30 seconds if you don’t have many complex libraries. Also, the execution of the R or python code is often a bit slower than what you would experience outside the web browser.</p>
+<hr>
+<p>We start by <strong>installing the extension</strong>.</p>
+<p>In the terminal, navigate to your quarto project folder and type:</p>
+<pre class="terminal"><code>quarto add r-wasm/quarto-live</code></pre>
+<p>The command will ask you to type “Y” and press Enter in order to validate the installation.</p>
+<p>Then, you can start adding webassembly components in your qmd files.</p>
+<p>For example, try adding a new file <code>interactive_compute.qmd</code></p>
+<blockquote class="blockquote">
+<p>this example is heavily inspired by <a href="https://r-wasm.github.io/quarto-live/interactive/reactivity.html">this page</a>.</p>
+</blockquote>
+<p>We start the page by the yaml preamble:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Interactive work without a server with web assembly</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> live-html</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="an">engine:</span><span class="co"> knitr</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>{{&lt; include ./_extensions/r-wasm/live/_knitr.qmd &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note here the <code>format: live-html</code>, and <code>engine: knitr</code>. The first marks the document as a <code>live</code> document (that uses quarto-live), and the second set the rendering engine (the alternative is <code>engine: jupyter</code>, which requires a python installation).</p>
+<p>The last line is required if you use the knitr rendering engine. According to the extension documentation in the future it will not be needed anymore, but for now we have to include it.</p>
+<p>Then, you can (finally) start adding some code:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| output: false</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: FALSE</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| edit: false</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="in">#| autorun: true</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="in">library(babynames)</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="in">library(magrittr)</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="in">library(dplyr)</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>Histogram interacting with a javascript <span class="co">[</span><span class="ot">Observable input</span><span class="co">](https://github.com/observablehq/inputs?tab=readme-ov-file)</span> component:</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="co">//| echo: false</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>viewof sex_box <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"M"</span><span class="op">,</span> <span class="st">"F"</span>]<span class="op">,</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">value</span><span class="op">:</span> [<span class="st">"M"</span><span class="op">,</span> <span class="st">"F"</span>]<span class="op">,</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> <span class="st">"Shown sexes:"</span><span class="op">,</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: FALSE</span></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a><span class="in">#| edit: false</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a><span class="in">#| autorun: true</span></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a><span class="in">#| input:</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a><span class="in">#|   - sex_box</span></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="in">nbins = 100</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a><span class="in">data = babynames %&gt;% filter( sex %in% sex_box  )</span></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot( data , aes(x=n , fill = sex) ) + geom_histogram(bins = nbins) + scale_x_log10()</span></span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can note that the code cells types are different:</p>
+<ul>
+<li><code>{webr}</code> : contains R that will be in web-assembly: rather than being executed once during the html rendering, they will be executed live in the browser.</li>
+<li><code>{ojs}</code> : <a href="https://github.com/observablehq">Observable</a> javascript - we use these cells to include interactive javascript input/outputs</li>
+</ul>
+<p>Also, in addition to the base quarto chunk options, we see:</p>
+<ul>
+<li><code>//|</code> in <code>{ojs}</code> cells, because javascript comments start with <code>//</code> rather than <code>#</code></li>
+<li><code>#| edit:</code> : make a cell editable or not</li>
+<li><code>#| autorun: true</code> : when true the cell is automatically executed at startup and whenever its content is changed.</li>
+</ul>
+<p>And importantly:</p>
+<pre><code>#| input:
+#|   - sex_box</code></pre>
+<p>This tells R to go grab a javascript variable we defined with <code>viewof</code> in another <code>{ojs}</code> block.</p>
+<p>From there, even more components can be added to create the interactive plot of dashboard of your choice:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| edit: false</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| autorun: true</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="in">get_most_frequent &lt;- function(babynames, select_sex, from = 1950) {</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="in">  most_freq &lt;- babynames |&gt;</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="in">    filter(sex == select_sex, year &gt; from) |&gt;</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="in">    group_by(name) |&gt;</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="in">    summarise(average = mean(prop)) |&gt;</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="in">    arrange(desc(average))</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="in">  return(list(</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="in">    babynames = babynames,</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="in">    most_frequent = most_freq,</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="in">    sex = select_sex,</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="in">    from = from))</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="in">plot_top &lt;- function(x, top = 10) {</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="in">  topx &lt;- x$most_frequent$name[1:top]</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="in">  p &lt;- x$babynames |&gt;</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="in">    filter(name %in% topx, sex == x$sex, year &gt; x$from) |&gt;</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="in">    ggplot(aes(x = year, y = prop, color = name)) +</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="in">    geom_line() +</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a><span class="in">    scale_color_brewer(palette = "Paired") +</span></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="in">    theme_classic()</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a><span class="in">  return(p)</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>A more complex examples with more interactive inputs (NB: it seems that when moving the slider the image get re-computed for each intermediate value, leading to some slowness sometimes)  :</span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: FALSE</span></span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a><span class="in">#| edit: false</span></span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a><span class="in">#| autorun: true</span></span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a><span class="in">#| input:</span></span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a><span class="in">#|   - sex_show</span></span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a><span class="in">#|   - year</span></span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a><span class="in">#|   - n_names</span></span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a><span class="in">get_most_frequent(babynames, select_sex = sex_show , from = year ) |&gt;</span></span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a><span class="in">  plot_top(top=n_names)</span></span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a><span class="co">//| echo: false</span></span>
+<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a>viewof sex_show <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">radio</span>([<span class="st">"M"</span><span class="op">,</span> <span class="st">"F"</span>]<span class="op">,</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Sex:"</span><span class="op">,</span><span class="dt">value</span><span class="op">:</span><span class="st">"F"</span>})</span>
+<span id="cb18-54"><a href="#cb18-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a>viewof year <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1880</span><span class="op">,</span> <span class="dv">2010</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"starting year:"</span>})</span>
+<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a>viewof n_names <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">1</span><span class="op">,</span> <span class="dv">12</span>]<span class="op">,</span> {<span class="dt">step</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="st">"number of top names:"</span>})</span>
+<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<p>You can also just have interactive R/python cells where you can write and execute code :</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{webr}</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="in">for (x in 1:5) {</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="in">  print(x ** 2)</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
 </section>
 
 </main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

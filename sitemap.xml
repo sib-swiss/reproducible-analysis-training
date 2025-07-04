@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sib-swiss.github.io/reproducible-analysis-training/slides.html</loc>
-    <lastmod>2025-05-13T14:25:13.053Z</lastmod>
+    <loc>https://sib-swiss.github.io/reproducible-analysis-training/exercises_git.html</loc>
+    <lastmod>2025-07-04T09:23:15.415Z</lastmod>
   </url>
   <url>
     <loc>https://sib-swiss.github.io/reproducible-analysis-training/index.html</loc>
-    <lastmod>2025-05-13T14:25:13.053Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sib-swiss.github.io/reproducible-analysis-training/exercises_git.html</loc>
-    <lastmod>2025-05-13T14:25:12.998Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sib-swiss.github.io/reproducible-analysis-training/slides/slides_zenodo.html</loc>
-    <lastmod>2025-05-13T14:25:13.054Z</lastmod>
+    <lastmod>2025-07-04T09:23:15.470Z</lastmod>
   </url>
   <url>
     <loc>https://sib-swiss.github.io/reproducible-analysis-training/slides/slides_introduction.html</loc>
-    <lastmod>2025-05-13T14:25:13.054Z</lastmod>
+    <lastmod>2025-07-04T09:23:15.471Z</lastmod>
   </url>
   <url>
-    <loc>https://sib-swiss.github.io/reproducible-analysis-training/slides/slides_quarto.html</loc>
-    <lastmod>2025-05-13T14:25:13.054Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sib-swiss.github.io/reproducible-analysis-training/slides/slides_git.html</loc>
-    <lastmod>2025-05-13T14:25:13.054Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sib-swiss.github.io/reproducible-analysis-training/course_preparations.html</loc>
-    <lastmod>2025-05-13T14:25:12.997Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sib-swiss.github.io/reproducible-analysis-training/exercises_quarto.html</loc>
-    <lastmod>2025-05-13T14:25:12.998Z</lastmod>
+    <loc>https://sib-swiss.github.io/reproducible-analysis-training/slides/slides_zenodo.html</loc>
+    <lastmod>2025-07-04T09:23:15.471Z</lastmod>
   </url>
   <url>
     <loc>https://sib-swiss.github.io/reproducible-analysis-training/exercises_zenodo.html</loc>
-    <lastmod>2025-05-13T14:25:12.998Z</lastmod>
+    <lastmod>2025-07-04T09:23:15.415Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sib-swiss.github.io/reproducible-analysis-training/exercises_quarto.html</loc>
+    <lastmod>2025-07-04T09:23:15.415Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sib-swiss.github.io/reproducible-analysis-training/slides/slides_git.html</loc>
+    <lastmod>2025-07-04T09:23:15.470Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sib-swiss.github.io/reproducible-analysis-training/slides/slides_quarto.html</loc>
+    <lastmod>2025-07-04T09:23:15.471Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sib-swiss.github.io/reproducible-analysis-training/course_preparations.html</loc>
+    <lastmod>2025-07-04T09:23:15.414Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sib-swiss.github.io/reproducible-analysis-training/slides.html</loc>
+    <lastmod>2025-07-04T09:23:15.470Z</lastmod>
   </url>
 </urlset>
