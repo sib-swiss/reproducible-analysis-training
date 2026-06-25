@@ -448,6 +448,13 @@
     "text": "Collaborating with git\n\nSync with a remote (e.g. on GitHub)\nAll commits are associated with a user\nIf you’re collaborating:\n\nMake sure to sync with the remote regularly (git pull + git push)\nWork with branches and pull requests"
   },
   {
+    "objectID": "slides/slides_git.html#github-or-gitlab",
+    "href": "slides/slides_git.html#github-or-gitlab",
+    "title": "3. Introduction to git, GitHub and GitHub pages",
+    "section": "github or gitlab",
+    "text": "github or gitlab\n\n\n\n\n\n\n\ngithub:\n\n\nmicrosoft owned (with an opensource origin)\nquite public/big-collaboration oriented\n\n\n\n\n\n\n\n\ngitlab:\n\n\nself-owned, with an opensource community edition\nvery complete DevOps, CI/CD, security group setups\noften institution have their own gitlab server"
+  },
+  {
     "objectID": "slides/slides_git.html#creating-a-remote-repository",
     "href": "slides/slides_git.html#creating-a-remote-repository",
     "title": "3. Introduction to git, GitHub and GitHub pages",
