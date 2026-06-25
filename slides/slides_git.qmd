@@ -121,6 +121,50 @@ flowchart LR
 
     -   Work with branches and pull requests
 
+## github or gitlab
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg){height=1in fig-align="center"}
+
+[github](http://github.com): 
+
+
+::: {style="font-size: 70%;"}
+
+
+-   microsoft owned (with an opensource origin)
+-   quite public/big-collaboration oriented
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+
+![](https://upload.wikimedia.org/wikipedia/commons/c/c8/GitLab_logo_%282%29.svg){height=1in fig-align="center"}
+
+[gitlab](http://gitlab.com): 
+
+::: {style="font-size: 70%;"}
+
+-   self-owned, with an opensource community edition
+-   very complete DevOps, CI/CD, security group setups
+-   often institution have their own gitlab server 
+
+:::
+
+:::
+
+::::
+
+
+
+
+
 ## Creating a remote repository
 
 -   Create an empty repository on GitHub
