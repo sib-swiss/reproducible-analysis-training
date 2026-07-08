@@ -13,7 +13,7 @@ format:
 
 ## Teachers
 
--   **Monique Zahn** - Training coordinator at SIB
+-   **Diana Marek** - Training coordinator at SIB
 -   **Geert van Geest** - Training coordinator at SIB, original author of this course
 -   **Wandrille Duchemin** - Bioinformatician and trainer, SIB and sciCORE Basel
 
@@ -45,7 +45,7 @@ format:
 
 - During lectures: Zoom
 
-- During exercises: Slack
+- During exercises: Shared document
 
 -   Tutorial website:
 
