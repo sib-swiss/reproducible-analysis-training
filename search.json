@@ -95,7 +95,7 @@
     "href": "slides/slides_introduction.html#teachers",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Teachers",
-    "text": "Teachers\n\nMonique Zahn - Training coordinator at SIB\nGeert van Geest - Training coordinator at SIB, original author of this course\nWandrille Duchemin - Bioinformatician and trainer, SIB and sciCORE Basel"
+    "text": "Teachers\n\nDiana Marek - Training coordinator at SIB\nGeert van Geest - Training coordinator at SIB, original author of this course\nWandrille Duchemin - Bioinformatician and trainer, SIB and sciCORE Basel"
   },
   {
     "objectID": "slides/slides_introduction.html#learning-outcomes",
@@ -116,7 +116,7 @@
     "href": "slides/slides_introduction.html#communication",
     "title": "1. Make your research FAIRer with Quarto, GitHub and Zenodo",
     "section": "Communication",
-    "text": "Communication\n\nsib-swiss.github.io/reproducible-analysis-training/\nDuring lectures: Zoom\nDuring exercises: Slack\nTutorial website:\nsib-swiss.github.io/reproducible-analysis-training\nAsk questions at any time!"
+    "text": "Communication\n\nsib-swiss.github.io/reproducible-analysis-training/\nDuring lectures: Zoom\nDuring exercises: Shared document\nTutorial website:\nsib-swiss.github.io/reproducible-analysis-training\nAsk questions at any time!"
   },
   {
     "objectID": "slides/slides_introduction.html#question-1-3",
